@@ -32,24 +32,52 @@
 
   <!-- Songs List -->
   <div id="songs-list" class="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
-    <!-- Songs will be loaded from data.json -->
+    <p class="text-gray-500 col-span-full">Loading...</p>
   </div>
 
   <script>
+    // ========== THAY API KEY CỦA BẠN VÀO ĐÂY ==========
+   const YOUTUBE_API_KEY = "AIzaSyD5uqH3jv-PD-99rXRBSn2fspk58qPvhBA";
+    // ==================================================
+
     fetch('data.json')
       .then(res => res.json())
-      .then(data => {
+      .then(async (data) => {
         const songs = data.youtube || [];
         const container = document.getElementById('songs-list');
+        container.innerHTML = "";
 
         if (songs.length === 0) {
           container.innerHTML = `<p class="text-gray-500 col-span-full">No songs added yet.</p>`;
           return;
         }
 
+        // Lấy tất cả videoId
+        const videoIds = songs.map(s => s.videoId).join(',');
+
+        // Gọi YouTube API lấy view count
+        let statsMap = {};
+        try {
+          const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoIds}&key=${YOUTUBE_API_KEY}`;
+          const res = await fetch(apiUrl);
+          const json = await res.json();
+
+          if (json.items) {
+            json.items.forEach(item => {
+              statsMap[item.id] = {
+                views: parseInt(item.statistics.viewCount || 0).toLocaleString()
+              };
+            });
+          }
+        } catch (err) {
+          console.error("Error fetching YouTube stats", err);
+        }
+
+        // Hiển thị các bài hát
         songs.forEach(song => {
           const thumbnail = `https://img.youtube.com/vi/${song.videoId}/hqdefault.jpg`;
           const youtubeUrl = `https://www.youtube.com/watch?v=${song.videoId}`;
+          const views = statsMap[song.videoId]?.views || "—";
 
           const card = document.createElement('div');
           card.className = 'card bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden';
@@ -57,7 +85,12 @@
             <img src="${thumbnail}" alt="${song.title}" class="w-full aspect-video object-cover">
             <div class="p-5">
               <h3 class="font-bold text-lg mb-1 line-clamp-2">${song.title}</h3>
-              <p class="text-sm text-gray-400 mb-3">Target: <span class="text-red-400 font-medium">${song.target || '—'}</span> views</p>
+              <p class="text-sm text-gray-400 mb-1">
+                Views: <span class="text-white font-medium">${views}</span>
+              </p>
+              <p class="text-sm text-gray-400 mb-4">
+                Target: <span class="text-red-400 font-medium">${song.target || '—'}</span>
+              </p>
               <a href="${youtubeUrl}" target="_blank" 
                  class="inline-block bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-full transition">
                 Watch on YouTube →
