@@ -49,7 +49,7 @@
 
       // Tự động tăng target mỗi khi đạt (nhảy 1000)
       while (currentViews >= target) {
-        target += 1000;
+        target += 100000;
       }
       return target;
     }
@@ -90,7 +90,7 @@
           const youtubeUrl = `https://www.youtube.com/watch?v=${song.videoId}`;
           
           const currentViews = statsMap[song.videoId]?.views || 0;
-          const baseTarget = parseInt((song.target || "0").toString().replace(/,/g, '')) || 1000;
+          const baseTarget = parseInt((song.target || "0").toString().replace(/,/g, '')) || 100000;
           
           // Tính target hiện tại (tự tăng)
           const currentTarget = calculateTarget(currentViews, baseTarget);
