@@ -1,0 +1,48 @@
+{
+  "episodes": {
+    "1": [
+      {
+        "name": "Generator 1",
+        "title": "Santa Scribe X",
+        "url": "https://santa-scribe-x.lovable.app/?utm_id=97760_v0_s00_e0_tv4&fbclid=PAT01DUAUiDENleHRuA2FlbQIxMABwZG9mAnNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp1U96t4kvfrp3gHmRhNKfhE4HhqYie5twPvkb9wVx0sQdNSrauNVi__XWE4P_aem_MYU8ZaSMwEteTv_b72Qqng"
+      },
+      {
+        "name": "Generator 2",
+        "title": "Clinic Comment Engine",
+        "url": "https://clinic-comment-engine.lovable.app/?utm_id=97760_v0_s00_e0_tv4&fbclid=PAT01DUAUiDOtleHRuA2FlbQIxMABwZG9mAnNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp6MxugxGZLm9Y4BM70v6WYfI4T6nJcNxbUB4qFUOBG49eNpmZ2U_CkLjUJIa_aem_42r58l8923FBivE6iZni6A"
+      },
+      {
+        "name": "Generator 3",
+        "title": "Luxe Comment Forge",
+        "url": "https://luxe-comment-forge.lovable.app/?utm_medium=zalo&utm_campaign=zalo&utm_id=97760_v0_s00_e0_tv4&fbclid=PAT01DUAUiDXxleHRuA2FlbQIxMABwZG9mAnNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp6MxugxGZLm9Y4BM70v6WYfI4T6nJcNxbUB4qFUOBG49eNpmZ2U_CkLjUJIa_aem_42r58l8923FBivE6iZni6A"
+      },
+      {
+        "name": "Generator 4",
+        "title": "Streetwise Copy Engine",
+        "url": "https://streetwise-copy-engine.lovable.app/?zarsrc=30&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo&utm_id=97760_v0_s00_e0_tv4&fbclid=PAT01DUAUiDk9leHRuA2FlbQIxMABwZG9mAnNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp1U96t4kvfrp3gHmRhNKfhE4HhqYie5twPvkb9wVx0sQdNSrauNVi__XWE4P_aem_MYU8ZaSMwEteTv_b72Qqng"
+      }
+    ],
+    "2": [
+      {
+        "name": "Generator 1",
+        "title": "Santa Scribe X",
+        "url": "https://santa-scribe-x.lovable.app/?utm_id=97760_v0_s00_e0_tv4"
+      },
+      {
+        "name": "Generator 2",
+        "title": "Clinic Comment Engine",
+        "url": "https://clinic-comment-engine.lovable.app/?utm_id=97760_v0_s00_e0_tv4"
+      },
+      {
+        "name": "Generator 3",
+        "title": "Luxe Comment Forge",
+        "url": "https://luxe-comment-forge.lovable.app/?utm_id=97760_v0_s00_e0_tv4"
+      },
+      {
+        "name": "Generator 4",
+        "title": "Streetwise Copy Engine",
+        "url": "https://streetwise-copy-engine.lovable.app/?utm_id=97760_v0_s00_e0_tv4"
+      }
+    ]
+  }
+}
