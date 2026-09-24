@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Engagement - PerthSanta Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background-color: #0a0a0a; min-height: 100vh; }
+    .card { transition: all 0.25s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(220, 38, 38, 0.25); }
+  </style>
+</head>
+<body class="text-white">
+
+  <div class="max-w-5xl mx-auto px-4 pt-10 pb-6">
+    <a href="index.html" class="text-red-500 hover:text-red-400 text-sm mb-6 inline-block">← Back to Home</a>
+    <h1 class="text-3xl md:text-4xl font-bold mb-2">Instagram Engagement</h1>
+    <p class="text-gray-400">Official accounts to support. Track your personal comment / like count for today.</p>
+  </div>
+
+  <div id="ig-list" class="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
+    <p class="text-gray-500 col-span-full">Loading...</p>
+  </div>
+
+  <script>
+    const STORAGE_KEY = "ps_hub_ig";
+
+    function todayKey() {
+      const d = new Date();
+      return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+    }
+
+    function loadState() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+        if (raw.date !== todayKey()) return { date: todayKey(), counts: {} };
+        return raw;
+      } catch {
+        return { date: todayKey(), counts: {} };
+      }
+    }
+
+    function saveState(state) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    fetch("data.json")
+      .then(r => r.json())
+      .then(data => {
+        const accounts = data.instagram || [];
+        const state = loadState();
+        const list = document.getElementById("ig-list");
+        list.innerHTML = "";
+
+        if (!accounts.length) {
+          list.innerHTML = `<p class="text-gray-500 col-span-full">No Instagram targets yet.</p>`;
+          return;
+        }
+
+        accounts.forEach(acc => {
+          const current = state.counts[acc.id] || 0;
+          const target = acc.target || 0;
+          const remaining = Math.max(target - current, 0);
+          const pct = target ? Math.min((current / target) * 100, 100) : 0;
+
+          const card = document.createElement("div");
+          card.className = "card bg-zinc-900 border border-zinc-700 rounded-2xl p-5 flex flex-col";
+          card.innerHTML = `
+            <p class="text-red-500 text-sm mb-1">${acc.handle}</p>
+            <h3 class="text-xl font-bold mb-1">${acc.name}</h3>
+            <p class="text-sm text-gray-400 mb-4">${acc.goal || ""}</p>
+
+            <div class="space-y-1 text-sm mb-3">
+              <p class="text-gray-400">Today: <span class="text-white font-medium count">${current}</span></p>
+              <p class="text-gray-400">Target: <span class="text-red-400 font-medium">${target}</span></p>
+              <p class="text-gray-400">Remaining: <span class="text-yellow-400 font-medium remain">${remaining}</span></p>
+            </div>
+            <div class="h-2 bg-zinc-800 rounded-full overflow-hidden mb-4">
+              <div class="bar h-full bg-red-600" style="width:${pct}%"></div>
+            </div>
+
+            <div class="mt-auto flex items-center gap-2">
+              <button data-act="minus" class="px-3 py-1.5 rounded-full border border-zinc-600 text-sm hover:border-red-500">−</button>
+              <button data-act="plus" class="px-3 py-1.5 rounded-full bg-red-600 hover:bg-red-500 text-sm">+1</button>
+              <a href="${acc.url}" target="_blank" class="ml-auto text-sm text-red-500 hover:text-red-400">Open IG →</a>
+            </div>
+          `;
+
+          const countEl = card.querySelector(".count");
+          const remainEl = card.querySelector(".remain");
+          const bar = card.querySelector(".bar");
+
+          function render(n) {
+            state.counts[acc.id] = n;
+            saveState(state);
+            countEl.innerText = n;
+            remainEl.innerText = Math.max(target - n, 0);
+            bar.style.width = (target ? Math.min((n / target) * 100, 100) : 0) + "%";
+          }
+
+          card.querySelector('[data-act="plus"]').onclick = () => render((state.counts[acc.id] || 0) + 1);
+          card.querySelector('[data-act="minus"]').onclick = () => render(Math.max((state.counts[acc.id] || 0) - 1, 0));
+          list.appendChild(card);
+        });
+      })
+      .catch(() => {
+        document.getElementById("ig-list").innerHTML = `<p class="text-red-500">Error loading data.json</p>`;
+      });
+  </script>
+</body>
+</html>
