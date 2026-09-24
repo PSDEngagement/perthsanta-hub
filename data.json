@@ -34,5 +34,89 @@
       "videoId": "-OwlECihP68",
       "target": "900,000"
     }
+  ],
+  "missions": [
+    {
+      "id": "stream-heartbound",
+      "title": "Stream Heartbound trailer",
+      "desc": "Watch / loop the official Heartbound pilot trailer on YouTube today.",
+      "points": 20,
+      "link": "https://www.youtube.com/watch?v=I1guVkLJ4mU"
+    },
+    {
+      "id": "stream-arak",
+      "title": "Stream A-Rak-A-Rak OST",
+      "desc": "Play the Love You Teacher OST at least once (no skip).",
+      "points": 15,
+      "link": "https://www.youtube.com/watch?v=-OwlECihP68"
+    },
+    {
+      "id": "like-comment-yt",
+      "title": "Like + comment on YouTube",
+      "desc": "Leave a kind comment on any official PerthSanta video.",
+      "points": 15,
+      "link": "https://www.youtube.com/@GMMTV"
+    },
+    {
+      "id": "ig-like",
+      "title": "Like latest official IG posts",
+      "desc": "Like the newest posts from @perthppe and @santa_pp.",
+      "points": 10,
+      "link": "https://www.instagram.com/perthppe/"
+    },
+    {
+      "id": "ig-comment",
+      "title": "Leave an IG comment",
+      "desc": "Write 1 supportive comment (no spam, no tagging strangers).",
+      "points": 15,
+      "link": "https://www.instagram.com/santa_pp/"
+    },
+    {
+      "id": "share-story",
+      "title": "Share to IG Story",
+      "desc": "Repost official content to your story and tag Perth / Santa.",
+      "points": 20,
+      "link": "https://www.instagram.com/gmmtv/"
+    },
+    {
+      "id": "x-retweet",
+      "title": "Boost on X",
+      "desc": "Like + repost an official GMMTV / PerthSanta announcement.",
+      "points": 10,
+      "link": "https://x.com/GMMTV"
+    },
+    {
+      "id": "trend-help",
+      "title": "Help Heartbound trends",
+      "desc": "Use official hashtags when posting about today's episode / teaser.",
+      "points": 15,
+      "link": "series-trends.html"
+    }
+  ],
+  "instagram": [
+    {
+      "id": "perthppe",
+      "handle": "@perthppe",
+      "name": "Perth Tanapon",
+      "url": "https://www.instagram.com/perthppe/",
+      "goal": "Like + comment the latest 3 posts",
+      "target": 500
+    },
+    {
+      "id": "santa_pp",
+      "handle": "@santa_pp",
+      "name": "Santa Pongsapak",
+      "url": "https://www.instagram.com/santa_pp/",
+      "goal": "Like + comment the latest 3 posts",
+      "target": 500
+    },
+    {
+      "id": "gmmtv",
+      "handle": "@gmmtv",
+      "name": "GMMTV Official",
+      "url": "https://www.instagram.com/gmmtv/",
+      "goal": "Engage Heartbound / PerthSanta posts",
+      "target": 800
+    }
   ]
 }
