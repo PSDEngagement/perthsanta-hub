@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Streaming - PerthSanta Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      min-height: 100vh;
+    }
+    .card {
+      transition: all 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(220, 38, 38, 0.25);
+    }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- Header -->
+  <div class="max-w-5xl mx-auto px-4 pt-10 pb-6">
+    <a href="index.html" class="text-red-500 hover:text-red-400 text-sm mb-6 inline-block">
+      ← Back to Home
+    </a>
+    <h1 class="text-3xl md:text-4xl font-bold mb-2">YouTube Streaming</h1>
+    <p class="text-gray-400">Music streaming targets on YouTube</p>
+  </div>
+
+  <!-- Songs List -->
+  <div id="songs-list" class="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
+    <!-- Songs will be loaded from data.json -->
+  </div>
+
+  <script>
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        const songs = data.youtube || [];
+        const container = document.getElementById('songs-list');
+
+        if (songs.length === 0) {
+          container.innerHTML = `<p class="text-gray-500 col-span-full">No songs added yet.</p>`;
+          return;
+        }
+
+        songs.forEach(song => {
+          const thumbnail = `https://img.youtube.com/vi/${song.videoId}/hqdefault.jpg`;
+          const youtubeUrl = `https://www.youtube.com/watch?v=${song.videoId}`;
+
+          const card = document.createElement('div');
+          card.className = 'card bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden';
+          card.innerHTML = `
+            <img src="${thumbnail}" alt="${song.title}" class="w-full aspect-video object-cover">
+            <div class="p-5">
+              <h3 class="font-bold text-lg mb-1 line-clamp-2">${song.title}</h3>
+              <p class="text-sm text-gray-400 mb-3">Target: <span class="text-red-400 font-medium">${song.target || '—'}</span> views</p>
+              <a href="${youtubeUrl}" target="_blank" 
+                 class="inline-block bg-red-600 hover:bg-red-500 text-white text-sm px-4 py-2 rounded-full transition">
+                Watch on YouTube →
+              </a>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('songs-list').innerHTML = `<p class="text-red-500">Error loading data.json</p>`;
+      });
+  </script>
+
+</body>
+</html>
