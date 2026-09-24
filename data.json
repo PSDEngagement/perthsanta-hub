@@ -93,32 +93,32 @@
       "link": "series-trends.html"
     }
   ],
-   "instagram": [
+     "instagram": [
     {
-      "id": "post-example-1",
-      "date": "2026-09-24",
-      "handle": "@perthppe",
-      "title": "Bài mới nhất của Perth — thay bằng caption ngắn",
-      "postUrl": "https://www.instagram.com/perthppe/",
-      "image": "images/perth-2026-09-24.jpg",
-      "like": 10000,
-      "comment": 500,
-      "share": 200,
+      "id": "DdjmVMSCe8f",
+      "date": "2026-09-21",
+      "handle": "@santa.pp",
+      "title": "ELLEMEN X PhuwinDunkSanta",
+      "postUrl": "https://www.instagram.com/p/DdjmVMSCe8f/",
+      "image": "",
+      "like": 150000,
+      "comment": 30000,
+      "share": 5000,
       "generators": [
         { "name": "Generator 1", "url": "https://santa-scribe-x.lovable.app/?utm_id=97760_v0_s00_e0_tv4" },
         { "name": "Generator 2", "url": "https://clinic-comment-engine.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
       ]
     },
     {
-      "id": "post-example-2",
-      "date": "2026-09-23",
-      "handle": "@santa_pp",
-      "title": "Bài mới nhất của Santa — thay bằng caption ngắn",
-      "postUrl": "https://www.instagram.com/santa_pp/",
-      "image": "images/santa-2026-09-23.jpg",
-      "like": 8000,
-      "comment": 400,
-      "share": 150,
+      "id": "DdbrHbSCZm6",
+      "date": "2026-09-18",
+      "handle": "@santa.pp",
+      "title": "Night time",
+      "postUrl": "https://www.instagram.com/p/DdbrHbSCZm6/",
+      "image": "",
+      "like": 500000,
+      "comment": 30000,
+      "share": 8000,
       "generators": [
         { "name": "Generator 1", "url": "https://luxe-comment-forge.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
       ]
