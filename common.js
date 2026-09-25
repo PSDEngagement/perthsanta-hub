@@ -1,6 +1,7 @@
 (function () {
   const NAV = [
     { href: "index.html", key: "navHome", en: "Home" },
+    { href: "introduce.html", key: "navIntroduce", en: "Introduce" },
     { href: "series-trends.html", key: "navTrends", en: "Trends" },
     { href: "daily-missions.html", key: "navMissions", en: "Missions" },
     { href: "youtube-streaming.html", key: "navYoutube", en: "YouTube" },
@@ -9,7 +10,7 @@
 
   window.PS_I18N = {
     en: {
-      navHome: "Home", navTrends: "Trends", navMissions: "Missions",
+      navHome: "Home", navIntroduce: "Introduce", navTrends: "Trends", navMissions: "Missions",
       navYoutube: "YouTube", navIg: "Instagram",
       title: "PerthSanta Engagement Hub",
       subtitle: "PerthSantaDomiia Together Forever",
@@ -27,7 +28,7 @@
       card4Btn: "Open Engagement →"
     },
     vi: {
-      navHome: "Trang chủ", navTrends: "Trends", navMissions: "Missions",
+      navHome: "Trang chủ", navIntroduce: "Introduce", navTrends: "Trends", navMissions: "Missions",
       navYoutube: "YouTube", navIg: "Instagram",
       title: "PerthSanta Engagement Hub",
       subtitle: "PerthSantaDomiia Together Forever",
@@ -45,7 +46,7 @@
       card4Btn: "Open Engagement →"
     },
     th: {
-      navHome: "หน้าแรก", navTrends: "Trends", navMissions: "Missions",
+      navHome: "หน้าแรก", navIntroduce: "Introduce", navTrends: "Trends", navMissions: "Missions",
       navYoutube: "YouTube", navIg: "Instagram",
       title: "PerthSanta Engagement Hub",
       subtitle: "PerthSantaDomiia Together Forever",
@@ -63,7 +64,7 @@
       card4Btn: "Open Engagement →"
     },
     my: {
-      navHome: "ပင်မ", navTrends: "Trends", navMissions: "Missions",
+      navHome: "ပင်မ", navIntroduce: "Introduce", navTrends: "Trends", navMissions: "Missions",
       navYoutube: "YouTube", navIg: "Instagram",
       title: "PerthSanta Engagement Hub",
       subtitle: "PerthSantaDomiia Together Forever",
@@ -130,7 +131,7 @@
       "</select>" +
     "</div>";
 
-    document.body.insertBefore(bar, document.body.firstChild);
+  document.body.insertBefore(bar, document.body.firstChild);
   document.getElementById("language").value = lang;
   window.psApplyLang(lang);
 
@@ -140,7 +141,8 @@
     back.innerHTML = '<a href="index.html" class="inline-flex items-center text-red-500 hover:text-red-400 text-sm font-medium">← Back to Home</a>';
     bar.insertAdjacentElement("afterend", back);
   }
-      document.body.style.minHeight = "100vh";
+
+  document.body.style.minHeight = "100vh";
   document.body.style.display = "flex";
   document.body.style.flexDirection = "column";
 
