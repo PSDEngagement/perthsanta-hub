@@ -33,23 +33,36 @@
         });
         posts.forEach(function (post) {
           var card = document.createElement("div");
-          card.className = "card p-4";
+          card.className = "card p-4 flex gap-4";
+          var img = document.createElement("img");
+          img.className = "w-24 h-24 object-cover rounded-lg bg-zinc-800 flex-shrink-0";
+          img.alt = "";
+          if (post.image) {
+            img.src = post.image;
+            img.onerror = function () { img.style.display = "none"; };
+          } else {
+            img.style.display = "none";
+          }
+          var box = document.createElement("div");
+          box.className = "min-w-0 flex-1";
           var gens = "";
           (post.generators || []).forEach(function (g) {
             gens += '<a href="' + (g.url || "#") + '" target="_blank" rel="noopener" class="inline-block bg-red-700 text-white text-sm rounded-full px-4 py-2 mr-2 mb-2">' + (g.name || "Gen") + "</a>";
           });
-          card.innerHTML =
+          box.innerHTML =
             "<p class='text-red-400 text-xs'>" + (post.handle || "") + " · " + (post.date || "") + "</p>" +
             "<h3 class='font-bold text-base my-1'></h3>" +
             "<p class='text-xs text-gray-400 mb-3'>Like " + formatNum(post.like) + " · Comment " + formatNum(post.comment) + " · Share " + formatNum(post.share) + "</p>" +
             "<div>" + gens +
               '<a href="' + (post.postUrl || "#") + '" target="_blank" rel="noopener" class="inline-block bg-zinc-800 text-white text-sm rounded-full px-4 py-2">Open Instagram</a>' +
             "</div>";
-          card.querySelector("h3").textContent = post.title || "Instagram post";
+          box.querySelector("h3").textContent = post.title || "Instagram post";
+          card.appendChild(img);
+          card.appendChild(box);
           list.appendChild(card);
         });
       })
-      .catch(function (e) {
+      .catch(function () {
         document.getElementById("ig-list").textContent = "Failed to load data.json";
       });
   </script>
