@@ -140,4 +140,14 @@
     back.innerHTML = '<a href="index.html" class="inline-flex items-center text-red-500 hover:text-red-400 text-sm font-medium">← Back to Home</a>';
     bar.insertAdjacentElement("afterend", back);
   }
+    var foot = document.createElement("footer");
+  foot.className = "text-center text-sm text-gray-500 py-10 px-4";
+  foot.innerHTML =
+    '© 2026 PerthSanta Engagement Hub · Made with love by ' +
+    '<a href="https://x.com/itsmaeta" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Eira</a>. ' +
+    '<a href="https://x.com/comeforlove_ps" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Lubiichan</a>. ' +
+    '<a href="https://x.com/NganVt2386624" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Ngân</a>. ' +
+    '<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a>. ' +
+    '<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a>';
+  document.body.appendChild(foot);
 })();
