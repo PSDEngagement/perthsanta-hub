@@ -1,16 +1,15 @@
 (function () {
   const NAV = [
-    { href: "index.html", key: "navHome", en: "Home" },
-    { href: "introduce.html", key: "navIntroduce", en: "Introduce" },
-    { href: "series-trends.html", key: "navTrends", en: "Trends" },
-    { href: "daily-missions.html", key: "navMissions", en: "Missions" },
-    { href: "youtube-streaming.html", key: "navYoutube", en: "YouTube" },
-    { href: "ig-engagement.html", key: "navIg", en: "Instagram" }
+    { href: "index.html", key: "navHome" },
+    { href: "series-trends.html", key: "navTrends" },
+    { href: "daily-missions.html", key: "navMissions" },
+    { href: "youtube-streaming.html", key: "navYoutube" },
+    { href: "ig-engagement.html", key: "navIg" }
   ];
 
   window.PS_I18N = {
     en: {
-      navHome: "Home", navIntroduce: "Introduce", navTrends: "Trends", navMissions: "Missions",
+      navHome: "Home", navTrends: "Trends", navMissions: "Missions",
       navYoutube: "YouTube", navIg: "Instagram",
       title: "PerthSanta Engagement Hub",
       subtitle: "PerthSantaDomiia Together Forever",
@@ -28,7 +27,7 @@
       card4Btn: "Open Engagement →"
     },
     vi: {
-      navHome: "Trang chủ", navIntroduce: "Introduce", navTrends: "Trends", navMissions: "Missions",
+      navHome: "Trang chủ", navTrends: "Trends", navMissions: "Missions",
       navYoutube: "YouTube", navIg: "Instagram",
       title: "PerthSanta Engagement Hub",
       subtitle: "PerthSantaDomiia Together Forever",
@@ -46,7 +45,7 @@
       card4Btn: "Open Engagement →"
     },
     th: {
-      navHome: "หน้าแรก", navIntroduce: "Introduce", navTrends: "Trends", navMissions: "Missions",
+      navHome: "หน้าแรก", navTrends: "Trends", navMissions: "Missions",
       navYoutube: "YouTube", navIg: "Instagram",
       title: "PerthSanta Engagement Hub",
       subtitle: "PerthSantaDomiia Together Forever",
@@ -64,7 +63,7 @@
       card4Btn: "Open Engagement →"
     },
     my: {
-      navHome: "ပင်မ", navIntroduce: "Introduce", navTrends: "Trends", navMissions: "Missions",
+      navHome: "ပင်မ", navTrends: "Trends", navMissions: "Missions",
       navYoutube: "YouTube", navIg: "Instagram",
       title: "PerthSanta Engagement Hub",
       subtitle: "PerthSantaDomiia Together Forever",
@@ -99,7 +98,6 @@
       const k = el.getAttribute("data-i18n");
       if (t[k]) el.innerText = t[k];
     });
-    document.documentElement.lang = lang === "vi" ? "vi" : lang === "th" ? "th" : lang === "my" ? "my" : "en";
   };
 
   window.psChangeLanguage = function () {
@@ -137,14 +135,13 @@
 
   if (here !== "index.html" && here !== "") {
     const back = document.createElement("div");
-        back.className = "w-full px-4 pt-4 text-left";
-    back.innerHTML = '<a href="index.html" class="inline-flex items-center text-red-500 hover:text-red-400 text-sm font-medium">← Back to Home</a>';
+    back.className = "max-w-6xl mx-auto px-4 pt-4 text-left";
+    back.innerHTML = '<a href="index.html" class="inline-flex text-red-500 hover:text-red-400 text-sm font-medium">← Back to Home</a>';
     bar.insertAdjacentElement("afterend", back);
   }
 
-
   var foot = document.createElement("footer");
-  foot.className = "text-center text-sm text-gray-500 py-10 px-4 mt-auto w-full";
+  foot.className = "text-center text-sm text-gray-500 py-10 px-4";
   foot.innerHTML =
     '© 2026 PerthSanta Engagement Hub · Made with love by ' +
     '<a href="https://x.com/itsmaeta" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Eira</a>. ' +
@@ -153,5 +150,4 @@
     '<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a>. ' +
     '<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a>';
   document.body.appendChild(foot);
-  });
 })();
