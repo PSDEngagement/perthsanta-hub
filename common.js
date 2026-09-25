@@ -140,8 +140,12 @@
     back.innerHTML = '<a href="index.html" class="inline-flex items-center text-red-500 hover:text-red-400 text-sm font-medium">← Back to Home</a>';
     bar.insertAdjacentElement("afterend", back);
   }
-    var foot = document.createElement("footer");
-  foot.className = "text-center text-sm text-gray-500 py-10 px-4";
+      document.body.style.minHeight = "100vh";
+  document.body.style.display = "flex";
+  document.body.style.flexDirection = "column";
+
+  var foot = document.createElement("footer");
+  foot.className = "text-center text-sm text-gray-500 py-10 px-4 mt-auto";
   foot.innerHTML =
     '© 2026 PerthSanta Engagement Hub · Made with love by ' +
     '<a href="https://x.com/itsmaeta" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Eira</a>. ' +
