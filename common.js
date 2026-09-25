@@ -130,7 +130,14 @@
       "</select>" +
     "</div>";
 
-  document.body.insertBefore(bar, document.body.firstChild);
+    document.body.insertBefore(bar, document.body.firstChild);
   document.getElementById("language").value = lang;
   window.psApplyLang(lang);
+
+  if (here !== "index.html" && here !== "") {
+    const back = document.createElement("div");
+    back.className = "max-w-6xl mx-auto px-4 pt-4";
+    back.innerHTML = '<a href="index.html" class="inline-flex items-center text-red-500 hover:text-red-400 text-sm font-medium">← Back to Home</a>';
+    bar.insertAdjacentElement("afterend", back);
+  }
 })();
