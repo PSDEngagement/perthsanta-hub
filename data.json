@@ -95,9 +95,9 @@
       "title": "Perth × Streetwise Chronicle",
       "postUrl": "https://www.instagram.com/p/DdeHgssgRG4/",
       "image": "images/Perth.jpg",
-      "like": 345100,
+      "like": 350000,
       "comment": 25000,
-      "share": 150000,
+      "share": 1500000,
       "generators": [
         { "name": "Generator 1", "url": "https://streetwise-copy-engine.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
       ]
@@ -125,10 +125,9 @@
       "image": "images/Santa.jpg",
       "like": 150000,
       "comment": 30000,
-      "share": 5000,
+      "share": 1500000,
       "generators": [
-        { "name": "Generator 1", "url": "https://santa-scribe-x.lovable.app/?utm_id=97760_v0_s00_e0_tv4" },
-        { "name": "Generator 2", "url": "https://clinic-comment-engine.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
+        { "name": "Generator 1", "url": "https://santa-scribe-x.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
       ]
     },
     {
@@ -140,7 +139,7 @@
       "image": "images/Nighttime.jpg",
       "like": 500000,
       "comment": 30000,
-      "share": 8000,
+      "share": 1500000,
       "generators": [
         { "name": "Generator 1", "url": "https://luxe-comment-forge.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
       ]
