@@ -7,8 +7,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { background: #070707; min-height: 100vh; }
-    .card { background: #18181b; border: 1px solid #3f3f46; border-radius: 1rem; overflow: hidden; }
-    .thumb { width: 100%; height: 140px; object-fit: cover; background: #18181b; }
+    .card { position: relative; border-radius: 1rem; overflow: hidden; min-height: 340px; }
+    .card img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .card .shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.05) 20%, rgba(0,0,0,0.82) 72%); }
+    .card .panel { position: relative; z-index: 2; min-height: 340px; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; }
   </style>
 </head>
 <body class="text-white">
@@ -22,14 +24,7 @@
     function fallbackThumb(handle) {
       var label = (handle || "@IG").replace("@", "");
       return "data:image/svg+xml;utf8," + encodeURIComponent(
-        "<svg xmlns='http://www.w3.org/2000/svg' width='640' height='360'>" +
-        "<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>" +
-        "<stop offset='0%' stop-color='#3f1010'/><stop offset='100%' stop-color='#7f1d1d'/></linearGradient></defs>" +
-        "<rect width='100%' height='100%' fill='url(#g)'/>" +
-        "<circle cx='320' cy='150' r='42' fill='none' stroke='#fecaca' stroke-width='8'/>" +
-        "<circle cx='320' cy='150' r='16' fill='none' stroke='#fecaca' stroke-width='6'/>" +
-        "<text x='320' y='230' text-anchor='middle' font-size='22' fill='#fecaca' font-family='sans-serif'>@" + label + "</text>" +
-        "</svg>"
+        "<svg xmlns='http://www.w3.org/2000/svg' width='640' height='800'><rect width='100%' height='100%' fill='#7f1d1d'/><text x='320' y='400' text-anchor='middle' font-size='28' fill='#fecaca' font-family='sans-serif'>@" + label + "</text></svg>"
       );
     }
     fetch("data.json?t=" + Date.now())
@@ -48,24 +43,25 @@
         posts.forEach(function (post) {
           var gens = "";
           (post.generators || []).forEach(function (g) {
-            gens += '<a href="' + (g.url || "#") + '" target="_blank" rel="noopener" class="inline-block bg-zinc-800 hover:bg-red-700 text-white text-xs rounded-full px-3 py-1.5 mr-1 mb-1">' + (g.name || "Generator") + "</a>";
+            gens += '<a href="' + (g.url || "#") + '" target="_blank" rel="noopener" class="inline-block bg-black/50 hover:bg-red-700 text-white text-xs rounded-full px-3 py-1.5 mr-1 mb-1 border border-white/20">' + (g.name || "Generator") + "</a>";
           });
           var card = document.createElement("article");
           card.className = "card";
           card.innerHTML =
-            '<img class="thumb" alt="">' +
-            '<div class="p-4">' +
-              '<p class="text-red-400 text-xs"></p>' +
+            '<img class="bg" alt="">' +
+            '<div class="shade"></div>' +
+            '<div class="panel">' +
+              '<p class="text-red-300 text-xs meta"></p>' +
               '<h3 class="font-bold text-sm mt-1 mb-3"></h3>' +
               '<div class="grid grid-cols-3 gap-1.5 text-center mb-3">' +
-                '<div class="bg-zinc-800 rounded-lg py-2 px-1"><p class="text-[9px] text-gray-400 uppercase">Like</p><p class="font-semibold text-red-400 text-xs">' + formatNum(post.like) + "</p></div>" +
-                '<div class="bg-zinc-800 rounded-lg py-2 px-1"><p class="text-[9px] text-gray-400 uppercase">Comment</p><p class="font-semibold text-red-400 text-xs">' + formatNum(post.comment) + "</p></div>" +
-                '<div class="bg-zinc-800 rounded-lg py-2 px-1"><p class="text-[9px] text-gray-400 uppercase">Share</p><p class="font-semibold text-red-400 text-xs">' + formatNum(post.share) + "</p></div>" +
+                '<div class="bg-black/45 rounded-lg py-2 px-1"><p class="text-[9px] text-gray-300 uppercase">Like</p><p class="font-semibold text-red-400 text-xs">' + formatNum(post.like) + "</p></div>" +
+                '<div class="bg-black/45 rounded-lg py-2 px-1"><p class="text-[9px] text-gray-300 uppercase">Comment</p><p class="font-semibold text-red-400 text-xs">' + formatNum(post.comment) + "</p></div>" +
+                '<div class="bg-black/45 rounded-lg py-2 px-1"><p class="text-[9px] text-gray-300 uppercase">Share</p><p class="font-semibold text-red-400 text-xs">' + formatNum(post.share) + "</p></div>" +
               "</div>" +
-              "<div class='mb-3'>" + gens + "</div>" +
+              "<div class='mb-2'>" + gens + "</div>" +
               '<a href="' + (post.postUrl || "#") + '" target="_blank" rel="noopener" class="block text-center bg-red-700 hover:bg-red-600 text-white rounded-full px-3 py-2 text-xs">Open Instagram →</a>' +
             "</div>";
-          card.querySelector("p").textContent = (post.handle || "") + (post.date ? " · " + post.date : "");
+          card.querySelector(".meta").textContent = (post.handle || "") + (post.date ? " · " + post.date : "");
           card.querySelector("h3").textContent = post.title || "Instagram post";
           var img = card.querySelector("img");
           img.src = post.image || fallbackThumb(post.handle);
