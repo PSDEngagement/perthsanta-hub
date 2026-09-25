@@ -7,58 +7,59 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { background: #070707; min-height: 100vh; }
-    .card { transition: all 0.3s ease; }
+    .card { transition: all 0.3s ease; background: rgba(24,24,27,0.82); backdrop-filter: blur(10px); }
     .card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(185, 28, 28, 0.28); }
-    .hero-img { object-fit: cover; object-position: center 20%; }
+    .hero-img { object-fit: cover; object-position: center 18%; }
   </style>
 </head>
 <body class="text-white">
 
-  <section class="relative max-w-6xl mx-auto px-4 pt-8 pb-10">
-    <div class="relative overflow-hidden rounded-3xl border border-red-900/40">
-      <img src="images/hero-perthsanta.jpg" alt="PerthSanta" class="hero-img w-full h-56 sm:h-80 md:h-[420px]">
-      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/10"></div>
-      <div class="absolute inset-x-0 bottom-0 p-6 sm:p-10">
+  <section class="relative max-w-6xl mx-auto px-4 pt-6 pb-16">
+    <div class="relative overflow-hidden rounded-3xl border border-red-900/40 min-h-[720px] sm:min-h-[780px]">
+      <img src="images/hero-perthsanta.jpg" alt="PerthSanta" class="hero-img absolute inset-0 w-full h-full">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/80"></div>
+
+      <div class="relative z-10 p-6 sm:p-10 pb-8">
         <h1 data-i18n="title" class="text-3xl sm:text-5xl font-bold tracking-tight">PerthSanta Engagement Hub</h1>
-        <p data-i18n="subtitle" class="mt-2 text-base sm:text-xl text-red-300">PerthSantaDomiia Together Forever</p>
+        <p data-i18n="subtitle" class="mt-2 text-base sm:text-xl text-red-200">PerthSantaDomiia Together Forever</p>
+      </div>
+
+      <div class="relative z-10 px-4 sm:px-8 pb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="card border border-white/10 rounded-2xl p-6">
+          <p class="text-sm text-red-400 mb-1">01</p>
+          <h2 data-i18n="card1Title" class="text-xl font-bold mb-2">Heartbound Series Trends</h2>
+          <p data-i18n="card1Desc" class="text-sm text-gray-300 mb-5"></p>
+          <a href="series-trends.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
+            <span data-i18n="card1Btn">Open Trends →</span>
+          </a>
+        </div>
+        <div class="card border border-white/10 rounded-2xl p-6">
+          <p class="text-sm text-red-400 mb-1">02</p>
+          <h2 data-i18n="card2Title" class="text-xl font-bold mb-2">Daily Missions</h2>
+          <p data-i18n="card2Desc" class="text-sm text-gray-300 mb-5"></p>
+          <a href="daily-missions.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
+            <span data-i18n="card2Btn">View Missions →</span>
+          </a>
+        </div>
+        <div class="card border border-white/10 rounded-2xl p-6">
+          <p class="text-sm text-red-400 mb-1">03</p>
+          <h2 data-i18n="card3Title" class="text-xl font-bold mb-2">YouTube Streaming</h2>
+          <p data-i18n="card3Desc" class="text-sm text-gray-300 mb-5"></p>
+          <a href="youtube-streaming.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
+            <span data-i18n="card3Btn">Open Streaming →</span>
+          </a>
+        </div>
+        <div class="card border border-white/10 rounded-2xl p-6">
+          <p class="text-sm text-red-400 mb-1">04</p>
+          <h2 data-i18n="card4Title" class="text-xl font-bold mb-2">Instagram Engagement</h2>
+          <p data-i18n="card4Desc" class="text-sm text-gray-300 mb-5"></p>
+          <a href="ig-engagement.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
+            <span data-i18n="card4Btn">Open Engagement →</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
-
-  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-5 pb-16">
-    <div class="card bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6">
-      <p class="text-sm text-red-500 mb-1">01</p>
-      <h2 data-i18n="card1Title" class="text-xl font-bold mb-2">Heartbound Series Trends</h2>
-      <p data-i18n="card1Desc" class="text-sm text-gray-400 mb-5"></p>
-      <a href="series-trends.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
-        <span data-i18n="card1Btn">Open Trends →</span>
-      </a>
-    </div>
-    <div class="card bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6">
-      <p class="text-sm text-red-500 mb-1">02</p>
-      <h2 data-i18n="card2Title" class="text-xl font-bold mb-2">Daily Missions</h2>
-      <p data-i18n="card2Desc" class="text-sm text-gray-400 mb-5"></p>
-      <a href="daily-missions.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
-        <span data-i18n="card2Btn">View Missions →</span>
-      </a>
-    </div>
-    <div class="card bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6">
-      <p class="text-sm text-red-500 mb-1">03</p>
-      <h2 data-i18n="card3Title" class="text-xl font-bold mb-2">YouTube Streaming</h2>
-      <p data-i18n="card3Desc" class="text-sm text-gray-400 mb-5"></p>
-      <a href="youtube-streaming.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
-        <span data-i18n="card3Btn">Open Streaming →</span>
-      </a>
-    </div>
-    <div class="card bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6">
-      <p class="text-sm text-red-500 mb-1">04</p>
-      <h2 data-i18n="card4Title" class="text-xl font-bold mb-2">Instagram Engagement</h2>
-      <p data-i18n="card4Desc" class="text-sm text-gray-400 mb-5"></p>
-      <a href="ig-engagement.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
-        <span data-i18n="card4Btn">Open Engagement →</span>
-      </a>
-    </div>
-  </div>
 
   <footer class="text-center text-sm text-gray-500 pb-10">
     © 2026 PerthSanta Engagement Hub · Made with love by EiRa.Lubiichan.Ngân.Kiim.Doria
