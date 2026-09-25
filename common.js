@@ -142,11 +142,6 @@
     bar.insertAdjacentElement("afterend", back);
   }
 
-  document.body.style.minHeight = "100vh";
-  document.body.style.display = "flex";
-  document.body.style.flexDirection = "column";
-  document.body.style.alignItems = "stretch";
-  document.body.style.textAlign = "left";
 
   var foot = document.createElement("footer");
   foot.className = "text-center text-sm text-gray-500 py-10 px-4 mt-auto w-full";
@@ -158,14 +153,5 @@
     '<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a>. ' +
     '<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a>';
   document.body.appendChild(foot);
-    Array.from(document.body.children).forEach(function (el) {
-    if (el.tagName === "FOOTER") return;
-    el.style.width = "100%";
-    el.style.maxWidth = "none";
-    el.style.marginLeft = "0";
-    el.style.marginRight = "0";
-    el.style.textAlign = "left";
-    el.style.alignSelf = "stretch";
-    el.style.boxSizing = "border-box";
   });
 })();
