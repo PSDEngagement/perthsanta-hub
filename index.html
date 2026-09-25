@@ -6,180 +6,63 @@
   <title>PerthSanta Engagement Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      background-color: #0a0a0a;
-      min-height: 100vh;
-    }
-    .card {
-      transition: all 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 30px rgba(220, 38, 38, 0.25);
-    }
+    body { background: #070707; min-height: 100vh; }
+    .card { transition: all 0.3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(185, 28, 28, 0.28); }
+    .hero-img { object-fit: cover; object-position: center 20%; }
   </style>
 </head>
 <body class="text-white">
 
-  <!-- Language Switcher -->
-  <div class="fixed top-4 right-4 z-50">
-    <select id="language" onchange="changeLanguage()" 
-            class="bg-black border border-red-600 text-white text-sm rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500">
-      <option value="en">English</option>
-      <option value="vi">Tiếng Việt</option>
-      <option value="th">ภาษาไทย</option>
-      <option value="my">မြန်မာ</option>
-    </select>
-  </div>
+  <section class="relative max-w-6xl mx-auto px-4 pt-8 pb-10">
+    <div class="relative overflow-hidden rounded-3xl border border-red-900/40">
+      <img src="images/hero-perthsanta.jpg" alt="PerthSanta" class="hero-img w-full h-56 sm:h-80 md:h-[420px]">
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/10"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 sm:p-10">
+        <h1 data-i18n="title" class="text-3xl sm:text-5xl font-bold tracking-tight">PerthSanta Engagement Hub</h1>
+        <p data-i18n="subtitle" class="mt-2 text-base sm:text-xl text-red-300">PerthSantaDomiia Together Forever</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Header -->
-  <div class="text-center pt-20 pb-14 px-4">
-    <h1 id="title" class="text-4xl md:text-6xl font-bold mb-3 tracking-tight">
-      Welcome to PerthSanta Engagement Hub
-    </h1>
-    <p id="subtitle" class="text-lg md:text-xl text-red-400">
-      PerthSantaDomiia Together Forever
-    </p>
-  </div>
-
-  <!-- Cards -->
-  <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-6 pb-20">
-
-    <!-- 01 Series Trends -->
-    <div class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-6">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-5 pb-16">
+    <div class="card bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6">
       <p class="text-sm text-red-500 mb-1">01</p>
-      <h2 id="card1-title" class="text-xl font-bold mb-2">HeartboundSeries Trends</h2>
-      <p id="card1-desc" class="text-sm text-gray-400 mb-5">Track trending episodes of PerthSanta series</p>
-      <a href="series-trends.html" class="inline-block bg-red-600 hover:bg-red-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition">
-        <span id="card1-btn">Open Trends →</span>
+      <h2 data-i18n="card1Title" class="text-xl font-bold mb-2">Heartbound Series Trends</h2>
+      <p data-i18n="card1Desc" class="text-sm text-gray-400 mb-5"></p>
+      <a href="series-trends.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
+        <span data-i18n="card1Btn">Open Trends →</span>
       </a>
     </div>
-
-    <!-- 02 Daily Missions -->
-    <div class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-6">
+    <div class="card bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6">
       <p class="text-sm text-red-500 mb-1">02</p>
-      <h2 id="card2-title" class="text-xl font-bold mb-2">Daily Missions</h2>
-      <p id="card2-desc" class="text-sm text-gray-400 mb-5">Daily mission statistics and progress</p>
-      <a href="daily-missions.html" class="inline-block bg-red-600 hover:bg-red-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition">
-        <span id="card2-btn">View Missions →</span>
+      <h2 data-i18n="card2Title" class="text-xl font-bold mb-2">Daily Missions</h2>
+      <p data-i18n="card2Desc" class="text-sm text-gray-400 mb-5"></p>
+      <a href="daily-missions.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
+        <span data-i18n="card2Btn">View Missions →</span>
       </a>
     </div>
-
-    <!-- 03 YouTube Streaming -->
-    <div class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-6">
+    <div class="card bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6">
       <p class="text-sm text-red-500 mb-1">03</p>
-      <h2 id="card3-title" class="text-xl font-bold mb-2">YouTube Streaming</h2>
-      <p id="card3-desc" class="text-sm text-gray-400 mb-5">Music streaming targets on YouTube</p>
-      <a href="youtube-streaming.html" class="inline-block bg-red-600 hover:bg-red-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition">
-        <span id="card3-btn">Open Streaming →</span>
+      <h2 data-i18n="card3Title" class="text-xl font-bold mb-2">YouTube Streaming</h2>
+      <p data-i18n="card3Desc" class="text-sm text-gray-400 mb-5"></p>
+      <a href="youtube-streaming.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
+        <span data-i18n="card3Btn">Open Streaming →</span>
       </a>
     </div>
-
-    <!-- 04 Instagram Engagement -->
-    <div class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-6">
+    <div class="card bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6">
       <p class="text-sm text-red-500 mb-1">04</p>
-      <h2 id="card4-title" class="text-xl font-bold mb-2">Instagram Engagement</h2>
-      <p id="card4-desc" class="text-sm text-gray-400 mb-5">Instagram posts to engage + targets</p>
-      <a href="ig-engagement.html" class="inline-block bg-red-600 hover:bg-red-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition">
-        <span id="card4-btn">Open Engagement →</span>
+      <h2 data-i18n="card4Title" class="text-xl font-bold mb-2">Instagram Engagement</h2>
+      <p data-i18n="card4Desc" class="text-sm text-gray-400 mb-5"></p>
+      <a href="ig-engagement.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
+        <span data-i18n="card4Btn">Open Engagement →</span>
       </a>
     </div>
-
   </div>
 
-  <!-- Footer -->
   <footer class="text-center text-sm text-gray-500 pb-10">
     © 2026 PerthSanta Engagement Hub · Made with love by EiRa.Lubiichan.Ngân.Kiim.Doria
   </footer>
-
-  <script>
-    const translations = {
-      en: {
-        title: "Welcome to PerthSanta Engagement Hub",
-        subtitle: "PerthSantaDomiia Together Forever",
-        card1Title: "HeartboundSeries Trends",
-        card1Desc: "Track trending episodes of PerthSanta series",
-        card1Btn: "Open Trends →",
-        card2Title: "Daily Missions",
-        card2Desc: "Daily mission statistics and progress",
-        card2Btn: "View Missions →",
-        card3Title: "YouTube Streaming",
-        card3Desc: "Music streaming targets on YouTube",
-        card3Btn: "Open Streaming →",
-        card4Title: "Instagram Engagement",
-        card4Desc: "Instagram posts to engage + targets",
-        card4Btn: "Open Engagement →"
-      },
-      vi: {
-        title: "Welcome to PerthSanta Engagement Hub",
-        subtitle: "PerthSantaDomiia Together Forever",
-        card1Title: "HeartboundSeries Trends",
-        card1Desc: "Theo dõi xu hướng các tập phim của PerthSanta",
-        card1Btn: "Xem Trends →",
-        card2Title: "Daily Missions",
-        card2Desc: "Thống kê nhiệm vụ hàng ngày",
-        card2Btn: "Xem Missions →",
-        card3Title: "YouTube Streaming",
-        card3Desc: "Mục tiêu streaming nhạc trên YouTube",
-        card3Btn: "Xem Streaming →",
-        card4Title: "Instagram Engagement",
-        card4Desc: "Các bài Instagram cần tương tác + mục tiêu",
-        card4Btn: "Xem Engagement →"
-      },
-      th: {
-        title: "Welcome to PerthSanta Engagement Hub",
-        subtitle: "PerthSantaDomiia Together Forever",
-        card1Title: "HeartboundSeries Trends",
-        card1Desc: "ติดตามเทรนด์ตอนต่างๆ ของซีรีส์ PerthSanta",
-        card1Btn: "เปิด Trends →",
-        card2Title: "Daily Missions",
-        card2Desc: "สถิติภารกิจประจำวัน",
-        card2Btn: "ดู Missions →",
-        card3Title: "YouTube Streaming",
-        card3Desc: "เป้าหมายการสตรีมเพลงบน YouTube",
-        card3Btn: "เปิด Streaming →",
-        card4Title: "Instagram Engagement",
-        card4Desc: "โพสต์ Instagram ที่ต้องมีส่วนร่วม + เป้าหมาย",
-        card4Btn: "เปิด Engagement →"
-      },
-      my: {
-        title: "Welcome to PerthSanta Engagement Hub",
-        subtitle: "PerthSantaDomiia Together Forever",
-        card1Title: "HeartboundSeries Trends",
-        card1Desc: "PerthSanta စီးရီးအပိုင်းများ၏ ခေတ်စားမှုကို ခြေရာခံရန်",
-        card1Btn: "Trends ဖွင့်ရန် →",
-        card2Title: "Daily Missions",
-        card2Desc: "နေ့စဉ် မစ်ရှင်စာရင်းဇယားများ",
-        card2Btn: "Missions ကြည့်ရန် →",
-        card3Title: "YouTube Streaming",
-        card3Desc: "YouTube တွင် သီချင်း streaming ပစ်မှတ်များ",
-        card3Btn: "Streaming ဖွင့်ရန် →",
-        card4Title: "Instagram Engagement",
-        card4Desc: "Instagram ပို့စ်များနှင့် ပစ်မှတ်များ",
-        card4Btn: "Engagement ဖွင့်ရန် →"
-      }
-    };
-
-    function changeLanguage() {
-      const lang = document.getElementById("language").value;
-      const t = translations[lang];
-
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("subtitle").innerText = t.subtitle;
-      document.getElementById("card1-title").innerText = t.card1Title;
-      document.getElementById("card1-desc").innerText = t.card1Desc;
-      document.getElementById("card1-btn").innerText = t.card1Btn;
-      document.getElementById("card2-title").innerText = t.card2Title;
-      document.getElementById("card2-desc").innerText = t.card2Desc;
-      document.getElementById("card2-btn").innerText = t.card2Btn;
-      document.getElementById("card3-title").innerText = t.card3Title;
-      document.getElementById("card3-desc").innerText = t.card3Desc;
-      document.getElementById("card3-btn").innerText = t.card3Btn;
-      document.getElementById("card4-title").innerText = t.card4Title;
-      document.getElementById("card4-desc").innerText = t.card4Desc;
-      document.getElementById("card4-btn").innerText = t.card4Btn;
-    }
-  </script>
-
+  <script src="common.js"></script>
 </body>
 </html>
