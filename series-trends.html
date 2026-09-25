@@ -17,7 +17,12 @@
     <p class="text-gray-400">Select an episode to view generators</p>
   </div>
 
-  <div id="episode-list" class="max-w-4xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-10"></div>
+  <div id="episode-list" class="max-w-4xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-10">
+    <button type="button" onclick="showGenerators('1')" class="card bg-zinc-900 border border-zinc-700 rounded-xl p-5 text-center hover:border-red-500 min-h-[88px]">
+      <p class="text-red-500 text-sm mb-1">EP</p>
+      <p class="text-2xl font-bold">1</p>
+    </button>
+  </div>
 
   <div id="generators-section" class="hidden max-w-4xl mx-auto px-4 pb-10">
     <div class="flex items-center justify-between mb-6 gap-3">
@@ -38,39 +43,10 @@
         </div>
         <p class="text-lg font-bold">X</p>
       </button>
-
       <button type="button" onclick="showGuide('instagram')" class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-5 text-center min-h-[140px]">
         <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-zinc-800 flex items-center justify-center">
           <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" class="w-7 h-7">
         </div>
         <p class="text-lg font-bold">Instagram</p>
       </button>
-
-      <button type="button" onclick="showGuide('tiktok')" class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-5 text-center min-h-[140px]">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-zinc-800 flex items-center justify-center">
-          <img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" class="w-7 h-7">
-        </div>
-        <p class="text-lg font-bold">TikTok</p>
-      </button>
-
-      <button type="button" onclick="showGuide('facebook')" class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-5 text-center min-h-[140px]">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-zinc-800 flex items-center justify-center">
-          <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" class="w-7 h-7">
-        </div>
-        <p class="text-lg font-bold">Facebook</p>
-      </button>
-
-      <button type="button" onclick="showGuide('youtube')" class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-5 text-center min-h-[140px]">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-zinc-800 flex items-center justify-center">
-          <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube" class="w-7 h-7">
-        </div>
-        <p class="text-lg font-bold">YouTube</p>
-      </button>
-    </div>
-
-    <div id="guide-detail" class="hidden">
-      <div class="flex items-center justify-between mb-4 gap-3">
-        <h3 id="guide-detail-title" class="text-2xl font-bold">Guide</h3>
-        <button onclick="backToGuides()" class="text-sm text-red-500 hover:text-red-400">← Back to platforms</button>
-      </div>
-      <div class="bg-zinc-900 border border-zinc-700
+      <button type="button" onclick="showGuide('tiktok')" class="card bg-zinc-900 border border-zinc-700 rounded-2
