@@ -8,7 +8,7 @@
   <style>
     body { background: #070707; min-height: 100vh; }
     .card { transition: all 0.25s ease; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(185, 28, 28, 0.25); }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(185, 28, 28, 0.2); }
   </style>
 </head>
 <body class="text-white">
@@ -16,13 +16,13 @@
     <h1 class="text-3xl md:text-4xl font-bold mb-2">YouTube Streaming</h1>
     <p class="text-gray-400">Music streaming targets on YouTube</p>
   </div>
-  <div id="songs-list" class="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
+  <div id="songs-list" class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-4 pb-20">
     <p class="text-gray-500 col-span-full">Loading...</p>
   </div>
+  <script src="yt-config.js"></script>
   <script src="common.js"></script>
   <script>
-    const YOUTUBE_API_KEY = "AIzaSyD5uqH3jv-PD-99rXRBSn2fspk58qPvhBA";
-    function formatNumber(num) { return num.toLocaleString(); }
+    function formatNumber(num) { return Number(num || 0).toLocaleString(); }
     function calculateTarget(currentViews, baseTarget) {
       let target = baseTarget;
       while (currentViews >= target) target += 100000;
@@ -38,30 +38,39 @@
           container.innerHTML = '<p class="text-gray-500 col-span-full">No songs added yet.</p>';
           return;
         }
+        const key = window.YOUTUBE_API_KEY || "";
         const videoIds = songs.map(s => s.videoId).join(",");
         let statsMap = {};
-        try {
-          const res = await fetch("https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" + videoIds + "&key=" + YOUTUBE_API_KEY);
-          const json = await res.json();
-          (json.items || []).forEach(item => {
-            statsMap[item.id] = { views: parseInt(item.statistics.viewCount || 0) };
-          });
-        } catch (e) {}
+        if (key) {
+          try {
+            const res = await fetch("https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" + videoIds + "&key=" + key);
+            const json = await res.json();
+            (json.items || []).forEach(item => {
+              statsMap[item.id] = { views: parseInt(item.statistics.viewCount || 0) };
+            });
+          } catch (e) {}
+        }
         songs.forEach(song => {
-          const currentViews = statsMap[song.videoId]?.views || 0;
+          const currentViews = statsMap[song.videoId] ? statsMap[song.videoId].views : 0;
           const baseTarget = parseInt((song.target || "0").toString().replace(/,/g, "")) || 100000;
           const currentTarget = calculateTarget(currentViews, baseTarget);
-          const remaining = currentTarget - currentViews;
+          const remaining = Math.max(0, currentTarget - currentViews);
+          const pct = currentTarget ? Math.min(100, Math.round(currentViews / currentTarget * 100)) : 0;
           const card = document.createElement("div");
           card.className = "card bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden";
           card.innerHTML =
-            '<img src="https://img.youtube.com/vi/'+song.videoId+'/hqdefault.jpg" alt="" class="w-full aspect-video object-cover">'+
-            '<div class="p-5"><h3 class="font-bold text-lg mb-2 line-clamp-2">'+song.title+'</h3>'+
-            '<div class="space-y-1 mb-4 text-sm">'+
-            '<p class="text-gray-400">Current Views: <span class="text-white font-medium">'+formatNumber(currentViews)+'</span></p>'+
-            '<p class="text-gray-400">Target: <span class="text-red-400 font-medium">'+formatNumber(currentTarget)+'</span></p>'+
-            '<p class="text-gray-400">Remaining: <span class="text-yellow-400 font-medium">'+formatNumber(remaining)+'</span></p>'+
-            '</div><a href="https://www.youtube.com/watch?v='+song.videoId+'" target="_blank" class="inline-block bg-red-700 hover:bg-red-600 text-white text-sm px-4 py-2 rounded-full">Watch on YouTube →</a></div>';
+            '<div class="flex gap-4 p-4">'+
+              '<img src="https://img.youtube.com/vi/'+song.videoId+'/mqdefault.jpg" alt="" class="w-28 sm:w-32 h-20 sm:h-24 object-cover rounded-lg bg-zinc-800 flex-shrink-0">'+
+              '<div class="min-w-0 flex-1">'+
+                '<h3 class="font-bold text-base leading-snug line-clamp-2 mb-2">'+song.title+'</h3>'+
+                '<p class="text-xs text-gray-400">Views <span class="text-white">'+formatNumber(currentViews)+'</span> · Target <span class="text-red-400">'+formatNumber(currentTarget)+'</span></p>'+
+                '<p class="text-xs text-gray-400 mb-2">Remaining <span class="text-yellow-400">'+formatNumber(remaining)+'</span> · '+pct+'%</p>'+
+                '<div class="h-1.5 bg-zinc-800 rounded-full overflow-hidden mb-3">'+
+                  '<div class="h-full bg-red-600" style="width:'+pct+'%"></div>'+
+                '</div>'+
+                '<a href="https://www.youtube.com/watch?v='+song.videoId+'" target="_blank" rel="noopener" class="inline-block bg-red-700 hover:bg-red-600 text-white text-sm px-4 py-2 rounded-full">Watch →</a>'+
+              '</div>'+
+            '</div>';
           container.appendChild(card);
         });
       })
