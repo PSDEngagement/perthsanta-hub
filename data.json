@@ -89,6 +89,20 @@
   },
   "instagram": [  
         {
+      "id": "DdYe0t5Ado0",
+      "date": "2026-09-17",
+      "handle": "@perthppe",
+      "title": "Perth Sayang",
+      "postUrl": "https://www.instagram.com/p/DdYe0t5Ado0/",
+      "image": "images/Sayang.jpg",
+      "like": 350000,
+      "comment": 25000,
+      "share": 1500000,
+      "generators": [
+        { "name": "Generator 1", "url": "https://urban-comment-craft.lovable.app/" }
+      ]
+    },
+        {
       "id": "DdeHgssgRG4",
       "date": "2026-09-19",
       "handle": "@perthppe",
@@ -109,8 +123,8 @@
       "title": "Perth × Alpha Clinic",
       "postUrl": "https://www.instagram.com/p/DdoDRklARxQ/",
       "image": "images/Clinic.jpg",
-      "like": 150000,
-      "comment": 20000,
+      "like": 200000,
+      "comment": 25000,
       "share": 1500000,
       "generators": [
         { "name": "Generator 1", "url": "https://clinic-comment-engine.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
