@@ -15,7 +15,12 @@
   <div class="max-w-4xl mx-auto px-4 pt-8 pb-6">
     <h1 class="text-3xl md:text-4xl font-bold mb-2">Heartbound Series Trends</h1>
     <p class="text-gray-400">Select an episode to view generators</p>
+    <div class="flex gap-2 mt-4">
+      <button id="tab-episodes" onclick="showTab('episodes')" class="px-4 py-2 rounded-full text-sm bg-red-600 text-white">Episodes</button>
+      <button id="tab-introduce" onclick="showTab('introduce')" class="px-4 py-2 rounded-full text-sm bg-zinc-800 text-gray-300">Introduce</button>
+    </div>
   </div>
+
   <div id="episode-list" class="max-w-4xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 pb-16"></div>
   <div id="generators-section" class="hidden max-w-4xl mx-auto px-4 pb-20">
     <div class="flex items-center justify-between mb-6 gap-3">
@@ -24,15 +29,52 @@
     </div>
     <div id="generators-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
   </div>
+
+  <div id="introduce-list" class="hidden max-w-4xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 pb-16"></div>
+  <div id="introduce-guides" class="hidden max-w-4xl mx-auto px-4 pb-10">
+    <div class="flex items-center justify-between mb-6 gap-3">
+      <h2 class="text-2xl font-bold" id="platform-title">Platform</h2>
+      <button onclick="backToPlatforms()" class="text-sm text-red-500 hover:text-red-400">← Back</button>
+    </div>
+    <div id="guides-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+  </div>
+  <div id="introduce-content" class="hidden max-w-4xl mx-auto px-4 pb-20">
+    <div class="flex items-center justify-between mb-6 gap-3">
+      <h2 class="text-2xl font-bold" id="guide-title">Guide</h2>
+      <button onclick="backToGuides()" class="text-sm text-red-500 hover:text-red-400">← Back</button>
+    </div>
+    <div id="guide-content" class="bg-zinc-900 border border-zinc-700 rounded-xl p-6 text-gray-300 whitespace-pre-wrap min-h-[180px]"></div>
+  </div>
+
   <script src="common.js"></script>
   <script>
     let data = {};
+    let currentPlatform = "";
+
     fetch("data.json?t=" + Date.now())
       .then(r => r.json())
-      .then(json => { data = json; renderEpisodes(); })
+      .then(json => {
+        data = json;
+        renderEpisodes();
+        renderPlatforms();
+      })
       .catch(() => {
         document.getElementById("episode-list").innerHTML = "<p class='text-red-500'>Error loading data.json</p>";
       });
+
+    function showTab(tab) {
+      const isEp = tab === "episodes";
+      document.getElementById("tab-episodes").className =
+        "px-4 py-2 rounded-full text-sm " + (isEp ? "bg-red-600 text-white" : "bg-zinc-800 text-gray-300");
+      document.getElementById("tab-introduce").className =
+        "px-4 py-2 rounded-full text-sm " + (!isEp ? "bg-red-600 text-white" : "bg-zinc-800 text-gray-300");
+      document.getElementById("episode-list").classList.toggle("hidden", !isEp);
+      document.getElementById("generators-section").classList.add("hidden");
+      document.getElementById("introduce-list").classList.toggle("hidden", isEp);
+      document.getElementById("introduce-guides").classList.add("hidden");
+      document.getElementById("introduce-content").classList.add("hidden");
+    }
+
     function renderEpisodes() {
       const container = document.getElementById("episode-list");
       container.innerHTML = "";
@@ -44,6 +86,7 @@
         container.appendChild(btn);
       });
     }
+
     function showGenerators(epNumber) {
       document.getElementById("episode-list").classList.add("hidden");
       document.getElementById("generators-section").classList.remove("hidden");
@@ -58,9 +101,58 @@
         container.appendChild(a);
       });
     }
+
     function backToEpisodes() {
       document.getElementById("generators-section").classList.add("hidden");
       document.getElementById("episode-list").classList.remove("hidden");
+    }
+
+    function renderPlatforms() {
+      const box = document.getElementById("introduce-list");
+      box.innerHTML = "";
+      Object.keys(data.introduce || {}).forEach(key => {
+        const btn = document.createElement("button");
+        btn.className = "card bg-zinc-900 border border-zinc-700 rounded-xl p-5 text-center hover:border-red-500 min-h-[88px]";
+        btn.innerHTML = '<p class="text-red-500 text-sm mb-1">PLATFORM</p><p class="text-xl font-bold uppercase">'+key+"</p>";
+        btn.onclick = () => showGuides(key);
+        box.appendChild(btn);
+      });
+    }
+
+    function showGuides(key) {
+      currentPlatform = key;
+      document.getElementById("introduce-list").classList.add("hidden");
+      document.getElementById("introduce-guides").classList.remove("hidden");
+      document.getElementById("platform-title").innerText = key.toUpperCase();
+      const box = document.getElementById("guides-list");
+      box.innerHTML = "";
+      (data.introduce[key] || []).forEach((item, i) => {
+        const btn = document.createElement("button");
+        btn.className = "card bg-zinc-900 border border-zinc-700 rounded-xl p-5 hover:border-red-500 text-left";
+        btn.innerHTML = '<p class="text-red-500 text-sm mb-1">'+item.name+'</p><p class="font-medium">'+item.title+'</p>';
+        btn.onclick = () => showContent(i);
+        box.appendChild(btn);
+      });
+    }
+
+    function showContent(i) {
+      const item = (data.introduce[currentPlatform] || [])[i];
+      if (!item) return;
+      document.getElementById("introduce-guides").classList.add("hidden");
+      document.getElementById("introduce-content").classList.remove("hidden");
+      document.getElementById("guide-title").innerText = item.title || item.name;
+      document.getElementById("guide-content").innerText = item.content || "Chưa có nội dung hướng dẫn.";
+    }
+
+    function backToPlatforms() {
+      document.getElementById("introduce-guides").classList.add("hidden");
+      document.getElementById("introduce-content").classList.add("hidden");
+      document.getElementById("introduce-list").classList.remove("hidden");
+    }
+
+    function backToGuides() {
+      document.getElementById("introduce-content").classList.add("hidden");
+      document.getElementById("introduce-guides").classList.remove("hidden");
     }
   </script>
 </body>
