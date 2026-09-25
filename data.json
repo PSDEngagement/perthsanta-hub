@@ -35,7 +35,7 @@
       "target": "900,000"
     }
   ],
-    "dailyMissions": {
+  "dailyMissions": {
     "countdown": {
       "badge": "COUNTDOWN TO EPISODE 1",
       "title": "Countdown to Heartbound Episode 1 • Saturday, September 26 • 20:30 ICT",
@@ -78,8 +78,8 @@
       { "name": "Viki", "url": "https://www.viki.com/" },
       { "name": "iQIYI", "url": "https://www.iq.com/" }
     ]
-  }
-     "instagram": [
+  },
+  "instagram": [
     {
       "id": "DdjmVMSCe8f",
       "date": "2026-09-21",
