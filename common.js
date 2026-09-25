@@ -137,7 +137,7 @@
 
   if (here !== "index.html" && here !== "") {
     const back = document.createElement("div");
-    back.className = "max-w-6xl mx-auto px-4 pt-4";
+        back.className = "w-full px-4 pt-4 text-left";
     back.innerHTML = '<a href="index.html" class="inline-flex items-center text-red-500 hover:text-red-400 text-sm font-medium">← Back to Home</a>';
     bar.insertAdjacentElement("afterend", back);
   }
@@ -158,4 +158,14 @@
     '<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a>. ' +
     '<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a>';
   document.body.appendChild(foot);
+    Array.from(document.body.children).forEach(function (el) {
+    if (el.tagName === "FOOTER") return;
+    el.style.width = "100%";
+    el.style.maxWidth = "none";
+    el.style.marginLeft = "0";
+    el.style.marginRight = "0";
+    el.style.textAlign = "left";
+    el.style.alignSelf = "stretch";
+    el.style.boxSizing = "border-box";
+  });
 })();
