@@ -1,92 +1,80 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram Engagement - PerthSanta Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { background-color: #0a0a0a; min-height: 100vh; }
+    body { background: #070707; min-height: 100vh; }
     .card { transition: all 0.25s ease; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(220, 38, 38, 0.25); }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(185, 28, 28, 0.25); }
     .thumb { aspect-ratio: 1 / 1; object-fit: cover; background: #18181b; }
   </style>
 </head>
 <body class="text-white">
-
-  <div class="max-w-6xl mx-auto px-4 pt-10 pb-6">
-    <a href="index.html" class="text-red-500 hover:text-red-400 text-sm mb-6 inline-block">← Back to Home</a>
+  <div class="max-w-6xl mx-auto px-4 pt-8 pb-6">
     <h1 class="text-3xl md:text-4xl font-bold mb-2">Instagram Engagement</h1>
   </div>
-
-  <div id="ig-list" class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
+  <div id="ig-list" class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pb-20">
     <p class="text-gray-500 col-span-full">Loading...</p>
   </div>
-
+  <script src="common.js"></script>
   <script>
-    function formatNum(n) {
-      n = Number(n) || 0;
-      return n.toLocaleString("en-US");
-    }
-
+    function formatNum(n) { return (Number(n) || 0).toLocaleString("en-US"); }
     function fallbackThumb(handle) {
-      const letter = (handle || "IG").replace("@", "").charAt(0).toUpperCase();
+      const label = (handle || "@IG").replace("@", "");
       return "data:image/svg+xml;utf8," + encodeURIComponent(
-        "<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><rect width='100%' height='100%' fill='#18181b'/><text x='50%' y='52%' text-anchor='middle' font-size='180' fill='#dc2626' font-family='sans-serif'>" + letter + "</text></svg>"
+        "<svg xmlns='http://www.w3.org/2000/svg' width='640' height='640'>" +
+        "<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>" +
+        "<stop offset='0%' stop-color='#3f1010'/><stop offset='50%' stop-color='#7f1d1d'/>" +
+        "<stop offset='100%' stop-color='#1c1917'/></linearGradient></defs>" +
+        "<rect width='100%' height='100%' fill='url(#g)'/>" +
+        "<circle cx='320' cy='250' r='70' fill='none' stroke='#fecaca' stroke-width='10'/>" +
+        "<circle cx='320' cy='250' r='28' fill='none' stroke='#fecaca' stroke-width='8'/>" +
+        "<rect x='230' y='360' width='180' height='18' rx='9' fill='#fecaca' opacity='0.85'/>" +
+        "<text x='320' y='430' text-anchor='middle' font-size='28' fill='#fecaca' font-family='sans-serif'>@" + label + "</text>" +
+        "</svg>"
       );
     }
-
-    fetch("data.json")
+    fetch("data.json?t=" + Date.now())
       .then(r => r.json())
       .then(data => {
-        const posts = (data.instagram || []).slice().sort((a, b) => {
-          return String(b.date || "").localeCompare(String(a.date || ""));
-        });
+        const posts = (data.instagram || []).slice().sort((a,b) => String(b.date||"").localeCompare(String(a.date||"")));
         const list = document.getElementById("ig-list");
         list.innerHTML = "";
-
         if (!posts.length) {
-          list.innerHTML = '<p class="text-gray-500 col-span-full">Chưa có bài.</p>';
+          list.innerHTML = '<p class="text-gray-500 col-span-full">No posts yet.</p>';
           return;
         }
-
         posts.forEach(post => {
           const gens = post.generators || [];
           const genHtml = gens.length
-            ? gens.map(g =>
-                '<a href="' + g.url + '" target="_blank" class="block text-center bg-zinc-800 hover:bg-red-600 border border-zinc-600 hover:border-red-500 rounded-full px-3 py-2 text-sm transition">' +
-                (g.name || "Generator") +
-                "</a>"
-              ).join("")
-            : '<p class="text-xs text-gray-500">Chưa gắn generator</p>';
-
+            ? gens.map(g => '<a href="'+g.url+'" target="_blank" rel="noopener" class="block text-center bg-zinc-800 hover:bg-red-700 border border-zinc-600 rounded-full px-3 py-2.5 text-sm">'+(g.name||"Generator")+"</a>").join("")
+            : '<p class="text-xs text-gray-500">No generator yet</p>';
           const card = document.createElement("article");
           card.className = "card bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden flex flex-col";
           card.innerHTML =
-            '<img class="thumb w-full" alt="" src="' + (post.image || "") + '">' +
-            '<div class="p-5 flex flex-col flex-1">' +
-              '<p class="text-red-500 text-sm">' + (post.handle || "") + (post.date ? " · " + post.date : "") + "</p>" +
-              '<h3 class="font-bold text-lg mt-1 mb-4">' + (post.title || "Instagram post") + "</h3>" +
-              '<div class="grid grid-cols-3 gap-2 text-center mb-4">' +
-                '<div class="bg-zinc-800 rounded-xl py-2 px-1"><p class="text-[11px] text-gray-400 uppercase">Target like</p><p class="font-semibold text-red-400">' + formatNum(post.like) + "</p></div>" +
-                '<div class="bg-zinc-800 rounded-xl py-2 px-1"><p class="text-[11px] text-gray-400 uppercase">Target comment</p><p class="font-semibold text-red-400">' + formatNum(post.comment) + "</p></div>" +
-                '<div class="bg-zinc-800 rounded-xl py-2 px-1"><p class="text-[11px] text-gray-400 uppercase">Target share</p><p class="font-semibold text-red-400">' + formatNum(post.share) + "</p></div>" +
-              "</div>" +
-              '<div class="space-y-2 mb-4"><p class="text-xs text-gray-500 uppercase tracking-wide">Generator</p>' + genHtml + "</div>" +
-              '<a href="' + (post.postUrl || "#") + '" target="_blank" rel="noopener" class="mt-auto inline-block text-center bg-red-600 hover:bg-red-500 text-white rounded-full px-4 py-2.5 text-sm font-medium">Open Instagram →</a>' +
+            '<img class="thumb w-full" alt="" src="'+(post.image||"")+'">'+
+            '<div class="p-5 flex flex-col flex-1">'+
+              '<p class="text-red-400 text-sm">'+(post.handle||"")+(post.date?" · "+post.date:"")+"</p>"+
+              '<h3 class="font-bold text-lg mt-1 mb-4">'+(post.title||"Instagram post")+"</h3>"+
+              '<div class="grid grid-cols-3 gap-2 text-center mb-4">'+
+                '<div class="bg-zinc-800 rounded-xl py-3 px-1"><p class="text-[10px] sm:text-[11px] text-gray-400 uppercase">Target like</p><p class="font-semibold text-red-400 text-sm sm:text-base">'+formatNum(post.like)+"</p></div>"+
+                '<div class="bg-zinc-800 rounded-xl py-3 px-1"><p class="text-[10px] sm:text-[11px] text-gray-400 uppercase">Target comment</p><p class="font-semibold text-red-400 text-sm sm:text-base">'+formatNum(post.comment)+"</p></div>"+
+                '<div class="bg-zinc-800 rounded-xl py-3 px-1"><p class="text-[10px] sm:text-[11px] text-gray-400 uppercase">Target share</p><p class="font-semibold text-red-400 text-sm sm:text-base">'+formatNum(post.share)+"</p></div>"+
+              "</div>"+
+              '<div class="space-y-2 mb-4"><p class="text-xs text-gray-500 uppercase tracking-wide">Generator</p>'+genHtml+"</div>"+
+              '<a href="'+(post.postUrl||"#")+'" target="_blank" rel="noopener" class="mt-auto inline-block text-center bg-red-700 hover:bg-red-600 text-white rounded-full px-4 py-3 text-sm font-medium">Open Instagram →</a>'+
             "</div>";
-
           const img = card.querySelector("img");
-          img.addEventListener("error", function () {
-            img.src = fallbackThumb(post.handle);
-          });
+          img.addEventListener("error", function(){ img.src = fallbackThumb(post.handle); });
           if (!post.image) img.src = fallbackThumb(post.handle);
-
           list.appendChild(card);
         });
       })
       .catch(() => {
-        document.getElementById("ig-list").innerHTML = '<p class="text-red-500">Lỗi đọc data.json</p>';
+        document.getElementById("ig-list").innerHTML = '<p class="text-red-500">Failed to load data.json</p>';
       });
   </script>
 </body>
