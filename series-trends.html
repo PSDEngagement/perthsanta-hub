@@ -49,4 +49,137 @@
         </div>
         <p class="text-lg font-bold">Instagram</p>
       </button>
-      <button type="button" onclick="showGuide('tiktok')" class="card bg-zinc-900 border border-zinc-700 rounded-2
+      <button type="button" onclick="showGuide('tiktok')" class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-5 text-center min-h-[140px]">
+        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-zinc-800 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" class="w-7 h-7">
+        </div>
+        <p class="text-lg font-bold">TikTok</p>
+      </button>
+      <button type="button" onclick="showGuide('facebook')" class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-5 text-center min-h-[140px]">
+        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-zinc-800 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" class="w-7 h-7">
+        </div>
+        <p class="text-lg font-bold">Facebook</p>
+      </button>
+      <button type="button" onclick="showGuide('youtube')" class="card bg-zinc-900 border border-zinc-700 rounded-2xl p-5 text-center min-h-[140px]">
+        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-zinc-800 flex items-center justify-center">
+          <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube" class="w-7 h-7">
+        </div>
+        <p class="text-lg font-bold">YouTube</p>
+      </button>
+    </div>
+
+    <div id="guide-detail" class="hidden">
+      <div class="flex items-center justify-between mb-4 gap-3">
+        <h3 id="guide-detail-title" class="text-2xl font-bold">Guide</h3>
+        <button onclick="backToGuides()" class="text-sm text-red-500 hover:text-red-400">← Back to platforms</button>
+      </div>
+      <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-5 sm:p-8 space-y-4 text-gray-300 leading-relaxed">
+        <div id="guide-x" class="hidden guide-panel">
+          <p class="text-white font-semibold">X – Guide Trending</p>
+          <p>Điền hướng dẫn X vào đây.</p>
+        </div>
+        <div id="guide-instagram" class="hidden guide-panel">
+          <p class="text-white font-semibold">Instagram – Guide Trending</p>
+          <p>Điền hướng dẫn Instagram vào đây.</p>
+        </div>
+        <div id="guide-tiktok" class="hidden guide-panel">
+          <p class="text-white font-semibold">TikTok – Guide Trending</p>
+          <p>Điền hướng dẫn TikTok vào đây.</p>
+        </div>
+        <div id="guide-facebook" class="hidden guide-panel">
+          <p class="text-white font-semibold">Facebook – Guide Trending</p>
+          <p>Điền hướng dẫn Facebook vào đây.</p>
+        </div>
+        <div id="guide-youtube" class="hidden guide-panel">
+          <p class="text-white font-semibold">YouTube – Guide Trending</p>
+          <p>Điền hướng dẫn YouTube vào đây.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="common.js"></script>
+  <script>
+    let data = {};
+
+    const GUIDE_TITLES = {
+      x: "X",
+      instagram: "Instagram",
+      tiktok: "TikTok",
+      facebook: "Facebook",
+      youtube: "YouTube"
+    };
+
+    function showGuide(id) {
+      document.getElementById("guide-grid").classList.add("hidden");
+      document.getElementById("guide-detail").classList.remove("hidden");
+      document.getElementById("guide-detail-title").innerText = GUIDE_TITLES[id] || id;
+      document.querySelectorAll(".guide-panel").forEach(function (el) {
+        el.classList.add("hidden");
+      });
+      var panel = document.getElementById("guide-" + id);
+      if (panel) panel.classList.remove("hidden");
+    }
+
+    function backToGuides() {
+      document.getElementById("guide-detail").classList.add("hidden");
+      document.getElementById("guide-grid").classList.remove("hidden");
+    }
+
+    fetch("data.json?t=" + Date.now())
+      .then(function (r) { return r.json(); })
+      .then(function (json) {
+        data = json || {};
+        renderEpisodes();
+      })
+      .catch(function () {
+        data = { episodes: { "1": [] } };
+        renderEpisodes();
+      });
+
+    function renderEpisodes() {
+      var container = document.getElementById("episode-list");
+      var eps = Object.keys((data && data.episodes) || {});
+      if (!eps.length) eps = ["1"];
+      eps.sort(function (a, b) { return a - b; });
+      container.innerHTML = "";
+      eps.forEach(function (ep) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "card bg-zinc-900 border border-zinc-700 rounded-xl p-5 text-center hover:border-red-500 min-h-[88px]";
+        btn.innerHTML = '<p class="text-red-500 text-sm mb-1">EP</p><p class="text-2xl font-bold">' + ep + "</p>";
+        btn.onclick = function () { showGenerators(ep); };
+        container.appendChild(btn);
+      });
+    }
+
+    function showGenerators(epNumber) {
+      document.getElementById("episode-list").classList.add("hidden");
+      document.getElementById("generators-section").classList.remove("hidden");
+      document.getElementById("current-ep").innerText = epNumber;
+      var container = document.getElementById("generators-list");
+      container.innerHTML = "";
+      var list = (data.episodes && data.episodes[epNumber]) || [];
+      if (!list.length) {
+        container.innerHTML = '<p class="text-gray-400">No generators yet.</p>';
+        return;
+      }
+      list.forEach(function (gen) {
+        var a = document.createElement("a");
+        a.href = gen.url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.className = "card bg-zinc-900 border border-zinc-700 rounded-xl p-5 hover:border-red-500 block";
+        a.innerHTML = '<p class="text-red-500 text-sm mb-1">' + gen.name + '</p><p class="font-medium">' + gen.title + '</p><p class="text-xs text-gray-500 mt-2">Click to open →</p>';
+        container.appendChild(a);
+      });
+    }
+
+    function backToEpisodes() {
+      document.getElementById("generators-section").classList.add("hidden");
+      document.getElementById("episode-list").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
