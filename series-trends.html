@@ -27,7 +27,7 @@
   <div id="generators-section" class="hidden max-w-4xl mx-auto px-4 pb-10">
     <div class="flex items-center justify-between mb-6 gap-3">
       <h2 class="text-2xl font-bold">Episode <span id="current-ep">1</span> – Generators</h2>
-      <button onclick="backToEpisodes()" class="text-sm text-red-500 hover:text-red-400">← Back to Episodes</button>
+      <button type="button" onclick="backToEpisodes()" class="text-sm text-red-500 hover:text-red-400">← Back to Episodes</button>
     </div>
     <div id="generators-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
   </div>
@@ -72,7 +72,7 @@
     <div id="guide-detail" class="hidden">
       <div class="flex items-center justify-between mb-4 gap-3">
         <h3 id="guide-detail-title" class="text-2xl font-bold">Guide</h3>
-        <button onclick="backToGuides()" class="text-sm text-red-500 hover:text-red-400">← Back to platforms</button>
+        <button type="button" onclick="backToGuides()" class="text-sm text-red-500 hover:text-red-400">← Back to platforms</button>
       </div>
       <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-5 sm:p-8 space-y-4 text-gray-300 leading-relaxed">
         <div id="guide-x" class="hidden guide-panel">
@@ -102,26 +102,16 @@
   <script src="common.js"></script>
   <script>
     let data = {};
-
-    const GUIDE_TITLES = {
-      x: "X",
-      instagram: "Instagram",
-      tiktok: "TikTok",
-      facebook: "Facebook",
-      youtube: "YouTube"
-    };
+    const GUIDE_TITLES = { x: "X", instagram: "Instagram", tiktok: "TikTok", facebook: "Facebook", youtube: "YouTube" };
 
     function showGuide(id) {
       document.getElementById("guide-grid").classList.add("hidden");
       document.getElementById("guide-detail").classList.remove("hidden");
       document.getElementById("guide-detail-title").innerText = GUIDE_TITLES[id] || id;
-      document.querySelectorAll(".guide-panel").forEach(function (el) {
-        el.classList.add("hidden");
-      });
+      document.querySelectorAll(".guide-panel").forEach(function (el) { el.classList.add("hidden"); });
       var panel = document.getElementById("guide-" + id);
       if (panel) panel.classList.remove("hidden");
     }
-
     function backToGuides() {
       document.getElementById("guide-detail").classList.add("hidden");
       document.getElementById("guide-grid").classList.remove("hidden");
@@ -129,14 +119,8 @@
 
     fetch("data.json?t=" + Date.now())
       .then(function (r) { return r.json(); })
-      .then(function (json) {
-        data = json || {};
-        renderEpisodes();
-      })
-      .catch(function () {
-        data = { episodes: { "1": [] } };
-        renderEpisodes();
-      });
+      .then(function (json) { data = json || {}; renderEpisodes(); })
+      .catch(function () { data = { episodes: { "1": [] } }; renderEpisodes(); });
 
     function renderEpisodes() {
       var container = document.getElementById("episode-list");
@@ -153,7 +137,6 @@
         container.appendChild(btn);
       });
     }
-
     function showGenerators(epNumber) {
       document.getElementById("episode-list").classList.add("hidden");
       document.getElementById("generators-section").classList.remove("hidden");
@@ -167,15 +150,12 @@
       }
       list.forEach(function (gen) {
         var a = document.createElement("a");
-        a.href = gen.url;
-        a.target = "_blank";
-        a.rel = "noopener";
+        a.href = gen.url; a.target = "_blank"; a.rel = "noopener";
         a.className = "card bg-zinc-900 border border-zinc-700 rounded-xl p-5 hover:border-red-500 block";
         a.innerHTML = '<p class="text-red-500 text-sm mb-1">' + gen.name + '</p><p class="font-medium">' + gen.title + '</p><p class="text-xs text-gray-500 mt-2">Click to open →</p>';
         container.appendChild(a);
       });
     }
-
     function backToEpisodes() {
       document.getElementById("generators-section").classList.add("hidden");
       document.getElementById("episode-list").classList.remove("hidden");
