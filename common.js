@@ -145,9 +145,11 @@
   document.body.style.minHeight = "100vh";
   document.body.style.display = "flex";
   document.body.style.flexDirection = "column";
+  document.body.style.alignItems = "stretch";
+  document.body.style.textAlign = "left";
 
   var foot = document.createElement("footer");
-  foot.className = "text-center text-sm text-gray-500 py-10 px-4 mt-auto";
+  foot.className = "text-center text-sm text-gray-500 py-10 px-4 mt-auto w-full";
   foot.innerHTML =
     '© 2026 PerthSanta Engagement Hub · Made with love by ' +
     '<a href="https://x.com/itsmaeta" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Eira</a>. ' +
