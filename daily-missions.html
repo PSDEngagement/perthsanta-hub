@@ -91,4 +91,13 @@
           if (r.url) { el.target = "_blank"; el.rel = "noopener"; }
           el.className = "card bg-zinc-900 border border-zinc-700 rounded-2xl p-5 text-center block min-h-[120px]";
           el.innerHTML = '<p class="text-xl font-bold mb-3">'+(r.name||"")+"</p>"+
-            '<span class="inline-block bg-red-700 
+            '<span class="inline-block bg-red-700 hover:bg-red-600 text-white text-sm rounded-full px-4 py-2">Rate now</span>';
+          rateBox.appendChild(el);
+        });
+      })
+      .catch(function () {
+        document.getElementById("series-list").innerHTML = '<p class="text-red-500">Failed to load data.json</p>';
+      });
+  </script>
+</body>
+</html>
