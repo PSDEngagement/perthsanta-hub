@@ -144,8 +144,7 @@
 
   const style = document.createElement("style");
   style.textContent =
-    "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');" +
-    "body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}" +
+    "body{font-family:'Times New Roman',Times,serif;}" +
     "@keyframes ps-blink{0%,100%{opacity:1}50%{opacity:.45}}" +
     ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
     "#ps-alert-panel{max-height:0;overflow:hidden;transition:max-height .35s ease}" +
