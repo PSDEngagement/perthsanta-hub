@@ -160,10 +160,20 @@
     document.head.appendChild(fontLink);
   }
 
+    // Font: Inter (clean UI) + light serif only for hero titles via .ps-display
+  if (!document.getElementById("ps-font-inter")) {
+    var fontLink = document.createElement("link");
+    fontLink.id = "ps-font-inter";
+    fontLink.rel = "stylesheet";
+    fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap";
+    document.head.appendChild(fontLink);
+  }
+
   const style = document.createElement("style");
   style.textContent =
-    "html{font-size:17px}" +
-    "body{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:1rem;line-height:1.55}" +
+    "html{font-size:16px}" +
+    "body{font-family:Inter,system-ui,-apple-system,sans-serif;font-size:1rem;line-height:1.5;-webkit-font-smoothing:antialiased}" +
+    ".ps-display{font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:0.01em}" +
     "@keyframes ps-blink{0%,100%{opacity:1}50%{opacity:.45}}" +
     ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
     "#ps-alert-panel{max-height:0;overflow:hidden;transition:max-height .35s ease}" +
