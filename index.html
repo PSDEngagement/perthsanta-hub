@@ -7,61 +7,91 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { background: #070707; min-height: 100vh; }
-    .card { transition: all 0.3s ease; background: rgba(24,24,27,0.86); backdrop-filter: blur(10px); }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(185, 28, 28, 0.28); }
-    .hero-img { object-fit: cover; object-position: center 12%; }
+    .hero-img { object-fit: cover; object-position: center 30%; }
+    .menu-row { transition: background 0.2s ease, border-color 0.2s ease; }
+    .menu-row:active { background: rgba(39, 39, 42, 0.9); }
+    @media (min-width: 640px) {
+      .menu-row:hover { border-color: rgba(185, 28, 28, 0.5); background: rgba(24, 24, 27, 0.95); }
+    }
   </style>
 </head>
 <body class="text-white">
 
-  <section class="relative max-w-6xl mx-auto px-4 pt-6 pb-16">
-    <div class="relative overflow-hidden rounded-3xl border border-red-900/40 min-h-[860px] sm:min-h-[920px] flex flex-col">
+  <main class="max-w-6xl mx-auto px-4 pt-4 sm:pt-6 pb-8">
+
+    <!-- HERO -->
+    <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-red-900/30 aspect-[16/10] sm:aspect-[21/9] sm:min-h-[280px] mb-5 sm:mb-8">
       <img src="images/hero-perthsanta.jpg" alt="PerthSanta" class="hero-img absolute inset-0 w-full h-full">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/85"></div>
-
-      <div class="relative z-10 flex-1"></div>
-
-      <div class="relative z-10 px-4 sm:px-8 pb-8">
-        <h1 data-i18n="title" class="text-3xl sm:text-5xl font-bold tracking-tight">PerthSanta Engagement Hub</h1>
-        <p data-i18n="subtitle" class="mt-2 mb-6 text-base sm:text-xl text-red-200">PerthSantaDomiia Together Forever</p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="card border border-white/10 rounded-2xl p-6">
-            <p class="text-sm text-red-400 mb-1">01</p>
-            <h2 data-i18n="card1Title" class="text-xl font-bold mb-2">Heartbound Series Trends</h2>
-            <p data-i18n="card1Desc" class="text-sm text-gray-300 mb-5"></p>
-            <a href="series-trends.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
-              <span data-i18n="card1Btn">Open Trends →</span>
-            </a>
-          </div>
-          <div class="card border border-white/10 rounded-2xl p-6">
-            <p class="text-sm text-red-400 mb-1">02</p>
-            <h2 data-i18n="card2Title" class="text-xl font-bold mb-2">Daily Missions</h2>
-            <p data-i18n="card2Desc" class="text-sm text-gray-300 mb-5"></p>
-            <a href="daily-missions.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
-              <span data-i18n="card2Btn">View Missions →</span>
-            </a>
-          </div>
-          <div class="card border border-white/10 rounded-2xl p-6">
-            <p class="text-sm text-red-400 mb-1">03</p>
-            <h2 data-i18n="card3Title" class="text-xl font-bold mb-2">YouTube Streaming</h2>
-            <p data-i18n="card3Desc" class="text-sm text-gray-300 mb-5"></p>
-            <a href="youtube-streaming.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
-              <span data-i18n="card3Btn">Open Streaming →</span>
-            </a>
-          </div>
-          <div class="card border border-white/10 rounded-2xl p-6">
-            <p class="text-sm text-red-400 mb-1">04</p>
-            <h2 data-i18n="card4Title" class="text-xl font-bold mb-2">Instagram Engagement</h2>
-            <p data-i18n="card4Desc" class="text-sm text-gray-300 mb-5"></p>
-            <a href="ig-engagement.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2.5 rounded-full text-sm font-medium">
-              <span data-i18n="card4Btn">Open Engagement →</span>
-            </a>
-          </div>
-        </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+        <h1 data-i18n="title" class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
+          PerthSanta × Domiia
+        </h1>
+        <p data-i18n="subtitle" class="mt-1.5 sm:mt-2 text-sm sm:text-lg text-red-100/90 font-medium">
+          Together Forever <span class="text-red-400">♥</span>
+        </p>
       </div>
     </div>
-  </section>
+
+    <!--
+      4 mục nhiệm vụ:
+      - Mobile: 1 cột dọc (list)
+      - Desktop (sm+): lưới 2×2
+    -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+
+      <!-- 01 Trends -->
+      <a href="series-trends.html" class="menu-row flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/80 px-4 py-3.5 sm:p-5">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-red-950/80 flex items-center justify-center shrink-0 text-red-400">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="min-w-0 flex-1">
+          <p data-i18n="card1Title" class="font-semibold text-white text-[15px] sm:text-base truncate">Heartbound Series Trends</p>
+          <p data-i18n="card1Desc" class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate">See what fans are loving</p>
+        </div>
+        <span class="text-red-500 text-lg shrink-0 hidden sm:inline">›</span>
+        <span class="text-red-500 text-xl shrink-0 sm:hidden">›</span>
+      </a>
+
+      <!-- 02 Missions -->
+      <a href="daily-missions.html" class="menu-row flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/80 px-4 py-3.5 sm:p-5">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-red-950/80 flex items-center justify-center shrink-0 text-red-400">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+        </div>
+        <div class="min-w-0 flex-1">
+          <p data-i18n="card2Title" class="font-semibold text-white text-[15px] sm:text-base truncate">Daily Missions</p>
+          <p data-i18n="card2Desc" class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate">Complete tasks, earn rewards</p>
+        </div>
+        <span class="text-red-500 text-xl shrink-0">›</span>
+      </a>
+
+      <!-- 03 YouTube -->
+      <a href="youtube-streaming.html" class="menu-row flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/80 px-4 py-3.5 sm:p-5">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-red-950/80 flex items-center justify-center shrink-0 text-red-400">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/></svg>
+        </div>
+        <div class="min-w-0 flex-1">
+          <p data-i18n="card3Title" class="font-semibold text-white text-[15px] sm:text-base truncate">YouTube Streaming</p>
+          <p data-i18n="card3Desc" class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate">Live streams & exclusive content</p>
+        </div>
+        <span class="text-red-500 text-xl shrink-0">›</span>
+      </a>
+
+      <!-- 04 Instagram -->
+      <a href="ig-engagement.html" class="menu-row flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/80 px-4 py-3.5 sm:p-5">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-red-950/80 flex items-center justify-center shrink-0 text-red-400">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div class="min-w-0 flex-1">
+          <p data-i18n="card4Title" class="font-semibold text-white text-[15px] sm:text-base truncate">Instagram Engagement</p>
+          <p data-i18n="card4Desc" class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate">Likes, comments & community</p>
+        </div>
+        <span class="text-red-500 text-xl shrink-0">›</span>
+      </a>
+
+    </div>
+  </main>
+
   <script src="common.js"></script>
 </body>
 </html>
