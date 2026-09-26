@@ -1,96 +1,100 @@
 (function () {
   const NAV = [
-    { href: "index.html", key: "navHome" },
-    { href: "series-trends.html", key: "navTrends" },
-    { href: "daily-missions.html", key: "navMissions" },
-    { href: "youtube-streaming.html", key: "navYoutube" },
-    { href: "ig-engagement.html", key: "navIg" }
+    { href: "index.html", key: "navHome", icon: "home" },
+    { href: "series-trends.html", key: "navTrends", icon: "trends" },
+    { href: "daily-missions.html", key: "navMissions", icon: "missions" },
+    { href: "youtube-streaming.html", key: "navYoutube", icon: "youtube" },
+    { href: "ig-engagement.html", key: "navIg", icon: "ig" }
   ];
 
   window.PS_I18N = {
     en: {
       navHome: "Home", navTrends: "Trends", navMissions: "Missions",
-      navYoutube: "YouTube", navIg: "Instagram",
-      title: "PerthSanta Engagement Hub",
-      subtitle: "PerthSantaDomiia Together Forever",
+      navYoutube: "YouTube", navIg: "Instagram", navIntro: "Intro",
+      title: "PerthSanta × Domiia",
+      subtitle: "Together Forever",
       card1Title: "Heartbound Series Trends",
-      card1Desc: "Track trending episodes and open generators",
-      card1Btn: "Open Trends →",
+      card1Desc: "See what fans are loving",
+      card1Btn: "Open →",
       card2Title: "Daily Missions",
-      card2Desc: "Countdown, watch links and rating missions",
-      card2Btn: "View Missions →",
+      card2Desc: "Complete tasks, earn rewards",
+      card2Btn: "Open →",
       card3Title: "YouTube Streaming",
-      card3Desc: "Music and trailer streaming targets",
-      card3Btn: "Open Streaming →",
+      card3Desc: "Live streams & exclusive content",
+      card3Btn: "Open →",
       card4Title: "Instagram Engagement",
-      card4Desc: "Posts to engage with like, comment and share targets",
-      card4Btn: "Open Engagement →",
+      card4Desc: "Likes, comments & community",
+      card4Btn: "Open →",
       alertText: "You have important missions not completed yet — tap to view",
       alertEmpty: "All important missions are done.",
-      alertClose: "Close"
+      alertClose: "Close",
+      backHome: "← Back to Home"
     },
     vi: {
       navHome: "Trang chủ", navTrends: "Trends", navMissions: "Missions",
-      navYoutube: "YouTube", navIg: "Instagram",
-      title: "PerthSanta Engagement Hub",
-      subtitle: "PerthSantaDomiia Together Forever",
+      navYoutube: "YouTube", navIg: "Instagram", navIntro: "Intro",
+      title: "PerthSanta × Domiia",
+      subtitle: "Together Forever",
       card1Title: "Heartbound Series Trends",
-      card1Desc: "Theo dõi tập và mở generator",
-      card1Btn: "Open Trends →",
+      card1Desc: "Xem fan đang yêu thích gì",
+      card1Btn: "Mở →",
       card2Title: "Daily Missions",
-      card2Desc: "Countdown, link xem phim và nhiệm vụ đánh giá",
-      card2Btn: "View Missions →",
+      card2Desc: "Làm nhiệm vụ, nhận phần thưởng",
+      card2Btn: "Mở →",
       card3Title: "YouTube Streaming",
-      card3Desc: "Mục tiêu streaming trailer và nhạc",
-      card3Btn: "Open Streaming →",
+      card3Desc: "Stream & nội dung độc quyền",
+      card3Btn: "Mở →",
       card4Title: "Instagram Engagement",
-      card4Desc: "Bài cần tương tác với target like, comment, share",
-      card4Btn: "Open Engagement →",
+      card4Desc: "Like, comment & cộng đồng",
+      card4Btn: "Mở →",
       alertText: "Có nhiệm vụ quan trọng bạn chưa hoàn thành — nhấn để xem",
       alertEmpty: "Đã hoàn thành tất cả nhiệm vụ quan trọng.",
-      alertClose: "Đóng"
+      alertClose: "Đóng",
+      backHome: "← Về trang chủ"
     },
     th: {
       navHome: "หน้าแรก", navTrends: "Trends", navMissions: "Missions",
-      navYoutube: "YouTube", navIg: "Instagram",
-      title: "PerthSanta Engagement Hub",
-      subtitle: "PerthSantaDomiia Together Forever",
+      navYoutube: "YouTube", navIg: "Instagram", navIntro: "Intro",
+      title: "PerthSanta × Domiia",
+      subtitle: "Together Forever",
       card1Title: "Heartbound Series Trends",
-      card1Desc: "ติดตามตอนและเปิด generator",
-      card1Btn: "Open Trends →",
+      card1Desc: "ดูสิ่งที่แฟน ๆ กำลังรัก",
+      card1Btn: "เปิด →",
       card2Title: "Daily Missions",
-      card2Desc: "นับถอยหลัง ลิงก์ดูซีรีส์ และภารกิจให้คะแนน",
-      card2Btn: "View Missions →",
+      card2Desc: "ทำภารกิจ รับรางวัล",
+      card2Btn: "เปิด →",
       card3Title: "YouTube Streaming",
-      card3Desc: "เป้าหมายสตรีมตัวอย่างและเพลง",
-      card3Btn: "Open Streaming →",
+      card3Desc: "สตรีมและคอนเทนต์พิเศษ",
+      card3Btn: "เปิด →",
       card4Title: "Instagram Engagement",
-      card4Desc: "โพสต์ที่ต้องมีส่วนร่วม พร้อมเป้า like comment share",
-      card4Btn: "Open Engagement →",
+      card4Desc: "ไลก์ คอมเมนต์ และชุมชน",
+      card4Btn: "เปิด →",
       alertText: "มีภารกิจสำคัญที่ยังไม่เสร็จ — แตะเพื่อดู",
       alertEmpty: "ภารกิจสำคัญครบแล้ว",
-      alertClose: "ปิด"
+      alertClose: "ปิด",
+      backHome: "← กลับหน้าแรก"
     },
     my: {
       navHome: "ပင်မ", navTrends: "Trends", navMissions: "Missions",
-      navYoutube: "YouTube", navIg: "Instagram",
-      title: "PerthSanta Engagement Hub",
-      subtitle: "PerthSantaDomiia Together Forever",
+      navYoutube: "YouTube", navIg: "Instagram", navIntro: "Intro",
+      title: "PerthSanta × Domiia",
+      subtitle: "Together Forever",
       card1Title: "Heartbound Series Trends",
-      card1Desc: "အပိုင်းများနှင့် generator",
-      card1Btn: "Open Trends →",
+      card1Desc: "ပရိသတ်ကြိုက်တာတွေ",
+      card1Btn: "ဖွင့် →",
       card2Title: "Daily Missions",
-      card2Desc: "Countdown, ကြည့်ရန်လင့်နှင့် အဆင့်သတ်မှတ်ခြင်း",
-      card2Btn: "View Missions →",
+      card2Desc: "Mission လုပ်၊ ဆုယူ",
+      card2Btn: "ဖွင့် →",
       card3Title: "YouTube Streaming",
-      card3Desc: "Trailer နှင့် သီချင်း streaming ပစ်မှတ်",
-      card3Btn: "Open Streaming →",
+      card3Desc: "Stream နှင့် အထူး content",
+      card3Btn: "ဖွင့် →",
       card4Title: "Instagram Engagement",
-      card4Desc: "Like, comment, share ပစ်မှတ်များ",
-      card4Btn: "Open Engagement →",
+      card4Desc: "Like, comment နှင့် community",
+      card4Btn: "ဖွင့် →",
       alertText: "အရေးကြီး mission မပြီးသေးပါ — နှိပ်ပြီးကြည့်ပါ",
       alertEmpty: "အရေးကြီး mission အားလုံး ပြီးပါပြီ",
-      alertClose: "ပိတ်"
+      alertClose: "ပိတ်",
+      backHome: "← ပင်မသို့"
     }
   };
 
@@ -126,36 +130,62 @@
   const lang = currentLang();
   const t = window.PS_I18N[lang];
 
-  const links = NAV.map(function (n) {
-    const active = here === n.href || (here === "" && n.href === "index.html");
-    const cls = active
-      ? "px-3 py-1.5 rounded-full text-sm bg-red-600 text-white"
-      : "px-3 py-1.5 rounded-full text-sm text-gray-300 hover:text-white hover:bg-zinc-800";
-    return '<a href="' + n.href + '" class="' + cls + '" data-i18n="' + n.key + '">' + t[n.key] + "</a>";
-  }).join("");
+  function navIcon(name, active) {
+    const c = active ? "#f87171" : "#a1a1aa";
+    const icons = {
+      home: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="' + c + '" stroke-width="2"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.5z"/></svg>',
+      trends: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="' + c + '" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>',
+      missions: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="' + c + '" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="' + c + '"/></svg>',
+      youtube: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="' + c + '" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M10 9.5v5l5-2.5-5-2.5z" fill="' + c + '" stroke="none"/></svg>',
+      ig: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="' + c + '" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="' + c + '" stroke="none"/></svg>'
+    };
+    return icons[name] || "";
+  }
 
   const style = document.createElement("style");
   style.textContent =
-    "@keyframes ps-blink { 0%,100%{ opacity:1; } 50%{ opacity:0.45; } }" +
-    ".ps-alert-blink { animation: ps-blink 1.2s ease-in-out infinite; }" +
-    "#ps-alert-panel { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }" +
-    "#ps-alert-panel.open { max-height: 420px; overflow-y: auto; }";
+    "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');" +
+    "body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}" +
+    "@keyframes ps-blink{0%,100%{opacity:1}50%{opacity:.45}}" +
+    ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
+    "#ps-alert-panel{max-height:0;overflow:hidden;transition:max-height .35s ease}" +
+    "#ps-alert-panel.open{max-height:420px;overflow-y:auto}" +
+    "body.ps-has-tabbar{padding-bottom:72px}" +
+    "@media (min-width:768px){body.ps-has-tabbar{padding-bottom:0}}";
   document.head.appendChild(style);
 
+  const desktopNav = NAV.map(function (n) {
+    const active = here === n.href || (here === "" && n.href === "index.html");
+    const cls = active
+      ? "px-3 py-1.5 rounded-full text-sm bg-red-600 text-white font-medium"
+      : "px-3 py-1.5 rounded-full text-sm text-zinc-300 hover:text-white hover:bg-zinc-800 font-medium";
+    return '<a href="' + n.href + '" class="' + cls + '" data-i18n="' + n.key + '">' + t[n.key] + "</a>";
+  }).join("");
+
   const bar = document.createElement("header");
-  bar.className = "sticky top-0 z-50 border-b border-zinc-800 bg-black/80 backdrop-blur";
+  bar.className = "sticky top-0 z-50 border-b border-zinc-800/80 bg-black/90 backdrop-blur-md";
   bar.innerHTML =
-    '<div class="max-w-6xl mx-auto px-3 sm:px-4 py-3 flex flex-wrap items-center gap-3">' +
-      '<a href="index.html" class="font-bold tracking-tight text-white mr-auto">PerthSanta <span class="text-red-500">Hub</span></a>' +
-      '<nav class="flex flex-wrap gap-1">' + links + "</nav>" +
-      '<select id="language" onchange="psChangeLanguage()" class="bg-zinc-950 border border-zinc-700 text-white text-sm rounded-lg px-2 py-1.5">' +
-        '<option value="en">EN</option><option value="vi">VI</option><option value="th">TH</option><option value="my">MY</option>' +
+    '<div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 flex items-center gap-2 sm:gap-3">' +
+      '<a href="index.html" class="flex items-center gap-2.5 min-w-0 shrink-0">' +
+        '<img src="images/logo.png" alt="Logo" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover bg-zinc-800 border border-zinc-700" onerror="this.style.display=\'none\'">' +
+        '<span class="font-bold tracking-tight text-white text-base sm:text-lg">PerthSanta</span>' +
+      "</a>" +
+      '<div class="flex-1"></div>' +
+      '<nav class="hidden md:flex flex-wrap items-center gap-1">' + desktopNav + "</nav>" +
+      '<a href="introduce.html" class="px-3 py-1.5 rounded-full text-sm border border-zinc-600 text-zinc-200 hover:border-red-500 hover:text-white font-medium" data-i18n="navIntro">' +
+        (t.navIntro || "Intro") +
+      "</a>" +
+      '<select id="language" onchange="psChangeLanguage()" class="bg-zinc-950 border border-zinc-600 text-white text-sm rounded-full px-2.5 py-1.5 font-medium">' +
+        '<option value="en">EN</option>' +
+        '<option value="vi">VI</option>' +
+        '<option value="th">TH</option>' +
+        '<option value="my">MY</option>' +
       "</select>" +
     "</div>" +
     '<div id="ps-alert-wrap" class="hidden border-t border-red-900/50 bg-red-950/90">' +
       '<button type="button" id="ps-alert-btn" class="w-full max-w-6xl mx-auto px-3 sm:px-4 py-2.5 flex items-center justify-center gap-2 text-sm sm:text-base text-red-100 ps-alert-blink cursor-pointer hover:bg-red-900/40 transition">' +
         '<span class="inline-block w-2 h-2 rounded-full bg-red-400 shrink-0"></span>' +
-        '<span id="ps-alert-label">' + (t.alertText || "You have important missions not completed yet — tap to view") + "</span>" +
+        '<span id="ps-alert-label">' + (t.alertText || "") + "</span>" +
         '<span id="ps-alert-count" class="ml-1 px-2 py-0.5 rounded-full bg-red-600 text-white text-xs font-bold">0</span>' +
       "</button>" +
       '<div id="ps-alert-panel" class="border-t border-red-900/40 bg-zinc-950">' +
@@ -173,12 +203,23 @@
   document.getElementById("language").value = lang;
   window.psApplyLang(lang);
 
-  if (here !== "index.html" && here !== "") {
-    const back = document.createElement("div");
-    back.className = "max-w-6xl mx-auto px-4 pt-4 text-left";
-    back.innerHTML = '<a href="index.html" class="inline-flex text-red-500 hover:text-red-400 text-sm font-medium">← Back to Home</a>';
-    bar.insertAdjacentElement("afterend", back);
-  }
+  document.body.classList.add("ps-has-tabbar");
+  const tabbar = document.createElement("nav");
+  tabbar.className = "md:hidden fixed bottom-0 inset-x-0 z-50 border-t border-zinc-800 bg-black/95 backdrop-blur-md";
+  tabbar.innerHTML =
+    '<div class="grid grid-cols-5 h-16 max-w-lg mx-auto">' +
+    NAV.map(function (n) {
+      const active = here === n.href || (here === "" && n.href === "index.html");
+      const labelCls = active ? "text-red-400" : "text-zinc-500";
+      return (
+        '<a href="' + n.href + '" class="flex flex-col items-center justify-center gap-0.5 ' + labelCls + '">' +
+          navIcon(n.icon, active) +
+          '<span class="text-[10px] font-medium leading-tight" data-i18n="' + n.key + '">' + t[n.key] + "</span>" +
+        "</a>"
+      );
+    }).join("") +
+    "</div>";
+  document.body.appendChild(tabbar);
 
   var foot = document.createElement("footer");
   foot.className = "text-center text-sm text-gray-500 py-10 px-4";
@@ -231,11 +272,9 @@
     var unfinished = list.filter(function (m) {
       return m && m.done !== true && m.done !== "true";
     });
-
     var ytOnes = unfinished.filter(function (m) {
       return m.type === "youtube" && m.videoId && parseTarget(m.target) > 0;
     });
-
     if (ytOnes.length) {
       var key = await loadYtConfig();
       var viewsMap = await fetchYtViews(
@@ -251,7 +290,6 @@
         return views < target;
       });
     }
-
     return unfinished;
   }
 
@@ -261,17 +299,14 @@
     var listEl = document.getElementById("ps-alert-list");
     var panel = document.getElementById("ps-alert-panel");
     if (!wrap || !listEl) return;
-
     if (!missions.length) {
       wrap.classList.add("hidden");
       panel.classList.remove("open");
       return;
     }
-
     wrap.classList.remove("hidden");
     countEl.innerText = String(missions.length);
     listEl.innerHTML = "";
-
     missions.forEach(function (m) {
       var li = document.createElement("li");
       var href = m.page || "index.html";
@@ -279,12 +314,8 @@
       var tag = m.type ? '<span class="text-xs text-gray-500 uppercase">' + m.type + "</span>" : "";
       li.innerHTML =
         '<a href="' + href + '" class="flex items-center justify-between gap-3 rounded-xl border border-zinc-700 bg-zinc-900 hover:border-red-600 hover:bg-zinc-800 px-4 py-3 transition">' +
-          '<span class="min-w-0">' +
-            '<span class="block font-medium text-white text-sm sm:text-base truncate">' + title + "</span>" +
-            tag +
-          "</span>" +
-          '<span class="text-red-400 text-sm shrink-0">Go →</span>' +
-        "</a>";
+          '<span class="min-w-0"><span class="block font-medium text-white text-sm sm:text-base truncate">' + title + "</span>" + tag + "</span>" +
+          '<span class="text-red-400 text-sm shrink-0">Go →</span></a>';
       listEl.appendChild(li);
     });
   }
@@ -294,10 +325,7 @@
     var panel = document.getElementById("ps-alert-panel");
     var closeBtn = document.getElementById("ps-alert-close");
     if (!btn || !panel) return;
-
-    btn.addEventListener("click", function () {
-      panel.classList.toggle("open");
-    });
+    btn.addEventListener("click", function () { panel.classList.toggle("open"); });
     if (closeBtn) {
       closeBtn.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -310,11 +338,7 @@
 
   fetch("data.json?t=" + Date.now())
     .then(function (r) { return r.json(); })
-    .then(function (data) {
-      return getUnfinishedMissions(data || {});
-    })
-    .then(function (missions) {
-      renderAlert(missions);
-    })
+    .then(function (data) { return getUnfinishedMissions(data || {}); })
+    .then(function (missions) { renderAlert(missions); })
     .catch(function () {});
 })();
