@@ -303,4 +303,43 @@
             ]
         }
     ]
+      "missions": [
+    {
+      "id": "rate-mdl",
+      "title": "Rate Heartbound on MyDramaList",
+      "page": "daily-missions.html",
+      "type": "manual",
+      "done": false
+    },
+    {
+      "id": "rate-imdb",
+      "title": "Rate Heartbound on IMDb",
+      "page": "daily-missions.html",
+      "type": "manual",
+      "done": false
+    },
+    {
+      "id": "trends-ep1",
+      "title": "Trend Heartbound Episode 1 (generators + guides)",
+      "page": "series-trends.html",
+      "type": "manual",
+      "done": false
+    },
+    {
+      "id": "yt-I1guVkLJ4mU",
+      "title": "YouTube: Heartbound trailer → 2M views",
+      "page": "youtube-streaming.html",
+      "type": "youtube",
+      "videoId": "I1guVkLJ4mU",
+      "target": "2000000",
+      "done": false
+    },
+    {
+      "id": "ig-DdbrHbSCZm6",
+      "title": "IG @santa.pp — Night time",
+      "page": "ig-engagement.html",
+      "type": "instagram",
+      "done": false
+    }
+  ]
 }
