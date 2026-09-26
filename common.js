@@ -142,9 +142,19 @@
     return icons[name] || "";
   }
 
+    // Load Montserrat (weights 400–700)
+  if (!document.getElementById("ps-font-montserrat")) {
+    var fontLink = document.createElement("link");
+    fontLink.id = "ps-font-montserrat";
+    fontLink.rel = "stylesheet";
+    fontLink.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";
+    document.head.appendChild(fontLink);
+  }
+
   const style = document.createElement("style");
   style.textContent =
-    "body{font-family:'Times New Roman',Times,serif;}" +
+    "html{font-size:17px}" +
+    "body{font-family:'Montserrat',system-ui,-apple-system,sans-serif;font-size:1rem;line-height:1.55}" +
     "@keyframes ps-blink{0%,100%{opacity:1}50%{opacity:.45}}" +
     ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
     "#ps-alert-panel{max-height:0;overflow:hidden;transition:max-height .35s ease}" +
