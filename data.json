@@ -131,6 +131,20 @@
       ]
     },
     {
+    "id": "DdRakUhBX7X",
+    "date": "2026-09-14",
+    "handle": "@perthppe",
+    "title": "Perth Guitar Session",
+    "postUrl": "https://www.instagram.com/p/DdRakUhBX7X/",
+    "image": "images/Perth.jpg",
+    "like": 350000,
+    "comment": 25000,
+    "share": 1500000,
+    "generators": [
+      { "name": "Generator 1", "url": "https://santa-scribe-x.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
+      ]
+    },
+    {
       "id": "DdjmVMSCe8f",
       "date": "2026-09-21",
       "handle": "@santa.pp",
@@ -152,7 +166,7 @@
       "postUrl": "https://www.instagram.com/p/DdbrHbSCZm6/",
       "image": "images/Nighttime.jpg",
       "like": 500000,
-      "comment": 30000,
+      "comment": 25000,
       "share": 1500000,
       "generators": [
         { "name": "Generator 1", "url": "https://luxe-comment-forge.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
