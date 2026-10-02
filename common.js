@@ -178,9 +178,16 @@
     "@keyframes ps-blink{0%,100%{opacity:1}50%{opacity:.45}}" +
     ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
     "#ps-alert-panel.open{display:block !important}" +
-    "body.ps-has-tabbar{padding-bottom:calc(104px + env(safe-area-inset-bottom, 0px))}" +
+    "body.ps-has-tabbar{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px)) !important}" +
     "@media (min-width:768px){body.ps-has-tabbar{padding-bottom:0}}" +
-    "#ps-site-footer{position:relative;z-index:1}";
+    "a,button,select{ -webkit-tap-highlight-color:transparent }" +
+    "#ps-tabbar a{min-height:64px}" +
+    "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
+    "#ps-site-footer{position:relative;z-index:1;line-height:1.55}" +
+    "#ps-site-footer .ps-foot-by{display:block;margin-top:2px}" +
+    "@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}";
+
+    document.head.appendChild(style);
 
   const desktopNav = NAV.map(function (n) {
     const active = here === n.href || (here === "" && n.href === "index.html");
@@ -234,7 +241,9 @@
 
   document.body.classList.add("ps-has-tabbar");
   const tabbar = document.createElement("nav");
-  tabbar.className = "md:hidden fixed bottom-0 inset-x-0 z-50 border-t border-zinc-800 bg-black/95 backdrop-blur-md";
+  tabbar.id = "ps-tabbar";
+  tabbar.setAttribute("aria-label", "Main");
+  tabbar.className = "md:hidden fixed bottom-0 inset-x-0 z-50 border-t border-zinc-800/90 bg-black/95 backdrop-blur-md";
   tabbar.style.paddingBottom = "env(safe-area-inset-bottom, 0px)";
   tabbar.innerHTML =
     '<div class="grid grid-cols-5 h-16 max-w-lg mx-auto">' +
@@ -242,7 +251,7 @@
       const active = here === n.href || (here === "" && n.href === "index.html");
       const labelCls = active ? "text-red-400" : "text-zinc-500";
       return (
-        '<a href="' + n.href + '" class="flex flex-col items-center justify-center gap-0.5 ' + labelCls + '">' +
+        '<a href="' + n.href + '" class="flex flex-col items-center justify-center gap-0.5 ' + labelCls + (active ? " ps-tab-on" : "") + '" ' + (active ? 'aria-current="page"' : "") + '>' +
           navIcon(n.icon, active) +
           '<span class="text-[10px] font-medium leading-tight" data-i18n="' + n.key + '">' + t[n.key] + "</span>" +
         "</a>"
@@ -253,14 +262,15 @@
 
   var foot = document.createElement("footer");
   foot.id = "ps-site-footer";
-  foot.className = "text-center text-sm text-gray-500 pt-8 pb-2 px-4";
+  foot.className = "text-center text-[13px] text-zinc-500 pt-8 pb-3 px-5";
   foot.innerHTML =
-    '© 2026 PerthSanta Engagement Hub · Made with love by ' +
+    '<span>© 2026 PerthSanta Engagement Hub</span>' +
+    '<span class="ps-foot-by">Made with love by ' +
     '<a href="https://x.com/itsmaeta" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Eira</a>. ' +
     '<a href="https://x.com/comeforlove_ps" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Lubiichan</a>. ' +
     '<a href="https://x.com/NganVt2386624" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Ngân</a>. ' +
     '<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a>. ' +
-    '<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a>';
+    '<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a></span>';
   document.body.appendChild(foot);
 
   function parseTarget(v) {
