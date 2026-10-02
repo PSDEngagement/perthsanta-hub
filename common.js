@@ -142,7 +142,11 @@
     return icons[name] || "";
   }
 
-    // Load Montserrat (weights 400–700)
+  var vp = document.querySelector('meta[name="viewport"]');
+  if (vp && vp.content.indexOf("viewport-fit") === -1) {
+    vp.setAttribute("content", vp.content + ", viewport-fit=cover");
+  }
+
   if (!document.getElementById("ps-font-montserrat")) {
     var fontLink = document.createElement("link");
     fontLink.id = "ps-font-montserrat";
@@ -151,43 +155,40 @@
     document.head.appendChild(fontLink);
   }
 
-    // Load Cormorant Garamond (weights 400–700)
   if (!document.getElementById("ps-font-cormorant")) {
-    var fontLink = document.createElement("link");
-    fontLink.id = "ps-font-cormorant";
-    fontLink.rel = "stylesheet";
-    fontLink.href = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap";
-    document.head.appendChild(fontLink);
+    var fontLink2 = document.createElement("link");
+    fontLink2.id = "ps-font-cormorant";
+    fontLink2.rel = "stylesheet";
+    fontLink2.href = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap";
+    document.head.appendChild(fontLink2);
   }
 
-    // Font: Inter (clean UI) + light serif only for hero titles via .ps-display
   if (!document.getElementById("ps-font-inter")) {
-    var fontLink = document.createElement("link");
-    fontLink.id = "ps-font-inter";
-    fontLink.rel = "stylesheet";
-    fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap";
-    document.head.appendChild(fontLink);
+    var fontLink3 = document.createElement("link");
+    fontLink3.id = "ps-font-inter";
+    fontLink3.rel = "stylesheet";
+    fontLink3.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap";
+    document.head.appendChild(fontLink3);
   }
 
   const style = document.createElement("style");
   style.textContent =
-      style.textContent =
     "html{font-size:16px}" +
     "body{font-family:Inter,system-ui,-apple-system,sans-serif;font-size:1rem;line-height:1.5;-webkit-font-smoothing:antialiased;background:#070707}" +
     ".ps-display{font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:0.01em}" +
     "@keyframes ps-blink{0%,100%{opacity:1}50%{opacity:.45}}" +
     ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
     "#ps-alert-panel.open{display:block !important}" +
-    "body.ps-has-tabbar{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px)) !important}" +
-    "@media (min-width:768px){body.ps-has-tabbar{padding-bottom:0}}" +
-    "a,button,select{ -webkit-tap-highlight-color:transparent }" +
+    "body.ps-has-tabbar{padding-bottom:calc(128px + env(safe-area-inset-bottom, 0px)) !important}" +
+    "@media (min-width:768px){body.ps-has-tabbar{padding-bottom:0 !important}}" +
+    "a,button,select{-webkit-tap-highlight-color:transparent}" +
+    "#ps-tabbar{padding-bottom:env(safe-area-inset-bottom, 0px)}" +
     "#ps-tabbar a{min-height:64px}" +
     "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
-    "#ps-site-footer{position:relative;z-index:1;line-height:1.55}" +
-    "#ps-site-footer .ps-foot-by{display:block;margin-top:2px}" +
+    "#ps-site-footer{position:relative;z-index:1;line-height:1.6;margin-bottom:12px}" +
+    "#ps-site-footer .ps-foot-by{display:block;margin-top:4px}" +
     "@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}";
-
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 
   const desktopNav = NAV.map(function (n) {
     const active = here === n.href || (here === "" && n.href === "index.html");
@@ -199,18 +200,17 @@
 
   const bar = document.createElement("header");
   bar.className = "sticky top-0 z-50 border-b border-zinc-800/80 bg-black/90 backdrop-blur-md";
-   bar.innerHTML =
+  bar.innerHTML =
     '<div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 flex items-center gap-2 sm:gap-3">' +
       '<a href="index.html" class="flex items-center gap-1 min-w-0 shrink-0">' +
-  '<img src="images/logo.png" alt="Logo" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover" onerror="this.style.display=\'none\'">' +
-  '<span class="font-bold tracking-tight text-white text-base sm:text-lg -ml-0.5">PerthSanta</span>' +
-"</a>" +
+        '<img src="images/logo.png" alt="Logo" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover" onerror="this.style.display=\'none\'">' +
+        '<span class="font-bold tracking-tight text-white text-base sm:text-lg -ml-0.5">PerthSanta</span>' +
+      "</a>" +
       '<div class="flex-1"></div>' +
       '<nav class="hidden md:flex flex-wrap items-center gap-1">' + desktopNav + "</nav>" +
       '<a href="introduce.html" class="px-3 py-1.5 rounded-full text-sm border border-zinc-600 text-zinc-200 hover:border-red-500 hover:text-white font-medium" data-i18n="navIntro">' +
         (t.navIntro || "Intro") +
       "</a>" +
-      /* ===== Nút Missions nhỏ (cỡ EN) ===== */
       '<div id="ps-alert-wrap" class="hidden relative">' +
         '<button type="button" id="ps-alert-btn" class="ps-alert-blink flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm border border-red-700 bg-red-950 text-red-200 hover:bg-red-900 hover:text-white font-medium cursor-pointer transition">' +
           '<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"></span>' +
@@ -227,7 +227,6 @@
           "</div>" +
         "</div>" +
       "</div>" +
-      /* ===== EN ===== */
       '<select id="language" onchange="psChangeLanguage()" class="bg-zinc-950 border border-zinc-600 text-white text-sm rounded-full px-2.5 py-1.5 font-medium">' +
         '<option value="en">EN</option>' +
         '<option value="vi">VI</option>' +
@@ -262,7 +261,7 @@
 
   var foot = document.createElement("footer");
   foot.id = "ps-site-footer";
-  foot.className = "text-center text-[13px] text-zinc-500 pt-8 pb-3 px-5";
+  foot.className = "text-center text-[13px] text-zinc-500 pt-8 pb-4 px-5";
   foot.innerHTML =
     '<span>© 2026 PerthSanta Engagement Hub</span>' +
     '<span class="ps-foot-by">Made with love by ' +
@@ -361,7 +360,7 @@
     });
   }
 
-    function setupAlertToggle() {
+  function setupAlertToggle() {
     var btn = document.getElementById("ps-alert-btn");
     var panel = document.getElementById("ps-alert-panel");
     var closeBtn = document.getElementById("ps-alert-close");
