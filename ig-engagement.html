@@ -38,7 +38,6 @@
       z-index: 0;
     }
 
-    /* IG post cards */
     .ig-card {
       position: relative;
       border-radius: 1rem;
@@ -70,7 +69,6 @@
         rgba(0,0,0,0.75) 100%
       );
     }
-    /* Panel kính mờ */
     .ig-card .panel {
       position: absolute;
       left: 10px;
@@ -102,7 +100,24 @@
       padding: 0.45rem 0.2rem;
     }
 
-    /* Generator — vuông to kiểu EP */
+    @keyframes statBlink {
+      0%, 100% { opacity: 1; color: #f87171; }
+      50% { opacity: 0.28; color: #fecaca; }
+    }
+    .stat-box.pending {
+      border-color: rgba(248, 113, 113, 0.45);
+    }
+    .stat-box.pending .stat-num {
+      animation: statBlink 1.1s ease-in-out infinite;
+    }
+    .stat-box.done {
+      border-color: rgba(74, 222, 128, 0.4);
+    }
+    .stat-box.done .stat-num {
+      color: #4ade80;
+      animation: none;
+    }
+
     .gen-btn {
       width: 3.25rem;
       height: 3.25rem;
@@ -151,7 +166,6 @@
 </head>
 <body class="text-white relative overflow-x-hidden">
 
-  <!-- Background image mờ -->
   <div class="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
     <img src="images/poster-heartbound.jpg" alt=""
          class="w-full h-full object-cover opacity-95"
@@ -159,11 +173,9 @@
     <div class="absolute inset-0 bg-[#070707]/20"></div>
   </div>
 
-  <!-- soft background glows -->
   <div class="page-glow bg-red-600" style="top:-80px;right:-60px;"></div>
   <div class="page-glow bg-red-800" style="bottom:10%;left:-80px;"></div>
 
-  <!-- Header -->
   <div class="relative z-10 max-w-4xl mx-auto px-4 pt-8 pb-6">
     <div class="flex items-start justify-between gap-4">
       <div class="fade-up">
@@ -182,7 +194,6 @@
     </div>
   </div>
 
-  <!-- Posts grid -->
   <div id="ig-list" class="relative z-10 max-w-4xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-24 fade-up fade-up-d2"></div>
 
   <script src="common.js"></script>
@@ -194,6 +205,12 @@
       return "data:image/svg+xml;utf8," + encodeURIComponent(
         "<svg xmlns='http://www.w3.org/2000/svg' width='640' height='800'><rect width='100%' height='100%' fill='#7f1d1d'/><text x='320' y='400' text-anchor='middle' font-size='28' fill='#fecaca' font-family='sans-serif'>@" + label + "</text></svg>"
       );
+    }
+
+    function statBox(label, value, done) {
+      return '<div class="stat-box ' + (done ? "done" : "pending") + '">' +
+        '<p class="text-[9px] text-gray-400 uppercase tracking-wider">' + label + "</p>" +
+        '<p class="stat-num font-semibold text-xs mt-0.5">' + formatNum(value) + "</p></div>";
     }
 
     fetch("data.json?t=" + Date.now())
@@ -227,9 +244,9 @@
               '<p class="text-red-300 text-xs font-medium meta"></p>' +
               '<h3 class="font-bold text-sm sm:text-[15px] mt-0.5 mb-2.5 leading-snug text-white"></h3>' +
               '<div class="grid grid-cols-3 gap-1.5 text-center mb-2.5">' +
-                '<div class="stat-box"><p class="text-[9px] text-gray-400 uppercase tracking-wider">Like</p><p class="font-semibold text-red-400 text-xs mt-0.5">' + formatNum(post.like) + "</p></div>" +
-                '<div class="stat-box"><p class="text-[9px] text-gray-400 uppercase tracking-wider">Comment</p><p class="font-semibold text-red-400 text-xs mt-0.5">' + formatNum(post.comment) + "</p></div>" +
-                '<div class="stat-box"><p class="text-[9px] text-gray-400 uppercase tracking-wider">Share</p><p class="font-semibold text-red-400 text-xs mt-0.5">' + formatNum(post.share) + "</p></div>" +
+                statBox("Like", post.like, post.likeDone) +
+                statBox("Comment", post.comment, post.commentDone) +
+                statBox("Share", post.share, post.shareDone) +
               "</div>" +
               (gens ? '<div class="flex flex-wrap gap-2 mb-2.5">' + gens + "</div>" : "") +
               '<a href="' + (post.postUrl || "#") + '" target="_blank" rel="noopener" class="ig-open-btn">Open Instagram →</a>' +
