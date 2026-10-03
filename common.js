@@ -25,9 +25,9 @@
       card4Title: "Instagram Engagement",
       card4Desc: "Likes, comments & community",
       card4Btn: "Open →",
-      alertText: "You have important missions not completed yet — tap to view",
-      alertEmpty: "All important missions are done.",
-      alertClose: "Close",
+      alertText: "You have important tasks not completed yet — tap to view",
+      alertEmpty: "All important tasks are done.",
+      alertTitle: "To-Do",
       backHome: "← Back to Home"
     },
     vi: {
@@ -49,7 +49,7 @@
       card4Btn: "Mở →",
       alertText: "Có nhiệm vụ quan trọng bạn chưa hoàn thành — nhấn để xem",
       alertEmpty: "Đã hoàn thành tất cả nhiệm vụ quan trọng.",
-      alertClose: "Đóng",
+      alertTitle: "To-Do",
       backHome: "← Về trang chủ"
     },
     th: {
@@ -71,7 +71,7 @@
       card4Btn: "เปิด →",
       alertText: "มีภารกิจสำคัญที่ยังไม่เสร็จ — แตะเพื่อดู",
       alertEmpty: "ภารกิจสำคัญครบแล้ว",
-      alertClose: "ปิด",
+      alertTitle: "To-Do",
       backHome: "← กลับหน้าแรก"
     },
     my: {
@@ -93,7 +93,7 @@
       card4Btn: "ဖွင့် →",
       alertText: "အရေးကြီး mission မပြီးသေးပါ — နှိပ်ပြီးကြည့်ပါ",
       alertEmpty: "အရေးကြီး mission အားလုံး ပြီးပါပြီ",
-      alertClose: "ပိတ်",
+      alertTitle: "To-Do",
       backHome: "← ပင်မသို့"
     }
   };
@@ -114,10 +114,6 @@
       const k = el.getAttribute("data-i18n");
       if (t[k]) el.innerText = t[k];
     });
-    const alertLabel = document.getElementById("ps-alert-label");
-    if (alertLabel) alertLabel.innerText = t.alertText || window.PS_I18N.en.alertText;
-    const closeBtn = document.getElementById("ps-alert-close");
-    if (closeBtn) closeBtn.innerText = t.alertClose || "Close";
   };
 
   window.psChangeLanguage = function () {
@@ -142,11 +138,7 @@
     return icons[name] || "";
   }
 
-  var vp = document.querySelector('meta[name="viewport"]');
-  if (vp && vp.content.indexOf("viewport-fit") === -1) {
-    vp.setAttribute("content", vp.content + ", viewport-fit=cover");
-  }
-
+  // Load fonts
   if (!document.getElementById("ps-font-montserrat")) {
     var fontLink = document.createElement("link");
     fontLink.id = "ps-font-montserrat";
@@ -156,19 +148,19 @@
   }
 
   if (!document.getElementById("ps-font-cormorant")) {
-    var fontLink2 = document.createElement("link");
-    fontLink2.id = "ps-font-cormorant";
-    fontLink2.rel = "stylesheet";
-    fontLink2.href = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap";
-    document.head.appendChild(fontLink2);
+    var fontLink = document.createElement("link");
+    fontLink.id = "ps-font-cormorant";
+    fontLink.rel = "stylesheet";
+    fontLink.href = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap";
+    document.head.appendChild(fontLink);
   }
 
   if (!document.getElementById("ps-font-inter")) {
-    var fontLink3 = document.createElement("link");
-    fontLink3.id = "ps-font-inter";
-    fontLink3.rel = "stylesheet";
-    fontLink3.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap";
-    document.head.appendChild(fontLink3);
+    var fontLink = document.createElement("link");
+    fontLink.id = "ps-font-inter";
+    fontLink.rel = "stylesheet";
+    fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap";
+    document.head.appendChild(fontLink);
   }
 
   const style = document.createElement("style");
@@ -179,14 +171,13 @@
     "@keyframes ps-blink{0%,100%{opacity:1}50%{opacity:.45}}" +
     ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
     "#ps-alert-panel.open{display:block !important}" +
-    "body.ps-has-tabbar{padding-bottom:calc(128px + env(safe-area-inset-bottom, 0px)) !important}" +
-    "@media (min-width:768px){body.ps-has-tabbar{padding-bottom:0 !important}}" +
-    "a,button,select{-webkit-tap-highlight-color:transparent}" +
-    "#ps-tabbar{padding-bottom:env(safe-area-inset-bottom, 0px)}" +
+    "body.ps-has-tabbar{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px)) !important}" +
+    "@media (min-width:768px){body.ps-has-tabbar{padding-bottom:0}}" +
+    "a,button,select{ -webkit-tap-highlight-color:transparent }" +
     "#ps-tabbar a{min-height:64px}" +
     "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
-    "#ps-site-footer{position:relative;z-index:1;line-height:1.6;margin-bottom:12px}" +
-    "#ps-site-footer .ps-foot-by{display:block;margin-top:4px}" +
+    "#ps-site-footer{position:relative;z-index:1;line-height:1.55}" +
+    "#ps-site-footer .ps-foot-by{display:block;margin-top:2px}" +
     "@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}";
   document.head.appendChild(style);
 
@@ -211,22 +202,22 @@
       '<a href="introduce.html" class="px-3 py-1.5 rounded-full text-sm border border-zinc-600 text-zinc-200 hover:border-red-500 hover:text-white font-medium" data-i18n="navIntro">' +
         (t.navIntro || "Intro") +
       "</a>" +
+      /* ===== To-Do button ===== */
       '<div id="ps-alert-wrap" class="hidden relative">' +
         '<button type="button" id="ps-alert-btn" class="ps-alert-blink flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm border border-red-700 bg-red-950 text-red-200 hover:bg-red-900 hover:text-white font-medium cursor-pointer transition">' +
           '<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"></span>' +
-          '<span class="hidden sm:inline">Missions</span>' +
+          '<span class="hidden sm:inline">To-Do</span>' +
           '<span id="ps-alert-count" class="px-1.5 py-0.5 rounded-full bg-red-600 text-white text-xs font-bold leading-none">0</span>' +
         "</button>" +
-        '<div id="ps-alert-panel" class="absolute right-0 top-full mt-2 w-72 sm:w-80 rounded-xl border border-zinc-700 bg-zinc-950 shadow-xl z-50 hidden">' +
-          '<div class="px-3 py-2.5">' +
-            '<div class="flex items-center justify-between mb-2">' +
-              '<p class="text-xs text-gray-400">Unfinished missions</p>' +
-              '<button type="button" id="ps-alert-close" class="text-xs text-red-400 hover:text-red-300">' + (t.alertClose || "Close") + "</button>" +
-            "</div>" +
-            '<ul id="ps-alert-list" class="space-y-1.5 max-h-64 overflow-y-auto"></ul>' +
+        '<div id="ps-alert-panel" class="absolute right-0 top-full mt-2 w-72 sm:w-80 rounded-xl border border-red-900/40 bg-[#0c0c0c] shadow-xl z-50 hidden overflow-hidden">' +
+          '<div class="px-3.5 pt-3 pb-2 border-b border-zinc-800/80">' +
+            '<p class="text-sm font-semibold text-white tracking-wide">To-Do</p>' +
+            '<p class="text-[11px] text-zinc-500 mt-0.5">Pending tasks</p>' +
           "</div>" +
+          '<ul id="ps-alert-list" class="p-2 space-y-1.5 max-h-64 overflow-y-auto"></ul>' +
         "</div>" +
       "</div>" +
+      /* ===== Language ===== */
       '<select id="language" onchange="psChangeLanguage()" class="bg-zinc-950 border border-zinc-600 text-white text-sm rounded-full px-2.5 py-1.5 font-medium">' +
         '<option value="en">EN</option>' +
         '<option value="vi">VI</option>' +
@@ -339,23 +330,32 @@
     var listEl = document.getElementById("ps-alert-list");
     var panel = document.getElementById("ps-alert-panel");
     if (!wrap || !listEl) return;
+
     if (!missions.length) {
       wrap.classList.add("hidden");
       panel.classList.remove("open");
+      panel.classList.add("hidden");
       return;
     }
+
     wrap.classList.remove("hidden");
     countEl.innerText = String(missions.length);
     listEl.innerHTML = "";
+
     missions.forEach(function (m) {
       var li = document.createElement("li");
       var href = m.page || "index.html";
-      var title = m.title || m.id || "Mission";
-      var tag = m.type ? '<span class="text-xs text-gray-500 uppercase">' + m.type + "</span>" : "";
+      var title = m.title || m.id || "Task";
+      var typeLabel = m.type ? m.type.toUpperCase() : "TASK";
+
       li.innerHTML =
-        '<a href="' + href + '" class="flex items-center justify-between gap-3 rounded-xl border border-zinc-700 bg-zinc-900 hover:border-red-600 hover:bg-zinc-800 px-4 py-3 transition">' +
-          '<span class="min-w-0"><span class="block font-medium text-white text-sm sm:text-base truncate">' + title + "</span>" + tag + "</span>" +
-          '<span class="text-red-400 text-sm shrink-0">Go →</span></a>';
+        '<a href="' + href + '" class="flex items-center justify-between gap-3 rounded-xl border border-zinc-800 bg-zinc-900/80 hover:border-red-600/70 hover:bg-zinc-800/90 px-3.5 py-3 transition group">' +
+          '<span class="min-w-0">' +
+            '<span class="block font-medium text-white text-sm truncate group-hover:text-red-100">' + title + '</span>' +
+            '<span class="text-[10px] tracking-wider text-zinc-500 uppercase mt-0.5 block">' + typeLabel + '</span>' +
+          '</span>' +
+          '<span class="text-red-400 text-xs font-medium shrink-0 opacity-80 group-hover:opacity-100">Go →</span>' +
+        '</a>';
       listEl.appendChild(li);
     });
   }
@@ -363,23 +363,23 @@
   function setupAlertToggle() {
     var btn = document.getElementById("ps-alert-btn");
     var panel = document.getElementById("ps-alert-panel");
-    var closeBtn = document.getElementById("ps-alert-close");
     if (!btn || !panel) return;
+
     btn.addEventListener("click", function (e) {
       e.stopPropagation();
       panel.classList.toggle("open");
       panel.classList.toggle("hidden");
     });
-    if (closeBtn) {
-      closeBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        panel.classList.remove("open");
-        panel.classList.add("hidden");
-      });
-    }
+
+    // Click ra ngoài thì đóng
     document.addEventListener("click", function () {
       panel.classList.remove("open");
       panel.classList.add("hidden");
+    });
+
+    // Ngăn panel bị đóng khi click bên trong
+    panel.addEventListener("click", function (e) {
+      e.stopPropagation();
     });
   }
 
