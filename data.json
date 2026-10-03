@@ -347,39 +347,25 @@
     ],
     "schedule": [
       {
-        "month": "September 2026",
-        "items": [
-          {
-            "date": "27 Sep",
-            "title": "GrabFood Payweek ถูกกว่าชัวร์* กับ Perth Santa",
-            "note": "18:00 ICT",
-            "location": "Facebook & YouTube: GMMTV OFFICIAL • Facebook: GrabTH",
-            "hastag": "GrabFoodถูกกว่าชัวร์xPERTHSANTA",
-            "keyword": "GRABFOOD WITH PERTHSANTA",
-            "for": ["PS"]
-          }
-        ]
-      },
-      {
         "month": "October 2026",
         "items": [
           {
-            "date": "1 Oct",
-            "title": "SHOPEE LIVE",
-            "note": "07:30 PM (UTC+7)",
-            "location": "LIVE SHOPEE",
-            "hastag": "ShopeeLivexPerthSanta",
-            "keyword": "SHOPEE PERTHSANTA NAROCK MAK",
-            "for": ["PS"]
-          },
-          {
             "date": "3-4 Oct",
             "title": "DR.ALLY PAI AEW TUAY KAN TEE CHANG MAI WITH PERTH",
-            "note": "TBA",
+            "note": "ALL DAY",
             "location": "PRIVATE EVENT",
-            "hastag": "TBA",
-            "keyword": "TBA",
+            "hastag": "DrAllyinCNXwithPerth",
+            "keyword": "PERTH PAIAEW CHIANGMAI",
             "for": ["PERTH"]
+          },
+          {
+            "date": "6 Oct",
+            "title": "TOPS OF BEAUTY X GILLETTE VENUS",
+            "note": "05:30 PM (UTC+7)",
+            "location": "CENTRAL PINKLAO, G FLOOR",
+            "hastag": "GilletteVenusxSanta",
+            "keyword": "TBA",
+            "for": ["SANTA"]
           }
         ]
       }
