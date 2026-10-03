@@ -202,15 +202,15 @@
       '<a href="introduce.html" class="px-3 py-1.5 rounded-full text-sm border border-zinc-600 text-zinc-200 hover:border-red-500 hover:text-white font-medium" data-i18n="navIntro">' +
         (t.navIntro || "Intro") +
       "</a>" +
-      /* ===== To-Do button ===== */
+      /* ===== To-Do button (red style) ===== */
       '<div id="ps-alert-wrap" class="hidden relative">' +
-        '<button type="button" id="ps-alert-btn" class="ps-alert-blink flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm border border-red-700 bg-red-950 text-red-200 hover:bg-red-900 hover:text-white font-medium cursor-pointer transition">' +
+        '<button type="button" id="ps-alert-btn" class="ps-alert-blink flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm border border-red-600/80 bg-red-950/90 text-red-200 hover:bg-red-900 hover:text-white font-medium cursor-pointer transition shadow-[0_0_12px_rgba(239,68,68,0.25)]">' +
           '<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"></span>' +
           '<span class="hidden sm:inline">To-Do</span>' +
           '<span id="ps-alert-count" class="px-1.5 py-0.5 rounded-full bg-red-600 text-white text-xs font-bold leading-none">0</span>' +
         "</button>" +
-        '<div id="ps-alert-panel" class="absolute right-0 top-full mt-2 w-72 sm:w-80 rounded-xl border border-red-900/40 bg-[#0c0c0c] shadow-xl z-50 hidden overflow-hidden">' +
-          '<div class="px-3.5 pt-3 pb-2 border-b border-zinc-800/80">' +
+        '<div id="ps-alert-panel" class="absolute right-0 top-full mt-2 w-72 sm:w-80 rounded-xl border border-red-900/50 bg-[#0c0c0c] shadow-[0_8px_32px_rgba(185,28,28,0.25)] z-50 hidden overflow-hidden">' +
+          '<div class="px-3.5 pt-3 pb-2 border-b border-red-900/30">' +
             '<p class="text-sm font-semibold text-white tracking-wide">To-Do</p>' +
             '<p class="text-[11px] text-zinc-500 mt-0.5">Pending tasks</p>' +
           "</div>" +
@@ -349,12 +349,13 @@
       var typeLabel = m.type ? m.type.toUpperCase() : "TASK";
 
       li.innerHTML =
-        '<a href="' + href + '" class="flex items-center justify-between gap-3 rounded-xl border border-zinc-800 bg-zinc-900/80 hover:border-red-600/70 hover:bg-zinc-800/90 px-3.5 py-3 transition group">' +
-          '<span class="min-w-0">' +
+        '<a href="' + href + '" class="flex items-center justify-between gap-3 rounded-xl border border-red-900/40 bg-gradient-to-br from-[#2a0a0a]/80 to-[#0a0a0a] hover:border-red-600 hover:from-[#450a0a]/90 hover:to-[#1a0a0a] px-3.5 py-3 transition group relative overflow-hidden">' +
+          '<span class="absolute left-[20%] right-[20%] bottom-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-60 group-hover:opacity-100"></span>' +
+          '<span class="min-w-0 relative">' +
             '<span class="block font-medium text-white text-sm truncate group-hover:text-red-100">' + title + '</span>' +
             '<span class="text-[10px] tracking-wider text-zinc-500 uppercase mt-0.5 block">' + typeLabel + '</span>' +
           '</span>' +
-          '<span class="text-red-400 text-xs font-medium shrink-0 opacity-80 group-hover:opacity-100">Go →</span>' +
+          '<span class="text-red-400 text-xs font-medium shrink-0 opacity-80 group-hover:opacity-100 relative">Go →</span>' +
         '</a>';
       listEl.appendChild(li);
     });
