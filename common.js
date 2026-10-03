@@ -172,7 +172,7 @@
     ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
     "#ps-alert-panel.open{display:block !important}" +
     "body.ps-has-tabbar{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px)) !important}" +
-    "@media (min-width:768px){body.ps-has-tabbar{padding-bottom:0}}" +
+    "@media (min-width:1024px){body.ps-has-tabbar{padding-bottom:0}}" +
     "a,button,select{ -webkit-tap-highlight-color:transparent }" +
     "#ps-tabbar a{min-height:64px}" +
     "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
@@ -198,15 +198,15 @@
         '<span class="font-bold tracking-tight text-white text-base sm:text-lg -ml-0.5">PerthSanta</span>' +
       "</a>" +
       '<div class="flex-1"></div>' +
-      '<nav class="hidden md:flex flex-wrap items-center gap-1">' + desktopNav + "</nav>" +
+      '<nav class="hidden lg:flex flex-wrap items-center gap-1">' + desktopNav + "</nav>" +
       '<a href="introduce.html" class="px-3 py-1.5 rounded-full text-sm border border-zinc-600 text-zinc-200 hover:border-red-500 hover:text-white font-medium" data-i18n="navIntro">' +
         (t.navIntro || "Intro") +
       "</a>" +
-      /* ===== To-Do button (red style) ===== */
+      /* ===== To-Do button (red style, always show text) ===== */
       '<div id="ps-alert-wrap" class="hidden relative">' +
         '<button type="button" id="ps-alert-btn" class="ps-alert-blink flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm border border-red-600/80 bg-red-950/90 text-red-200 hover:bg-red-900 hover:text-white font-medium cursor-pointer transition shadow-[0_0_12px_rgba(239,68,68,0.25)]">' +
           '<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"></span>' +
-          '<span class="hidden sm:inline">To-Do</span>' +
+          '<span class="inline text-xs sm:text-sm">To-Do</span>' +
           '<span id="ps-alert-count" class="px-1.5 py-0.5 rounded-full bg-red-600 text-white text-xs font-bold leading-none">0</span>' +
         "</button>" +
         '<div id="ps-alert-panel" class="absolute right-0 top-full mt-2 w-72 sm:w-80 rounded-xl border border-red-900/50 bg-[#0c0c0c] shadow-[0_8px_32px_rgba(185,28,28,0.25)] z-50 hidden overflow-hidden">' +
@@ -233,7 +233,7 @@
   const tabbar = document.createElement("nav");
   tabbar.id = "ps-tabbar";
   tabbar.setAttribute("aria-label", "Main");
-  tabbar.className = "md:hidden fixed bottom-0 inset-x-0 z-50 border-t border-zinc-800/90 bg-black/95 backdrop-blur-md";
+  tabbar.className = "lg:hidden fixed bottom-0 inset-x-0 z-50 border-t border-zinc-800/90 bg-black/95 backdrop-blur-md";
   tabbar.style.paddingBottom = "env(safe-area-inset-bottom, 0px)";
   tabbar.innerHTML =
     '<div class="grid grid-cols-5 h-16 max-w-lg mx-auto">' +
@@ -372,13 +372,11 @@
       panel.classList.toggle("hidden");
     });
 
-    // Click ra ngoài thì đóng
     document.addEventListener("click", function () {
       panel.classList.remove("open");
       panel.classList.add("hidden");
     });
 
-    // Ngăn panel bị đóng khi click bên trong
     panel.addEventListener("click", function (e) {
       e.stopPropagation();
     });
