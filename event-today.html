@@ -65,30 +65,6 @@
       box-shadow: 0 0 16px rgba(239, 68, 68, 0.35);
       transform: translateY(-3px);
     }
-
-    .copy-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      margin-top: 0.9rem;
-      background: linear-gradient(145deg, #7f1d1d 0%, #450a0a 100%);
-      border: 1px solid #991b1b;
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 600;
-      border-radius: 9999px;
-      padding: 0.4rem 0.9rem;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-    .copy-btn:hover {
-      background: linear-gradient(145deg, #991b1b 0%, #7f1d1d 100%);
-      box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
-    }
-    .copy-btn.copied {
-      background: linear-gradient(145deg, #166534 0%, #14532d 100%);
-      border-color: #22c55e;
-    }
   </style>
 </head>
 <body class="text-white">
@@ -121,12 +97,8 @@
           </p>
           
           <p class="text-sm text-gray-300">
-            Tag: <span class="text-red-400 font-medium">#DrAllyinCNXwithPerth</span>
+            #️⃣ <span class="text-red-400 font-medium">#DrAllyinCNXwithPerth</span>
           </p>
-
-          <button type="button" class="copy-btn" id="copy-btn">
-            📋 Copy
-          </button>
         </div>
       </div>
     </div>
@@ -152,46 +124,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    function copyText(text, btn) {
-      if (!text) return;
-      var done = function () {
-        var old = btn.textContent;
-        btn.textContent = "Copied";
-        btn.classList.add("copied");
-        setTimeout(function () {
-          btn.textContent = old;
-          btn.classList.remove("copied");
-        }, 1200);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done).catch(function () {
-          fallbackCopy(text, done);
-        });
-      } else {
-        fallbackCopy(text, done);
-      }
-    }
-
-    function fallbackCopy(text, done) {
-      var ta = document.createElement("textarea");
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand("copy");
-        done();
-      } catch (e) {}
-      document.body.removeChild(ta);
-    }
-
-    // Nội dung copy: keyword + hashtag
-    var copyPayload = "PERTH PAIAEW CHIANGMAI\n\n#DrAllyinCNXwithPerth";
-
-    document.getElementById("copy-btn").addEventListener("click", function () {
-      copyText(copyPayload, this);
-    });
-  </script>
 </body>
 </html>
