@@ -188,6 +188,23 @@
   },
   "instagram": [
     {
+      "id": "DeCUBduAf1F",
+      "date": "2026-10-03",
+      "handle": "@perthppe",
+      "title": "Perth ChiangMai",
+      "postUrl": "https://www.instagram.com/p/DeCUBduAf1F/",
+      "image": "images/ChiangMai.jpg",
+      "like": 350000,
+      "likeDone": false,
+      "comment": 25000,
+      "commentDone": false,
+      "share": 1500000,
+      "shareDone": false,
+      "generators": [
+        { "name": "Generator 1", "url": "" }
+      ]
+    },
+    {
       "id": "DdYe0t5Ado0",
       "date": "2026-09-17",
       "handle": "@perthppe",
