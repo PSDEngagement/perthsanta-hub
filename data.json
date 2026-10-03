@@ -402,6 +402,42 @@
             "hastag": "TBA",
             "keyword": "TBA",
             "for": ["SANTA"]
+          },
+          {
+            "date": "11 Oct",
+            "title": "GMMTV FANIVAL 2026 HAPPY FAMILY",
+            "note": "06:30 PM (UTC+7)",
+            "location": "UNION HALL, UNION MALL",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PSD"]
+          },
+          {
+            "date": "17 Oct",
+            "title": "PERTHSANTA 1ST FANMEETING IN MACAU",
+            "note": "12:30 PM (UTC+7)",
+            "location": "H853 ENTERTAINMENT HALL, LISBOETA MACAU, MACAU",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PS"]
+          },
+          {
+            "date": "25 Oct",
+            "title": "FINELINE X PERTH AT LOUTS'S",
+            "note": "TBA",
+            "location": "LOUTS'S RAMA4",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH"]
+          },
+          {
+            "date": "25 Oct",
+            "title": "THE A FESTIVAL 2026",
+            "note": "TBA",
+            "location": "PARIS EVENT CENTER, PARIS, FRANCE",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["SANTA"]
           }
         ]
       }
