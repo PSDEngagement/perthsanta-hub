@@ -366,6 +366,42 @@
             "hastag": "GilletteVenusxSanta",
             "keyword": "TBA",
             "for": ["SANTA"]
+          },
+          {
+            "date": "6 Oct",
+            "title": "GO HAIR WITH PERTH",
+            "note": "07:30 PM (UTC+7)",
+            "location": "CENTRAL PINKLAO, G FLOOR",
+            "hastag": "GOHAIRxPerth",
+            "keyword": "TBA",
+            "for": ["PERTH"]
+          },
+          {
+            "date": "8 Oct",
+            "title": "L'OREAL PARIS WITH SANTA",
+            "note": "12:00 PM (UTC+7)",
+            "location": "TIKTOKSHOP L'OREAL",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["SANTA"]
+          },
+          {
+            "date": "8 Oct",
+            "title": "DESTINY CLINIC",
+            "note": "06:00 PM (UTC+7)",
+            "location": "CENTRAL RAMA2",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PS"]
+          },
+          {
+            "date": "10 Oct",
+            "title": "STRAWBERRY SHORTCAKE WITH SANTA",
+            "note": "07:00 PM (UTC+7)",
+            "location": "TIKTOKSHOP 3CE THAILAND",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["SANTA"]
           }
         ]
       }
