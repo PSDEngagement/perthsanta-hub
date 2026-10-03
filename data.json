@@ -292,7 +292,7 @@
   ],
   "missions": [
     { "id": "event-today", "title": "Trend Event", "page": "event-today.html", "type": "X", "done": false },
-    { "id": "yt-I1guVkLJ4mU", "title": "YouTube: Heartbound trailer → 2M views", "page": "youtube-streaming.html", "type": "youtube", "videoId": "I1guVkLJ4mU", "target": "2000000", "done": false },
+    { "id": "yt-I1guVkLJ4mU", "title": "YouTube: Heartbound trailer → 2M views", "page": "youtube-streaming.html", "type": "youtube", "videoId": "I1guVkLJ4mU", "target": "2000000", "done": false }
   ],
   "introduce": {
     "profiles": [
