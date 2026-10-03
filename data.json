@@ -212,11 +212,11 @@
       "postUrl": "https://www.instagram.com/p/DeCUGfuTjzX/",
       "image": "images/Santa.Felix.jpg",
       "like": 150000,
-      "likeDone": true,
+      "likeDone": false,
       "comment": 25000,
       "commentDone": false,
       "share": 1500000,
-      "shareDone": true,
+      "shareDone": false,
       "generators": [
         { "name": "Generator 1", "url": "https://pixel-perfect-render-46841.lovable.app/" }
       ]
