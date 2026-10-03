@@ -12,7 +12,6 @@
     html, body { background: #070707; min-height: 100vh; }
     body { font-family: Inter, system-ui, sans-serif; color: #fff; }
     .title-serif { font-family: "Cormorant Garamond", Georgia, serif; }
-
     .event-card {
       position: relative;
       overflow: hidden;
@@ -20,105 +19,90 @@
       border: 1px solid #3f3f46;
       background: #141414;
     }
-    .event-card::before {
-      content: "";
+    .event-bg {
       position: absolute;
       inset: 0;
-      background: url("images/ảnh event today.jpg") center/cover no-repeat;
+      background-image: url("images/ảnh event today.jpg");
+      background-size: cover;
+      background-position: center;
       opacity: 0.18;
-      filter: grayscale(30%) brightness(0.7);
+      filter: brightness(0.7) contrast(1.05);
+      pointer-events: none;
       z-index: 0;
     }
-    .event-card-content {
+    .event-content {
       position: relative;
       z-index: 1;
+      text-align: left;
     }
-
     .gen-card {
-      width: 4.25rem;
-      height: 4.25rem;
+      width: 3.25rem;
+      height: 3.25rem;
       display: flex;
       align-items: center;
       justify-content: center;
       background: linear-gradient(145deg, #2a0a0a 0%, #18181b 50%, #0c0c0c 100%);
       border: 1px solid #3f3f46;
-      border-radius: 0.85rem;
+      border-radius: 0.75rem;
       text-align: center;
       padding: 0.25rem;
       transition: all 0.25s ease;
-      font-size: 0.8rem;
+      font-size: 0.65rem;
       font-weight: 600;
       color: #d4d4d8;
       text-decoration: none;
     }
     @media (min-width: 640px) {
-      .gen-card {
-        width: 4.75rem;
-        height: 4.75rem;
-        font-size: 0.9rem;
-      }
+      .gen-card { width: 3.75rem; height: 3.75rem; font-size: 0.75rem; }
     }
     .gen-card:hover {
       border-color: #ef4444;
       color: #fff;
       background: linear-gradient(145deg, #450a0a 0%, #1c0909 50%, #0c0c0c 100%);
-      box-shadow: 0 0 16px rgba(239, 68, 68, 0.35);
-      transform: translateY(-3px);
+      box-shadow: 0 0 14px rgba(239, 68, 68, 0.3);
+      transform: translateY(-2px);
     }
   </style>
 </head>
 <body class="text-white">
   <div class="max-w-4xl mx-auto px-4 pt-10 pb-24">
     <a href="series-trends.html" class="inline-block text-sm text-red-400 hover:text-red-300 mb-6">← Back to Trends</a>
-    
     <h1 class="title-serif text-4xl sm:text-5xl font-bold leading-none mb-2">
       Event <span class="text-red-500">Today</span>
     </h1>
     <p class="text-gray-400 text-sm mb-8">Live from the schedule. Updates automatically each day.</p>
 
-    <!-- Event Today Card -->
-    <div id="event-box">
-      <div class="event-card p-4 sm:p-5 mb-3 max-w-md">
-        <div class="event-card-content">
-          <p class="text-red-400 text-base sm:text-lg font-semibold tracking-wide mb-3 leading-snug">
-            DR.ALLY PAI AEW TUAY KAN TEE CHANG MAI WITH PERTH
-          </p>
-          
-          <p class="text-sm text-gray-300 mb-1">
-            Date: <span class="text-white font-medium">3-4 Oct · 3/10/2026</span>
-          </p>
-          
-          <p class="text-sm text-gray-300 mb-1">
-            Start trend: <span class="text-white font-medium">All day</span>
-          </p>
-          
-          <p class="text-sm text-gray-300 mb-1">
-            🔑 <span class="text-white font-medium">PERTH PAIAEW CHIANGMAI</span>
-          </p>
-          
-          <p class="text-sm text-gray-300">
-            #️⃣ <span class="text-red-400 font-medium">#DrAllyinCNXwithPerth</span>
-          </p>
-        </div>
-      </div>
-    </div>
+    <div class="event-card p-4 sm:p-5 max-w-sm">
+      <!-- ảnh nền mờ / chìm -->
+      <div class="event-bg"></div>
 
-    <!-- Post / comment generator -->
-    <div class="mt-10">
-      <p class="text-base sm:text-lg text-gray-300 mb-4 font-medium">Post / comment generator</p>
-      
-      <div class="flex gap-4">
-        <a href="https://santa-scribe-x.lovable.app/" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="gen-card">
+      <div class="event-content">
+        <!-- tiêu đề event -->
+        <p class="text-red-400 text-sm font-semibold tracking-wide mb-4">
+          DR.ALLY PAI AEW TUAY KAN TEE CHANG MAI WITH PERTH
+        </p>
+
+        <!-- 1 dòng trắng rồi đến nội dung -->
+        <p class="text-sm text-gray-300 mb-1">
+          Date: <span class="text-white font-medium">3-4 Oct · 3/10/2026</span>
+        </p>
+        <p class="text-sm text-gray-300 mb-1">
+          Start trend: <span class="text-white font-medium">All day</span>
+        </p>
+        <p class="text-sm text-gray-300 mb-1">
+          🔑 <span class="text-white font-medium">PERTH PAIAEW CHIANGMAI</span>
+        </p>
+        <p class="text-sm text-gray-300">
+          <span class="text-red-400 font-medium">#️⃣ #DrAllyinCNXwithPerth</span>
+        </p>
+      </div>
+
+      <!-- 2 ô Gen xếp dọc góc phải dưới -->
+      <div class="absolute bottom-3 right-3 flex flex-col gap-2 z-10">
+        <a href="https://santa-scribe-x.lovable.app/" target="_blank" rel="noopener" class="gen-card">
           <span>Gen 1</span>
         </a>
-        
-        <a href="https://streetwise-copy-engine.lovable.app/?zarsrc=30&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="gen-card">
+        <a href="https://streetwise-copy-engine.lovable.app/?zarsrc=30&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo" target="_blank" rel="noopener" class="gen-card">
           <span>Gen 2</span>
         </a>
       </div>
