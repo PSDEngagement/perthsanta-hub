@@ -201,7 +201,24 @@
       "share": 1500000,
       "shareDone": false,
       "generators": [
-        { "name": "Generator 1", "url": "" }
+        { "name": "Generator 1", "url": "https://pixel-perfect-display-7828.lovable.app/" }
+      ]
+    },
+     {
+      "id": "DeCUGfuTjzX",
+      "date": "2026-10-03",
+      "handle": "@santa.pp",
+      "title": "Santa X Felix",
+      "postUrl": "https://www.instagram.com/p/DeCUGfuTjzX/",
+      "image": "images/Santa.Felix.jpg",
+      "like": 150000,
+      "likeDone": true,
+      "comment": 25000,
+      "commentDone": false,
+      "share": 1500000,
+      "shareDone": true,
+      "generators": [
+        { "name": "Generator 1", "url": "https://pixel-perfect-render-46841.lovable.app/" }
       ]
     },
     {
