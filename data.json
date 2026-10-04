@@ -471,10 +471,19 @@
             "for": ["SANTA"]
           },
           {
+            "date": "23 Oct",
+            "title": "SEOUL SOCIETY CLINIC",
+            "note": "05:00 PM (UTC+7)",
+            "location": "CENTRAL SIRACHA, G FLOOR",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH"]
+          },
+          {
             "date": "25 Oct",
-            "title": "FINELINE X PERTH AT LOUTS'S",
+            "title": "FINELINE X PERTH AT LOTUS'S",
             "note": "TBA",
-            "location": "LOUTS'S RAMA4",
+            "location": "LOTUS'S RAMA4",
             "hastag": "TBA",
             "keyword": "TBA",
             "for": ["PERTH"]
