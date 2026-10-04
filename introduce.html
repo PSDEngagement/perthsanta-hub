@@ -235,6 +235,12 @@
     var introData = { profiles: [], schedule: [], infJobUrl: "#" };
     var currentIndex = 0;
 
+    function scrollToTop() {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+
     var PHOTO_MAP = {
       PERTH: "images/perthrockstar.jpg",
       SANTA: "images/santadancer.jpg",
@@ -325,6 +331,7 @@
       var p = list[i];
       hideAll();
       document.getElementById("intro-detail").classList.remove("hidden");
+      scrollToTop();
       document.getElementById("detail-name").innerText = p.name || "Profile";
       document.getElementById("next-btn").classList.toggle("hidden", i >= list.length - 1);
       document.getElementById("detail-box").innerHTML =
@@ -395,6 +402,7 @@
     function showSchedule() {
       hideAll();
       document.getElementById("intro-schedule").classList.remove("hidden");
+      scrollToTop();
       var box = document.getElementById("schedule-box");
       box.innerHTML = "";
 
@@ -467,7 +475,6 @@
             }
           }
 
-          // Who's job — hearts only
           var forRaw = it.for || it.who || [];
           if (typeof forRaw === "string") forRaw = [forRaw];
 
@@ -566,6 +573,7 @@
     function backToHome() {
       hideAll();
       document.getElementById("intro-home").classList.remove("hidden");
+      scrollToTop();
     }
   </script>
 </body>
