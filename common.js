@@ -162,7 +162,19 @@
     fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap";
     document.head.appendChild(fontLink);
   }
+  
+ if (!document.querySelector('link[rel="apple-touch-icon"]')) {
+    var touch = document.createElement("link");
+    touch.rel = "apple-touch-icon";
+    touch.href = "images/logo.jpg";
+    document.head.appendChild(touch);
 
+    var fav = document.createElement("link");
+    fav.rel = "icon";
+    fav.href = "images/logo.jpg";
+    document.head.appendChild(fav);
+  }
+  
   const style = document.createElement("style");
   style.textContent =
     "html{font-size:16px}" +
