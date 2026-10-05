@@ -163,16 +163,28 @@
     document.head.appendChild(fontLink);
   }
   
- if (!document.querySelector('link[rel="apple-touch-icon"]')) {
+  if (!document.getElementById("ps-app-icon")) {
+    var fav = document.createElement("link");
+    fav.id = "ps-app-icon";
+    fav.rel = "icon";
+    fav.type = "image/jpeg";
+    fav.href = "images/logo.jpg";
+    document.head.appendChild(fav);
+
     var touch = document.createElement("link");
     touch.rel = "apple-touch-icon";
     touch.href = "images/logo.jpg";
     document.head.appendChild(touch);
 
-    var fav = document.createElement("link");
-    fav.rel = "icon";
-    fav.href = "images/logo.jpg";
-    document.head.appendChild(fav);
+    var manifest = document.createElement("link");
+    manifest.rel = "manifest";
+    manifest.href = "manifest.json";
+    document.head.appendChild(manifest);
+
+    var metaApp = document.createElement("meta");
+    metaApp.name = "apple-mobile-web-app-title";
+    metaApp.content = "PerthSanta";
+    document.head.appendChild(metaApp);
   }
   
   const style = document.createElement("style");
