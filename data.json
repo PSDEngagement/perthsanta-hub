@@ -381,15 +381,6 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "3-4 Oct",
-            "title": "DR.ALLY PAI AEW TUAY KAN TEE CHANG MAI WITH PERTH",
-            "note": "ALL DAY",
-            "location": "PRIVATE EVENT",
-            "hastag": "DrAllyinCNXwithPerth",
-            "keyword": "PERTH PAIAEW CHIANGMAI",
-            "for": ["PERTH"]
-          },
-          {
             "date": "6 Oct",
             "title": "TOPS OF BEAUTY X GILLETTE VENUS",
             "note": "05:30 PM (UTC+7)",
@@ -424,6 +415,15 @@
             "hastag": "TBA",
             "keyword": "TBA",
             "for": ["PS"]
+          },
+          {
+            "date": "10 Oct",
+            "title": "INFINITY MEDICAL CLINIC",
+            "note": "05:00 PM (UTC+7)",
+            "location": "CENTRAL CHANTHANURI",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH"]
           },
           {
             "date": "10 Oct",
