@@ -4,45 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouTube Guide Trending - PerthSanta Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { background: #070707; min-height: 100vh; }</style>
+  <style>
+    html, body { background: #070707; min-height: 100vh; }
+    body { font-family: Inter, system-ui, sans-serif; color: #fff; }
+    .title-serif { font-family: "Cormorant Garamond", Georgia, serif; }
+  </style>
 </head>
 <body class="text-white">
   <div class="max-w-4xl mx-auto px-4 pt-8 pb-20">
-    <a href="series-trends.html" class="text-sm text-red-500 hover:text-red-400">← Back to Trends</a>
-    <h1 class="text-3xl font-bold mt-4 mb-2">YouTube – Guide Trending</h1>
-    <p class="text-gray-400 mb-6">How to trend Heartbound on YouTube.</p>
-    <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-5 sm:p-8 text-gray-300 leading-relaxed space-y-3">
+    <a href="series-trends.html" class="inline-block text-sm text-red-400 hover:text-red-300 mb-6">← Back to Trends</a>
 
-      <!-- Nút liên kết -->
+    <h1 class="title-serif text-3xl sm:text-4xl font-bold mb-2">
+      YouTube <span class="text-red-500">Guide</span>
+    </h1>
+    <p class="text-gray-400 text-sm mb-8">How to help trend Heartbound / PerthSanta on YouTube.</p>
+
+    <div class="bg-[#141414] border border-zinc-700 rounded-2xl p-5 sm:p-8 text-gray-300 leading-relaxed space-y-6">
+
+      <!-- Button -->
       <div class="flex justify-center">
         <a href="https://psdengagement.github.io/perthsanta-hub/youtube-streaming.html" 
            target="_blank"
-           class="inline-flex items-center justify-center px-5 py-3 bg-red-600 hover:bg-red-500 text-white font-medium rounded-full transition">
+           class="inline-flex items-center justify-center px-6 py-3 bg-red-600 hover:bg-red-500 text-white font-medium rounded-full transition shadow-lg shadow-red-900/30">
           Open YouTube Streaming →
         </a>
       </div>
 
-      <!-- Nội dung hướng dẫn -->
+      <!-- Guide content -->
       <div class="space-y-4">
-        <ul class="list-disc list-inside space-y-3">
-          <li>
-            <strong>Before streaming:</strong>  
-            increase the volume to &gt;50%, go to settings to increase the quality to 1080p.
+        <ul class="space-y-4 text-sm sm:text-base">
+          <li class="flex gap-3">
+            <span class="text-red-400 font-bold shrink-0">1.</span>
+            <div>
+              <strong class="text-white">Before streaming:</strong>  
+              Increase the volume to &gt;50%, go to settings and set the quality to 1080p.
+            </div>
           </li>
-          <li>
-            <strong>While watching:</strong>  
-            remember to comment and share (you can share to Facebook, and comments must NOT use excessive emojis or words like TOP or TRENDING...)
+          <li class="flex gap-3">
+            <span class="text-red-400 font-bold shrink-0">2.</span>
+            <div>
+              <strong class="text-white">While watching:</strong>  
+              Remember to comment and share (you can share to Facebook).  
+              Comments must <strong>NOT</strong> use excessive emojis or words like “TOP” or “TRENDING”…
+            </div>
           </li>
-          <li>
-            <strong>After finishing :</strong>  
-            Only like and comment after watching the entire video in the first time.
+          <li class="flex gap-3">
+            <span class="text-red-400 font-bold shrink-0">3.</span>
+            <div>
+              <strong class="text-white">After finishing:</strong>  
+              Only like and comment after watching the entire video for the first time.
+            </div>
           </li>
         </ul>
       </div>
 
+      <!-- Illustration image -->
+      <div class="pt-2">
+        <img 
+          src="images/Guideyoutube.jpg" 
+          alt="YouTube interaction guide illustration" 
+          class="w-full rounded-xl border border-zinc-700 object-contain"
+        >
+      </div>
+
     </div>
   </div>
+
   <script src="common.js"></script>
 </body>
 </html>
