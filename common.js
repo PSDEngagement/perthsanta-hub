@@ -194,7 +194,7 @@
   bar.innerHTML =
     '<div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 flex items-center gap-2 sm:gap-3">' +
       '<a href="index.html" class="flex items-center gap-1 min-w-0 shrink-0">' +
-        '<img src="images/logo.png" alt="Logo" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover" onerror="this.style.display=\'none\'">' +
+        '<img src="images/logo.jpg" alt="Logo" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover" onerror="this.style.display=\'none\'">' +
         '<span class="font-bold tracking-tight text-white text-base sm:text-lg -ml-0.5">PerthSanta</span>' +
       "</a>" +
       '<div class="flex-1"></div>' +
