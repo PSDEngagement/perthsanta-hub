@@ -201,7 +201,7 @@
     "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
    "#ps-site-footer{position:relative;z-index:1;line-height:1.55}" +
 "@media (min-width:1024px){#ps-site-footer{margin-top:32px}}" +
-"@media (max-width:1023px){#ps-site-footer{position:relative;margin-top:32px;padding:8px 12px 68px;background:transparent;border:0;font-size:10px;line-height:1.35}}" +
+"@media (max-width:1023px){#ps-site-footer{position:relative;margin-top:32px;padding:8px 12px 64px;background:transparent;border:0;font-size:12px;line-height:1.35}}" +
 "#ps-site-footer .ps-foot-by{display:block;margin-top:1px}" +
 "@media (max-width:1023px){#ps-site-footer .ps-foot-note{display:block;margin-top:1px;font-size:9px;opacity:.65}}" +
   document.head.appendChild(style);
