@@ -196,8 +196,7 @@
     ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
     "#ps-alert-panel.open{display:block !important}" +
     "body.ps-has-tabbar{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px)) !important}" +
-    "@media (min-width:1024px){body.ps-has-tabbar{padding-bottom:0}}" +
-    "a,button,select{ -webkit-tap-highlight-color:transparent }" +
+   "@media (min-width:1024px){#ps-site-footer{margin-top:40px}}" +
     "#ps-tabbar a{min-height:64px}" +
     "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
     "#ps-site-footer{position:relative;z-index:1;line-height:1.55}" +
