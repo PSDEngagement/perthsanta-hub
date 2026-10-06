@@ -849,19 +849,39 @@
     }
 
 
-    function getStatus(startMinutes, nowMinutes) {
+    function getStatus(event, nowDate) {
 
-      if (startMinutes === null) {
-        return "live";
-      }
+  if (event._startMin === null) {
+    return "live";
+  }
 
-      if (nowMinutes < startMinutes) {
-        return "upcoming";
-      }
+  const eventStart =
+    new Date(
+      nowDate.getFullYear(),
+      event._monthIndex,
+      event._day,
+      Math.floor(event._startMin / 60),
+      event._startMin % 60,
+      0,
+      0
+    );
 
-      return "live";
-    }
+  const eventEnd =
+    new Date(
+      eventStart.getTime() +
+      24 * 60 * 60 * 1000
+    );
 
+  if (nowDate < eventStart) {
+    return "upcoming";
+  }
+
+  if (nowDate >= eventEnd) {
+    return "past";
+  }
+
+  return "live";
+}
 
     /* =========================================================
        HEARTS
@@ -1283,84 +1303,120 @@
           ) || [];
 
 
-        const todayEvents = [];
-
 
         // -----------------------------------------------------
         // Find ALL events happening today
         // -----------------------------------------------------
 
-        schedule.forEach(
-          function (monthBlock) {
+        const allEvents = [];
 
-            (
-              monthBlock.items ||
-              []
-            ).forEach(
-              function (item) {
+schedule.forEach(
+  function (monthBlock) {
 
-                const parsed =
-                  parseDateLabel(
-                    item.date
-                  );
+    (
+      monthBlock.items ||
+      []
+    ).forEach(
+      function (item) {
 
+        const parsed =
+          parseDateLabel(
+            item.date
+          );
 
-                if (!parsed) {
-                  return;
-                }
+        if (!parsed) {
+          return;
+        }
 
+        allEvents.push({
 
-                if (
-                  parsed.day === todayDay &&
-                  parsed.monthIndex === todayMonth
-                ) {
+          title: item.title,
 
-                  todayEvents.push({
+          note: item.note,
 
-                    title: item.title,
+          location: item.location,
 
-                    note: item.note,
+          hastag: item.hastag,
 
-                    location: item.location,
+          keyword: item.keyword,
 
-                    hastag: item.hastag,
+          for: item.for,
 
-                    keyword: item.keyword,
+          generators:
+            Array.isArray(item.generators)
+              ? item.generators
+              : [],
 
-                    for: item.for,
+          _day:
+            parsed.day,
 
-                    generators:
-                      Array.isArray(item.generators)
-                        ? item.generators
-                        : [],
+          _monthIndex:
+            parsed.monthIndex,
 
-                    _day:
-                      parsed.day,
+          _startMin:
+            parseTimeToMinutes(
+              item.note
+            )
 
-                    _monthIndex:
-                      parsed.monthIndex,
+        });
 
-                    _startMin:
-                      parseTimeToMinutes(
-                        item.note
-                      )
+      }
+    );
 
-                  });
+  }
+);
+        const activeEvents = [];
 
-                }
+allEvents.forEach(
+  function (event) {
 
-              }
-            );
+    if (event._startMin === null) {
 
-          }
-        );
+      if (
+        event._day === todayDay &&
+        event._monthIndex === todayMonth
+      ) {
+        activeEvents.push(event);
+      }
+
+      return;
+    }
+
+    const eventStart =
+      new Date(
+        bkk.getFullYear(),
+        event._monthIndex,
+        event._day,
+        Math.floor(event._startMin / 60),
+        event._startMin % 60,
+        0,
+        0
+      );
+
+    const eventEnd =
+      new Date(
+        eventStart.getTime() +
+        24 * 60 * 60 * 1000
+      );
+
+    if (
+      bkk >= eventStart &&
+      bkk < eventEnd
+    ) {
+
+      activeEvents.push(event);
+
+    }
+
+  }
+);
 
 
         // -----------------------------------------------------
         // Sort today's events by start time
         // -----------------------------------------------------
 
-        todayEvents.sort(
+        activeEvents.sort(
           function (a, b) {
 
             if (
@@ -1396,7 +1452,7 @@
         // -----------------------------------------------------
 
         if (
-          todayEvents.length === 0
+  activeEvents.length === 0
         ) {
 
           container.innerHTML =
@@ -1432,14 +1488,14 @@
         // -----------------------------------------------------
 
         container.innerHTML =
-          todayEvents
+          activeEvents
             .map(function (event) {
 
               const status =
-                getStatus(
-                  event._startMin,
-                  nowMinutes
-                );
+  getStatus(
+    event,
+    bkk
+  );
 
               return buildCard(
                 event,
