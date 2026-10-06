@@ -200,7 +200,7 @@
     "a,button,select{ -webkit-tap-highlight-color:transparent }" +
     "#ps-tabbar a{min-height:64px}" +
     "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
-    "#ps-site-footer{position:relative;z-index:1;line-height:1.55;min-height:72px;box-sizing:border-box}" +
+    "#ps-site-footer{position:relative;z-index:1;line-height:1.55}" +
     "#ps-site-footer .ps-foot-by{display:block;margin-top:2px}" +
     "@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}";
   document.head.appendChild(style);
