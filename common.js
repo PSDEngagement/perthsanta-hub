@@ -286,7 +286,6 @@
     '<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a>. ' +
     '<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a></span>';
   document.body.appendChild(foot);
-  document.body.appendChild(tabbar);
 
   function parseTarget(v) {
     if (v == null) return 0;
