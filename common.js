@@ -283,6 +283,7 @@
 '<a href="https://x.com/NganVt2386624" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Ngân</a> ' +
 '<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a> ' +
 '<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a></span>';
+   '<span class="ps-foot-note">Fan-made project created to support PerthSanta. Not affiliated with or officially endorsed by PerthSanta, GMMTV, or any associated brands.</span>';
   document.body.appendChild(foot);
   document.body.appendChild(tabbar);
 
