@@ -390,7 +390,17 @@
             "location": "CENTRAL PINKLAO, G FLOOR",
             "hastag": "GilletteVenusxSanta",
             "keyword": "SANTA WITH VENUS AT TOPS",
-            "for": ["SANTA"]
+            "for": ["SANTA"],
+            "generators": [
+    {
+      "name": "GEN 1",
+      "url": "https://your-generator-1.com"
+    },
+    {
+      "name": "GEN 2",
+      "url": "https://your-generator-2.com"
+    }
+  ]
           },
           {
             "date": "6 Oct",
@@ -399,7 +409,17 @@
             "location": "CENTRAL PINKLAO, G FLOOR",
             "hastag": "GOHAIRxPerth",
             "keyword": "PERTH X TOPS OF GOHAIR",
-            "for": ["PERTH"]
+            "for": ["PERTH"],
+            "generators": [
+    {
+      "name": "GEN 1",
+      "url": "https://your-generator-1.com"
+    },
+    {
+      "name": "GEN 2",
+      "url": "https://your-generator-2.com"
+    }
+  ]
           },
           {
             "date": "7 Oct",
