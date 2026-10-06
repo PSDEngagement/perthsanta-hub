@@ -3,152 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>PerthSanta Engagement Hub</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
-  <link rel="shortcut icon" href="images/logo.png">
+  <meta
+    name="description"
+    content="PerthSanta Engagement Hub — support, events, missions and streaming activities."
+  >
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://psdengagement.github.io/perthsanta-hub/">
+  <meta
+    name="keywords"
+    content="PerthSanta, Perth Tanapon, Santa Pongsapak, Heartbound, GMMTV"
+  >
+
+  <meta name="author" content="PerthSanta Engagement Hub">
+
   <meta property="og:title" content="PerthSanta Engagement Hub">
-  <meta property="og:description" content="Official fan hub for PerthSanta × Domiia – Heartbound Series Trends, Daily Missions, YouTube Streaming & Instagram Engagement. Together Forever.">
-  <meta property="og:image" content="https://psdengagement.github.io/perthsanta-hub/images/hero-perthsanta.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PerthSanta × Domiia - Together Forever">
-  <meta property="og:site_name" content="PerthSanta Hub">
-  <meta property="og:locale" content="en_US">
+  <meta
+    property="og:description"
+    content="Support PerthSanta through events, missions, streaming and social engagement."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:url"
+    content="https://psdengagement.github.io/perthsanta-hub/"
+  >
+  <meta
+    property="og:image"
+    content="https://psdengagement.github.io/perthsanta-hub/images/hero-perthsanta.jpg"
+  >
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PerthSanta Engagement Hub">
-  <meta name="twitter:description" content="Official fan hub for PerthSanta × Domiia – Heartbound Series Trends, Daily Missions, YouTube Streaming & Instagram Engagement. Together Forever.">
-  <meta name="twitter:image" content="https://psdengagement.github.io/perthsanta-hub/images/hero-perthsanta.jpg">
-  <meta name="twitter:image:alt" content="PerthSanta × Domiia - Together Forever">
+  <meta
+    name="twitter:description"
+    content="Support PerthSanta through events, missions, streaming and social engagement."
+  >
+  <meta
+    name="twitter:image"
+    content="https://psdengagement.github.io/perthsanta-hub/images/hero-perthsanta.jpg"
+  >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
-    html,
-    body {
-      background: #070707 !important;
-      min-height: 100vh;
+    * {
+      box-sizing: border-box;
     }
 
-    .hero-img {
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #050505;
+      color: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #090909;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.92) 0%,
+          rgba(0,0,0,.48) 48%,
+          rgba(0,0,0,.05) 100%
+        ),
+        url("images/hero-perthsanta.jpg") center / cover no-repeat;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 35%;
-      display: block;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 2.5rem;
     }
 
     .hero-title {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      text-shadow:
-        0 2px 16px rgba(0,0,0,.75),
-        0 1px 3px rgba(0,0,0,.9);
+      margin: 0;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: .95;
+      font-weight: 800;
+      letter-spacing: -0.06em;
     }
 
-    .hero-sub {
-      font-family: "Outfit", system-ui, sans-serif;
-      letter-spacing: 0.22em;
-      text-shadow: 0 2px 12px rgba(0,0,0,.7);
+    .hero-subtitle {
+      margin-top: .8rem;
+      color: rgba(255,255,255,.72);
+      font-size: .9rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
-    /* =========================================================
-       EVENT CARDS
-       ========================================================= */
+    /* =========================
+       MAIN
+    ========================= */
+
+    .main {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* =========================
+       EVENT STACK
+    ========================= */
 
     .events-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      margin-bottom: 0.75rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
 
-    @media (min-width: 640px) {
+    /* Desktop: 2 cards side-by-side */
+    @media (min-width: 768px) {
       .events-stack {
-        margin-bottom: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    .event-live {
-      display: block;
-      background: linear-gradient(
-        165deg,
-        #1a0808 0%,
-        #0f0f0f 50%,
-        #0a0a0a 100%
-      );
-      border: 1px solid #5c1a1a;
-      border-radius: 0.9rem;
-      padding: 0.75rem 0.85rem;
-      transition: all 0.25s ease;
+    /* =========================
+       EVENT CARD
+    ========================= */
+
+    .event-card {
       position: relative;
+      width: 100%;
+      min-width: 0;
+      padding: 1.15rem;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 1.25rem;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.045),
+          rgba(255,255,255,.015)
+        );
+      box-shadow:
+        0 12px 35px rgba(0,0,0,.28);
       overflow: hidden;
-      text-decoration: none;
-      color: inherit;
     }
 
-    .event-live:hover {
-      border-color: #991b1b;
-      box-shadow: 0 6px 20px rgba(185, 28, 28, 0.18);
-    }
-
-    .event-live.upcoming {
-      border-color: #3f1a1a;
-      background: linear-gradient(
-        165deg,
-        #141010 0%,
-        #0f0f0f 50%,
-        #0a0a0a 100%
-      );
-    }
-
-    .event-live.upcoming:hover {
-      border-color: #5c1a1a;
+    .event-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: #dc2626;
+      opacity: .8;
     }
 
     .ev-top {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
-      margin-bottom: 0.35rem;
+      gap: .75rem;
+      min-width: 0;
     }
 
     .ev-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      flex-shrink: 0;
+      gap: .35rem;
+      min-width: 0;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.72);
     }
 
-    /* =========================================================
-       LIVE NOW
-       ========================================================= */
+    .event-live {
+      color: #ef4444;
+    }
 
     .live-dot {
-      width: 0.45rem;
-      height: 0.45rem;
-      border-radius: 9999px;
+      width: .42rem;
+      height: .42rem;
+      border-radius: 999px;
       background: #ef4444;
       flex-shrink: 0;
-      animation: live-flash 0.7s ease-in-out infinite;
+      animation: live-flash .7s ease-in-out infinite;
     }
 
     .live-text {
-      color: #ef4444 !important;
-      animation: live-flash 0.7s ease-in-out infinite;
+      animation: live-flash .7s ease-in-out infinite;
     }
 
     @keyframes live-flash {
@@ -158,286 +230,156 @@
       }
 
       50% {
-        opacity: 0.25;
+        opacity: .25;
       }
     }
 
-    .upcoming-dot {
-      width: 0.45rem;
-      height: 0.45rem;
-      border-radius: 9999px;
-      background: #a1a1aa;
+    /* =========================
+       AUDIENCE HEARTS
+    ========================= */
+
+    .ev-hearts {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: .18rem;
+      margin-left: auto;
       flex-shrink: 0;
     }
 
-    .ev-title {
-      font-weight: 600;
-      color: #fff;
-      font-size: 0.875rem;
-      line-height: 1.3;
-      margin: 0 0 0.3rem;
+    .ev-heart {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.28rem;
+      line-height: 1;
+      font-weight: 900;
     }
 
-    @media (min-width: 640px) {
-      .ev-title {
-        font-size: 0.95rem;
-      }
+    .ev-heart.black {
+      color: #000000;
+      -webkit-text-stroke: 1px rgba(255,255,255,.75);
+      text-shadow: 0 0 1px rgba(255,255,255,.7);
+    }
+
+    .ev-heart.white {
+      color: #ffffff;
+      -webkit-text-stroke: .25px rgba(255,255,255,.4);
+    }
+
+    .ev-heart.red {
+      color: #ef4444;
+    }
+
+    /* =========================
+       EVENT CONTENT
+    ========================= */
+
+    .ev-title {
+      margin-top: .8rem;
+      font-size: 1rem;
+      line-height: 1.35;
+      font-weight: 800;
+      color: #ffffff;
     }
 
     .ev-meta {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      gap: 0.35rem 0.6rem;
-      font-size: 0.7rem;
-      color: #a1a1aa;
-      margin-bottom: 0.45rem;
+      gap: .4rem .65rem;
+      margin-top: .5rem;
+      color: rgba(255,255,255,.58);
+      font-size: .72rem;
+      line-height: 1.4;
     }
 
-    .ev-meta svg {
-      width: 0.75rem;
-      height: 0.75rem;
-      opacity: 0.7;
-      flex-shrink: 0;
-    }
-
-    /* =========================================================
-       HEARTS
-       ========================================================= */
-
-    .ev-hearts {
+    .ev-meta-item {
       display: inline-flex;
       align-items: center;
-      gap: 0.12rem;
-      margin-left: auto;
-      padding-left: 0.5rem;
-      font-size: 0.9rem;
-      line-height: 1;
-      white-space: nowrap;
     }
 
-    .heart-black {
-      color: #ffffff;
-      text-shadow: 0 0 0 #ffffff;
+    .ev-location {
+      margin-top: .35rem;
+      color: rgba(255,255,255,.48);
+      font-size: .7rem;
+      line-height: 1.4;
     }
-
-    .heart-white {
-      color: #ffffff;
-      text-shadow:
-        0 0 0 #ffffff,
-        0 0 2px rgba(255,255,255,.65);
-    }
-
-    .heart-red {
-      color: #ef4444;
-    }
-
-    /* =========================================================
-       KEYWORD + HASHTAG
-       ========================================================= */
 
     .ev-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.3rem;
-      margin-bottom: 0.5rem;
+      gap: .4rem;
+      margin-top: .8rem;
     }
 
     .ev-tag {
-      font-size: 0.65rem;
-      padding: 0.15rem 0.45rem;
-      border-radius: 0.3rem;
-      line-height: 1.3;
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.55rem;
+      padding: .25rem .55rem;
+      border-radius: .45rem;
+      font-size: .65rem;
+      line-height: 1.2;
+      font-weight: 600;
+      word-break: break-word;
     }
 
     .ev-tag.keyword {
-      background: rgba(39, 39, 42, 0.8);
-      color: #d4d4d8;
-      border: 1px solid #3f3f46;
+      color: rgba(255,255,255,.65);
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.07);
     }
 
     .ev-tag.hashtag {
-      background: rgba(39, 39, 42, 0.55);
       color: #ffffff;
-      border: 1px solid #52525b;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.12);
     }
 
-    .ev-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
+    /* =========================
+       GENERATORS
+    ========================= */
 
-    .ev-gens {
+    .ev-generators {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: .5rem;
+      margin-top: 1rem;
     }
 
-    /* =========================================================
-       GEN BUTTONS
-       ========================================================= */
-
     .ev-gen {
+      width: 2.75rem;
+      height: 2.75rem;
+      min-width: 2.75rem;
+      padding: 0;
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
-      min-width: 4.25rem;
-      height: 2.25rem;
+      border-radius: .65rem;
+      border: 1px solid rgba(255,255,255,.14);
 
-      padding: 0 0.75rem;
+      background: rgba(255,255,255,.06);
+      color: #ffffff;
 
-      font-size: 0.72rem;
-      font-weight: 600;
+      font-size: .68rem;
+      line-height: 1;
+      font-weight: 700;
 
-      color: #d4d4d8;
-
-      background: linear-gradient(
-        145deg,
-        #2a0a0a 0%,
-        #18181b 50%,
-        #0c0c0c 100%
-      );
-
-      border: 1px solid #3f3f46;
-      border-radius: 0.5rem;
-
-      text-decoration: none;
-      transition: all 0.2s ease;
+      transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
     }
 
     .ev-gen:hover {
-      border-color: #ef4444;
-      color: #fff;
-
-      background: linear-gradient(
-        145deg,
-        #450a0a 0%,
-        #1c0909 50%,
-        #0c0c0c 100%
-      );
-
+      background: rgba(220,38,38,.16);
+      border-color: rgba(239,68,68,.45);
       transform: translateY(-1px);
     }
 
-    .ev-view {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.2rem;
-      font-size: 0.7rem;
-      font-weight: 500;
-      padding: 0.3rem 0.65rem;
-      border-radius: 9999px;
-      border: 1px solid;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .ev-view.live {
-      border-color: rgba(220, 38, 38, 0.6);
-      color: #fca5a5;
-    }
-
-    .ev-view.upcoming {
-      border-color: #52525b;
-      color: #a1a1aa;
-    }
-
-    /* =========================================================
-       4 TASK CARDS
-       ========================================================= */
-
-    .menu-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-
-      background: linear-gradient(
-        165deg,
-        #2a0a0a 0%,
-        #141414 45%,
-        #0a0a0a 100%
-      );
-
-      border: 1px solid #3f1a1a;
-      border-radius: 1rem;
-
-      padding: 0.9rem 1rem;
-
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .menu-row::after {
-      content: "";
-      position: absolute;
-      left: 20%;
-      right: 20%;
-      bottom: 0;
-      height: 2px;
-
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #ef4444,
-        transparent
-      );
-
-      opacity: 0.6;
-    }
-
-    .menu-row:hover {
-      border-color: #991b1b;
-      transform: translateY(-3px);
-
-      box-shadow: 0 12px 28px rgba(185, 28, 28, 0.22);
-
-      background: linear-gradient(
-        165deg,
-        #450a0a 0%,
-        #1a0a0a 45%,
-        #0a0a0a 100%
-      );
-    }
-
-    .menu-row:hover::after {
-      opacity: 1;
-    }
-
-    .menu-row:active {
-      transform: translateY(-1px);
-    }
-
-    .menu-icon {
-      width: 2.75rem;
-      height: 2.75rem;
-
-      border-radius: 0.75rem;
-
-      background: #0a0a0a;
-      border: 1px solid #3f1a1a;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      flex-shrink: 0;
-      color: #f87171;
-    }
-
-    @media (min-width: 640px) {
-      .menu-row {
-        padding: 1.1rem 1.25rem;
-      }
-
-      .menu-icon {
-        width: 3rem;
-        height: 3rem;
-      }
-    }
+    /* =========================
+       TASKS
+    ========================= */
 
     .tasks-grid {
       display: none;
@@ -446,372 +388,311 @@
     @media (min-width: 640px) {
       .tasks-grid {
         display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .tasks-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    .task-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 170px;
+      padding: 1.15rem;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 1rem;
+      background: rgba(255,255,255,.025);
+      transition:
+        transform .2s ease,
+        border-color .2s ease;
+    }
+
+    .task-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.16);
+    }
+
+    .task-number {
+      color: #ef4444;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .task-title {
+      margin-top: .7rem;
+      font-size: .95rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .task-link {
+      margin-top: 1.25rem;
+      color: rgba(255,255,255,.58);
+      font-size: .68rem;
+      font-weight: 600;
+    }
+
+    /* =========================
+       EMPTY STATE
+    ========================= */
+
+    .empty-events {
+      padding: 1.5rem;
+      border: 1px dashed rgba(255,255,255,.1);
+      border-radius: 1rem;
+      color: rgba(255,255,255,.45);
+      text-align: center;
+      font-size: .8rem;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 639px) {
+      .hero {
+        min-height: 360px;
+      }
+
+      .hero-content {
+        padding: 2rem 1rem 2rem;
+      }
+
+      .main {
+        padding: 1.25rem 1rem 3rem;
+      }
+
+      .event-card {
+        padding: 1rem;
+      }
+
+      .ev-heart {
+        font-size: 1.22rem;
+      }
+
+      .ev-gen {
+        width: 2.75rem;
+        height: 2.75rem;
+        min-width: 2.75rem;
       }
     }
   </style>
 </head>
 
-<body class="text-white bg-[#070707]">
+<body>
 
-  <main class="max-w-6xl mx-auto px-4 pt-3 sm:pt-4 pb-6">
+  <!-- =========================
+       HERO
+  ========================= -->
 
-    <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">PerthSanta × Domiia</h1>
 
-    <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-red-900/30 bg-black mb-3 sm:mb-4 h-[200px] sm:h-[300px] md:h-[380px]">
-
-      <img
-        src="images/hero-perthsanta.jpg"
-        alt="PerthSanta"
-        class="hero-img absolute inset-0"
-      >
-
-      <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-black/20"></div>
-
-      <div class="absolute inset-x-0 top-0 flex flex-col items-center text-center px-4 pt-4 sm:pt-6 md:pt-8">
-
-        <h1
-          data-i18n="title"
-          class="hero-title text-2xl sm:text-4xl md:text-5xl font-bold tracking-wide text-white"
-        >
-          PerthSanta × Domiia
-        </h1>
-
-        <p
-          data-i18n="subtitle"
-          class="hero-sub mt-1 sm:mt-2 text-[10px] sm:text-xs md:text-sm uppercase text-white/90 font-medium"
-        >
-          Together Forever
-        </p>
-
+      <div class="hero-subtitle">
+        Together Forever
       </div>
-
-      <a
-        href="https://x.com/jammyjellyjam?s=20"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="absolute bottom-2 right-3 sm:bottom-3 sm:right-4 text-[10px] sm:text-xs text-white/70 hover:text-white transition"
-      >
-        @jammyjellyjam
-      </a>
-
     </div>
+  </header>
 
+
+  <!-- =========================
+       MAIN
+  ========================= -->
+
+  <main class="main">
 
     <!-- EVENT CARDS -->
-
     <div id="events-stack" class="events-stack"></div>
 
 
-    <!-- 4 TASK CARDS -->
+    <!-- =========================
+         TASK CARDS
+    ========================= -->
 
-    <div class="tasks-grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+    <section class="tasks-grid">
 
-      <!-- Series Trends -->
-
-      <a href="series-trends.html" class="menu-row">
-
-        <div class="menu-icon">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-        </div>
-
-        <div class="min-w-0 flex-1">
-
-          <p
-            data-i18n="card1Title"
-            class="font-semibold text-white text-[15px] sm:text-base truncate"
-          >
+      <a href="series-trends.html" class="task-card">
+        <div>
+          <div class="task-number">01</div>
+          <div class="task-title">
             Heartbound Series Trends
-          </p>
-
-          <p
-            data-i18n="card1Desc"
-            class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate"
-          >
-            See what fans are loving
-          </p>
-
+          </div>
         </div>
 
-        <span class="text-red-500 text-xl shrink-0">›</span>
-
+        <div class="task-link">
+          View task →
+        </div>
       </a>
 
 
-      <!-- Daily Missions -->
-
-      <a href="daily-missions.html" class="menu-row">
-
-        <div class="menu-icon">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <circle cx="12" cy="12" r="9"/>
-            <circle cx="12" cy="12" r="5"/>
-            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
-          </svg>
-        </div>
-
-        <div class="min-w-0 flex-1">
-
-          <p
-            data-i18n="card2Title"
-            class="font-semibold text-white text-[15px] sm:text-base truncate"
-          >
+      <a href="daily-missions.html" class="task-card">
+        <div>
+          <div class="task-number">02</div>
+          <div class="task-title">
             Daily Missions
-          </p>
-
-          <p
-            data-i18n="card2Desc"
-            class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate"
-          >
-            Complete tasks, earn rewards
-          </p>
-
+          </div>
         </div>
 
-        <span class="text-red-500 text-xl shrink-0">›</span>
-
+        <div class="task-link">
+          View task →
+        </div>
       </a>
 
 
-      <!-- YouTube -->
-
-      <a href="youtube-streaming.html" class="menu-row">
-
-        <div class="menu-icon">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/>
-          </svg>
-        </div>
-
-        <div class="min-w-0 flex-1">
-
-          <p
-            data-i18n="card3Title"
-            class="font-semibold text-white text-[15px] sm:text-base truncate"
-          >
+      <a href="youtube-streaming.html" class="task-card">
+        <div>
+          <div class="task-number">03</div>
+          <div class="task-title">
             YouTube Streaming
-          </p>
-
-          <p
-            data-i18n="card3Desc"
-            class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate"
-          >
-            Live streams & exclusive content
-          </p>
-
+          </div>
         </div>
 
-        <span class="text-red-500 text-xl shrink-0">›</span>
-
+        <div class="task-link">
+          View task →
+        </div>
       </a>
 
 
-      <!-- Instagram -->
-
-      <a href="ig-engagement.html" class="menu-row">
-
-        <div class="menu-icon">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <rect x="3" y="3" width="18" height="18" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle
-              cx="17.5"
-              cy="6.5"
-              r="1"
-              fill="currentColor"
-              stroke="none"
-            />
-          </svg>
-        </div>
-
-        <div class="min-w-0 flex-1">
-
-          <p
-            data-i18n="card4Title"
-            class="font-semibold text-white text-[15px] sm:text-base truncate"
-          >
+      <a href="ig-engagement.html" class="task-card">
+        <div>
+          <div class="task-number">04</div>
+          <div class="task-title">
             Instagram Engagement
-          </p>
-
-          <p
-            data-i18n="card4Desc"
-            class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate"
-          >
-            Likes, comments & community
-          </p>
-
+          </div>
         </div>
 
-        <span class="text-red-500 text-xl shrink-0">›</span>
-
+        <div class="task-link">
+          View task →
+        </div>
       </a>
 
-    </div>
+    </section>
 
   </main>
 
 
-  <!-- EVENT SCRIPT -->
+  <!-- =========================
+       EVENT SCRIPT
+  ========================= -->
 
   <script>
-  (function () {
-
     const MONTHS = {
-      jan: 0,
-      feb: 1,
-      mar: 2,
-      apr: 3,
-      may: 4,
-      jun: 5,
-      jul: 6,
-      aug: 7,
-      sep: 8,
-      oct: 9,
-      nov: 10,
-      dec: 11
+      January: 0,
+      February: 1,
+      March: 2,
+      April: 3,
+      May: 4,
+      June: 5,
+      July: 6,
+      August: 7,
+      September: 8,
+      October: 9,
+      November: 10,
+      December: 11
     };
 
 
+    /* =========================
+       DATE PARSER
+    ========================= */
+
     function parseDateLabel(label) {
-
-      if (!label) return null;
-
-      const m = String(label)
+      const parts = String(label || "")
         .trim()
-        .match(/^(\d{1,2})\s+([A-Za-z]{3})/);
+        .split(/\s+/);
 
-      if (!m) return null;
+      if (parts.length < 2) {
+        return null;
+      }
 
-      const day = parseInt(m[1], 10);
+      const day = parseInt(parts[0], 10);
+      const monthIndex = MONTHS[parts[1]];
 
-      const monthIndex =
-        MONTHS[m[2].toLowerCase()];
-
-      if (monthIndex === undefined) {
+      if (!Number.isFinite(day) || monthIndex === undefined) {
         return null;
       }
 
       return {
-        day,
-        monthIndex
+        day: day,
+        monthIndex: monthIndex
       };
     }
 
 
+    /* =========================
+       TIME PARSER
+    ========================= */
+
     function parseTimeToMinutes(note) {
+      const text = String(note || "")
+        .replace(/\(UTC\+7\)/gi, "")
+        .trim()
+        .toUpperCase();
 
-      if (!note) return null;
-
-      const s =
-        String(note)
-          .trim()
-          .toUpperCase();
-
-      if (
-        s === "ALL DAY" ||
-        s === "TBA" ||
-        s === "N/A"
-      ) {
-        return null;
+      if (text.includes("ALL DAY")) {
+        return 0;
       }
 
-
-      let m =
-        s.match(
-          /(\d{1,2})[:.](\d{2})\s*(AM|PM)/
-        );
-
-      if (m) {
-
-        let h =
-          parseInt(m[1], 10);
-
-        const min =
-          parseInt(m[2], 10);
-
-        const ap = m[3];
-
-        if (ap === "PM" && h < 12) {
-          h += 12;
-        }
-
-        if (ap === "AM" && h === 12) {
-          h = 0;
-        }
-
-        return h * 60 + min;
+      if (text.includes("TBA")) {
+        return 0;
       }
 
+      const match = text.match(
+        /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/
+      );
 
-      m =
-        s.match(
-          /(\d{1,2})[:.](\d{2})/
-        );
-
-      if (m) {
-
-        return (
-          parseInt(m[1], 10) * 60 +
-          parseInt(m[2], 10)
-        );
+      if (!match) {
+        return 0;
       }
 
-      return null;
+      let hour = parseInt(match[1], 10);
+      const minute = parseInt(match[2] || "0", 10);
+      const ampm = match[3];
+
+      if (ampm === "PM" && hour !== 12) {
+        hour += 12;
+      }
+
+      if (ampm === "AM" && hour === 12) {
+        hour = 0;
+      }
+
+      return hour * 60 + minute;
     }
 
+
+    /* =========================
+       DISPLAY TIME
+    ========================= */
 
     function formatDisplayTime(note) {
+      const text = String(note || "")
+        .replace(/\(UTC\+7\)/gi, "")
+        .trim();
 
-      if (!note) return "";
-
-      const s =
-        String(note).trim();
-
-      if (/ALL DAY/i.test(s)) {
-        return "ALL DAY";
+      if (!text) {
+        return "BKK";
       }
 
-      if (/TBA/i.test(s)) {
-        return "TBA";
-      }
-
-      return (
-        s
-          .replace(/\s*\([^)]*\)\s*/g, "")
-          .trim() +
-        " BKK"
-      );
+      return text + " BKK";
     }
 
 
-    function formatDateShort(day, monthIndex) {
+    /* =========================
+       DISPLAY DATE
+    ========================= */
 
-      const names = [
+    function formatDateShort(day, monthIndex) {
+      const monthNames = [
         "JAN",
         "FEB",
         "MAR",
@@ -829,14 +710,22 @@
       return (
         String(day).padStart(2, "0") +
         " " +
-        names[monthIndex]
+        monthNames[monthIndex]
       );
     }
 
 
-    function getStatus(startMinutes, nowMinutes) {
+    /* =========================
+       EVENT STATUS
+    ========================= */
 
-      if (startMinutes === null) {
+    function getStatus(startMinutes, nowMinutes, note) {
+      const text = String(note || "").toUpperCase();
+
+      if (
+        text.includes("ALL DAY") ||
+        text.includes("TBA")
+      ) {
         return "live";
       }
 
@@ -848,611 +737,430 @@
     }
 
 
-    /* =========================================================
-       HEARTS
-       
-       PERTH     = BLACK
-       SANTA     = WHITE
-       PS        = BLACK + WHITE
-       PSD       = BLACK + WHITE + RED
-
-       Always in this order:
-       BLACK → WHITE → RED
-       ========================================================= */
+    /* =========================
+       AUDIENCE HEARTS
+    ========================= */
 
     function getAudienceHearts(audience) {
+      const list = Array.isArray(audience)
+        ? audience
+        : [audience];
 
-      const values =
-        Array.isArray(audience)
-          ? audience.map(function (item) {
-              return String(item).trim().toUpperCase();
-            })
-          : [String(audience || "").trim().toUpperCase()];
+      const normalized = list.map(function (item) {
+        return String(item || "")
+          .trim()
+          .toUpperCase();
+      });
 
+      const hearts = [];
 
-      if (values.includes("PSD")) {
-        return (
-          '<span class="heart-black">♥</span>' +
-          '<span class="heart-white">♥</span>' +
-          '<span class="heart-red">♥</span>'
-        );
-      }
-
+      /*
+        PERTH → black
+        SANTA → white
+        PS    → black + white
+        PSD   → black + white + red
+      */
 
       if (
-        values.includes("PS") ||
-        values.includes("PERTHSANTA")
+        normalized.includes("PERTH") ||
+        normalized.includes("PS") ||
+        normalized.includes("PSD")
       ) {
-        return (
-          '<span class="heart-black">♥</span>' +
-          '<span class="heart-white">♥</span>'
+        hearts.push(
+          '<span class="ev-heart black" aria-label="Perth">♥</span>'
         );
       }
 
-
-      if (values.includes("PERTH")) {
-        return (
-          '<span class="heart-black">♥</span>'
+      if (
+        normalized.includes("SANTA") ||
+        normalized.includes("PS") ||
+        normalized.includes("PSD")
+      ) {
+        hearts.push(
+          '<span class="ev-heart white" aria-label="Santa">♥</span>'
         );
       }
 
-
-      if (values.includes("SANTA")) {
-        return (
-          '<span class="heart-white">♥</span>'
+      if (normalized.includes("PSD")) {
+        hearts.push(
+          '<span class="ev-heart red" aria-label="Domiia">♥</span>'
         );
       }
 
-
-      return "";
+      return hearts.join("");
     }
 
 
-    // =========================================================
-    // Build Event Card
-    // =========================================================
+    /* =========================
+       BUILD EVENT CARD
+    ========================= */
 
     function buildCard(ev, status) {
 
-      const isLive =
-        status === "live";
+      const audienceHearts = getAudienceHearts(ev.for);
 
-      const isPast =
-        status === "past";
-
-      const cls =
-        "event-live" +
-        (isLive ? "" : " upcoming") +
-        (isPast ? " opacity-60" : "");
-
-
-      // -------------------------------------------------------
-      // LIVE / UPCOMING badge
-      // -------------------------------------------------------
-
-      const badgeDot =
-        isLive
-          ? '<span class="live-dot"></span>'
-          : '<span class="upcoming-dot"></span>';
+      const gens =
+        (Array.isArray(ev.generators)
+          ? ev.generators
+          : []
+        )
+          .filter(function (g) {
+            return (
+              g &&
+              g.url &&
+              g.url !== "#" &&
+              g.url !== "event-today.html"
+            );
+          })
+          .slice(0, 2);
 
 
-      const badgeText =
-        isLive
-          ? "LIVE NOW"
-          : (isPast ? "ENDED" : "UPCOMING");
+      const generatorHtml = gens.length
+        ? `
+          <div class="ev-generators">
+            ${gens.map(function (g) {
+              return `
+                <a
+                  class="ev-gen"
+                  href="${g.url}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="${g.name || "Generator"}"
+                >
+                  GEN
+                </a>
+              `;
+            }).join("")}
+          </div>
+        `
+        : "";
 
 
-      const badgeClass =
-        isLive
-          ? "live-text"
-          : "text-zinc-400";
+      const badgeHtml =
+        status === "live"
+          ? `
+            <div class="ev-badge event-live">
+              <span class="live-dot"></span>
+              <span class="live-text">LIVE NOW</span>
+            </div>
+          `
+          : `
+            <div class="ev-badge">
+              UPCOMING
+            </div>
+          `;
 
 
-      // -------------------------------------------------------
-      // Hearts
-      // -------------------------------------------------------
+      const dateInfo = parseDateLabel(ev.date);
 
-      const heartsHtml =
-        getAudienceHearts(ev.for);
-
-
-      // -------------------------------------------------------
-      // Hashtag
-      // -------------------------------------------------------
-
-      const hashtag =
-        (ev.hastag && ev.hastag !== "TBA")
-          ? "#" + ev.hastag.replace(/^#/, "")
-          : "";
+      const displayDate = dateInfo
+        ? formatDateShort(
+            dateInfo.day,
+            dateInfo.monthIndex
+          )
+        : "";
 
 
-      // -------------------------------------------------------
-      // Keyword
-      // -------------------------------------------------------
+      return `
+        <article class="event-card">
 
-      const keyword =
-        (ev.keyword && ev.keyword !== "TBA")
-          ? ev.keyword
-          : "";
+          <div class="ev-top">
+
+            ${badgeHtml}
+
+            ${
+              audienceHearts
+                ? `
+                  <div class="ev-hearts">
+                    ${audienceHearts}
+                  </div>
+                `
+                : ""
+            }
+
+          </div>
 
 
-      // -------------------------------------------------------
-      // Date / time
-      // -------------------------------------------------------
+          <div class="ev-title">
+            ${ev.title || ""}
+          </div>
 
-      const timeStr =
-        formatDisplayTime(ev.note);
 
-      const dateStr =
-        formatDateShort(
-          ev._day,
-          ev._monthIndex
+          <div class="ev-meta">
+
+            ${
+              displayDate
+                ? `
+                  <span class="ev-meta-item">
+                    ${displayDate}
+                  </span>
+                `
+                : ""
+            }
+
+            <span class="ev-meta-item">
+              ${formatDisplayTime(ev.note)}
+            </span>
+
+          </div>
+
+
+          ${
+            ev.location
+              ? `
+                <div class="ev-location">
+                  ${ev.location}
+                </div>
+              `
+              : ""
+          }
+
+
+          <div class="ev-tags">
+
+            ${
+              ev.keyword
+                ? `
+                  <span class="ev-tag keyword">
+                    ${ev.keyword}
+                  </span>
+                `
+                : ""
+            }
+
+            ${
+              ev.hastag
+                ? `
+                  <span class="ev-tag hashtag">
+                    #${ev.hastag}
+                  </span>
+                `
+                : ""
+            }
+
+          </div>
+
+
+          ${generatorHtml}
+
+        </article>
+      `;
+    }
+
+
+    /* =========================
+       LOAD EVENTS
+    ========================= */
+
+    async function loadEvents() {
+
+      const container =
+        document.getElementById("events-stack");
+
+      if (!container) {
+        return;
+      }
+
+
+      try {
+
+        const response = await fetch(
+          "data.json?t=" + Date.now(),
+          {
+            cache: "no-store"
+          }
         );
 
 
-      // -------------------------------------------------------
-      // GEN links
-      // Maximum 2
-      // -------------------------------------------------------
-
-      const gens =
-        (
-          Array.isArray(ev.generators)
-            ? ev.generators
-            : []
-        )
-        .filter(function (g) {
-
-          return (
-            g &&
-            g.url &&
-            g.url !== "#" &&
-            g.url !== "event-today.html"
+        if (!response.ok) {
+          throw new Error(
+            "Failed to load data.json"
           );
+        }
 
-        })
-        .slice(0, 2);
 
+        const data = await response.json();
 
-      const genHtml =
-        gens
-          .map(function (g, i) {
-
-            return (
-              '<a href="' +
-              g.url +
-              '" target="_blank" rel="noopener noreferrer" class="ev-gen">' +
-              (g.name || ("GEN " + (i + 1))) +
-              "</a>"
-            );
-
-          })
-          .join("");
-
-
-      // -------------------------------------------------------
-      // Tags
-      // Keyword FIRST
-      // Hashtag SECOND
-      // -------------------------------------------------------
-
-      let tagsHtml = "";
-
-
-      if (keyword) {
-
-        tagsHtml +=
-          '<span class="ev-tag keyword">' +
-          keyword +
-          "</span>";
-
-      }
-
-
-      if (hashtag) {
-
-        tagsHtml +=
-          '<span class="ev-tag hashtag">' +
-          hashtag +
-          "</span>";
-
-      }
-
-
-      // -------------------------------------------------------
-      // Complete card
-      // -------------------------------------------------------
-
-      return (
-
-        '<div class="' + cls + '">' +
-
-
-          // Badge + Hearts
-
-          '<div class="ev-top">' +
-
-            '<div class="ev-badge">' +
-
-              badgeDot +
-
-              '<span class="text-[11px] font-bold tracking-wide uppercase ' +
-              badgeClass +
-              '">' +
-
-              badgeText +
-
-              "</span>" +
-
-            "</div>" +
-
-            (
-              heartsHtml
-                ? (
-                    '<div class="ev-hearts">' +
-                    heartsHtml +
-                    "</div>"
-                  )
-                : ""
-            ) +
-
-          "</div>" +
-
-
-          // Event title
-
-          '<p class="ev-title">' +
-          (ev.title || "Event") +
-          "</p>" +
-
-
-          // Date / time
-
-          '<div class="ev-meta">' +
-
-            '<span class="inline-flex items-center gap-1">' +
-
-              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
-                '<rect x="3" y="4" width="18" height="18" rx="2"/>' +
-                '<path d="M16 2v4M8 2v4M3 10h18"/>' +
-              '</svg>' +
-
-              dateStr +
-
-            "</span>" +
-
-
-            (
-              timeStr
-                ? (
-                    '<span class="inline-flex items-center gap-1">' +
-
-                      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
-                        '<circle cx="12" cy="12" r="9"/>' +
-                        '<path d="M12 7v5l3 2"/>' +
-                      '</svg>' +
-
-                      timeStr +
-
-                    "</span>"
-                  )
-                : ""
-            ) +
-
-          "</div>" +
-
-
-          // Keyword + Hashtag
-
-          (
-            tagsHtml
-              ? (
-                  '<div class="ev-tags">' +
-                  tagsHtml +
-                  "</div>"
-                )
-              : ""
-          ) +
-
-
-          // GEN buttons
-
-          (
-            genHtml
-              ? (
-                  '<div class="ev-bottom">' +
-
-                    '<div class="ev-gens">' +
-                    genHtml +
-                    "</div>" +
-
-                  "</div>"
-                )
-              : ""
-          ) +
-
-
-        "</div>"
-
-      );
-    }
-
-
-    // =========================================================
-    // Main
-    // =========================================================
-
-    const container =
-      document.getElementById(
-        "events-stack"
-      );
-
-
-    if (!container) {
-      return;
-    }
-
-
-    // =========================================================
-    // Current time in Bangkok / UTC+7
-    // =========================================================
-
-    const now =
-      new Date();
-
-    const bkkOffsetMs =
-      7 *
-      60 *
-      60 *
-      1000;
-
-    const utc =
-      now.getTime() +
-      now.getTimezoneOffset() *
-      60000;
-
-    const bkk =
-      new Date(
-        utc +
-        bkkOffsetMs
-      );
-
-
-    const todayDay =
-      bkk.getDate();
-
-    const todayMonth =
-      bkk.getMonth();
-
-    const nowMinutes =
-      bkk.getHours() * 60 +
-      bkk.getMinutes();
-
-
-    // =========================================================
-    // Load data.json
-    // =========================================================
-
-    fetch(
-      "data.json?t=" +
-      Date.now()
-    )
-
-      .then(function (r) {
-
-        return r.json();
-
-      })
-
-
-      .then(function (data) {
 
         const schedule =
-          (
-            data.introduce &&
-            data.introduce.schedule
-          ) || [];
+          data &&
+          data.introduce &&
+          Array.isArray(data.introduce.schedule)
+            ? data.introduce.schedule
+            : [];
+
+
+        /*
+          Bangkok time (UTC+7)
+        */
+
+        const now = new Date();
+
+        const bkkDate = new Date(
+          now.toLocaleString(
+            "en-US",
+            {
+              timeZone: "Asia/Bangkok"
+            }
+          )
+        );
+
+
+        const currentDay =
+          bkkDate.getDate();
+
+        const currentMonth =
+          bkkDate.getMonth();
+
+        const currentYear =
+          bkkDate.getFullYear();
+
+
+        const nowMinutes =
+          bkkDate.getHours() * 60 +
+          bkkDate.getMinutes();
 
 
         const todayEvents = [];
 
 
-        // -----------------------------------------------------
-        // Find ALL events happening today
-        // -----------------------------------------------------
+        schedule.forEach(function (monthBlock) {
 
-        schedule.forEach(
-          function (monthBlock) {
-
-            (
-              monthBlock.items ||
-              []
-            ).forEach(
-              function (item) {
-
-                const parsed =
-                  parseDateLabel(
-                    item.date
-                  );
+          const monthName =
+            String(
+              monthBlock.month || ""
+            )
+            .trim()
+            .split(/\s+/)[0];
 
 
-                if (!parsed) {
-                  return;
-                }
+          const monthIndex =
+            MONTHS[monthName];
 
 
-                if (
-                  parsed.day === todayDay &&
-                  parsed.monthIndex === todayMonth
-                ) {
-
-                  todayEvents.push({
-
-                    title: item.title,
-
-                    note: item.note,
-
-                    location: item.location,
-
-                    hastag: item.hastag,
-
-                    keyword: item.keyword,
-
-                    for: item.for,
-
-                    generators:
-                      Array.isArray(item.generators)
-                        ? item.generators
-                        : [],
-
-                    _day:
-                      parsed.day,
-
-                    _monthIndex:
-                      parsed.monthIndex,
-
-                    _startMin:
-                      parseTimeToMinutes(
-                        item.note
-                      )
-
-                  });
-
-                }
-
-              }
-            );
-
+          if (
+            monthIndex === undefined
+          ) {
+            return;
           }
-        );
 
 
-        // -----------------------------------------------------
-        // Sort today's events by start time
-        // -----------------------------------------------------
+          const items =
+            Array.isArray(monthBlock.items)
+              ? monthBlock.items
+              : [];
 
-        todayEvents.sort(
-          function (a, b) {
 
-            if (
-              a._startMin === null &&
-              b._startMin === null
-            ) {
-              return 0;
+          items.forEach(function (item) {
+
+            const dateInfo =
+              parseDateLabel(item.date);
+
+
+            if (!dateInfo) {
+              return;
             }
 
-            if (
-              a._startMin === null
-            ) {
-              return 1;
-            }
 
             if (
-              b._startMin === null
+              dateInfo.day !== currentDay ||
+              dateInfo.monthIndex !== currentMonth
             ) {
-              return -1;
+              return;
             }
 
-            return (
-              a._startMin -
-              b._startMin
-            );
 
-          }
-        );
+            const startMinutes =
+              parseTimeToMinutes(
+                item.note
+              );
 
 
-        // -----------------------------------------------------
-        // No events today
-        // -----------------------------------------------------
+            const status =
+              getStatus(
+                startMinutes,
+                nowMinutes,
+                item.note
+              );
 
-        if (
-          todayEvents.length === 0
-        ) {
 
-          container.innerHTML =
+            todayEvents.push({
+              ...item,
+              startMinutes,
+              status
+            });
 
-            '<div class="event-live upcoming opacity-70">' +
+          });
 
-              '<p class="ev-title">' +
-              "No events today" +
-              "</p>" +
+        });
 
-              '<div class="ev-meta">' +
-              "Check the full schedule in Intro" +
-              "</div>" +
 
-              '<div class="ev-bottom">' +
+        /*
+          Sort all events of today
+          by start time.
+        */
 
-                '<div></div>' +
+        todayEvents.sort(function (a, b) {
+          return (
+            a.startMinutes -
+            b.startMinutes
+          );
+        });
 
-                '<a href="introduce.html" class="ev-view upcoming">' +
-                "Schedule →" +
-                "</a>" +
 
-              "</div>" +
+        if (!todayEvents.length) {
 
-            "</div>";
+          container.innerHTML = `
+            <div class="empty-events">
+              No events today.
+            </div>
+          `;
 
           return;
         }
 
 
-        // -----------------------------------------------------
-        // Show ALL events today
-        // -----------------------------------------------------
-
         container.innerHTML =
           todayEvents
             .map(function (event) {
-
-              const status =
-                getStatus(
-                  event._startMin,
-                  nowMinutes
-                );
-
               return buildCard(
                 event,
-                status
+                event.status
               );
-
             })
             .join("");
 
 
-      })
+      } catch (error) {
 
-
-      // =======================================================
-      // Error handling
-      // =======================================================
-
-      .catch(function (err) {
-
-        console.warn(
-          "Failed to load events:",
-          err
+        console.error(
+          "Event loading error:",
+          error
         );
 
+        container.innerHTML = `
+          <div class="empty-events">
+            Unable to load today's events.
+          </div>
+        `;
+      }
 
-        container.innerHTML =
+    }
 
-          '<div class="event-live upcoming">' +
 
-            '<p class="ev-title">' +
-            "Could not load events" +
-            "</p>" +
+    loadEvents();
 
-            '<div class="ev-meta">' +
-            "Please refresh the page" +
-            "</div>" +
 
-          "</div>";
+    /*
+      Refresh event status every minute.
+      This keeps LIVE / UPCOMING status current.
+    */
 
-      });
+    setInterval(
+      loadEvents,
+      60000
+    );
 
-  })();
   </script>
 
 
