@@ -200,9 +200,10 @@
     "#ps-tabbar a{min-height:64px}" +
     "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
    "#ps-site-footer{position:relative;z-index:1;line-height:1.55}" +
-    "@media (min-width:1024px){#ps-site-footer{margin-top:32px}}"+
-    "#ps-site-footer .ps-foot-by{display:block;margin-top:2px}" +
-    "@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}";
+"@media (min-width:1024px){#ps-site-footer{margin-top:32px}}" +
+"@media (max-width:1023px){#ps-site-footer{position:fixed;left:0;right:0;bottom:64px;z-index:40;margin:0;padding:5px 12px;background:rgba(7,7,7,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(63,63,70,.45);font-size:10px;line-height:1.35}}" +
+"#ps-site-footer .ps-foot-by{display:block;margin-top:1px}" +
+"@media (max-width:1023px){#ps-site-footer .ps-foot-note{display:block;margin-top:1px;font-size:9px;opacity:.65}}" +
   document.head.appendChild(style);
 
   const desktopNav = NAV.map(function (n) {
