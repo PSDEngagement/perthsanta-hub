@@ -199,7 +199,7 @@
     "#ps-tabbar a{min-height:64px}" +
     "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
    "#ps-site-footer{position:relative;z-index:1;line-height:1.55}" +
-    "@media (min-width:1024px){#ps-site-footer{margin-top:40vh}}" +
+    "@media (min-width:1024px){#ps-site-footer{margin-top:32px}}"+
     "#ps-site-footer .ps-foot-by{display:block;margin-top:2px}" +
     "@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}";
   document.head.appendChild(style);
