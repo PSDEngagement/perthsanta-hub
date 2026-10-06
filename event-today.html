@@ -26,7 +26,7 @@
     .event-card-bg {
       position: absolute;
       inset: 0;
-      background-image: url("images/piceventtoday.jpg");
+      background: #141414;
       background-size: cover;
       background-position: center;
       opacity: 0.28;
@@ -97,15 +97,23 @@
   </div>
 
   <script>
+    // Key = đúng title trong schedule.
+    // image bỏ trống = nền đen. Có ảnh thì điền "images/ten.jpg" hoặc link ngoài.
     var EVENT_GENS = {
-      "TOPS OF BEAUTY X GILLETTE VENUS": [
-        { name: "Gen 1", url: "https://santa-scribe-x.lovable.app/" },
-        { name: "Gen 2", url: "https://streetwise-copy-engine.lovable.app/" }
-      ],
-      "GO HAIR WITH PERTH": [
-        { name: "Gen 1", url: "https://link-gen-1" },
-        { name: "Gen 2", url: "https://link-gen-2" }
-      ]
+      "TOPS OF BEAUTY X GILLETTE VENUS": {
+        image: "",
+        links: [
+          { name: "Gen 1", url: "https://link-job-1-gen-1" },
+          { name: "Gen 2", url: "https://link-job-1-gen-2" }
+        ]
+      },
+      "GO HAIR WITH PERTH": {
+        image: "",
+        links: [
+          { name: "Gen 1", url: "https://link-job-2-gen-1" },
+          { name: "Gen 2", url: "https://link-job-2-gen-2" }
+        ]
+      }
     };
 
     (function () {
@@ -183,7 +191,11 @@
         var time = it.note && String(it.note).toUpperCase() !== "TBA" ? it.note : "All day";
         var keyw = it.keyword && String(it.keyword).toUpperCase() !== "TBA" ? it.keyword : "";
         var hash = tagText(it.hastag || it.hashtag);
-        var gens = EVENT_GENS[it.title] || [];
+        var cfg = EVENT_GENS[it.title] || {};
+        var gens = cfg.links || [];
+        var bg = cfg.image
+          ? ' style="background-image:url(\'' + esc(cfg.image) + '\')"'
+          : "";
         var genHtml = gens.filter(function (g) { return g && g.url; }).map(function (g, i) {
           return '<a href="' + esc(g.url) + '" target="_blank" rel="noopener" class="gen-card">' +
             esc(g.name || ("Gen " + (i + 1))) + "</a>";
@@ -191,7 +203,7 @@
 
         return (
           '<div class="event-card">' +
-            '<div class="event-card-bg"></div>' +
+            '<div class="event-card-bg"' + bg + '></div>' +
             '<div class="event-card-overlay"></div>' +
             '<div class="event-card-content">' +
               '<p class="text-red-400 text-[15px] sm:text-base font-semibold tracking-wide leading-snug break-words">' +
