@@ -411,15 +411,15 @@
             "keyword": "PERTH X TOPS OF GOHAIR",
             "for": ["PERTH"],
             "generators": [
-    {
-      "name": "GEN 1",
-      "url": "https://psdxtrend.github.io/x-comment-generator/gohair.html"
-    },
-    {
-      "name": "GEN 2",
-      "url": "https://psdtrendng.github.io/GentrendPerthgohair"
-    }
-  ]
+            {
+              "name": "GEN 1",
+              "url": "https://psdxtrend.github.io/x-comment-generator/gohair.html"
+            },
+            {
+              "name": "GEN 2",
+              "url": "https://psdtrendng.github.io/GentrendPerthgohair"
+           }
+           ]
           },
           {
             "date": "7 Oct",
@@ -428,7 +428,17 @@
             "location": "LIVE | INTERVIEW",
             "hastag": "TBA",
             "keyword": "TBA",
-            "for": ["SANTA"]
+            "for": ["SANTA"],
+            "generators": [
+           {
+             "name": "GEN 1",
+             "url": "#"
+           },
+          {
+             "name": "GEN 2",
+             "url": "#"
+          }
+           ]
           },
           {
             "date": "8 Oct",
