@@ -196,7 +196,7 @@
     ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
     "#ps-alert-panel.open{display:block !important}" +
     "body.ps-has-tabbar{padding-bottom:0 !important}"+
-"@media (max-width:1023px){body.ps-has-tabbar{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px)) !important}}"+
+"@media (max-width:1023px){body.ps-has-tabbar{padding-bottom:calc(68px + env(safe-area-inset-bottom, 0px)) !important}}"+
     "#ps-tabbar a{min-height:64px}" +
     "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
    "#ps-site-footer{position:relative;z-index:1;line-height:1.55}" +
