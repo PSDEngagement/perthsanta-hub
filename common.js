@@ -196,7 +196,6 @@
     ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite}" +
     "#ps-alert-panel.open{display:block !important}" +
     "body.ps-has-tabbar{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px)) !important}" +
-   "@media (min-width:1024px){#ps-site-footer{margin-top:40px}}" +
     "#ps-tabbar a{min-height:64px}" +
     "#ps-tabbar a.ps-tab-on{color:#fca5a5}" +
     "#ps-site-footer{position:relative;z-index:1;line-height:1.55}" +
@@ -278,11 +277,11 @@
   foot.innerHTML =
     '<span>© 2026 PerthSanta Engagement Hub</span>' +
     '<span class="ps-foot-by">Made with love by ' +
-    '<a href="https://x.com/itsmaeta" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Eira</a>. ' +
-    '<a href="https://x.com/comeforlove_ps" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Lubiichan</a>. ' +
-    '<a href="https://x.com/NganVt2386624" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Ngân</a>. ' +
-    '<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a>. ' +
-    '<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a></span>';
+    '<a href="https://x.com/itsmaeta" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Eira</a> ' +
+'<a href="https://x.com/comeforlove_ps" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Lubiichan</a> ' +
+'<a href="https://x.com/NganVt2386624" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Ngân</a> ' +
+'<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a> ' +
+'<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a></span>';
   document.body.appendChild(foot);
   document.body.appendChild(tabbar);
 
