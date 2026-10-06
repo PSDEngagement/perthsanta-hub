@@ -13,12 +13,11 @@
     body { font-family: Inter, system-ui, sans-serif; color: #fff; }
     .title-serif { font-family: "Cormorant Garamond", Georgia, serif; }
 
-    /* Event card – 4:3 image as faded background */
     .event-card {
       position: relative;
       width: 100%;
-      max-width: 28rem;          /* ~ max-w-md */
-      aspect-ratio: 4 / 3;
+      max-width: 28rem;
+      min-height: 13.5rem;
       border-radius: 1rem;
       overflow: hidden;
       border: 1px solid #3f3f46;
@@ -30,7 +29,7 @@
       background-image: url("images/piceventtoday.jpg");
       background-size: cover;
       background-position: center;
-      opacity: 0.28;             /* faded / submerged */
+      opacity: 0.28;
       filter: grayscale(15%) brightness(0.75);
     }
     .event-card-overlay {
@@ -46,13 +45,8 @@
     .event-card-content {
       position: relative;
       z-index: 10;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      padding: 1.1rem 1.15rem 1rem;
+      padding: 1.1rem 5.4rem 1.15rem 1.15rem;
     }
-
-    /* Gen buttons – square, stacked bottom-right */
     .gen-stack {
       position: absolute;
       bottom: 0.85rem;
@@ -99,51 +93,151 @@
     </h1>
     <p class="text-gray-400 text-sm mb-8">Live from the schedule. Updates automatically each day.</p>
 
-    <!-- ===== Event card ===== -->
-    <div class="event-card">
-      <!-- faded background image -->
-      <div class="event-card-bg"></div>
-      <div class="event-card-overlay"></div>
-
-      <!-- left-aligned content -->
-      <div class="event-card-content">
-        <div class="pr-16">   <!-- leave space for gen buttons -->
-          <p class="text-red-400 text-[15px] sm:text-base font-semibold tracking-wide leading-snug">
-            DR.ALLY PAI AEW TUAY KAN TEE CHANG MAI WITH PERTH
-          </p>
-
-          <!-- blank line -->
-          <div class="h-3"></div>
-
-          <p class="text-sm text-gray-300 leading-relaxed">
-            Date: <span class="text-white font-medium">3-4 Oct · 3/10/2026</span>
-          </p>
-          <p class="text-sm text-gray-300 leading-relaxed mt-0.5">
-            Start trend: <span class="text-white font-medium">All day</span>
-          </p>
-          <p class="text-sm text-gray-300 leading-relaxed mt-0.5">
-            🔑 <span class="text-white font-medium">PERTH PAIAEW CHIANGMAI</span>
-          </p>
-          <p class="text-sm text-gray-300 leading-relaxed mt-0.5">
-            <span class="text-red-400 font-medium">#️⃣DrAllyinCNXwithPerth</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- Gen 1 & Gen 2 – stacked bottom-right -->
-      <div class="gen-stack">
-        <a href="https://santa-scribe-x.lovable.app/"
-           target="_blank" rel="noopener"
-           class="gen-card">
-          Gen 1
-        </a>
-        <a href="https://streetwise-copy-engine.lovable.app/?zarsrc=30&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo"
-           target="_blank" rel="noopener"
-           class="gen-card">
-          Gen 2
-        </a>
-      </div>
-    </div>
+    <div id="event-today-list" class="flex flex-col gap-5"></div>
   </div>
+
+  <script>
+    var EVENT_GENS = {
+      "TOPS OF BEAUTY X GILLETTE VENUS": [
+        { name: "Gen 1", url: "https://santa-scribe-x.lovable.app/" },
+        { name: "Gen 2", url: "https://streetwise-copy-engine.lovable.app/" }
+      ],
+      "GO HAIR WITH PERTH": [
+        { name: "Gen 1", url: "https://link-gen-1" },
+        { name: "Gen 2", url: "https://link-gen-2" }
+      ]
+    };
+
+    (function () {
+      var listEl = document.getElementById("event-today-list");
+
+      function esc(s) {
+        return String(s || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function bangkokToday() {
+        var parts = new Intl.DateTimeFormat("en-US", {
+          timeZone: "Asia/Bangkok",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit"
+        }).formatToParts(new Date());
+        var map = {};
+        parts.forEach(function (p) { map[p.type] = p.value; });
+        return new Date(+map.year, +map.month - 1, +map.day);
+      }
+
+      function makeDate(day, monthName, year) {
+        var d = new Date(day + " " + monthName + " " + year);
+        if (isNaN(d.getTime())) return null;
+        d.setHours(0, 0, 0, 0);
+        return d;
+      }
+
+      function parseEventRange(dateStr, monthStr) {
+        var yearMatch = String(monthStr || "").match(/\d{4}/);
+        var year = yearMatch ? yearMatch[0] : String(new Date().getFullYear());
+        var monthMatch = String(monthStr || "").match(/[A-Za-z]+/);
+        var monthFromGroup = monthMatch ? monthMatch[0] : "";
+        var s = String(dateStr || "").trim();
+
+        var range = s.match(/^(\d{1,2})\s*[-–]\s*(\d{1,2})\s+([A-Za-z]+)$/);
+        if (range) {
+          return {
+            start: makeDate(range[1], range[3], year),
+            end: makeDate(range[2], range[3], year)
+          };
+        }
+        var single = s.match(/^(\d{1,2})\s+([A-Za-z]+)$/);
+        if (single) {
+          var one = makeDate(single[1], single[2], year);
+          return one ? { start: one, end: one } : null;
+        }
+        var dayOnly = s.match(/^(\d{1,2})$/);
+        if (dayOnly && monthFromGroup) {
+          var oneDay = makeDate(dayOnly[1], monthFromGroup, year);
+          return oneDay ? { start: oneDay, end: oneDay } : null;
+        }
+        return null;
+      }
+
+      function tagText(hash) {
+        hash = String(hash || "").trim();
+        if (!hash || hash.toUpperCase() === "TBA") return "";
+        return hash.charAt(0) === "#" ? hash : "#" + hash;
+      }
+
+      function numericDate(d) {
+        return d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
+      }
+
+      function cardHtml(it, month) {
+        var range = parseEventRange(it.date, month);
+        var dateLine = it.date || "";
+        if (range && range.start) dateLine += " · " + numericDate(range.start);
+
+        var time = it.note && String(it.note).toUpperCase() !== "TBA" ? it.note : "All day";
+        var keyw = it.keyword && String(it.keyword).toUpperCase() !== "TBA" ? it.keyword : "";
+        var hash = tagText(it.hastag || it.hashtag);
+        var gens = EVENT_GENS[it.title] || [];
+        var genHtml = gens.filter(function (g) { return g && g.url; }).map(function (g, i) {
+          return '<a href="' + esc(g.url) + '" target="_blank" rel="noopener" class="gen-card">' +
+            esc(g.name || ("Gen " + (i + 1))) + "</a>";
+        }).join("");
+
+        return (
+          '<div class="event-card">' +
+            '<div class="event-card-bg"></div>' +
+            '<div class="event-card-overlay"></div>' +
+            '<div class="event-card-content">' +
+              '<p class="text-red-400 text-[15px] sm:text-base font-semibold tracking-wide leading-snug break-words">' +
+                esc(it.title || "") + "</p>" +
+              '<div class="h-3"></div>' +
+              '<p class="text-sm text-gray-300 leading-relaxed break-words">Date: <span class="text-white font-medium">' +
+                esc(dateLine) + "</span></p>" +
+              '<p class="text-sm text-gray-300 leading-relaxed mt-0.5 break-words">Time: <span class="text-white font-medium">' +
+                esc(time) + "</span></p>" +
+              '<p class="text-sm text-gray-300 leading-relaxed mt-0.5 break-words">🔑 <span class="text-white font-medium">' +
+                esc(keyw || "—") + "</span></p>" +
+              '<p class="text-sm leading-relaxed mt-0.5 break-words"><span class="text-red-400 font-medium">' +
+                esc(hash || "—") + "</span></p>" +
+            "</div>" +
+            (genHtml ? '<div class="gen-stack">' + genHtml + "</div>" : "") +
+          "</div>"
+        );
+      }
+
+      fetch("data.json?t=" + Date.now())
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+          var months = (json.introduce && json.introduce.schedule) || [];
+          var today = bangkokToday();
+          var jobs = [];
+
+          months.forEach(function (m) {
+            (m.items || []).forEach(function (it) {
+              var range = parseEventRange(it.date, m.month);
+              if (!range || !range.start || !range.end) return;
+              if (today >= range.start && today <= range.end) {
+                jobs.push({ it: it, month: m.month });
+              }
+            });
+          });
+
+          if (!jobs.length) {
+            listEl.innerHTML = '<p class="text-zinc-400">No event on the schedule today.</p>';
+            return;
+          }
+          listEl.innerHTML = jobs.map(function (j) { return cardHtml(j.it, j.month); }).join("");
+        })
+        .catch(function () {
+          listEl.innerHTML = '<p class="text-red-400">Cannot load schedule.</p>';
+        });
+    })();
+  </script>
 </body>
 </html>
