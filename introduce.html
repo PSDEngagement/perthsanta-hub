@@ -142,7 +142,6 @@
 </head>
 <body class="text-white relative overflow-x-hidden">
 
-  <!-- Background image mờ -->
   <div class="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
     <img src="images/intro.jpg" alt=""
          class="w-full h-full object-cover opacity-95"
@@ -150,11 +149,9 @@
     <div class="absolute inset-0 bg-[#070707]/20"></div>
   </div>
 
-  <!-- soft background glows -->
   <div class="page-glow bg-red-600" style="top:-80px;right:-60px;"></div>
   <div class="page-glow bg-red-800" style="bottom:10%;left:-80px;"></div>
 
-  <!-- Header -->
   <div class="relative z-10 max-w-4xl mx-auto px-4 pt-8 pb-6">
     <div class="flex items-start justify-between gap-4">
       <div class="fade-up">
@@ -172,7 +169,6 @@
     </div>
   </div>
 
-  <!-- HOME -->
   <div id="intro-home" class="relative z-10">
     <section class="max-w-4xl mx-auto px-4 mb-10 fade-up fade-up-d1">
       <div class="flex items-center gap-2.5 mb-1">
@@ -206,7 +202,6 @@
     </section>
   </div>
 
-  <!-- PROFILE DETAIL -->
   <div id="intro-detail" class="hidden relative z-10 max-w-xl mx-auto px-4 pb-24">
     <div class="flex items-center justify-between mb-5">
       <h2 id="detail-name" class="title-serif text-2xl sm:text-3xl font-bold text-red-500">Profile</h2>
@@ -218,7 +213,6 @@
     <div id="detail-box" class="panel-box"></div>
   </div>
 
-  <!-- SCHEDULE -->
   <div id="intro-schedule" class="hidden relative z-10 max-w-4xl mx-auto px-4 pb-24">
     <div class="flex items-center justify-between mb-6">
       <div class="flex items-center gap-2.5">
@@ -286,10 +280,10 @@
           svg: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M14.5 3c.2 2.6 1.6 4.4 4.2 4.7v2.6c-1.4 0-2.7-.4-4.1-1.3v6.7c0 3.4-2.6 6.1-6.1 6.1S2.4 19.1 2.4 15.6 5 9.5 8.5 9.5c.4 0 .8 0 1.1.1v2.8c-.3-.1-.7-.2-1.1-.2-2 0-3.6 1.6-3.6 3.6s1.6 3.6 3.6 3.6 3.6-1.6 3.6-3.6V3h2.4z"/></svg>',
           cls: "bg-black hover:bg-zinc-800 text-white border border-zinc-700"
         },
-   Weibo: {
-  svg: `<svg class="w-7 h-7" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#fff"/><ellipse cx="21" cy="26" rx="13" ry="11" fill="#E6162D"/><ellipse cx="21" cy="26" rx="9" ry="7.5" fill="#fff"/><circle cx="21" cy="26.5" r="4.8" fill="#1A1A1A"/><circle cx="23.5" cy="24.2" r="1.6" fill="#fff"/><path d="M32 12c3.2 1.4 5.5 4 6.3 7" stroke="#FF9F1A" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M36 9c4 2 6.8 5.5 7.8 9.2" stroke="#FF9F1A" stroke-width="3" stroke-linecap="round" fill="none"/></svg>`,
-  cls: "bg-white border border-zinc-500"
-},
+        Weibo: {
+          svg: '<svg class="w-7 h-7" viewBox="0 0 64 64" aria-hidden="true"><path fill="#E6162D" d="M34 7.5c-8.2.2-15.4 3.6-18.6 9.2-2.2 3.8-1.8 7.4.8 10.2 1.4 1.6 1 3.2-.8 4.8-3.4 3-4.8 7.2-3.6 11.6 1.6 6.2 9 10.8 18 11.2 9.4.4 17.4-3.8 19.4-10.6 1.4-4.6 0-8.8-3.4-11.6-1.6-1.4-2-3-.6-4.8 2.2-3 2.6-6.4 1-9.6C44.2 11.4 39.6 7.8 34 7.5z"/><ellipse cx="29.6" cy="36.8" rx="13.4" ry="11.4" fill="#fff"/><circle cx="29.8" cy="37.4" r="6.6" fill="#111"/><circle cx="27.5" cy="39.6" r="2.2" fill="#fff"/><circle cx="32.6" cy="34.9" r="1.15" fill="#fff"/><path d="M45.6 13.6c3.6 1.8 6.2 4.8 7.4 8.4" fill="none" stroke="#FF9F1A" stroke-width="3.3" stroke-linecap="round"/><path d="M50 8.8c4.8 2.5 8.2 6.4 9.6 11.2" fill="none" stroke="#FF9F1A" stroke-width="3.3" stroke-linecap="round"/><path d="M54.4 4.4c5.6 3.1 9.6 7.8 11.2 13.4" fill="none" stroke="#FF9F1A" stroke-width="3.3" stroke-linecap="round"/></svg>',
+          cls: "bg-white hover:bg-zinc-100 border border-zinc-300"
+        }
       };
 
       return (p.socials || []).filter(function (s) { return s.url; }).map(function (s) {
@@ -299,8 +293,6 @@
           extra = ' style="background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)"';
         } else if (s.name === "TikTok") {
           extra = ' style="box-shadow: 2px 0 0 #25F4EE, -2px 0 0 #FE2C55"';
-          } else if (s.name === "Weibo") {
-          extra = '';
         }
         return '<a href="' + s.url + '" target="_blank" rel="noopener" title="' + s.name + '" class="inline-flex items-center justify-center w-11 h-11 rounded-full ' + item.cls + '"' + extra + ">" + item.svg + "</a>";
       }).join("") || '<span class="text-sm text-gray-500">No links yet</span>';
