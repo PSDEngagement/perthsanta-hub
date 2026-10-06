@@ -273,7 +273,6 @@
       );
     }).join("") +
     "</div>";
-  document.body.appendChild(tabbar);
 
   var foot = document.createElement("footer");
   foot.id = "ps-site-footer";
