@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,8 +134,7 @@
     }
 
     /* =========================================================
-       LIVE NOW — DOT + TEXT FLASH TOGETHER
-       Faster animation
+       LIVE NOW
        ========================================================= */
 
     .live-dot {
@@ -204,8 +202,38 @@
     }
 
     /* =========================================================
+       HEARTS
+       ========================================================= */
+
+    .ev-hearts {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.12rem;
+      margin-left: auto;
+      padding-left: 0.5rem;
+      font-size: 0.9rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .heart-black {
+      color: #ffffff;
+      text-shadow: 0 0 0 #ffffff;
+    }
+
+    .heart-white {
+      color: #ffffff;
+      text-shadow:
+        0 0 0 #ffffff,
+        0 0 2px rgba(255,255,255,.65);
+    }
+
+    .heart-red {
+      color: #ef4444;
+    }
+
+    /* =========================================================
        KEYWORD + HASHTAG
-       Keyword comes FIRST
        ========================================================= */
 
     .ev-tags {
@@ -222,14 +250,12 @@
       line-height: 1.3;
     }
 
-    /* Keyword */
     .ev-tag.keyword {
       background: rgba(39, 39, 42, 0.8);
       color: #d4d4d8;
       border: 1px solid #3f3f46;
     }
 
-    /* Hashtag — WHITE */
     .ev-tag.hashtag {
       background: rgba(39, 39, 42, 0.55);
       color: #ffffff;
@@ -251,7 +277,6 @@
 
     /* =========================================================
        GEN BUTTONS
-       Larger — EP1-like presence
        ========================================================= */
 
     .ev-gen {
@@ -414,7 +439,6 @@
       }
     }
 
-    /* Hide 4 tasks on mobile, show only event cards */
     .tasks-grid {
       display: none;
     }
@@ -431,9 +455,7 @@
 
   <main class="max-w-6xl mx-auto px-4 pt-3 sm:pt-4 pb-6">
 
-    <!-- =======================================================
-         HERO
-         ======================================================= -->
+    <!-- HERO -->
 
     <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-red-900/30 bg-black mb-3 sm:mb-4 h-[200px] sm:h-[300px] md:h-[380px]">
 
@@ -475,18 +497,12 @@
     </div>
 
 
-    <!-- =======================================================
-         EVENT CARDS
-         Automatically rendered from data.json
-         ALL EVENTS FOR TODAY ARE SHOWN
-         ======================================================= -->
+    <!-- EVENT CARDS -->
 
     <div id="events-stack" class="events-stack"></div>
 
 
-    <!-- =======================================================
-         4 TASK CARDS
-         ======================================================= -->
+    <!-- 4 TASK CARDS -->
 
     <div class="tasks-grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
 
@@ -660,16 +676,10 @@
   </main>
 
 
-  <!-- =========================================================
-       EVENT SCRIPT
-       ========================================================= -->
+  <!-- EVENT SCRIPT -->
 
   <script>
   (function () {
-
-    // =========================================================
-    // Helpers
-    // =========================================================
 
     const MONTHS = {
       jan: 0,
@@ -687,11 +697,6 @@
     };
 
 
-    /**
-     * Parse:
-     * "6 Oct"
-     * "06 Oct"
-     */
     function parseDateLabel(label) {
 
       if (!label) return null;
@@ -718,16 +723,6 @@
     }
 
 
-    /**
-     * Parse time from note.
-     *
-     * Supports:
-     * 05:30 PM
-     * 5:30 PM
-     * 17:30
-     * ALL DAY
-     * TBA
-     */
     function parseTimeToMinutes(note) {
 
       if (!note) return null;
@@ -745,8 +740,6 @@
         return null;
       }
 
-
-      // 12-hour format
 
       let m =
         s.match(
@@ -775,8 +768,6 @@
       }
 
 
-      // 24-hour format
-
       m =
         s.match(
           /(\d{1,2})[:.](\d{2})/
@@ -794,10 +785,6 @@
     }
 
 
-    /**
-     * Display:
-     * 5:30 PM BKK
-     */
     function formatDisplayTime(note) {
 
       if (!note) return "";
@@ -822,10 +809,6 @@
     }
 
 
-    /**
-     * Format:
-     * 06 OCT
-     */
     function formatDateShort(day, monthIndex) {
 
       const names = [
@@ -851,14 +834,6 @@
     }
 
 
-    /**
-     * Status:
-     *
-     * UPCOMING = before start time
-     * LIVE = at or after start time
-     *
-     * ALL DAY / TBA = LIVE
-     */
     function getStatus(startMinutes, nowMinutes) {
 
       if (startMinutes === null) {
@@ -870,6 +845,66 @@
       }
 
       return "live";
+    }
+
+
+    /* =========================================================
+       HEARTS
+       
+       PERTH     = BLACK
+       SANTA     = WHITE
+       PS        = BLACK + WHITE
+       PSD       = BLACK + WHITE + RED
+
+       Always in this order:
+       BLACK → WHITE → RED
+       ========================================================= */
+
+    function getAudienceHearts(audience) {
+
+      const values =
+        Array.isArray(audience)
+          ? audience.map(function (item) {
+              return String(item).trim().toUpperCase();
+            })
+          : [String(audience || "").trim().toUpperCase()];
+
+
+      if (values.includes("PSD")) {
+        return (
+          '<span class="heart-black">♥</span>' +
+          '<span class="heart-white">♥</span>' +
+          '<span class="heart-red">♥</span>'
+        );
+      }
+
+
+      if (
+        values.includes("PS") ||
+        values.includes("PERTHSANTA")
+      ) {
+        return (
+          '<span class="heart-black">♥</span>' +
+          '<span class="heart-white">♥</span>'
+        );
+      }
+
+
+      if (values.includes("PERTH")) {
+        return (
+          '<span class="heart-black">♥</span>'
+        );
+      }
+
+
+      if (values.includes("SANTA")) {
+        return (
+          '<span class="heart-white">♥</span>'
+        );
+      }
+
+
+      return "";
     }
 
 
@@ -914,6 +949,14 @@
 
 
       // -------------------------------------------------------
+      // Hearts
+      // -------------------------------------------------------
+
+      const heartsHtml =
+        getAudienceHearts(ev.for);
+
+
+      // -------------------------------------------------------
       // Hashtag
       // -------------------------------------------------------
 
@@ -949,8 +992,7 @@
 
       // -------------------------------------------------------
       // GEN links
-      // Take directly from data.json
-      // Maximum 2 GEN buttons
+      // Maximum 2
       // -------------------------------------------------------
 
       const gens =
@@ -979,7 +1021,7 @@
             return (
               '<a href="' +
               g.url +
-              '" target="_blank" rel="noopener" class="ev-gen">' +
+              '" target="_blank" rel="noopener noreferrer" class="ev-gen">' +
               (g.name || ("GEN " + (i + 1))) +
               "</a>"
             );
@@ -990,8 +1032,6 @@
 
       // -------------------------------------------------------
       // Tags
-      //
-      // IMPORTANT:
       // Keyword FIRST
       // Hashtag SECOND
       // -------------------------------------------------------
@@ -1020,7 +1060,7 @@
 
 
       // -------------------------------------------------------
-      // Return complete card
+      // Complete card
       // -------------------------------------------------------
 
       return (
@@ -1028,7 +1068,7 @@
         '<div class="' + cls + '">' +
 
 
-          // Badge
+          // Badge + Hearts
 
           '<div class="ev-top">' +
 
@@ -1045,6 +1085,16 @@
               "</span>" +
 
             "</div>" +
+
+            (
+              heartsHtml
+                ? (
+                    '<div class="ev-hearts">' +
+                    heartsHtml +
+                    "</div>"
+                  )
+                : ""
+            ) +
 
           "</div>" +
 
@@ -1251,7 +1301,9 @@
                     for: item.for,
 
                     generators:
-                      item.generators || [],
+                      Array.isArray(item.generators)
+                        ? item.generators
+                        : [],
 
                     _day:
                       parsed.day,
@@ -1347,11 +1399,7 @@
 
 
         // -----------------------------------------------------
-        // IMPORTANT:
-        //
-        // Show ALL events today.
-        // If there are 2 events today,
-        // there will be 2 cards.
+        // Show ALL events today
         // -----------------------------------------------------
 
         container.innerHTML =
