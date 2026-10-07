@@ -141,16 +141,19 @@
       50% { opacity: 0.2; }
     }
 
+    .upcoming-text {
+      color: #ef4444 !important;
+    }
+
     .upcoming-dots {
       display: inline-flex;
       align-items: center;
-      gap: 0.14rem;
-      min-width: 1.15rem;
-      color: #a1a1aa;
+      gap: 0.12rem;
+      margin-left: 0.05rem;
+      color: #ef4444;
       font-size: 1rem;
       font-weight: 700;
       line-height: 1;
-      letter-spacing: 0;
     }
 
     .upcoming-dots span {
@@ -632,18 +635,20 @@
       const isPast = status === "past";
       const cls = "event-live" + (isLive ? "" : " upcoming") + (isPast ? " opacity-60" : "");
 
-      let badgeDot = '<span class="ended-dot"></span>';
-      let badgeText = "ENDED";
-      let badgeClass = "text-zinc-400";
+      let badgeHtml;
 
       if (isLive) {
-        badgeDot = '<span class="live-dot"></span>';
-        badgeText = "LIVE NOW";
-        badgeClass = "live-text";
+        badgeHtml =
+          '<span class="live-dot"></span>' +
+          '<span class="text-[11px] font-bold tracking-wide uppercase live-text">LIVE NOW</span>';
       } else if (!isPast) {
-        badgeDot = '<span class="upcoming-dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span>';
-        badgeText = "UPCOMING";
-        badgeClass = "text-zinc-400";
+        badgeHtml =
+          '<span class="text-[11px] font-bold tracking-wide uppercase upcoming-text">UPCOMING</span>' +
+          '<span class="upcoming-dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span>';
+      } else {
+        badgeHtml =
+          '<span class="ended-dot"></span>' +
+          '<span class="text-[11px] font-bold tracking-wide uppercase text-zinc-400">ENDED</span>';
       }
 
       const heartsHtml = getAudienceHearts(ev.for);
@@ -669,12 +674,7 @@
 
       return '<div class="' + cls + '">' +
         '<div class="ev-top">' +
-          '<div class="ev-badge">' +
-            badgeDot +
-            '<span class="text-[11px] font-bold tracking-wide uppercase ' + badgeClass + '">' +
-              badgeText +
-            "</span>" +
-          "</div>" +
+          '<div class="ev-badge">' + badgeHtml + "</div>" +
           (heartsHtml ? '<div class="ev-hearts">' + heartsHtml + "</div>" : "") +
         "</div>" +
         '<p class="ev-title">' + (ev.title || "Event") + "</p>" +
