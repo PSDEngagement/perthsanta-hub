@@ -14,30 +14,20 @@
     body { font-family: Inter, system-ui, sans-serif; color: #fff; }
     .title-serif { font-family: "Cormorant Garamond", Georgia, serif; }
     .script-font { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 500; letter-spacing: 0.04em; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-    .fade-up { animation: fadeUp 0.5s ease both; }
     .page-glow { pointer-events: none; position: fixed; width: 280px; height: 280px; border-radius: 50%; filter: blur(80px); opacity: 0.12; z-index: 0; }
-    .yt-card, .panel, .hero {
-      background: linear-gradient(165deg, #2a0a0a 0%, #141414 45%, #0a0a0a 100%);
-      border: 1px solid #3f1a1a; border-radius: 1rem;
-    }
+    .yt-card, .panel, .hero { background: linear-gradient(165deg, #2a0a0a 0%, #141414 45%, #0a0a0a 100%); border: 1px solid #3f1a1a; border-radius: 1rem; }
     .yt-card { overflow: hidden; transition: all 0.3s ease; }
     .yt-card:hover { border-color: #991b1b; transform: translateY(-3px); box-shadow: 0 12px 28px rgba(185, 28, 28, 0.22); }
-    .hero.ready { border-color: #991b1b; box-shadow: 0 0 0 1px rgba(153, 27, 27, 0.45); }
-    .watch-btn, .ghost-btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      font-size: 0.75rem; font-weight: 600; border-radius: 9999px; padding: 0.4rem 0.9rem;
-    }
+    .watch-btn, .ghost-btn { display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; border-radius: 9999px; padding: 0.4rem 0.9rem; }
     .watch-btn { background: linear-gradient(145deg, #7f1d1d 0%, #450a0a 100%); border: 1px solid #991b1b; color: #fff; }
-    .watch-btn.locked { opacity: 0.45; pointer-events: none; }
     .ghost-btn { background: transparent; border: 1px solid #3f3f46; color: #d4d4d8; }
     .ghost-btn.on { background: #3f1a1a; border-color: #991b1b; color: #fecaca; }
     .progress-track { height: 6px; background: #27272a; border-radius: 9999px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, #991b1b, #ef4444); border-radius: 9999px; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #991b1b, #ef4444); }
     .chip, .tool-input, .tool-select { background: #141414; border: 1px solid #3f1a1a; color: #fff; border-radius: 9999px; font-size: 0.8rem; }
     .chip { color: #d4d4d8; padding: 0.35rem 0.8rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
     .chip.on { background: #7f1d1d; border-color: #991b1b; color: #fff; }
-    .sk { background: linear-gradient(90deg, #1c1c1c, #2a1515, #1c1c1c); background-size: 200% 100%; animation: shine 1.2s infinite; border-radius: 0.75rem; }
+    .sk { background: linear-gradient(90deg, #1c1c1c, #2a1515, #1c1c1c); background-size: 200% 100%; animation: shine 1.2s infinite; border-radius: 0.75rem; height: 5rem; }
     @keyframes shine { from { background-position: 100% 0; } to { background-position: -100% 0; } }
   </style>
 </head>
@@ -51,10 +41,8 @@
 
   <div class="relative z-10 max-w-4xl mx-auto px-4 pt-8 pb-4">
     <div class="flex items-start justify-between gap-4">
-      <div class="fade-up">
-        <h1 class="title-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-none tracking-tight">
-          <span class="text-white">YouTube</span><br><span class="text-red-500">Streaming</span>
-        </h1>
+      <div>
+        <h1 class="title-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-none tracking-tight"><span class="text-white">YouTube</span><br><span class="text-red-500">Streaming</span></h1>
         <p class="text-gray-400 text-sm mt-3">Mốc stream nhạc trên YouTube</p>
         <p id="updated" class="text-[11px] text-zinc-500 mt-1">Đang tải lượt xem...</p>
       </div>
@@ -83,17 +71,16 @@
         </select>
       </div>
     </div>
-
-    <div class="panel mt-4 p-4">
-      <p class="text-sm font-medium text-red-300 mb-3">Trước khi bấm Xem</p>
-      <label class="flex gap-2 text-sm text-zinc-300 mb-2"><input type="checkbox" data-check="vol"> Tăng âm lượng trên 50%, vào cài đặt và chọn chất lượng 1080p.</label>
-      <label class="flex gap-2 text-sm text-zinc-300 mb-2"><input type="checkbox" data-check="share"> Nhớ bình luận và chia sẻ. Bình luận không dùng quá nhiều emoji, không viết “TOP” hay “TRENDING”.</label>
-      <label class="flex gap-2 text-sm text-zinc-300"><input type="checkbox" data-check="done"> Chỉ like và bình luận sau khi đã xem hết video lần đầu.</label>
-      <p id="check-note" class="text-[11px] text-zinc-500 mt-3">Tick đủ 3 ý thì nút Xem ở bài ưu tiên mới mở.</p>
-    </div>
+    <details class="panel mt-4 p-4">
+      <summary class="cursor-pointer text-sm font-medium text-red-300">Trước khi bấm Xem</summary>
+      <ol class="mt-3 space-y-3 text-sm text-zinc-300 list-decimal pl-5">
+        <li><strong class="text-white">Trước khi xem:</strong> Tăng âm lượng trên 50%, vào cài đặt và chọn chất lượng 1080p.</li>
+        <li><strong class="text-white">Trong khi xem:</strong> Nhớ bình luận và chia sẻ. Bình luận không dùng quá nhiều emoji, không viết “TOP” hay “TRENDING”.</li>
+        <li><strong class="text-white">Sau khi xem xong:</strong> Chỉ like và bình luận sau khi đã xem hết video lần đầu.</li>
+      </ol>
+    </details>
     <div id="hero" class="mt-4"></div>
   </div>
-
   <div id="songs-list" class="relative z-10 max-w-4xl mx-auto px-4 pt-5 pb-24"></div>
 
   <script src="yt-config.js"></script>
@@ -101,22 +88,12 @@
   <script>
     function formatNumber(n) { return Number(n || 0).toLocaleString("vi-VN"); }
     function calculateTarget(views, base) { var t = base; while (views >= t) t += 100000; return t; }
-    function esc(s) { return String(s || "").replace(/[&<>"]/g, function (c) { return { "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;" }[c]; }); }
-    function todayKey() {
-      var d = new Date();
-      return "ytDone-" + d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
-    }
-    var songs = [], statsMap = {}, group = "all", q = "", sort = "gap", updatedAt = "";
-    var done = {}, checks = {};
+    function esc(s) { return String(s || "").replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+    function todayKey() { var d = new Date(); return "ytDone-" + d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0"); }
+    function at(day, end) { return new Date(day + (end ? "T23:59:59+07:00" : "T00:00:00+07:00")); }
+    var songs = [], statsMap = {}, group = "all", q = "", sort = "gap", done = {};
     try { done = JSON.parse(localStorage.getItem(todayKey()) || "{}"); } catch (e) {}
-    try { checks = JSON.parse(sessionStorage.getItem("ytChecks") || "{}"); } catch (e) {}
-    var LABELS = [
-      { id: "trailer", label: "Trailer / Pilot" },
-      { id: "ost", label: "OST" },
-      { id: "perth", label: "Perth Solo" },
-      { id: "jasper", label: "JASP.ER" }
-    ];
-    function ready() { return checks.vol && checks.share && checks.done; }
+    var LABELS = [{id:"trailer",label:"Trailer / Pilot"},{id:"ost",label:"OST"},{id:"perth",label:"Perth Solo"},{id:"jasper",label:"JASP.ER"}];
     function metrics(song) {
       var views = statsMap[song.videoId] ? statsMap[song.videoId].views : 0;
       var base = parseInt(String(song.target || "0").replace(/,/g, "")) || 100000;
@@ -127,83 +104,62 @@
       return songs.filter(function (s) {
         if (group !== "all" && (s.group || "ost") !== group) return false;
         return !q || String(s.title).toLowerCase().indexOf(q) >= 0;
-      }).map(function (s) {
-        var m = metrics(s);
-        return { s: s, views: m.views, target: m.target, gap: m.gap, pct: m.pct };
-      }).sort(function (a, b) {
-        if (sort === "pct") return b.pct - a.pct;
-        if (sort === "views") return b.views - a.views;
-        return a.gap - b.gap;
-      });
+      }).map(function (s) { var m = metrics(s); return { s:s, views:m.views, target:m.target, gap:m.gap, pct:m.pct }; })
+        .sort(function (a, b) { if (sort === "pct") return b.pct - a.pct; if (sort === "views") return b.views - a.views; return a.gap - b.gap; });
     }
-    function buttons(song, primary) {
+    function buttons(song) {
       var watch = "https://www.youtube.com/watch?v=" + song.videoId;
       var marked = done[song.videoId] ? " on" : "";
-      var lock = primary && !ready() ? " locked" : "";
-      return '<div class="mt-auto flex flex-wrap gap-2">' +
-        '<a class="watch-btn' + lock + '" target="_blank" rel="noopener" href="' + watch + '">Xem →</a>' +
+      return '<div class="mt-auto flex flex-wrap gap-2"><a class="watch-btn" target="_blank" rel="noopener" href="' + watch + '">Xem →</a>' +
         '<button type="button" class="ghost-btn" data-copy="' + watch + '">Sao chép</button>' +
-        '<button type="button" class="ghost-btn' + marked + '" data-done="' + song.videoId + '">' + (done[song.videoId] ? "Đã xem hôm nay" : "Đánh dấu") + '</button></div>';
+        '<button type="button" class="ghost-btn' + marked + '" data-done="' + song.videoId + '">' + (done[song.videoId] ? "Đã xem hôm nay" : "Đánh dấu") + "</button></div>";
     }
-    function cardHtml(row) {
-      var song = row.s;
-      return '<div class="yt-card"><div class="flex gap-3 sm:gap-4 p-3.5 sm:p-4">' +
-        '<img src="https://img.youtube.com/vi/' + song.videoId + '/mqdefault.jpg" alt="" class="w-28 sm:w-32 h-20 sm:h-24 object-cover rounded-lg bg-zinc-900 shrink-0 border border-zinc-800">' +
-        '<div class="min-w-0 flex-1 flex flex-col">' +
-          '<h3 class="font-semibold text-sm sm:text-base leading-snug line-clamp-2 mb-1.5">' + esc(song.title) + '</h3>' +
-          '<p class="text-[11px] sm:text-xs text-gray-400 mb-0.5">Lượt xem <span class="text-white font-medium">' + formatNumber(row.views) + '</span> · Mốc <span class="text-red-400 font-medium">' + formatNumber(row.target) + '</span></p>' +
-          '<p class="text-[11px] sm:text-xs text-gray-400 mb-2">Còn lại <span class="text-yellow-400 font-medium">' + formatNumber(row.gap) + '</span> · <span class="text-red-300">' + row.pct + '%</span></p>' +
-          '<div class="progress-track mb-2.5"><div class="progress-fill" style="width:' + row.pct + '%"></div></div>' +
-          buttons(song, false) + '</div></div></div>';
+    function pickFocus() {
+      var now = new Date(), rank = { episode: 3, trailer: 2, pilot: 1 };
+      var pool = songs.filter(function (s) {
+        if (!rank[s.role]) return false;
+        if (s.focusFrom && now < at(s.focusFrom, false)) return false;
+        if (s.focusUntil && now > at(s.focusUntil, true)) return false;
+        return true;
+      }).sort(function (a, b) { return rank[b.role] - rank[a.role] || (b.episode || 0) - (a.episode || 0); });
+      return pool[0] || songs.filter(function (s) { return s.videoId === "I1guVkLJ4mU"; })[0];
     }
-    function paintHero(rows) {
-      var next = rows.filter(function (r) { return !done[r.s.videoId]; })[0];
-      var box = document.getElementById("hero");
-      if (!next) { box.innerHTML = '<div class="panel p-4 text-sm text-zinc-400">Đã xem hết bài trong bộ lọc hôm nay.</div>'; return; }
-      box.innerHTML = '<article class="hero p-4 ' + (ready() ? "ready" : "") + '"><p class="text-[11px] uppercase tracking-wider text-red-300 mb-3">Ưu tiên hôm nay</p>' +
-        '<div class="flex gap-3"><img src="https://img.youtube.com/vi/' + next.s.videoId + '/mqdefault.jpg" alt="" class="w-36 h-24 object-cover rounded-lg border border-zinc-800">' +
-        '<div class="min-w-0 flex-1"><h2 class="font-semibold leading-snug line-clamp-2">' + esc(next.s.title) + '</h2>' +
-        '<p class="text-xs text-zinc-400 mt-1">Còn ' + formatNumber(next.gap) + ' · ' + next.pct + '%</p>' +
-        '<div class="progress-track my-2"><div class="progress-fill" style="width:' + next.pct + '%"></div></div>' +
-        buttons(next.s, true) + '</div></div></article>';
+    function paintHero() {
+      var song = pickFocus(), box = document.getElementById("hero");
+      if (!song) { box.innerHTML = ""; return; }
+      var m = metrics(song);
+      var label = song.role === "episode" ? "Tập " + (song.episode || "") : (song.role === "trailer" ? "Trailer" : "Pilot Heartbound");
+      box.innerHTML = '<article class="hero p-4"><p class="text-[11px] uppercase tracking-wider text-red-300 mb-3">Ưu tiên hôm nay · ' + label + '</p><div class="flex gap-3">' +
+        '<img src="https://img.youtube.com/vi/' + song.videoId + '/mqdefault.jpg" alt="" class="w-36 h-24 object-cover rounded-lg border border-zinc-800">' +
+        '<div class="min-w-0 flex-1"><h2 class="font-semibold leading-snug line-clamp-2">' + esc(song.title) + '</h2>' +
+        '<p class="text-xs text-zinc-400 mt-1">Còn ' + formatNumber(m.gap) + ' · ' + m.pct + '%</p>' +
+        '<div class="progress-track my-2"><div class="progress-fill" style="width:' + m.pct + '%"></div></div>' + buttons(song) + '</div></div></article>';
     }
     function paint() {
-      var rows = filtered();
-      paintHero(rows);
-      document.getElementById("check-note").textContent = ready() ? "Đủ 3 ý. Có thể bấm Xem." : "Tick đủ 3 ý thì nút Xem ở bài ưu tiên mới mở.";
-      var box = document.getElementById("songs-list");
+      paintHero();
+      var rows = filtered(), box = document.getElementById("songs-list"), html = "";
       if (!rows.length) { box.innerHTML = '<p class="text-gray-500">Không có bài khớp.</p>'; return; }
-      var html = "";
       LABELS.forEach(function (sec) {
         var items = rows.filter(function (r) { return (r.s.group || "ost") === sec.id; });
         if (!items.length) return;
         var near = items.filter(function (r) { return r.pct >= 90; }).length;
         html += '<div class="flex items-end justify-between gap-3 mb-1 mt-2"><div class="flex items-center gap-2.5"><span class="w-1 h-5 bg-red-500 rounded-full"></span><h2 class="title-serif text-2xl sm:text-3xl font-bold text-red-500">' + sec.label + '</h2></div><span class="text-[11px] text-zinc-400">' + near + '/' + items.length + ' gần mốc</span></div>';
         html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-8 mt-4">';
-        items.forEach(function (r) { html += cardHtml(r); });
+        items.forEach(function (r) {
+          html += '<div class="yt-card"><div class="flex gap-3 p-3.5"><img src="https://img.youtube.com/vi/' + r.s.videoId + '/mqdefault.jpg" alt="" class="w-28 h-20 object-cover rounded-lg border border-zinc-800">' +
+            '<div class="min-w-0 flex-1 flex flex-col"><h3 class="font-semibold text-sm leading-snug line-clamp-2 mb-1.5">' + esc(r.s.title) + '</h3>' +
+            '<p class="text-[11px] text-gray-400">Lượt xem <span class="text-white">' + formatNumber(r.views) + '</span> · Mốc <span class="text-red-400">' + formatNumber(r.target) + '</span></p>' +
+            '<p class="text-[11px] text-gray-400 mb-2">Còn lại <span class="text-yellow-400">' + formatNumber(r.gap) + '</span> · <span class="text-red-300">' + r.pct + '%</span></p>' +
+            '<div class="progress-track mb-2.5"><div class="progress-fill" style="width:' + r.pct + '%"></div></div>' + buttons(r.s) + '</div></div></div>';
+        });
         html += '</div>';
       });
       box.innerHTML = html;
     }
-    function skeletons() {
-      var html = "";
-      for (var i = 0; i < 4; i++) html += '<div class="yt-card p-4 mb-3"><div class="sk h-20"></div></div>';
-      document.getElementById("songs-list").innerHTML = html;
-    }
     document.body.addEventListener("click", function (e) {
-      var copy = e.target.closest("[data-copy]");
-      var mark = e.target.closest("[data-done]");
-      if (copy) {
-        navigator.clipboard.writeText(copy.getAttribute("data-copy"));
-        copy.textContent = "Đã chép";
-        setTimeout(function () { copy.textContent = "Sao chép"; }, 900);
-      }
-      if (mark) {
-        var id = mark.getAttribute("data-done");
-        done[id] = !done[id];
-        localStorage.setItem(todayKey(), JSON.stringify(done));
-        paint();
-      }
+      var copy = e.target.closest("[data-copy]"), mark = e.target.closest("[data-done]");
+      if (copy) { navigator.clipboard.writeText(copy.getAttribute("data-copy")); copy.textContent = "Đã chép"; setTimeout(function () { copy.textContent = "Sao chép"; }, 900); }
+      if (mark) { var id = mark.getAttribute("data-done"); done[id] = !done[id]; localStorage.setItem(todayKey(), JSON.stringify(done)); paint(); }
     });
     document.getElementById("q").addEventListener("input", function (e) { q = e.target.value.trim().toLowerCase(); paint(); });
     document.getElementById("sort").addEventListener("change", function (e) { sort = e.target.value; paint(); });
@@ -213,35 +169,20 @@
       Array.prototype.forEach.call(document.querySelectorAll(".chip"), function (c) { c.classList.remove("on"); });
       btn.classList.add("on"); paint();
     });
-    Array.prototype.forEach.call(document.querySelectorAll("[data-check]"), function (box) {
-      var key = box.getAttribute("data-check");
-      box.checked = !!checks[key];
-      box.addEventListener("change", function () {
-        checks[key] = box.checked;
-        sessionStorage.setItem("ytChecks", JSON.stringify(checks));
-        paint();
-      });
-    });
-    skeletons();
-    fetch("data.json?t=" + Date.now())
-      .then(function (res) { return res.json(); })
-      .then(async function (data) {
-        songs = data.youtube || [];
-        var key = window.YOUTUBE_API_KEY || "";
-        if (key && songs.length) {
-          try {
-            var res = await fetch("https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" + songs.map(function (s) { return s.videoId; }).join(",") + "&key=" + key);
-            var json = await res.json();
-            (json.items || []).forEach(function (item) { statsMap[item.id] = { views: parseInt(item.statistics.viewCount || 0, 10) }; });
-            updatedAt = new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" });
-          } catch (e) { updatedAt = ""; }
-        }
-        document.getElementById("updated").textContent = updatedAt ? "Lượt xem cập nhật lúc " + updatedAt : "Không tải được lượt xem, vẫn xem video được.";
-        paint();
-      })
-      .catch(function () {
-        document.getElementById("songs-list").innerHTML = '<p class="text-red-400">Không tải được danh sách. Tải lại trang.</p>';
-      });
+    document.getElementById("songs-list").innerHTML = '<div class="sk mb-3"></div><div class="sk mb-3"></div><div class="sk mb-3"></div>';
+    fetch("data.json?t=" + Date.now()).then(function (r) { return r.json(); }).then(async function (data) {
+      songs = data.youtube || [];
+      var key = window.YOUTUBE_API_KEY || "";
+      if (key && songs.length) {
+        try {
+          var res = await fetch("https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" + songs.map(function (s) { return s.videoId; }).join(",") + "&key=" + key);
+          var json = await res.json();
+          (json.items || []).forEach(function (item) { statsMap[item.id] = { views: parseInt(item.statistics.viewCount || 0, 10) }; });
+          document.getElementById("updated").textContent = "Lượt xem cập nhật lúc " + new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" });
+        } catch (e) { document.getElementById("updated").textContent = "Không tải được lượt xem, vẫn xem video được."; }
+      }
+      paint();
+    }).catch(function () { document.getElementById("songs-list").innerHTML = '<p class="text-red-400">Không tải được danh sách. Tải lại trang.</p>'; });
   </script>
 </body>
 </html>
