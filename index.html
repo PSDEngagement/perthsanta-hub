@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PerthSanta Engagement Hub</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
   <link rel="shortcut icon" href="images/logo.png">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://psdengagement.github.io/perthsanta-hub/">
   <meta property="og:title" content="PerthSanta Engagement Hub">
@@ -23,7 +21,6 @@
   <meta property="og:site_name" content="PerthSanta Hub">
   <meta property="og:locale" content="en_US">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PerthSanta Engagement Hub">
   <meta name="twitter:description" content="Official fan hub for PerthSanta × Domiia – Heartbound Series Trends, Daily Missions, YouTube Streaming & Instagram Engagement. Together Forever.">
@@ -85,12 +82,7 @@
 
     .event-live {
       display: block;
-      background: linear-gradient(
-        165deg,
-        #1a0808 0%,
-        #0f0f0f 50%,
-        #0a0a0a 100%
-      );
+      background: linear-gradient(165deg, #1a0808 0%, #0f0f0f 50%, #0a0a0a 100%);
       border: 1px solid #5c1a1a;
       border-radius: 0.9rem;
       padding: 0.75rem 0.85rem;
@@ -108,12 +100,7 @@
 
     .event-live.upcoming {
       border-color: #3f1a1a;
-      background: linear-gradient(
-        165deg,
-        #141010 0%,
-        #0f0f0f 50%,
-        #0a0a0a 100%
-      );
+      background: linear-gradient(165deg, #141010 0%, #0f0f0f 50%, #0a0a0a 100%);
     }
 
     .event-live.upcoming:hover {
@@ -150,21 +137,42 @@
     }
 
     @keyframes live-flash {
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.2;
-      }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
     }
 
-    .upcoming-dot {
+    .upcoming-dots {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.14rem;
+      min-width: 1.15rem;
+      color: #a1a1aa;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .upcoming-dots span {
+      opacity: 0.15;
+      animation: upcoming-run 1.2s infinite;
+    }
+
+    .upcoming-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .upcoming-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes upcoming-run {
+      0% { opacity: 0.15; }
+      25% { opacity: 1; }
+      70% { opacity: 1; }
+      100% { opacity: 0.15; }
+    }
+
+    .ended-dot {
       width: 0.45rem;
       height: 0.45rem;
       border-radius: 9999px;
-      background: #a1a1aa;
+      background: #71717a;
       flex-shrink: 0;
     }
 
@@ -177,9 +185,7 @@
     }
 
     @media (min-width: 640px) {
-      .ev-title {
-        font-size: 0.95rem;
-      }
+      .ev-title { font-size: 0.95rem; }
     }
 
     .ev-meta {
@@ -230,9 +236,7 @@
       text-shadow: 0 0 2px rgba(255,255,255,.65);
     }
 
-    .heart-red {
-      color: #ef4444;
-    }
+    .heart-red { color: #ef4444; }
 
     .ev-tags {
       display: flex;
@@ -284,12 +288,7 @@
       font-size: 0.68rem;
       font-weight: 600;
       color: #d4d4d8;
-      background: linear-gradient(
-        145deg,
-        #2a0a0a 0%,
-        #18181b 50%,
-        #0c0c0c 100%
-      );
+      background: linear-gradient(145deg, #2a0a0a 0%, #18181b 50%, #0c0c0c 100%);
       border: 1px solid #3f3f46;
       border-radius: 0.5rem;
       text-decoration: none;
@@ -299,48 +298,15 @@
     .ev-gen:hover {
       border-color: #ef4444;
       color: #fff;
-      background: linear-gradient(
-        145deg,
-        #450a0a 0%,
-        #1c0909 50%,
-        #0c0c0c 100%
-      );
+      background: linear-gradient(145deg, #450a0a 0%, #1c0909 50%, #0c0c0c 100%);
       transform: translateY(-1px);
-    }
-
-    .ev-view {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.2rem;
-      font-size: 0.7rem;
-      font-weight: 500;
-      padding: 0.3rem 0.65rem;
-      border-radius: 9999px;
-      border: 1px solid;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .ev-view.live {
-      border-color: rgba(220, 38, 38, 0.6);
-      color: #fca5a5;
-    }
-
-    .ev-view.upcoming {
-      border-color: #52525b;
-      color: #a1a1aa;
     }
 
     .menu-row {
       display: flex;
       align-items: center;
       gap: 1rem;
-      background: linear-gradient(
-        165deg,
-        #2a0a0a 0%,
-        #141414 45%,
-        #0a0a0a 100%
-      );
+      background: linear-gradient(165deg, #2a0a0a 0%, #141414 45%, #0a0a0a 100%);
       border: 1px solid #3f1a1a;
       border-radius: 1rem;
       padding: 0.9rem 1rem;
@@ -356,12 +322,7 @@
       right: 20%;
       bottom: 0;
       height: 2px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #ef4444,
-        transparent
-      );
+      background: linear-gradient(90deg, transparent, #ef4444, transparent);
       opacity: 0.6;
     }
 
@@ -369,21 +330,11 @@
       border-color: #991b1b;
       transform: translateY(-3px);
       box-shadow: 0 12px 28px rgba(185, 28, 28, 0.22);
-      background: linear-gradient(
-        165deg,
-        #450a0a 0%,
-        #1a0a0a 45%,
-        #0a0a0a 100%
-      );
+      background: linear-gradient(165deg, #450a0a 0%, #1a0a0a 45%, #0a0a0a 100%);
     }
 
-    .menu-row:hover::after {
-      opacity: 1;
-    }
-
-    .menu-row:active {
-      transform: translateY(-1px);
-    }
+    .menu-row:hover::after { opacity: 1; }
+    .menu-row:active { transform: translateY(-1px); }
 
     .menu-icon {
       width: 2.75rem;
@@ -399,47 +350,28 @@
     }
 
     @media (min-width: 640px) {
-      .menu-row {
-        padding: 1.1rem 1.25rem;
-      }
-
-      .menu-icon {
-        width: 3rem;
-        height: 3rem;
-      }
+      .menu-row { padding: 1.1rem 1.25rem; }
+      .menu-icon { width: 3rem; height: 3rem; }
     }
 
-    .tasks-grid {
-      display: none;
-    }
+    .tasks-grid { display: none; }
 
     @media (max-width: 639px) {
-      .tasks-grid.mobile-show {
-        display: grid;
-      }
+      .tasks-grid.mobile-show { display: grid; }
     }
 
     @media (min-width: 640px) {
-      .tasks-grid {
-        display: grid;
-      }
+      .tasks-grid { display: grid; }
     }
 
-    .desktop-empty-state {
-      display: none;
-    }
+    .desktop-empty-state { display: none; }
 
     @media (min-width: 640px) {
       .desktop-empty-state.show {
         display: block;
         border: 1px solid #3f1a1a;
         border-radius: 1rem;
-        background: linear-gradient(
-          165deg,
-          #171010 0%,
-          #101010 50%,
-          #0a0a0a 100%
-        );
+        background: linear-gradient(165deg, #171010 0%, #101010 50%, #0a0a0a 100%);
         padding: 1.1rem 1rem;
         text-align: center;
         margin-bottom: 1rem;
@@ -468,24 +400,15 @@
       }
     }
 
-    .mobile-home-support {
-      display: none;
-    }
+    .mobile-home-support { display: none; }
 
     @media (max-width: 639px) {
-      .mobile-home-support.show {
-        display: block;
-      }
+      .mobile-home-support.show { display: block; }
 
       .mobile-empty-state {
         border: 1px solid #3f1a1a;
         border-radius: 1rem;
-        background: linear-gradient(
-          165deg,
-          #171010 0%,
-          #101010 50%,
-          #0a0a0a 100%
-        );
+        background: linear-gradient(165deg, #171010 0%, #101010 50%, #0a0a0a 100%);
         padding: 1.1rem 1rem;
         text-align: center;
       }
@@ -520,42 +443,13 @@
   <main class="max-w-6xl mx-auto px-4 pt-3 sm:pt-4 pb-6">
 
     <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-red-900/30 bg-black mb-3 sm:mb-4 h-[200px] sm:h-[300px] md:h-[380px]">
-
-      <img
-        src="images/hero-perthsanta.jpg"
-        alt="PerthSanta"
-        class="hero-img absolute inset-0"
-      >
-
+      <img src="images/hero-perthsanta.jpg" alt="PerthSanta" class="hero-img absolute inset-0">
       <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-black/20"></div>
-
       <div class="absolute inset-x-0 top-0 flex flex-col items-center text-center px-4 pt-4 sm:pt-6 md:pt-8">
-
-        <h1
-          data-i18n="title"
-          class="hero-title text-2xl sm:text-4xl md:text-5xl font-bold tracking-wide text-white"
-        >
-          PerthSanta × Domiia
-        </h1>
-
-        <p
-          data-i18n="subtitle"
-          class="hero-sub mt-1 sm:mt-2 text-[10px] sm:text-xs md:text-sm uppercase text-white/90 font-medium"
-        >
-          Together Forever
-        </p>
-
+        <h1 data-i18n="title" class="hero-title text-2xl sm:text-4xl md:text-5xl font-bold tracking-wide text-white">PerthSanta × Domiia</h1>
+        <p data-i18n="subtitle" class="hero-sub mt-1 sm:mt-2 text-[10px] sm:text-xs md:text-sm uppercase text-white/90 font-medium">Together Forever</p>
       </div>
-
-      <a
-        href="https://x.com/jammyjellyjam?s=20"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="absolute bottom-2 right-3 sm:bottom-3 sm:right-4 text-[10px] sm:text-xs text-white/70 hover:text-white transition"
-      >
-        @jammyjellyjam
-      </a>
-
+      <a href="https://x.com/jammyjellyjam?s=20" target="_blank" rel="noopener noreferrer" class="absolute bottom-2 right-3 sm:bottom-3 sm:right-4 text-[10px] sm:text-xs text-white/70 hover:text-white transition">@jammyjellyjam</a>
     </div>
 
     <div id="events-stack" class="events-stack"></div>
@@ -574,10 +468,7 @@
       </div>
     </div>
 
-    <div
-      id="home-tasks"
-      class="tasks-grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
-    >
+    <div id="home-tasks" class="tasks-grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
 
       <a href="series-trends.html" class="menu-row">
         <div class="menu-icon">
@@ -723,24 +614,12 @@
 
       const hearts = [];
 
-      if (
-        values.includes("PERTH") ||
-        values.includes("PS") ||
-        values.includes("PERTHSANTA") ||
-        values.includes("PSD")
-      ) {
+      if (values.includes("PERTH") || values.includes("PS") || values.includes("PERTHSANTA") || values.includes("PSD")) {
         hearts.push('<span class="heart-black" aria-label="Perth">♥</span>');
       }
-
-      if (
-        values.includes("SANTA") ||
-        values.includes("PS") ||
-        values.includes("PERTHSANTA") ||
-        values.includes("PSD")
-      ) {
+      if (values.includes("SANTA") || values.includes("PS") || values.includes("PERTHSANTA") || values.includes("PSD")) {
         hearts.push('<span class="heart-white" aria-label="Santa">♥</span>');
       }
-
       if (values.includes("PSD")) {
         hearts.push('<span class="heart-red" aria-label="Domiia">♥</span>');
       }
@@ -752,9 +631,21 @@
       const isLive = status === "live";
       const isPast = status === "past";
       const cls = "event-live" + (isLive ? "" : " upcoming") + (isPast ? " opacity-60" : "");
-      const badgeDot = isLive ? '<span class="live-dot"></span>' : '<span class="upcoming-dot"></span>';
-      const badgeText = isLive ? "LIVE NOW" : (isPast ? "ENDED" : "UPCOMING");
-      const badgeClass = isLive ? "live-text" : "text-zinc-400";
+
+      let badgeDot = '<span class="ended-dot"></span>';
+      let badgeText = "ENDED";
+      let badgeClass = "text-zinc-400";
+
+      if (isLive) {
+        badgeDot = '<span class="live-dot"></span>';
+        badgeText = "LIVE NOW";
+        badgeClass = "live-text";
+      } else if (!isPast) {
+        badgeDot = '<span class="upcoming-dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span>';
+        badgeText = "UPCOMING";
+        badgeClass = "text-zinc-400";
+      }
+
       const heartsHtml = getAudienceHearts(ev.for);
       const hashtag = (ev.hastag && ev.hastag !== "TBA") ? "#" + ev.hastag.replace(/^#/, "") : "";
       const keyword = (ev.keyword && ev.keyword !== "TBA") ? ev.keyword : "";
@@ -842,22 +733,9 @@
       const activeEvents = [];
 
       allEvents.forEach(function (event) {
-        const showStart = new Date(
-          bkk.getFullYear(),
-          event._monthIndex,
-          event._day,
-          0, 0, 0, 0
-        );
-        const hideAt = new Date(
-          bkk.getFullYear(),
-          event._monthIndex,
-          event._day + 2,
-          0, 0, 0, 0
-        );
-
-        if (bkk >= showStart && bkk < hideAt) {
-          activeEvents.push(event);
-        }
+        const showStart = new Date(bkk.getFullYear(), event._monthIndex, event._day, 0, 0, 0, 0);
+        const hideAt = new Date(bkk.getFullYear(), event._monthIndex, event._day + 2, 0, 0, 0, 0);
+        if (bkk >= showStart && bkk < hideAt) activeEvents.push(event);
       });
 
       activeEvents.sort(function (a, b) {
@@ -875,15 +753,9 @@
       if (desktopEmptyState) desktopEmptyState.classList.remove("show");
       if (homeTasks) homeTasks.classList.remove("mobile-show");
 
-      if (mobileSupport && activeEvents.length === 0) {
-        mobileSupport.classList.add("show");
-      }
-      if (desktopEmptyState && activeEvents.length === 0) {
-        desktopEmptyState.classList.add("show");
-      }
-      if (homeTasks && activeEvents.length <= 1) {
-        homeTasks.classList.add("mobile-show");
-      }
+      if (mobileSupport && activeEvents.length === 0) mobileSupport.classList.add("show");
+      if (desktopEmptyState && activeEvents.length === 0) desktopEmptyState.classList.add("show");
+      if (homeTasks && activeEvents.length <= 1) homeTasks.classList.add("mobile-show");
 
       container.innerHTML = activeEvents.map(function (event) {
         return buildCard(event, getStatus(event, bkk));
