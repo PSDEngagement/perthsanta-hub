@@ -64,10 +64,6 @@
       text-shadow: 0 2px 12px rgba(0,0,0,.7);
     }
 
-    /* =========================================================
-       EVENT CARDS
-       ========================================================= */
-
     .events-stack {
       display: grid;
       grid-template-columns: 1fr;
@@ -85,8 +81,7 @@
       .events-stack {
         margin-bottom: 1rem;
       }
-    
-  }
+    }
 
     .event-live {
       display: block;
@@ -139,10 +134,6 @@
       gap: 0.35rem;
       flex-shrink: 0;
     }
-
-    /* =========================================================
-       LIVE NOW
-       ========================================================= */
 
     .live-dot {
       width: 0.45rem;
@@ -208,10 +199,6 @@
       flex-shrink: 0;
     }
 
-    /* =========================================================
-       HEARTS
-       ========================================================= */
-
     .ev-hearts {
       display: inline-flex;
       align-items: center;
@@ -246,10 +233,6 @@
     .heart-red {
       color: #ef4444;
     }
-
-    /* =========================================================
-       KEYWORD + HASHTAG
-       ========================================================= */
 
     .ev-tags {
       display: flex;
@@ -290,36 +273,25 @@
       gap: 0.4rem;
     }
 
-    /* =========================================================
-       GEN BUTTONS
-       ========================================================= */
-
     .ev-gen {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
       width: 2.7rem;
       height: 2.7rem;
       min-width: 2.7rem;
-
       padding: 0;
-
       font-size: 0.68rem;
       font-weight: 600;
-
       color: #d4d4d8;
-
       background: linear-gradient(
         145deg,
         #2a0a0a 0%,
         #18181b 50%,
         #0c0c0c 100%
       );
-
       border: 1px solid #3f3f46;
       border-radius: 0.5rem;
-
       text-decoration: none;
       transition: all 0.2s ease;
     }
@@ -327,14 +299,12 @@
     .ev-gen:hover {
       border-color: #ef4444;
       color: #fff;
-
       background: linear-gradient(
         145deg,
         #450a0a 0%,
         #1c0909 50%,
         #0c0c0c 100%
       );
-
       transform: translateY(-1px);
     }
 
@@ -361,27 +331,19 @@
       color: #a1a1aa;
     }
 
-    /* =========================================================
-       4 TASK CARDS
-       ========================================================= */
-
     .menu-row {
       display: flex;
       align-items: center;
       gap: 1rem;
-
       background: linear-gradient(
         165deg,
         #2a0a0a 0%,
         #141414 45%,
         #0a0a0a 100%
       );
-
       border: 1px solid #3f1a1a;
       border-radius: 1rem;
-
       padding: 0.9rem 1rem;
-
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -394,23 +356,19 @@
       right: 20%;
       bottom: 0;
       height: 2px;
-
       background: linear-gradient(
         90deg,
         transparent,
         #ef4444,
         transparent
       );
-
       opacity: 0.6;
     }
 
     .menu-row:hover {
       border-color: #991b1b;
       transform: translateY(-3px);
-
       box-shadow: 0 12px 28px rgba(185, 28, 28, 0.22);
-
       background: linear-gradient(
         165deg,
         #450a0a 0%,
@@ -430,16 +388,12 @@
     .menu-icon {
       width: 2.75rem;
       height: 2.75rem;
-
       border-radius: 0.75rem;
-
       background: #0a0a0a;
       border: 1px solid #3f1a1a;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       flex-shrink: 0;
       color: #f87171;
     }
@@ -456,166 +410,114 @@
     }
 
     .tasks-grid {
-  display: none;
-}
+      display: none;
+    }
 
-@media (max-width: 639px) {
-  .tasks-grid.mobile-show {
-    display: grid;
-  }
-}
+    @media (max-width: 639px) {
+      .tasks-grid.mobile-show {
+        display: grid;
+      }
+    }
 
-@media (min-width: 640px) {
-  .tasks-grid {
-    display: grid;
-  }
-}
+    @media (min-width: 640px) {
+      .tasks-grid {
+        display: grid;
+      }
+    }
 
-/* =========================================================
-   DESKTOP EMPTY STATE
-   ========================================================= */
+    .desktop-empty-state {
+      display: none;
+    }
 
-.desktop-empty-state {
-  display: none;
-}
+    @media (min-width: 640px) {
+      .desktop-empty-state.show {
+        display: block;
+        border: 1px solid #3f1a1a;
+        border-radius: 1rem;
+        background: linear-gradient(
+          165deg,
+          #171010 0%,
+          #101010 50%,
+          #0a0a0a 100%
+        );
+        padding: 1.1rem 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
 
-@media (min-width: 640px) {
+      .desktop-empty-heart {
+        color: #ffffff;
+        font-size: 1.35rem;
+        line-height: 1;
+        margin-bottom: 0.75rem;
+      }
 
-  .desktop-empty-state.show {
-    display: block;
+      .desktop-empty-title {
+        color: #ffffff;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 0.45rem;
+      }
 
-    border: 1px solid #3f1a1a;
-    border-radius: 1rem;
+      .desktop-empty-text {
+        color: #a1a1aa;
+        font-size: 0.75rem;
+        line-height: 1.55;
+      }
+    }
 
-    background: linear-gradient(
-      165deg,
-      #171010 0%,
-      #101010 50%,
-      #0a0a0a 100%
-    );
+    .mobile-home-support {
+      display: none;
+    }
 
-    padding: 1.1rem 1rem;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
+    @media (max-width: 639px) {
+      .mobile-home-support.show {
+        display: block;
+      }
 
-  .desktop-empty-heart {
-    color: #ffffff;
-    font-size: 1.35rem;
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
+      .mobile-empty-state {
+        border: 1px solid #3f1a1a;
+        border-radius: 1rem;
+        background: linear-gradient(
+          165deg,
+          #171010 0%,
+          #101010 50%,
+          #0a0a0a 100%
+        );
+        padding: 1.1rem 1rem;
+        text-align: center;
+      }
 
-  .desktop-empty-title {
-    color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    margin-bottom: 0.45rem;
-  }
+      .mobile-empty-heart {
+        color: #ffffff;
+        font-size: 1.35rem;
+        line-height: 1;
+        margin-bottom: 0.75rem;
+      }
 
-  .desktop-empty-text {
-    color: #a1a1aa;
-    font-size: 0.75rem;
-    line-height: 1.55;
-  }
+      .mobile-empty-title {
+        color: #ffffff;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 0.45rem;
+      }
 
-}
-/* =========================================================
-   MOBILE EMPTY STATE
-   ========================================================= */
-
-.mobile-home-support {
-  display: none;
-}
-
-@media (max-width: 639px) {
-
-  .mobile-home-support.show {
-    display: block;
-  }
-
-  .mobile-empty-state,
-  .mobile-explore-hub {
-    border: 1px solid #3f1a1a;
-    border-radius: 1rem;
-
-    background: linear-gradient(
-      165deg,
-      #171010 0%,
-      #101010 50%,
-      #0a0a0a 100%
-    );
-
-    padding: 1.1rem 1rem;
-  }
-
-  .mobile-empty-state {
-    text-align: center;
-  }
-
-  .mobile-empty-heart {
-    color: #ffffff;
-    font-size: 1.35rem;
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-
-  .mobile-empty-title {
-    color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    margin-bottom: 0.45rem;
-  }
-
-  .mobile-empty-text {
-    color: #a1a1aa;
-    font-size: 0.75rem;
-    line-height: 1.55;
-  }
-
-  .mobile-explore-hub {
-    margin-top: 0.7rem;
-  }
-
-  .mobile-explore-title {
-    color: #ffffff;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 0.7rem;
-  }
-
-  .mobile-explore-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.45rem 0.75rem;
-  }
-
-  .mobile-explore-links a {
-    color: #a1a1aa;
-    font-size: 0.72rem;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .mobile-explore-links a:hover {
-    color: #ffffff;
-  }
-
-}
+      .mobile-empty-text {
+        color: #a1a1aa;
+        font-size: 0.75rem;
+        line-height: 1.55;
+      }
+    }
   </style>
 </head>
 
 <body class="text-white bg-[#070707]">
 
   <main class="max-w-6xl mx-auto px-4 pt-3 sm:pt-4 pb-6">
-
-    <!-- HERO -->
 
     <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-red-900/30 bg-black mb-3 sm:mb-4 h-[200px] sm:h-[300px] md:h-[380px]">
 
@@ -656,479 +558,170 @@
 
     </div>
 
+    <div id="events-stack" class="events-stack"></div>
 
-   <!-- EVENT CARDS -->
-
-<div id="events-stack" class="events-stack"></div>
-<!-- DESKTOP EMPTY STATE -->
-
-<div id="desktop-empty-state" class="desktop-empty-state">
-
-  <div class="desktop-empty-heart">
-    ♡
-  </div>
-
-  <div class="desktop-empty-title">
-    NO EVENTS TODAY
-  </div>
-
-  <div class="desktop-empty-text">
-    Check back soon for the next PerthSanta update.
-  </div>
-
-</div>
-
-<!-- MOBILE EMPTY STATE -->
-
-<div id="mobile-home-support" class="mobile-home-support">
-
-  <div class="mobile-empty-state">
-
-    <div class="mobile-empty-heart">
-      ♡
+    <div id="desktop-empty-state" class="desktop-empty-state">
+      <div class="desktop-empty-heart">♡</div>
+      <div class="desktop-empty-title">NO EVENTS TODAY</div>
+      <div class="desktop-empty-text">Check back soon for the next PerthSanta update.</div>
     </div>
 
-    <div class="mobile-empty-title">
-      NO EVENTS TODAY
+    <div id="mobile-home-support" class="mobile-home-support">
+      <div class="mobile-empty-state">
+        <div class="mobile-empty-heart">♡</div>
+        <div class="mobile-empty-title">NO EVENTS TODAY</div>
+        <div class="mobile-empty-text">Check back soon for the next PerthSanta update.</div>
+      </div>
     </div>
 
-    <div class="mobile-empty-text">
-      Check back soon for the next PerthSanta update.
-    </div>
-
-  </div>
-
-
-  <div class="mobile-explore-hub">
-
-    <div class="mobile-explore-title">
-      EXPLORE THE HUB
-    </div>
-
-    <div class="mobile-explore-links">
-
-      <a href="daily-missions.html">
-        Daily Missions
-      </a>
-
-      <a href="ig-engagement.html">
-        Instagram Engagement
-      </a>
-
-      <a href="youtube-streaming.html">
-        YouTube
-      </a>
-
-      <a href="introduce.html">
-        Guides
-      </a>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- 4 TASK CARDS -->
-
-<div
-  id="home-tasks"
-  class="tasks-grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
->
-
-      <!-- Series Trends -->
+    <div
+      id="home-tasks"
+      class="tasks-grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+    >
 
       <a href="series-trends.html" class="menu-row">
-
         <div class="menu-icon">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
         </div>
-
         <div class="min-w-0 flex-1">
-
-          <p
-            data-i18n="card1Title"
-            class="font-semibold text-white text-[15px] sm:text-base truncate"
-          >
-            Heartbound Series Trends
-          </p>
-
-          <p
-            data-i18n="card1Desc"
-            class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate"
-          >
-            See what fans are loving
-          </p>
-
+          <p data-i18n="card1Title" class="font-semibold text-white text-[15px] sm:text-base truncate">Heartbound Series Trends</p>
+          <p data-i18n="card1Desc" class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate">See what fans are loving</p>
         </div>
-
         <span class="text-red-500 text-xl shrink-0">›</span>
-
       </a>
 
-
-      <!-- Daily Missions -->
-
       <a href="daily-missions.html" class="menu-row">
-
         <div class="menu-icon">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="9"/>
             <circle cx="12" cy="12" r="5"/>
             <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
           </svg>
         </div>
-
         <div class="min-w-0 flex-1">
-
-          <p
-            data-i18n="card2Title"
-            class="font-semibold text-white text-[15px] sm:text-base truncate"
-          >
-            Daily Missions
-          </p>
-
-          <p
-            data-i18n="card2Desc"
-            class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate"
-          >
-            Complete tasks, earn rewards
-          </p>
-
+          <p data-i18n="card2Title" class="font-semibold text-white text-[15px] sm:text-base truncate">Daily Missions</p>
+          <p data-i18n="card2Desc" class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate">Complete tasks, earn rewards</p>
         </div>
-
         <span class="text-red-500 text-xl shrink-0">›</span>
-
       </a>
 
-
-      <!-- YouTube -->
-
       <a href="youtube-streaming.html" class="menu-row">
-
         <div class="menu-icon">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
             <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/>
           </svg>
         </div>
-
         <div class="min-w-0 flex-1">
-
-          <p
-            data-i18n="card3Title"
-            class="font-semibold text-white text-[15px] sm:text-base truncate"
-          >
-            YouTube Streaming
-          </p>
-
-          <p
-            data-i18n="card3Desc"
-            class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate"
-          >
-            Live streams & exclusive content
-          </p>
-
+          <p data-i18n="card3Title" class="font-semibold text-white text-[15px] sm:text-base truncate">YouTube Streaming</p>
+          <p data-i18n="card3Desc" class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate">Live streams & exclusive content</p>
         </div>
-
         <span class="text-red-500 text-xl shrink-0">›</span>
-
       </a>
 
-
-      <!-- Instagram -->
-
       <a href="ig-engagement.html" class="menu-row">
-
         <div class="menu-icon">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="3" width="18" height="18" rx="5"/>
             <circle cx="12" cy="12" r="4"/>
-            <circle
-              cx="17.5"
-              cy="6.5"
-              r="1"
-              fill="currentColor"
-              stroke="none"
-            />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
           </svg>
         </div>
-
         <div class="min-w-0 flex-1">
-
-          <p
-            data-i18n="card4Title"
-            class="font-semibold text-white text-[15px] sm:text-base truncate"
-          >
-            Instagram Engagement
-          </p>
-
-          <p
-            data-i18n="card4Desc"
-            class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate"
-          >
-            Likes, comments & community
-          </p>
-
+          <p data-i18n="card4Title" class="font-semibold text-white text-[15px] sm:text-base truncate">Instagram Engagement</p>
+          <p data-i18n="card4Desc" class="text-xs sm:text-sm text-zinc-400 mt-0.5 truncate">Likes, comments & community</p>
         </div>
-
         <span class="text-red-500 text-xl shrink-0">›</span>
-
       </a>
 
     </div>
 
   </main>
 
-
-  <!-- EVENT SCRIPT -->
-
   <script>
   (function () {
 
     const MONTHS = {
-      jan: 0,
-      feb: 1,
-      mar: 2,
-      apr: 3,
-      may: 4,
-      jun: 5,
-      jul: 6,
-      aug: 7,
-      sep: 8,
-      oct: 9,
-      nov: 10,
-      dec: 11
+      jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5,
+      jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11
     };
 
-
     function parseDateLabel(label) {
-
       if (!label) return null;
-
-      const m = String(label)
-        .trim()
-        .match(/^(\d{1,2})\s+([A-Za-z]{3})/);
-
+      const m = String(label).trim().match(/^(\d{1,2})\s+([A-Za-z]{3})/);
       if (!m) return null;
-
       const day = parseInt(m[1], 10);
-
-      const monthIndex =
-        MONTHS[m[2].toLowerCase()];
-
-      if (monthIndex === undefined) {
-        return null;
-      }
-
-      return {
-        day,
-        monthIndex
-      };
+      const monthIndex = MONTHS[m[2].toLowerCase()];
+      if (monthIndex === undefined) return null;
+      return { day, monthIndex };
     }
 
-
     function parseTimeToMinutes(note) {
-
       if (!note) return null;
+      const s = String(note).trim().toUpperCase();
+      if (s === "ALL DAY" || s === "TBA" || s === "N/A") return null;
 
-      const s =
-        String(note)
-          .trim()
-          .toUpperCase();
-
-      if (
-        s === "ALL DAY" ||
-        s === "TBA" ||
-        s === "N/A"
-      ) {
-        return null;
-      }
-
-
-      let m =
-        s.match(
-          /(\d{1,2})[:.](\d{2})\s*(AM|PM)/
-        );
-
+      let m = s.match(/(\d{1,2})[:.](\d{2})\s*(AM|PM)/);
       if (m) {
-
-        let h =
-          parseInt(m[1], 10);
-
-        const min =
-          parseInt(m[2], 10);
-
+        let h = parseInt(m[1], 10);
+        const min = parseInt(m[2], 10);
         const ap = m[3];
-
-        if (ap === "PM" && h < 12) {
-          h += 12;
-        }
-
-        if (ap === "AM" && h === 12) {
-          h = 0;
-        }
-
+        if (ap === "PM" && h < 12) h += 12;
+        if (ap === "AM" && h === 12) h = 0;
         return h * 60 + min;
       }
 
-
-      m =
-        s.match(
-          /(\d{1,2})[:.](\d{2})/
-        );
-
-      if (m) {
-
-        return (
-          parseInt(m[1], 10) * 60 +
-          parseInt(m[2], 10)
-        );
-      }
-
+      m = s.match(/(\d{1,2})[:.](\d{2})/);
+      if (m) return parseInt(m[1], 10) * 60 + parseInt(m[2], 10);
       return null;
     }
 
-
     function formatDisplayTime(note) {
-
       if (!note) return "";
-
-      const s =
-        String(note).trim();
-
-      if (/ALL DAY/i.test(s)) {
-        return "ALL DAY";
-      }
-
-      if (/TBA/i.test(s)) {
-        return "TBA";
-      }
-
-      return (
-        s
-          .replace(/\s*\([^)]*\)\s*/g, "")
-          .trim() +
-        " BKK"
-      );
+      const s = String(note).trim();
+      if (/ALL DAY/i.test(s)) return "ALL DAY";
+      if (/TBA/i.test(s)) return "TBA";
+      return s.replace(/\s*\([^)]*\)\s*/g, "").trim() + " BKK";
     }
-
 
     function formatDateShort(day, monthIndex) {
-
-      const names = [
-        "JAN",
-        "FEB",
-        "MAR",
-        "APR",
-        "MAY",
-        "JUN",
-        "JUL",
-        "AUG",
-        "SEP",
-        "OCT",
-        "NOV",
-        "DEC"
-      ];
-
-      return (
-        String(day).padStart(2, "0") +
-        " " +
-        names[monthIndex]
-      );
+      const names = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+      return String(day).padStart(2, "0") + " " + names[monthIndex];
     }
 
+    function getBkkNow() {
+      const now = new Date();
+      const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+      return new Date(utc + 7 * 60 * 60 * 1000);
+    }
 
     function getStatus(event, nowDate) {
-
-  if (event._startMin === null) {
-    return "live";
-  }
-
-  const eventStart =
-    new Date(
-      nowDate.getFullYear(),
-      event._monthIndex,
-      event._day,
-      Math.floor(event._startMin / 60),
-      event._startMin % 60,
-      0,
-      0
-    );
-
-  const eventEnd =
-    new Date(
-      eventStart.getTime() +
-      24 * 60 * 60 * 1000
-    );
-
-  if (nowDate < eventStart) {
-    return "upcoming";
-  }
-
-  if (nowDate >= eventEnd) {
-    return "past";
-  }
-
-  return "live";
-}
-
-    /* =========================================================
-       HEARTS
-
-       PERTH     = BLACK
-       SANTA     = WHITE
-       PS        = BLACK + WHITE
-       PSD       = BLACK + WHITE + RED
-
-       Always:
-       BLACK → WHITE → RED
-       ========================================================= */
+      const start = event._startMin === null
+        ? new Date(nowDate.getFullYear(), event._monthIndex, event._day, 0, 0, 0, 0)
+        : new Date(
+            nowDate.getFullYear(),
+            event._monthIndex,
+            event._day,
+            Math.floor(event._startMin / 60),
+            event._startMin % 60,
+            0,
+            0
+          );
+      const eventEnd = new Date(start.getTime() + 24 * 60 * 60 * 1000);
+      if (nowDate < start) return "upcoming";
+      if (nowDate >= eventEnd) return "past";
+      return "live";
+    }
 
     function getAudienceHearts(audience) {
-
-      const values =
-        Array.isArray(audience)
-          ? audience.map(function (item) {
-              return String(item || "")
-                .trim()
-                .toUpperCase();
-            })
-          : [
-              String(audience || "")
-                .trim()
-                .toUpperCase()
-            ];
-
+      const values = Array.isArray(audience)
+        ? audience.map(function (item) {
+            return String(item || "").trim().toUpperCase();
+          })
+        : [String(audience || "").trim().toUpperCase()];
 
       const hearts = [];
-
 
       if (
         values.includes("PERTH") ||
@@ -1136,13 +729,8 @@
         values.includes("PERTHSANTA") ||
         values.includes("PSD")
       ) {
-
-        hearts.push(
-          '<span class="heart-black" aria-label="Perth">♥</span>'
-        );
-
+        hearts.push('<span class="heart-black" aria-label="Perth">♥</span>');
       }
-
 
       if (
         values.includes("SANTA") ||
@@ -1150,641 +738,176 @@
         values.includes("PERTHSANTA") ||
         values.includes("PSD")
       ) {
-
-        hearts.push(
-          '<span class="heart-white" aria-label="Santa">♥</span>'
-        );
-
+        hearts.push('<span class="heart-white" aria-label="Santa">♥</span>');
       }
 
-
-      if (
-        values.includes("PSD")
-      ) {
-
-        hearts.push(
-          '<span class="heart-red" aria-label="Domiia">♥</span>'
-        );
-
+      if (values.includes("PSD")) {
+        hearts.push('<span class="heart-red" aria-label="Domiia">♥</span>');
       }
-
 
       return hearts.join("");
     }
 
-
-    // =========================================================
-    // Build Event Card
-    // =========================================================
-
     function buildCard(ev, status) {
+      const isLive = status === "live";
+      const isPast = status === "past";
+      const cls = "event-live" + (isLive ? "" : " upcoming") + (isPast ? " opacity-60" : "");
+      const badgeDot = isLive ? '<span class="live-dot"></span>' : '<span class="upcoming-dot"></span>';
+      const badgeText = isLive ? "LIVE NOW" : (isPast ? "ENDED" : "UPCOMING");
+      const badgeClass = isLive ? "live-text" : "text-zinc-400";
+      const heartsHtml = getAudienceHearts(ev.for);
+      const hashtag = (ev.hastag && ev.hastag !== "TBA") ? "#" + ev.hastag.replace(/^#/, "") : "";
+      const keyword = (ev.keyword && ev.keyword !== "TBA") ? ev.keyword : "";
+      const timeStr = formatDisplayTime(ev.note);
+      const dateStr = formatDateShort(ev._day, ev._monthIndex);
 
-      const isLive =
-        status === "live";
-
-      const isPast =
-        status === "past";
-
-      const cls =
-        "event-live" +
-        (isLive ? "" : " upcoming") +
-        (isPast ? " opacity-60" : "");
-
-
-      // -------------------------------------------------------
-      // LIVE / UPCOMING badge
-      // -------------------------------------------------------
-
-      const badgeDot =
-        isLive
-          ? '<span class="live-dot"></span>'
-          : '<span class="upcoming-dot"></span>';
-
-
-      const badgeText =
-        isLive
-          ? "LIVE NOW"
-          : (isPast ? "ENDED" : "UPCOMING");
-
-
-      const badgeClass =
-        isLive
-          ? "live-text"
-          : "text-zinc-400";
-
-
-      // -------------------------------------------------------
-      // Hearts
-      // -------------------------------------------------------
-
-      const heartsHtml =
-        getAudienceHearts(ev.for);
-
-
-      // -------------------------------------------------------
-      // Hashtag
-      // -------------------------------------------------------
-
-      const hashtag =
-        (ev.hastag && ev.hastag !== "TBA")
-          ? "#" + ev.hastag.replace(/^#/, "")
-          : "";
-
-
-      // -------------------------------------------------------
-      // Keyword
-      // -------------------------------------------------------
-
-      const keyword =
-        (ev.keyword && ev.keyword !== "TBA")
-          ? ev.keyword
-          : "";
-
-
-      // -------------------------------------------------------
-      // Date / time
-      // -------------------------------------------------------
-
-      const timeStr =
-        formatDisplayTime(ev.note);
-
-      const dateStr =
-        formatDateShort(
-          ev._day,
-          ev._monthIndex
-        );
-
-
-      // -------------------------------------------------------
-      // GEN links
-      // Maximum 2
-      // -------------------------------------------------------
-
-      const gens =
-        (
-          Array.isArray(ev.generators)
-            ? ev.generators
-            : []
-        )
+      const gens = (Array.isArray(ev.generators) ? ev.generators : [])
         .filter(function (g) {
-
-          return (
-            g &&
-            g.url &&
-            g.url !== "#" &&
-            g.url !== "event-today.html"
-          );
-
+          return g && g.url && g.url !== "#" && g.url !== "event-today.html";
         })
         .slice(0, 2);
 
-
-      const genHtml =
-        gens
-          .map(function (g, i) {
-
-            return (
-              '<a href="' +
-              g.url +
-              '" target="_blank" rel="noopener noreferrer" class="ev-gen">' +
-              (g.name || ("GEN " + (i + 1))) +
-              "</a>"
-            );
-
-          })
-          .join("");
-
-
-      // -------------------------------------------------------
-      // Tags
-      // Keyword FIRST
-      // Hashtag SECOND
-      // -------------------------------------------------------
+      const genHtml = gens.map(function (g, i) {
+        return '<a href="' + g.url + '" target="_blank" rel="noopener noreferrer" class="ev-gen">' +
+          (g.name || ("GEN " + (i + 1))) + "</a>";
+      }).join("");
 
       let tagsHtml = "";
+      if (keyword) tagsHtml += '<span class="ev-tag keyword">' + keyword + "</span>";
+      if (hashtag) tagsHtml += '<span class="ev-tag hashtag">' + hashtag + "</span>";
 
-
-      if (keyword) {
-
-        tagsHtml +=
-          '<span class="ev-tag keyword">' +
-          keyword +
-          "</span>";
-
-      }
-
-
-      if (hashtag) {
-
-        tagsHtml +=
-          '<span class="ev-tag hashtag">' +
-          hashtag +
-          "</span>";
-
-      }
-
-
-      // -------------------------------------------------------
-      // Complete card
-      // -------------------------------------------------------
-
-      return (
-
-        '<div class="' + cls + '">' +
-
-
-          // Badge + Hearts
-
-          '<div class="ev-top">' +
-
-            '<div class="ev-badge">' +
-
-              badgeDot +
-
-              '<span class="text-[11px] font-bold tracking-wide uppercase ' +
-              badgeClass +
-              '">' +
-
+      return '<div class="' + cls + '">' +
+        '<div class="ev-top">' +
+          '<div class="ev-badge">' +
+            badgeDot +
+            '<span class="text-[11px] font-bold tracking-wide uppercase ' + badgeClass + '">' +
               badgeText +
-
-              "</span>" +
-
-            "</div>" +
-
-            (
-              heartsHtml
-                ? (
-                    '<div class="ev-hearts">' +
-                    heartsHtml +
-                    "</div>"
-                  )
-                : ""
-            ) +
-
-          "</div>" +
-
-
-          // Event title
-
-          '<p class="ev-title">' +
-          (ev.title || "Event") +
-          "</p>" +
-
-
-          // Date / time
-
-          '<div class="ev-meta">' +
-
-            '<span class="inline-flex items-center gap-1">' +
-
-              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
-                '<rect x="3" y="4" width="18" height="18" rx="2"/>' +
-                '<path d="M16 2v4M8 2v4M3 10h18"/>' +
-              '</svg>' +
-
-              dateStr +
-
             "</span>" +
-
-
-            (
-              timeStr
-                ? (
-                    '<span class="inline-flex items-center gap-1">' +
-
-                      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
-                        '<circle cx="12" cy="12" r="9"/>' +
-                        '<path d="M12 7v5l3 2"/>' +
-                      '</svg>' +
-
-                      timeStr +
-
-                    "</span>"
-                  )
-                : ""
-            ) +
-
           "</div>" +
-
-
-          // Keyword + Hashtag
-
-          (
-            tagsHtml
-              ? (
-                  '<div class="ev-tags">' +
-                  tagsHtml +
-                  "</div>"
-                )
-              : ""
-          ) +
-
-
-          // GEN buttons
-
-          (
-            genHtml
-              ? (
-                  '<div class="ev-bottom">' +
-
-                    '<div class="ev-gens">' +
-                    genHtml +
-                    "</div>" +
-
-                  "</div>"
-                )
-              : ""
-          ) +
-
-
-        "</div>"
-
-      );
+          (heartsHtml ? '<div class="ev-hearts">' + heartsHtml + "</div>" : "") +
+        "</div>" +
+        '<p class="ev-title">' + (ev.title || "Event") + "</p>" +
+        '<div class="ev-meta">' +
+          '<span class="inline-flex items-center gap-1">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+              '<rect x="3" y="4" width="18" height="18" rx="2"/>' +
+              '<path d="M16 2v4M8 2v4M3 10h18"/>' +
+            "</svg>" +
+            dateStr +
+          "</span>" +
+          (timeStr
+            ? '<span class="inline-flex items-center gap-1">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+                  '<circle cx="12" cy="12" r="9"/>' +
+                  '<path d="M12 7v5l3 2"/>' +
+                "</svg>" +
+                timeStr +
+              "</span>"
+            : "") +
+        "</div>" +
+        (tagsHtml ? '<div class="ev-tags">' + tagsHtml + "</div>" : "") +
+        (genHtml ? '<div class="ev-bottom"><div class="ev-gens">' + genHtml + "</div></div>" : "") +
+      "</div>";
     }
 
+    const container = document.getElementById("events-stack");
+    if (!container) return;
 
-    // =========================================================
-    // Main
-    // =========================================================
+    let scheduleCache = [];
 
-    const container =
-      document.getElementById(
-        "events-stack"
-      );
+    function renderHomeEvents() {
+      const bkk = getBkkNow();
+      const allEvents = [];
 
+      scheduleCache.forEach(function (monthBlock) {
+        (monthBlock.items || []).forEach(function (item) {
+          const parsed = parseDateLabel(item.date);
+          if (!parsed) return;
 
-    if (!container) {
-      return;
-    }
-
-
-    // =========================================================
-    // Current time in Bangkok / UTC+7
-    // =========================================================
-
-    const now =
-      new Date();
-
-    const bkkOffsetMs =
-      7 *
-      60 *
-      60 *
-      1000;
-
-    const utc =
-      now.getTime() +
-      now.getTimezoneOffset() *
-      60000;
-
-    const bkk =
-      new Date(
-        utc +
-        bkkOffsetMs
-      );
-
-
-    const todayDay =
-      bkk.getDate();
-
-    const todayMonth =
-      bkk.getMonth();
-
-    const nowMinutes =
-      bkk.getHours() * 60 +
-      bkk.getMinutes();
-
-
-    // =========================================================
-    // Load data.json
-    // =========================================================
-
-    fetch(
-      "data.json?t=" +
-      Date.now()
-    )
-
-      .then(function (r) {
-
-        return r.json();
-
-      })
-
-
-      .then(function (data) {
-
-        const schedule =
-          (
-            data.introduce &&
-            data.introduce.schedule
-          ) || [];
-
-
-
-        // -----------------------------------------------------
-        // Find ALL events happening today
-        // -----------------------------------------------------
-
-        const allEvents = [];
-
-schedule.forEach(
-  function (monthBlock) {
-
-    (
-      monthBlock.items ||
-      []
-    ).forEach(
-      function (item) {
-
-        const parsed =
-          parseDateLabel(
-            item.date
-          );
-
-        if (!parsed) {
-          return;
-        }
-
-        allEvents.push({
-
-          title: item.title,
-
-          note: item.note,
-
-          location: item.location,
-
-          hastag: item.hastag,
-
-          keyword: item.keyword,
-
-          for: item.for,
-
-          generators:
-            Array.isArray(item.generators)
-              ? item.generators
-              : [],
-
-          _day:
-            parsed.day,
-
-          _monthIndex:
-            parsed.monthIndex,
-
-          _startMin:
-            parseTimeToMinutes(
-              item.note
-            )
-
+          allEvents.push({
+            title: item.title,
+            note: item.note,
+            location: item.location,
+            hastag: item.hastag,
+            keyword: item.keyword,
+            for: item.for,
+            generators: Array.isArray(item.generators) ? item.generators : [],
+            _day: parsed.day,
+            _monthIndex: parsed.monthIndex,
+            _startMin: parseTimeToMinutes(item.note)
+          });
         });
+      });
 
-      }
-    );
+      const activeEvents = [];
 
-  }
-);
-        const activeEvents = [];
-
-allEvents.forEach(
-  function (event) {
-
-    if (event._startMin === null) {
-
-      if (
-        event._day === todayDay &&
-        event._monthIndex === todayMonth
-      ) {
-        activeEvents.push(event);
-      }
-
-      return;
-    }
-
-    const eventStart =
-      new Date(
-        bkk.getFullYear(),
-        event._monthIndex,
-        event._day,
-        Math.floor(event._startMin / 60),
-        event._startMin % 60,
-        0,
-        0
-      );
-
-    const eventEnd =
-      new Date(
-        eventStart.getTime() +
-        24 * 60 * 60 * 1000
-      );
-
-    if (
-      bkk >= eventStart &&
-      bkk < eventEnd
-    ) {
-
-      activeEvents.push(event);
-
-    }
-
-  }
-);
-
-
-        // -----------------------------------------------------
-        // Sort today's events by start time
-        // -----------------------------------------------------
-
-        activeEvents.sort(
-          function (a, b) {
-
-            if (
-              a._startMin === null &&
-              b._startMin === null
-            ) {
-              return 0;
-            }
-
-            if (
-              a._startMin === null
-            ) {
-              return 1;
-            }
-
-            if (
-              b._startMin === null
-            ) {
-              return -1;
-            }
-
-            return (
-              a._startMin -
-              b._startMin
-            );
-
-          }
+      allEvents.forEach(function (event) {
+        const showStart = new Date(
+          bkk.getFullYear(),
+          event._monthIndex,
+          event._day,
+          0, 0, 0, 0
+        );
+        const hideAt = new Date(
+          bkk.getFullYear(),
+          event._monthIndex,
+          event._day + 2,
+          0, 0, 0, 0
         );
 
-// -----------------------------------------------------
-// Mobile home layout
-//
-// 0 events  → Empty State + Explore Hub + 4 Tasks
-// 1 event   → Event Card + 4 Tasks
-// 2+ events → Event Cards + NO 4 Tasks
-//
-// Desktop remains unchanged.
-// -----------------------------------------------------
+        if (bkk >= showStart && bkk < hideAt) {
+          activeEvents.push(event);
+        }
+      });
 
-const mobileSupport =
-  document.getElementById("mobile-home-support");
+      activeEvents.sort(function (a, b) {
+        if (a._startMin === null && b._startMin === null) return 0;
+        if (a._startMin === null) return 1;
+        if (b._startMin === null) return -1;
+        return a._startMin - b._startMin;
+      });
 
-const homeTasks =
-  document.getElementById("home-tasks");
-const desktopEmptyState =
-  document.getElementById("desktop-empty-state");
+      const mobileSupport = document.getElementById("mobile-home-support");
+      const homeTasks = document.getElementById("home-tasks");
+      const desktopEmptyState = document.getElementById("desktop-empty-state");
 
-// -----------------------------------------------------
-// 0 events
-// -----------------------------------------------------
+      if (mobileSupport) mobileSupport.classList.remove("show");
+      if (desktopEmptyState) desktopEmptyState.classList.remove("show");
+      if (homeTasks) homeTasks.classList.remove("mobile-show");
 
-if (
-  mobileSupport &&
-  activeEvents.length === 0
-) {
+      if (mobileSupport && activeEvents.length === 0) {
+        mobileSupport.classList.add("show");
+      }
+      if (desktopEmptyState && activeEvents.length === 0) {
+        desktopEmptyState.classList.add("show");
+      }
+      if (homeTasks && activeEvents.length <= 1) {
+        homeTasks.classList.add("mobile-show");
+      }
 
-  mobileSupport.classList.add("show");
+      container.innerHTML = activeEvents.map(function (event) {
+        return buildCard(event, getStatus(event, bkk));
+      }).join("");
+    }
 
-}
-if (
-  desktopEmptyState &&
-  activeEvents.length === 0
-) {
-
-  desktopEmptyState.classList.add("show");
-
-}
-
-// -----------------------------------------------------
-// 0 or 1 event → show 4 Tasks on mobile
-// -----------------------------------------------------
-
-if (
-  homeTasks &&
-  activeEvents.length <= 1
-) {
-
-  homeTasks.classList.add("mobile-show");
-
-}
-
-
-// -----------------------------------------------------
-// 2+ events → hide 4 Tasks on mobile
-// -----------------------------------------------------
-
-if (
-  homeTasks &&
-  activeEvents.length >= 2
-) {
-
-  homeTasks.classList.remove("mobile-show");
-
-}
-
-        // -----------------------------------------------------
-        // Show ALL events today
-        // -----------------------------------------------------
-
-        container.innerHTML =
-          activeEvents
-            .map(function (event) {
-
-              const status =
-  getStatus(
-    event,
-    bkk
-  );
-
-              return buildCard(
-                event,
-                status
-              );
-
-            })
-            .join("");
-
-
+    fetch("data.json?t=" + Date.now())
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        scheduleCache = (data.introduce && data.introduce.schedule) || [];
+        renderHomeEvents();
+        setInterval(renderHomeEvents, 30000);
       })
-
-
-      // =======================================================
-      // Error handling
-      // =======================================================
-
       .catch(function (err) {
-
-        console.warn(
-          "Failed to load events:",
-          err
-        );
-
-
+        console.warn("Failed to load events:", err);
         container.innerHTML =
-
           '<div class="event-live upcoming">' +
-
-            '<p class="ev-title">' +
-            "Could not load events" +
-            "</p>" +
-
-            '<div class="ev-meta">' +
-            "Please refresh the page" +
-            "</div>" +
-
+            '<p class="ev-title">Could not load events</p>' +
+            '<div class="ev-meta">Please refresh the page</div>' +
           "</div>";
-
       });
 
   })();
   </script>
-
 
   <script src="common.js"></script>
 
