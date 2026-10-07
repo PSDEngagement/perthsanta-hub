@@ -85,7 +85,8 @@
       .events-stack {
         margin-bottom: 1rem;
       }
-    }
+    
+  }
 
     .event-live {
       display: block;
@@ -455,14 +456,108 @@
     }
 
     .tasks-grid {
-      display: none;
-    }
+  display: none;
+}
 
-    @media (min-width: 640px) {
-      .tasks-grid {
-        display: grid;
-      }
-    }
+@media (max-width: 639px) {
+  .tasks-grid.mobile-show {
+    display: grid;
+  }
+}
+
+@media (min-width: 640px) {
+  .tasks-grid {
+    display: grid;
+  }
+}
+
+
+/* =========================================================
+   MOBILE EMPTY STATE
+   ========================================================= */
+
+.mobile-home-support {
+  display: none;
+}
+
+@media (max-width: 639px) {
+
+  .mobile-home-support.show {
+    display: block;
+  }
+
+  .mobile-empty-state,
+  .mobile-explore-hub {
+    border: 1px solid #3f1a1a;
+    border-radius: 1rem;
+
+    background: linear-gradient(
+      165deg,
+      #171010 0%,
+      #101010 50%,
+      #0a0a0a 100%
+    );
+
+    padding: 1.1rem 1rem;
+  }
+
+  .mobile-empty-state {
+    text-align: center;
+  }
+
+  .mobile-empty-heart {
+    color: #ffffff;
+    font-size: 1.35rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .mobile-empty-title {
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 0.45rem;
+  }
+
+  .mobile-empty-text {
+    color: #a1a1aa;
+    font-size: 0.75rem;
+    line-height: 1.55;
+  }
+
+  .mobile-explore-hub {
+    margin-top: 0.7rem;
+  }
+
+  .mobile-explore-title {
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+  }
+
+  .mobile-explore-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem 0.75rem;
+  }
+
+  .mobile-explore-links a {
+    color: #a1a1aa;
+    font-size: 0.72rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .mobile-explore-links a:hover {
+    color: #ffffff;
+  }
+
+}
   </style>
 </head>
 
@@ -512,10 +607,69 @@
     </div>
 
 
-    <!-- EVENT CARDS -->
+   <!-- EVENT CARDS -->
 
-    <div id="events-stack" class="events-stack"></div>
+<div id="events-stack" class="events-stack"></div>
 
+
+<!-- MOBILE EMPTY STATE -->
+
+<div id="mobile-home-support" class="mobile-home-support">
+
+  <div class="mobile-empty-state">
+
+    <div class="mobile-empty-heart">
+      ♡
+    </div>
+
+    <div class="mobile-empty-title">
+      NO EVENTS TODAY
+    </div>
+
+    <div class="mobile-empty-text">
+      Check back soon for the next PerthSanta update.
+    </div>
+
+  </div>
+
+
+  <div class="mobile-explore-hub">
+
+    <div class="mobile-explore-title">
+      EXPLORE THE HUB
+    </div>
+
+    <div class="mobile-explore-links">
+
+      <a href="daily-missions.html">
+        Daily Missions
+      </a>
+
+      <a href="ig-engagement.html">
+        Instagram Engagement
+      </a>
+
+      <a href="youtube-streaming.html">
+        YouTube
+      </a>
+
+      <a href="introduce.html">
+        Guides
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- 4 TASK CARDS -->
+
+<div
+  id="home-tasks"
+  class="tasks-grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+>
 
     <!-- 4 TASK CARDS -->
 
@@ -1446,42 +1600,63 @@ allEvents.forEach(
           }
         );
 
+// -----------------------------------------------------
+// Mobile home layout
+//
+// 0 events  → Empty State + Explore Hub + 4 Tasks
+// 1 event   → Event Card + 4 Tasks
+// 2+ events → Event Cards + NO 4 Tasks
+//
+// Desktop remains unchanged.
+// -----------------------------------------------------
 
-        // -----------------------------------------------------
-        // No events today
-        // -----------------------------------------------------
+const mobileSupport =
+  document.getElementById("mobile-home-support");
 
-        if (
+const homeTasks =
+  document.getElementById("home-tasks");
+
+
+// -----------------------------------------------------
+// 0 events
+// -----------------------------------------------------
+
+if (
+  mobileSupport &&
   activeEvents.length === 0
-        ) {
+) {
 
-          container.innerHTML =
+  mobileSupport.classList.add("show");
 
-            '<div class="event-live upcoming opacity-70">' +
+}
 
-              '<p class="ev-title">' +
-              "No events today" +
-              "</p>" +
 
-              '<div class="ev-meta">' +
-              "Check the full schedule in Intro" +
-              "</div>" +
+// -----------------------------------------------------
+// 0 or 1 event → show 4 Tasks on mobile
+// -----------------------------------------------------
 
-              '<div class="ev-bottom">' +
+if (
+  homeTasks &&
+  activeEvents.length <= 1
+) {
 
-                '<div></div>' +
+  homeTasks.classList.add("mobile-show");
 
-                '<a href="introduce.html" class="ev-view upcoming">' +
-                "Schedule →" +
-                "</a>" +
+}
 
-              "</div>" +
 
-            "</div>";
+// -----------------------------------------------------
+// 2+ events → hide 4 Tasks on mobile
+// -----------------------------------------------------
 
-          return;
-        }
+if (
+  homeTasks &&
+  activeEvents.length >= 2
+) {
 
+  homeTasks.classList.remove("mobile-show");
+
+}
 
         // -----------------------------------------------------
         // Show ALL events today
