@@ -104,6 +104,35 @@
       border-radius: 9999px;
       transition: width 0.4s ease;
     }
+
+    .cat-filters {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .cat-filters { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+    .cat-btn {
+      background: linear-gradient(165deg, #2a0a0a 0%, #141414 55%, #0a0a0a 100%);
+      border: 1px solid #3f1a1a;
+      color: #fecaca;
+      border-radius: 0.85rem;
+      padding: 0.7rem 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.2;
+      transition: all 0.2s ease;
+    }
+    .cat-btn:hover { border-color: #991b1b; }
+    .cat-btn.active {
+      background: linear-gradient(145deg, #7f1d1d 0%, #450a0a 100%);
+      border-color: #ef4444;
+      color: #fff;
+      box-shadow: 0 0 14px rgba(239, 68, 68, 0.28);
+    }
   </style>
 </head>
 <body class="text-white relative overflow-x-hidden">
@@ -140,6 +169,16 @@
     </div>
   </div>
 
+  <!-- Category filters -->
+  <div id="cat-filters" class="relative z-10 max-w-4xl mx-auto px-4 fade-up fade-up-d2">
+    <div class="cat-filters">
+      <button type="button" class="cat-btn" data-group="trailer">Trailer/Pilot</button>
+      <button type="button" class="cat-btn" data-group="ost">OST</button>
+      <button type="button" class="cat-btn" data-group="perth">Perth Solo</button>
+      <button type="button" class="cat-btn" data-group="jasper">JASP.ER</button>
+    </div>
+  </div>
+
   <!-- Songs list -->
   <div id="songs-list" class="relative z-10 max-w-4xl mx-auto px-4 pb-24 fade-up fade-up-d2">
     <p class="text-gray-500">Loading...</p>
@@ -155,6 +194,21 @@
       while (currentViews >= target) target += 100000;
       return target;
     }
+
+    var activeGroup = "";
+    var allSongs = [];
+    var statsMap = {};
+
+    document.querySelectorAll(".cat-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var group = btn.getAttribute("data-group");
+        activeGroup = activeGroup === group ? "" : group;
+        document.querySelectorAll(".cat-btn").forEach(function (b) {
+          b.classList.toggle("active", b.getAttribute("data-group") === activeGroup);
+        });
+        renderSongs();
+      });
+    });
 
     function makeCard(song, statsMap) {
       var currentViews = statsMap[song.videoId] ? statsMap[song.videoId].views : 0;
@@ -187,25 +241,64 @@
       return card;
     }
 
+    function renderSongs() {
+      var container = document.getElementById("songs-list");
+      container.innerHTML = "";
+
+      var order = [
+        { id: "trailer", label: "Trailer / Pilot" },
+        { id: "ost", label: "OST" },
+        { id: "perth", label: "Perth Solo" },
+        { id: "jasper", label: "JASP.ER" }
+      ];
+      if (activeGroup) order = order.filter(function (sec) { return sec.id === activeGroup; });
+
+      var shown = 0;
+      order.forEach(function (sec, idx) {
+        var items = allSongs.filter(function (s) { return (s.group || "ost") === sec.id; });
+        if (!items.length) return;
+        shown += items.length;
+
+        if (idx > 0) {
+          var div = document.createElement("div");
+          div.className = "h-px bg-gradient-to-r from-transparent via-red-800/50 to-transparent mb-6 mt-2";
+          container.appendChild(div);
+        }
+
+        var head = document.createElement("div");
+        head.className = "flex items-center gap-2.5 mb-1";
+        head.innerHTML =
+          '<span class="w-1 h-5 bg-red-500 rounded-full"></span>' +
+          '<h2 class="title-serif text-2xl sm:text-3xl font-bold text-red-500">' + sec.label + '</h2>';
+        container.appendChild(head);
+
+        var grid = document.createElement("div");
+        grid.className = "grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-8 mt-4";
+        items.forEach(function (s) { grid.appendChild(makeCard(s, statsMap)); });
+        container.appendChild(grid);
+      });
+
+      if (!shown) container.innerHTML = '<p class="text-gray-500">No videos in this category.</p>';
+    }
+
     fetch("data.json?t=" + Date.now())
       .then(function (res) { return res.json(); })
       .then(async function (data) {
-        var songs = data.youtube || [];
+        allSongs = data.youtube || [];
+        statsMap = {};
         var container = document.getElementById("songs-list");
-        container.innerHTML = "";
 
-        if (!songs.length) {
+        if (!allSongs.length) {
           container.innerHTML = '<p class="text-gray-500">No songs added yet.</p>';
           return;
         }
 
         var key = window.YOUTUBE_API_KEY || "";
-        var statsMap = {};
         if (key) {
           try {
             var res = await fetch(
               "https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" +
-              songs.map(function (s) { return s.videoId; }).join(",") +
+              allSongs.map(function (s) { return s.videoId; }).join(",") +
               "&key=" + key
             );
             var json = await res.json();
@@ -215,35 +308,7 @@
           } catch (e) {}
         }
 
-        var order = [
-          { id: "trailer", label: "Trailer / Pilot" },
-          { id: "ost", label: "OST" },
-          { id: "perth", label: "Perth Solo" },
-          { id: "jasper", label: "JASP.ER" }
-        ];
-
-        order.forEach(function (sec, idx) {
-          var items = songs.filter(function (s) { return (s.group || "ost") === sec.id; });
-          if (!items.length) return;
-
-          if (idx > 0) {
-            var div = document.createElement("div");
-            div.className = "h-px bg-gradient-to-r from-transparent via-red-800/50 to-transparent mb-6 mt-2";
-            container.appendChild(div);
-          }
-
-          var head = document.createElement("div");
-          head.className = "flex items-center gap-2.5 mb-1";
-          head.innerHTML =
-            '<span class="w-1 h-5 bg-red-500 rounded-full"></span>' +
-            '<h2 class="title-serif text-2xl sm:text-3xl font-bold text-red-500">' + sec.label + '</h2>';
-          container.appendChild(head);
-
-          var grid = document.createElement("div");
-          grid.className = "grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-8 mt-4";
-          items.forEach(function (s) { grid.appendChild(makeCard(s, statsMap)); });
-          container.appendChild(grid);
-        });
+        renderSongs();
       })
       .catch(function () {
         document.getElementById("songs-list").innerHTML = '<p class="text-red-500">Error loading data.json</p>';
