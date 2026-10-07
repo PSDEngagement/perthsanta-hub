@@ -204,7 +204,7 @@
     "@media (min-width:1024px){#ps-site-footer{margin-top:32px}}" +
     "@media (max-width:1023px){#ps-site-footer{margin-top:24px;padding:8px 12px 12px;font-size:12px;line-height:1.35}}" +
     "#ps-site-footer .ps-foot-by{display:block;margin-top:1px}" +
-    "@media (max-width:1023px){#ps-site-footer .ps-foot-note{display:block;margin-top:1px;font-size:9px;opacity:.65}}" +
+    "@media (max-width:1023px){#ps-site-footer .ps-foot-note{display:block;margin-top:1px;font-size:12px;opacity:.65}}" +
     "@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}";
   document.head.appendChild(style);
 
