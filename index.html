@@ -608,6 +608,12 @@
       return "live";
     }
 
+    function statusRank(status) {
+      if (status === "live") return 0;
+      if (status === "upcoming") return 1;
+      return 2;
+    }
+
     function getAudienceHearts(audience) {
       const values = Array.isArray(audience)
         ? audience.map(function (item) {
@@ -739,6 +745,10 @@
       });
 
       activeEvents.sort(function (a, b) {
+        const rankA = statusRank(getStatus(a, bkk));
+        const rankB = statusRank(getStatus(b, bkk));
+        if (rankA !== rankB) return rankA - rankB;
+
         if (a._startMin === null && b._startMin === null) return 0;
         if (a._startMin === null) return 1;
         if (b._startMin === null) return -1;
