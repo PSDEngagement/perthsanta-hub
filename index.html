@@ -471,7 +471,57 @@
   }
 }
 
+/* =========================================================
+   DESKTOP EMPTY STATE
+   ========================================================= */
 
+.desktop-empty-state {
+  display: none;
+}
+
+@media (min-width: 640px) {
+
+  .desktop-empty-state.show {
+    display: block;
+
+    border: 1px solid #3f1a1a;
+    border-radius: 1rem;
+
+    background: linear-gradient(
+      165deg,
+      #171010 0%,
+      #101010 50%,
+      #0a0a0a 100%
+    );
+
+    padding: 1.1rem 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .desktop-empty-heart {
+    color: #ffffff;
+    font-size: 1.35rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .desktop-empty-title {
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 0.45rem;
+  }
+
+  .desktop-empty-text {
+    color: #a1a1aa;
+    font-size: 0.75rem;
+    line-height: 1.55;
+  }
+
+}
 /* =========================================================
    MOBILE EMPTY STATE
    ========================================================= */
@@ -610,7 +660,23 @@
    <!-- EVENT CARDS -->
 
 <div id="events-stack" class="events-stack"></div>
+<!-- DESKTOP EMPTY STATE -->
 
+<div id="desktop-empty-state" class="desktop-empty-state">
+
+  <div class="desktop-empty-heart">
+    ♡
+  </div>
+
+  <div class="desktop-empty-title">
+    NO EVENTS TODAY
+  </div>
+
+  <div class="desktop-empty-text">
+    Check back soon for the next PerthSanta update.
+  </div>
+
+</div>
 
 <!-- MOBILE EMPTY STATE -->
 
@@ -1611,7 +1677,8 @@ const mobileSupport =
 
 const homeTasks =
   document.getElementById("home-tasks");
-
+const desktopEmptyState =
+  document.getElementById("desktop-empty-state");
 
 // -----------------------------------------------------
 // 0 events
@@ -1625,7 +1692,14 @@ if (
   mobileSupport.classList.add("show");
 
 }
+if (
+  desktopEmptyState &&
+  activeEvents.length === 0
+) {
 
+  desktopEmptyState.classList.add("show");
+
+}
 
 // -----------------------------------------------------
 // 0 or 1 event → show 4 Tasks on mobile
