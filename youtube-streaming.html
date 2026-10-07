@@ -4,30 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouTube Streaming - PerthSanta Hub</title>
-  <!-- Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
-<link rel="shortcut icon" href="images/logo.png">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://psdengagement.github.io/perthsanta-hub/youtube-streaming.html">
-<meta property="og:title" content="YouTube Streaming | PerthSanta Engagement Hub">
-<meta property="og:description" content="Support PerthSanta × Domiia through YouTube streaming, views and engagement.">
-<meta property="og:image" content="https://psdengagement.github.io/perthsanta-hub/images/hero-perthsanta.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="PerthSanta × Domiia - Together Forever">
-<meta property="og:site_name" content="PerthSanta Hub">
-<meta property="og:locale" content="en_US">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="YouTube Streaming | PerthSanta Engagement Hub">
-<meta name="twitter:description" content="Support PerthSanta × Domiia through YouTube streaming, views and engagement.">
-<meta name="twitter:image" content="https://psdengagement.github.io/perthsanta-hub/images/hero-perthsanta.jpg">
-<meta name="twitter:image:alt" content="PerthSanta × Domiia - Together Forever">
+  <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -35,15 +12,11 @@
   <style>
     html, body { background: #070707; min-height: 100vh; }
     body { font-family: Inter, system-ui, sans-serif; color: #fff; }
-
     .title-serif { font-family: "Cormorant Garamond", Georgia, serif; }
     .script-font {
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-style: italic;
-      font-weight: 500;
-      letter-spacing: 0.04em;
+      font-style: italic; font-weight: 500; letter-spacing: 0.04em;
     }
-
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
@@ -51,106 +24,64 @@
     .fade-up { animation: fadeUp 0.5s ease both; }
     .fade-up-d1 { animation-delay: 0.08s; }
     .fade-up-d2 { animation-delay: 0.16s; }
-
     .page-glow {
-      pointer-events: none;
-      position: fixed;
-      width: 280px; height: 280px;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.12;
-      z-index: 0;
+      pointer-events: none; position: fixed;
+      width: 280px; height: 280px; border-radius: 50%;
+      filter: blur(80px); opacity: 0.12; z-index: 0;
     }
-
-    /* Song cards */
     .yt-card {
       background: linear-gradient(165deg, #2a0a0a 0%, #141414 45%, #0a0a0a 100%);
-      border: 1px solid #3f1a1a;
-      border-radius: 1rem;
-      overflow: hidden;
+      border: 1px solid #3f1a1a; border-radius: 1rem; overflow: hidden;
       transition: all 0.3s ease;
     }
     .yt-card:hover {
-      border-color: #991b1b;
-      transform: translateY(-3px);
+      border-color: #991b1b; transform: translateY(-3px);
       box-shadow: 0 12px 28px rgba(185, 28, 28, 0.22);
     }
-
+    .watch-btn, .ghost-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 600; border-radius: 9999px;
+      padding: 0.35rem 0.85rem; transition: all 0.2s ease;
+    }
     .watch-btn {
-      display: inline-block;
       background: linear-gradient(145deg, #7f1d1d 0%, #450a0a 100%);
-      border: 1px solid #991b1b;
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 600;
-      border-radius: 9999px;
-      padding: 0.4rem 1rem;
-      transition: all 0.2s ease;
+      border: 1px solid #991b1b; color: #fff;
     }
-    .watch-btn:hover {
-      background: linear-gradient(145deg, #991b1b 0%, #7f1d1d 100%);
-      box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
-    }
-
-    .progress-track {
-      height: 6px;
-      background: #27272a;
-      border-radius: 9999px;
-      overflow: hidden;
-    }
+    .watch-btn:hover { background: linear-gradient(145deg, #991b1b 0%, #7f1d1d 100%); }
+    .ghost-btn { background: transparent; border: 1px solid #3f3f46; color: #d4d4d8; }
+    .ghost-btn:hover { border-color: #991b1b; color: #fff; }
+    .ghost-btn.on { background: #3f1a1a; border-color: #991b1b; color: #fecaca; }
+    .progress-track { height: 6px; background: #27272a; border-radius: 9999px; overflow: hidden; }
     .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #991b1b, #ef4444);
-      border-radius: 9999px;
-      transition: width 0.4s ease;
+      height: 100%; background: linear-gradient(90deg, #991b1b, #ef4444);
+      border-radius: 9999px; transition: width 0.4s ease;
     }
-
-    .cat-filters {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.6rem;
-      margin-bottom: 1.25rem;
+    .chip {
+      border: 1px solid #3f1a1a; color: #d4d4d8; background: #141414;
+      border-radius: 9999px; padding: 0.35rem 0.8rem; font-size: 0.75rem; font-weight: 600;
+      white-space: nowrap;
     }
-    @media (min-width: 640px) {
-      .cat-filters { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .chip.on { background: #7f1d1d; border-color: #991b1b; color: #fff; }
+    .tool-input, .tool-select {
+      background: #141414; border: 1px solid #3f1a1a; color: #fff;
+      border-radius: 9999px; font-size: 0.8rem;
     }
-    .cat-btn {
-      background: linear-gradient(165deg, #2a0a0a 0%, #141414 55%, #0a0a0a 100%);
-      border: 1px solid #3f1a1a;
-      color: #fecaca;
-      border-radius: 0.85rem;
-      padding: 0.7rem 0.5rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-align: center;
-      line-height: 1.2;
-      transition: all 0.2s ease;
-    }
-    .cat-btn:hover { border-color: #991b1b; }
-    .cat-btn.active {
-      background: linear-gradient(145deg, #7f1d1d 0%, #450a0a 100%);
-      border-color: #ef4444;
-      color: #fff;
-      box-shadow: 0 0 14px rgba(239, 68, 68, 0.28);
+    .panel {
+      background: linear-gradient(165deg, #2a0a0a 0%, #141414 45%, #0a0a0a 100%);
+      border: 1px solid #3f1a1a; border-radius: 1rem;
     }
   </style>
 </head>
 <body class="text-white relative overflow-x-hidden">
-
-  <!-- Background image mờ -->
-   <!-- Background image mờ -->
   <div class="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
     <img src="images/ytstream.jpg" alt=""
          class="w-full h-full object-cover opacity-90"
          style="object-position: center 30%; filter: blur(5px) brightness(0.65) saturate(0.85); transform: scale(1.12);">
     <div class="absolute inset-0 bg-[#070707]/25"></div>
   </div>
-
-  <!-- soft background glows -->
   <div class="page-glow bg-red-600" style="top:-80px;right:-60px;"></div>
   <div class="page-glow bg-red-800" style="bottom:10%;left:-80px;"></div>
 
-  <!-- Header -->
   <div class="relative z-10 max-w-4xl mx-auto px-4 pt-8 pb-6">
     <div class="flex items-start justify-between gap-4">
       <div class="fade-up">
@@ -161,26 +92,42 @@
         <p class="text-gray-400 text-sm mt-3">Music streaming targets on YouTube</p>
       </div>
       <div class="hidden sm:block text-right fade-up fade-up-d1 pt-2">
-        <p class="script-font text-base md:text-lg text-white/70 tracking-wide font-light whitespace-nowrap">
-          Together We Make It Happen
-        </p>
+        <p class="script-font text-base md:text-lg text-white/70 tracking-wide font-light whitespace-nowrap">Together We Make It Happen</p>
         <div class="ml-auto mt-1.5 w-20 h-px bg-red-500/60 rounded-full"></div>
       </div>
     </div>
   </div>
 
-  <!-- Category filters -->
-  <div id="cat-filters" class="relative z-10 max-w-4xl mx-auto px-4 fade-up fade-up-d2">
-    <div class="cat-filters">
-      <button type="button" class="cat-btn" data-group="trailer">Trailer/ Pilot</button>
-      <button type="button" class="cat-btn" data-group="ost">OST</button>
-      <button type="button" class="cat-btn" data-group="perth">Perth Solo</button>
-      <button type="button" class="cat-btn" data-group="jasper">JASP.ER</button>
+  <div class="relative z-20 max-w-4xl mx-auto px-4">
+    <div class="sticky top-0 z-20 -mx-4 px-4 py-3 bg-[#070707]/75 backdrop-blur border-b border-red-900/40">
+      <div class="flex flex-wrap gap-2 items-center">
+        <input id="q" type="search" placeholder="Tìm bài..." class="tool-input flex-1 min-w-[140px] px-4 py-2">
+        <div id="chips" class="flex gap-1.5 overflow-x-auto">
+          <button type="button" data-g="all" class="chip on">Tất cả</button>
+          <button type="button" data-g="trailer" class="chip">Trailer</button>
+          <button type="button" data-g="ost" class="chip">OST</button>
+          <button type="button" data-g="perth" class="chip">Perth</button>
+          <button type="button" data-g="jasper" class="chip">JASP.ER</button>
+        </div>
+        <select id="sort" class="tool-select px-3 py-2">
+          <option value="gap">Gần chạm mốc</option>
+          <option value="pct">% cao nhất</option>
+          <option value="views">Views cao</option>
+        </select>
+      </div>
+      <p id="focus" class="mt-3 text-xs text-zinc-300"></p>
     </div>
+
+    <details class="panel mt-4 p-4">
+      <summary class="cursor-pointer text-sm font-medium text-red-300">Trước khi bấm Watch</summary>
+      <ol class="mt-3 space-y-1.5 text-sm text-zinc-300 list-decimal pl-5">
+        <li>Volume &gt; 50%, chất lượng 1080p.</li>
+        <li>Xem hết lần đầu, rồi mới like.</li>
+      </ol>
+    </details>
   </div>
 
-  <!-- Songs list -->
-  <div id="songs-list" class="relative z-10 max-w-4xl mx-auto px-4 pb-24 fade-up fade-up-d2">
+  <div id="songs-list" class="relative z-10 max-w-4xl mx-auto px-4 pt-5 pb-24 fade-up fade-up-d2">
     <p class="text-gray-500">Loading...</p>
   </div>
 
@@ -188,127 +135,128 @@
   <script src="common.js"></script>
   <script>
     function formatNumber(num) { return Number(num || 0).toLocaleString(); }
-
     function calculateTarget(currentViews, baseTarget) {
       var target = baseTarget;
       while (currentViews >= target) target += 100000;
       return target;
     }
-
-    var activeGroup = "";
-    var allSongs = [];
-    var statsMap = {};
-
-    document.querySelectorAll(".cat-btn").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var group = btn.getAttribute("data-group");
-        activeGroup = activeGroup === group ? "" : group;
-        document.querySelectorAll(".cat-btn").forEach(function (b) {
-          b.classList.toggle("active", b.getAttribute("data-group") === activeGroup);
-        });
-        renderSongs();
+    function esc(s) {
+      return String(s || "").replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" }[c];
       });
-    });
-
-    function makeCard(song, statsMap) {
-      var currentViews = statsMap[song.videoId] ? statsMap[song.videoId].views : 0;
-      var baseTarget = parseInt((song.target || "0").toString().replace(/,/g, "")) || 100000;
-      var currentTarget = calculateTarget(currentViews, baseTarget);
-      var remaining = Math.max(0, currentTarget - currentViews);
-      var pct = currentTarget ? Math.min(100, Math.round(currentViews / currentTarget * 100)) : 0;
-
-      var card = document.createElement("div");
-      card.className = "yt-card";
-      card.innerHTML =
-        '<div class="flex gap-3 sm:gap-4 p-3.5 sm:p-4">' +
-          '<img src="https://img.youtube.com/vi/' + song.videoId + '/mqdefault.jpg" alt="" class="w-28 sm:w-32 h-20 sm:h-24 object-cover rounded-lg bg-zinc-900 flex-shrink-0 border border-zinc-800">' +
-          '<div class="min-w-0 flex-1 flex flex-col">' +
-            '<h3 class="font-semibold text-sm sm:text-base leading-snug line-clamp-2 mb-1.5 text-zinc-100">' + song.title + '</h3>' +
-            '<p class="text-[11px] sm:text-xs text-gray-400 mb-0.5">' +
-              'Views <span class="text-white font-medium">' + formatNumber(currentViews) + '</span>' +
-              ' · Target <span class="text-red-400 font-medium">' + formatNumber(currentTarget) + '</span>' +
-            '</p>' +
-            '<p class="text-[11px] sm:text-xs text-gray-400 mb-2">' +
-              'Remaining <span class="text-yellow-400 font-medium">' + formatNumber(remaining) + '</span>' +
-              ' · <span class="text-red-300">' + pct + '%</span>' +
-            '</p>' +
-            '<div class="progress-track mb-2.5"><div class="progress-fill" style="width:' + pct + '%"></div></div>' +
-            '<div class="mt-auto">' +
-              '<a href="https://www.youtube.com/watch?v=' + song.videoId + '" target="_blank" rel="noopener" class="watch-btn">Watch →</a>' +
-            '</div>' +
-          '</div>' +
-        '</div>';
-      return card;
     }
 
-    function renderSongs() {
-      var container = document.getElementById("songs-list");
-      container.innerHTML = "";
+    var songs = [], statsMap = {}, group = "all", q = "", sort = "gap";
+    var done = {};
+    try { done = JSON.parse(localStorage.getItem("ytDone") || "{}"); } catch (e) { done = {}; }
 
-      var order = [
-        { id: "trailer", label: "Trailer / Pilot" },
-        { id: "ost", label: "OST" },
-        { id: "perth", label: "Perth Solo" },
-        { id: "jasper", label: "JASP.ER" }
-      ];
-      if (activeGroup) order = order.filter(function (sec) { return sec.id === activeGroup; });
+    var LABELS = [
+      { id: "trailer", label: "Trailer / Pilot" },
+      { id: "ost", label: "OST" },
+      { id: "perth", label: "Perth Solo" },
+      { id: "jasper", label: "JASP.ER" }
+    ];
 
-      var shown = 0;
-      order.forEach(function (sec, idx) {
-        var items = allSongs.filter(function (s) { return (s.group || "ost") === sec.id; });
+    function metrics(song) {
+      var views = statsMap[song.videoId] ? statsMap[song.videoId].views : 0;
+      var base = parseInt(String(song.target || "0").replace(/,/g, "")) || 100000;
+      var target = calculateTarget(views, base);
+      return { views: views, target: target, gap: Math.max(0, target - views), pct: target ? Math.min(100, Math.round(views / target * 100)) : 0 };
+    }
+
+    function filtered() {
+      return songs.filter(function (s) {
+        if (group !== "all" && (s.group || "ost") !== group) return false;
+        return !q || String(s.title).toLowerCase().indexOf(q) >= 0;
+      }).map(function (s) {
+        var m = metrics(s);
+        return { s: s, views: m.views, target: m.target, gap: m.gap, pct: m.pct };
+      }).sort(function (a, b) {
+        if (sort === "pct") return b.pct - a.pct;
+        if (sort === "views") return b.views - a.views;
+        return a.gap - b.gap;
+      });
+    }
+
+    function cardHtml(row) {
+      var song = row.s, watch = "https://www.youtube.com/watch?v=" + song.videoId;
+      var marked = done[song.videoId] ? " on" : "";
+      return '<div class="yt-card"><div class="flex gap-3 sm:gap-4 p-3.5 sm:p-4">' +
+        '<img src="https://img.youtube.com/vi/' + song.videoId + '/mqdefault.jpg" alt="" class="w-28 sm:w-32 h-20 sm:h-24 object-cover rounded-lg bg-zinc-900 flex-shrink-0 border border-zinc-800">' +
+        '<div class="min-w-0 flex-1 flex flex-col">' +
+          '<h3 class="font-semibold text-sm sm:text-base leading-snug line-clamp-2 mb-1.5 text-zinc-100">' + esc(song.title) + '</h3>' +
+          '<p class="text-[11px] sm:text-xs text-gray-400 mb-0.5">Views <span class="text-white font-medium">' + formatNumber(row.views) + '</span> · Target <span class="text-red-400 font-medium">' + formatNumber(row.target) + '</span></p>' +
+          '<p class="text-[11px] sm:text-xs text-gray-400 mb-2">Remaining <span class="text-yellow-400 font-medium">' + formatNumber(row.gap) + '</span> · <span class="text-red-300">' + row.pct + '%</span></p>' +
+          '<div class="progress-track mb-2.5"><div class="progress-fill" style="width:' + row.pct + '%"></div></div>' +
+          '<div class="mt-auto flex flex-wrap gap-2">' +
+            '<a class="watch-btn" target="_blank" rel="noopener" href="' + watch + '">Watch →</a>' +
+            '<button type="button" class="ghost-btn" data-copy="' + watch + '">Copy</button>' +
+            '<button type="button" class="ghost-btn' + marked + '" data-done="' + song.videoId + '">' + (done[song.videoId] ? "Đã stream" : "Đánh dấu") + '</button>' +
+          '</div></div></div></div>';
+    }
+
+    function paint() {
+      var rows = filtered();
+      var box = document.getElementById("songs-list");
+      var focus = document.getElementById("focus");
+      var next = rows.filter(function (r) { return !done[r.s.videoId]; })[0];
+      focus.textContent = next ? "Ưu tiên: " + next.s.title + " · còn " + formatNumber(next.gap) : "Không còn bài chưa đánh dấu trong bộ lọc này.";
+      if (!rows.length) { box.innerHTML = '<p class="text-gray-500">Không có bài khớp.</p>'; return; }
+
+      var html = "";
+      LABELS.forEach(function (sec) {
+        var items = rows.filter(function (r) { return (r.s.group || "ost") === sec.id; });
         if (!items.length) return;
-        shown += items.length;
-
-        if (idx > 0) {
-          var div = document.createElement("div");
-          div.className = "h-px bg-gradient-to-r from-transparent via-red-800/50 to-transparent mb-6 mt-2";
-          container.appendChild(div);
-        }
-
-        var head = document.createElement("div");
-        head.className = "flex items-center gap-2.5 mb-1";
-        head.innerHTML =
-          '<span class="w-1 h-5 bg-red-500 rounded-full"></span>' +
-          '<h2 class="title-serif text-2xl sm:text-3xl font-bold text-red-500">' + sec.label + '</h2>';
-        container.appendChild(head);
-
-        var grid = document.createElement("div");
-        grid.className = "grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-8 mt-4";
-        items.forEach(function (s) { grid.appendChild(makeCard(s, statsMap)); });
-        container.appendChild(grid);
+        html += '<div class="flex items-center gap-2.5 mb-1 mt-2"><span class="w-1 h-5 bg-red-500 rounded-full"></span><h2 class="title-serif text-2xl sm:text-3xl font-bold text-red-500">' + sec.label + '</h2></div>';
+        html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-8 mt-4">';
+        items.forEach(function (r) { html += cardHtml(r); });
+        html += '</div>';
       });
-
-      if (!shown) container.innerHTML = '<p class="text-gray-500">No videos in this category.</p>';
+      box.innerHTML = html;
     }
+
+    document.getElementById("songs-list").addEventListener("click", function (e) {
+      var copy = e.target.closest("[data-copy]");
+      var mark = e.target.closest("[data-done]");
+      if (copy) {
+        navigator.clipboard.writeText(copy.getAttribute("data-copy"));
+        copy.textContent = "Đã copy";
+        setTimeout(function () { copy.textContent = "Copy"; }, 900);
+      }
+      if (mark) {
+        var id = mark.getAttribute("data-done");
+        done[id] = !done[id];
+        localStorage.setItem("ytDone", JSON.stringify(done));
+        paint();
+      }
+    });
+    document.getElementById("q").addEventListener("input", function (e) { q = e.target.value.trim().toLowerCase(); paint(); });
+    document.getElementById("sort").addEventListener("change", function (e) { sort = e.target.value; paint(); });
+    document.getElementById("chips").addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-g]");
+      if (!btn) return;
+      group = btn.getAttribute("data-g");
+      Array.prototype.forEach.call(document.querySelectorAll(".chip"), function (c) { c.classList.remove("on"); });
+      btn.classList.add("on");
+      paint();
+    });
 
     fetch("data.json?t=" + Date.now())
       .then(function (res) { return res.json(); })
       .then(async function (data) {
-        allSongs = data.youtube || [];
-        statsMap = {};
-        var container = document.getElementById("songs-list");
-
-        if (!allSongs.length) {
-          container.innerHTML = '<p class="text-gray-500">No songs added yet.</p>';
-          return;
-        }
-
+        songs = data.youtube || [];
         var key = window.YOUTUBE_API_KEY || "";
-        if (key) {
+        if (key && songs.length) {
           try {
-            var res = await fetch(
-              "https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" +
-              allSongs.map(function (s) { return s.videoId; }).join(",") +
-              "&key=" + key
-            );
+            var res = await fetch("https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" +
+              songs.map(function (s) { return s.videoId; }).join(",") + "&key=" + key);
             var json = await res.json();
             (json.items || []).forEach(function (item) {
               statsMap[item.id] = { views: parseInt(item.statistics.viewCount || 0) };
             });
           } catch (e) {}
         }
-
-        renderSongs();
+        paint();
       })
       .catch(function () {
         document.getElementById("songs-list").innerHTML = '<p class="text-red-500">Error loading data.json</p>';
