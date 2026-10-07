@@ -383,44 +383,6 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "6 Oct",
-            "title": "TOPS OF BEAUTY X GILLETTE VENUS",
-            "note": "05:00 PM (UTC+7)",
-            "location": "CENTRAL PINKLAO, G FLOOR",
-            "hastag": "GilletteVenusxSanta",
-            "keyword": "SANTA WITH VENUS AT TOPS",
-            "for": ["SANTA"],
-            "generators": [
-    {
-      "name": "GEN 1",
-      "url": "https://psdxtrend.github.io/x-comment-generator/venus.html"
-    },
-    {
-      "name": "GEN 2",
-      "url": "https://psdtrendng.github.io/genSantaVenus/"
-    }
-  ]
-          },
-          {
-            "date": "6 Oct",
-            "title": "GO HAIR WITH PERTH",
-            "note": "07:30 PM (UTC+7)",
-            "location": "CENTRAL PINKLAO, G FLOOR",
-            "hastag": "GOHAIRxPerth",
-            "keyword": "PERTH X TOPS OF GOHAIR",
-            "for": ["PERTH"],
-            "generators": [
-            {
-              "name": "GEN 1",
-              "url": "https://psdxtrend.github.io/x-comment-generator/gohair.html"
-            },
-            {
-              "name": "GEN 2",
-              "url": "https://psdtrendng.github.io/GentrendPerthgohair"
-           }
-           ]
-          },
-          {
             "date": "7 Oct",
             "title": "JASP.ER TEMPTATION CONCERT | PRESS TOUR",
             "note": "10:00 AM (UTC+7)",
@@ -446,7 +408,17 @@
             "location": "TIKTOKSHOP L'OREAL",
             "hastag": "LOrealCloudStickxSanta",
             "keyword": "SANTA CLOUD SKIN SUNSTICK",
-            "for": ["SANTA"]
+            "for": ["SANTA"],
+            "generators": [
+           {
+             "name": "GEN 1",
+             "url": "https://psdxtrend.github.io/x-comment-generator/loreal.html"
+           },
+          {
+             "name": "GEN 2",
+             "url": "#"
+          }
+           ]
           },
           {
             "date": "8 Oct",
@@ -455,7 +427,17 @@
             "location": "CENTRAL RAMA2 1ST FLOOR",
             "hastag": "destinyclinicxPerthSanta",
             "keyword": "PERTHSANTA BEAUTY BLOOM",
-            "for": ["PS"]
+            "for": ["PS"],
+            "generators": [
+           {
+             "name": "GEN 1",
+             "url": "https://psdxtrend.github.io/x-comment-generator/destiny.html"
+           },
+          {
+             "name": "GEN 2",
+             "url": "#"
+          }
+           ]
           },
           {
             "date": "10 Oct",
