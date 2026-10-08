@@ -7,7 +7,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { background: #070707; min-height: 100vh; }
-    /* Ẩn scrollbar khi mở fullscreen */
     body.modal-open { overflow: hidden; }
   </style>
 </head>
@@ -64,7 +63,9 @@
         <div class="flex justify-center">
           <img src="picguideX.jpg" 
                alt="Priority order X" 
-               class="max-w-full h-auto rounded-xl border border-zinc-600 shadow-lg">
+               class="max-w-full h-auto rounded-xl border border-zinc-600 shadow-lg cursor-pointer hover:opacity-90 transition"
+               onclick="openFullscreen(this.src)"
+               title="Nhấn để xem full size">
         </div>
       </div>
 
