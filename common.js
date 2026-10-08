@@ -162,7 +162,7 @@
     fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap";
     document.head.appendChild(fontLink);
   }
-  
+
   if (!document.getElementById("ps-app-icon")) {
     var fav = document.createElement("link");
     fav.id = "ps-app-icon";
@@ -186,7 +186,7 @@
     metaApp.content = "PerthSanta";
     document.head.appendChild(metaApp);
   }
-  
+
   const style = document.createElement("style");
   style.textContent =
     "html{font-size:16px}" +
@@ -205,7 +205,13 @@
     "@media (max-width:1023px){#ps-site-footer{margin-top:24px;padding:8px 12px 12px;font-size:12px;line-height:1.35}}" +
     "#ps-site-footer .ps-foot-by{display:block;margin-top:1px}" +
     "@media (max-width:1023px){#ps-site-footer .ps-foot-note{display:block;margin-top:1px;font-size:12px;opacity:.65}}" +
-    "@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}";
+    "@media (prefers-reduced-motion:reduce){" +
+      ".ps-alert-blink{animation:ps-blink 1.2s ease-in-out infinite !important}" +
+      ".live-dot,.live-text{animation:live-flash 0.5s ease-in-out infinite !important}" +
+      ".upcoming-dots span{animation:upcoming-run 1.2s infinite !important}" +
+      ".upcoming-dots span:nth-child(2){animation-delay:0.2s}" +
+      ".upcoming-dots span:nth-child(3){animation-delay:0.4s}" +
+    "}";
   document.head.appendChild(style);
 
   const desktopNav = NAV.map(function (n) {
@@ -229,7 +235,6 @@
       '<a href="introduce.html" class="px-3 py-1.5 rounded-full text-sm border border-zinc-600 text-zinc-200 hover:border-red-500 hover:text-white font-medium" data-i18n="navIntro">' +
         (t.navIntro || "Intro") +
       "</a>" +
-      /* ===== To-Do button (red style, always show text) ===== */
       '<div id="ps-alert-wrap" class="hidden relative">' +
         '<button type="button" id="ps-alert-btn" class="ps-alert-blink flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm border border-red-600/80 bg-red-950/90 text-red-200 hover:bg-red-900 hover:text-white font-medium cursor-pointer transition shadow-[0_0_12px_rgba(239,68,68,0.25)]">' +
           '<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"></span>' +
@@ -244,7 +249,6 @@
           '<ul id="ps-alert-list" class="p-2 space-y-1.5 max-h-64 overflow-y-auto"></ul>' +
         "</div>" +
       "</div>" +
-      /* ===== Language ===== */
       '<select id="language" onchange="psChangeLanguage()" class="bg-zinc-950 border border-zinc-600 text-white text-sm rounded-full px-2.5 py-1.5 font-medium">' +
         '<option value="en">EN</option>' +
         '<option value="vi">VI</option>' +
@@ -283,11 +287,11 @@
     '<span>© 2026 PerthSanta Engagement Hub</span>' +
     '<span class="ps-foot-by">Made with love by ' +
     '<a href="https://x.com/itsmaeta" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Eira</a> ' +
-'<a href="https://x.com/comeforlove_ps" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Lubiichan</a> ' +
-'<a href="https://x.com/NganVt2386624" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Ngân</a> ' +
-'<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a> ' +
-'<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a></span>' +
-   '<span class="ps-foot-note">Fan-made project created to support PerthSanta. Not affiliated with or officially endorsed by PerthSanta, GMMTV, or any associated brands.</span>';
+    '<a href="https://x.com/comeforlove_ps" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Lubiichan</a> ' +
+    '<a href="https://x.com/NganVt2386624" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Ngân</a> ' +
+    '<a href="https://x.com/kimm221020" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Kiim</a> ' +
+    '<a href="https://x.com/Babedoria" target="_blank" rel="noopener" class="text-gray-300 hover:text-red-400">Doria</a></span>' +
+    '<span class="ps-foot-note">Fan-made project created to support PerthSanta. Not affiliated with or officially endorsed by PerthSanta, GMMTV, or any associated brands.</span>';
   document.body.appendChild(foot);
   document.body.appendChild(tabbar);
 
