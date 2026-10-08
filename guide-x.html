@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>X Guide Trending - PerthSanta Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { background: #070707; min-height: 100vh; }</style>
+  <style>
+    body { background: #070707; min-height: 100vh; }
+    /* Ẩn scrollbar khi mở fullscreen */
+    body.modal-open { overflow: hidden; }
+  </style>
 </head>
 <body class="text-white">
   <div class="max-w-4xl mx-auto px-4 pt-8 pb-20">
@@ -64,7 +68,7 @@
         </div>
       </div>
 
-      <!-- Schedule Post -->
+      <!-- Schedule Post Guide -->
       <div class="pt-8">
         <h3 class="text-center text-lg font-semibold text-white mb-4">
           Schedule Post Guide
@@ -72,11 +76,52 @@
         <div class="flex justify-center">
           <img src="images/picschedulepost.jpg" 
                alt="Schedule Post Guide" 
-               class="max-w-full h-auto rounded-xl border border-zinc-600 shadow-lg">
+               class="max-w-full h-auto rounded-xl border border-zinc-600 shadow-lg cursor-pointer hover:opacity-90 transition"
+               onclick="openFullscreen(this.src)"
+               title="Nhấn để xem full size">
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Fullscreen Modal -->
+  <div id="fullscreenModal" 
+       class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4"
+       onclick="closeFullscreen()">
+    <button onclick="closeFullscreen()" 
+            class="absolute top-4 right-4 text-white text-4xl font-light hover:text-red-400 transition z-10"
+            aria-label="Đóng">
+      &times;
+    </button>
+    <img id="fullscreenImg" 
+         src="" 
+         alt="Fullscreen" 
+         class="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+         onclick="event.stopPropagation()">
+  </div>
+
   <script src="common.js"></script>
+  <script>
+    function openFullscreen(src) {
+      const modal = document.getElementById('fullscreenModal');
+      const img = document.getElementById('fullscreenImg');
+      img.src = src;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeFullscreen() {
+      const modal = document.getElementById('fullscreenModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.classList.remove('modal-open');
+    }
+
+    // Đóng bằng phím ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeFullscreen();
+    });
+  </script>
 </body>
 </html>
