@@ -1,75 +1,292 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram Guide - PerthSanta Hub</title>
+  <meta name="description" content="How to interact effectively on Instagram for PerthSanta.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { background: #070707; min-height: 100vh; }</style>
+
+  <style>
+    html, body {
+      background: #070707;
+      min-height: 100vh;
+    }
+
+    body {
+      color: #fff;
+    }
+  </style>
 </head>
+
 <body class="text-white">
-  <div class="max-w-4xl mx-auto px-4 pt-8 pb-20">
-    <a href="series-trends.html" class="text-sm text-red-500 hover:text-red-400">← Back to Trends</a>
-    <h1 class="text-3xl font-bold mt-4 mb-2">Instagram – Guide</h1>
-    <p class="text-gray-400 mb-6">How to interact effectively on Instagram for PerthSanta.</p>
-    
+  <main class="max-w-4xl mx-auto px-4 pt-8 pb-20">
+
+    <!-- Back link and language selector -->
+    <div class="flex items-center justify-between gap-4">
+      <a
+        href="series-trends.html"
+        class="text-sm text-red-500 hover:text-red-400"
+        data-i18n="back"
+      >← Back to Trends</a>
+
+      <select
+        id="guideLanguage"
+        class="bg-zinc-900 border border-zinc-700 text-white text-sm rounded-lg px-3 py-2"
+        aria-label="Select language"
+      >
+        <option value="en">EN</option>
+        <option value="vi">VI</option>
+        <option value="th">TH</option>
+        <option value="my">MY</option>
+      </select>
+    </div>
+
+    <!-- Page title -->
+    <h1 class="text-3xl font-bold mt-4 mb-2">
+      <span data-i18n="instagram">Instagram</span>
+      <span data-i18n="guide">– Guide</span>
+    </h1>
+
+    <p class="text-gray-400 mb-6" data-i18n="pageDesc">
+      How to interact effectively on Instagram for PerthSanta.
+    </p>
+
     <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-5 sm:p-8 text-gray-300 leading-relaxed space-y-6">
 
-      <!-- 2 nút liên kết + avatar -->
+      <!-- Instagram profile links -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        
-        <!-- Nút Perth -->
-        <a href="https://www.instagram.com/perthppe?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" 
-           target="_blank"
-           class="inline-flex items-center gap-3 px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white font-medium rounded-full transition">
-          <img src="images/picPerthIG..jpg" 
-               alt="Perth" 
-               class="w-10 h-10 rounded-full object-cover border-2 border-white/40 flex-shrink-0">
-          <span>Open Instagram Perth →</span>
+
+        <!-- Perth -->
+        <a
+          href="https://www.instagram.com/perthppe?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white font-medium rounded-full transition"
+        >
+          <img
+            src="images/picPerthIG..jpg"
+            alt="Perth"
+            class="w-10 h-10 rounded-full object-cover border-2 border-white/40 flex-shrink-0"
+            loading="lazy"
+          >
+          <span data-i18n="openPerth">Open Instagram Perth →</span>
         </a>
 
-        <!-- Nút Santa -->
-        <a href="https://www.instagram.com/santa.pp?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" 
-           target="_blank"
-           class="inline-flex items-center gap-3 px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white font-medium rounded-full transition">
-          <img src="images/picSantaIG..jpg" 
-               alt="Santa" 
-               class="w-10 h-10 rounded-full object-cover border-2 border-white/40 flex-shrink-0">
-          <span>Open Instagram Santa →</span>
+        <!-- Santa -->
+        <a
+          href="https://www.instagram.com/santa.pp?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white font-medium rounded-full transition"
+        >
+          <img
+            src="images/picSantaIG..jpg"
+            alt="Santa"
+            class="w-10 h-10 rounded-full object-cover border-2 border-white/40 flex-shrink-0"
+            loading="lazy"
+          >
+          <span data-i18n="openSanta">Open Instagram Santa →</span>
         </a>
 
       </div>
 
-      <!-- Nội dung hướng dẫn -->
+      <!-- Interaction guide -->
       <div class="space-y-4">
         <ul class="list-disc list-inside space-y-3">
+
           <li>
-            <strong>New posts from PerthSanta:</strong>  
-            Like, repost, comment, save, share to DMs/Story as soon as possible, preferably within the first 24h
+            <strong data-i18n="newPostsTitle">New posts from PerthSanta:</strong>
+            <span data-i18n="newPostsText">
+              Like, repost, comment, save, and share to DMs/Story as soon as possible, preferably within the first 24 hours.
+            </span>
           </li>
+
           <li>
-            <strong>Follow trends:</strong>  
-            Visit the trend account to view targets and get comment generator to run.
+            <strong data-i18n="trendsTitle">Follow trends:</strong>
+            <span data-i18n="trendsText">
+              Visit the trend account to view targets and use the comment generator to participate.
+            </span>
           </li>
+
           <li>
-            <strong>Posts from GMM, Brands & Media:</strong>  
-            When you see posts about PerthSanta's projects/jobs, inter-act with them to boost media metrics.
+            <strong data-i18n="mediaTitle">Posts from GMMTV, Brands & Media:</strong>
+            <span data-i18n="mediaText">
+              When you see posts about PerthSanta's projects or jobs, interact with them to help boost media metrics and visibility.
+            </span>
           </li>
+
         </ul>
 
+        <!-- Algorithm priority -->
         <div class="bg-zinc-800 rounded-xl p-4 mt-4">
-          <p class="font-semibold text-white mb-2">IG Algorithm Priority Order:</p>
+          <p
+            class="font-semibold text-white mb-2"
+            data-i18n="priorityTitle"
+          >IG Algorithm Priority Order:</p>
+
           <ol class="list-decimal list-inside space-y-1">
-            <li><strong>Share</strong> (most important for the algorithm -  can be to DMs or story)</li>
-            <li><strong>Save, repost</strong></li>
-            <li><strong>Comment</strong> (natural + slightly long)</li>
-            <li><strong>Like</strong></li>
+            <li>
+              <strong data-i18n="share">Share</strong>
+              <span data-i18n="shareDetail">(most important for the algorithm — can be shared to DMs or Story)</span>
+            </li>
+            <li>
+              <strong data-i18n="saveRepost">Save, repost</strong>
+            </li>
+            <li>
+              <strong data-i18n="comment">Comment</strong>
+              <span data-i18n="commentDetail">(natural and slightly longer)</span>
+            </li>
+            <li>
+              <strong data-i18n="like">Like</strong>
+            </li>
           </ol>
         </div>
       </div>
 
     </div>
-  </div>
+  </main>
+
+  <!-- Shared website navigation and footer -->
   <script src="common.js"></script>
+
+  <!-- Language selector for Instagram guide only -->
+  <script>
+    (function () {
+      const translations = {
+        en: {
+          back: "← Back to Trends",
+          instagram: "Instagram",
+          guide: "– Guide",
+          pageDesc: "How to interact effectively on Instagram for PerthSanta.",
+          openPerth: "Open Instagram Perth →",
+          openSanta: "Open Instagram Santa →",
+          newPostsTitle: "New posts from PerthSanta:",
+          newPostsText: "Like, repost, comment, save, and share to DMs/Story as soon as possible, preferably within the first 24 hours.",
+          trendsTitle: "Follow trends:",
+          trendsText: "Visit the trend account to view targets and use the comment generator to participate.",
+          mediaTitle: "Posts from GMMTV, Brands & Media:",
+          mediaText: "When you see posts about PerthSanta's projects or jobs, interact with them to help boost media metrics and visibility.",
+          priorityTitle: "IG Algorithm Priority Order:",
+          share: "Share",
+          shareDetail: "(most important for the algorithm — can be shared to DMs or Story)",
+          saveRepost: "Save, repost",
+          comment: "Comment",
+          commentDetail: "(natural and slightly longer)",
+          like: "Like"
+        },
+
+        vi: {
+          back: "← Quay lại Trends",
+          instagram: "Instagram",
+          guide: "– Hướng dẫn",
+          pageDesc: "Cách tương tác hiệu quả trên Instagram để hỗ trợ PerthSanta.",
+          openPerth: "Mở Instagram Perth →",
+          openSanta: "Mở Instagram Santa →",
+          newPostsTitle: "Bài đăng mới từ PerthSanta:",
+          newPostsText: "Like, repost, bình luận, lưu và chia sẻ qua tin nhắn/Story sớm nhất có thể, tốt nhất trong 24 giờ đầu tiên.",
+          trendsTitle: "Theo dõi các chiến dịch trending:",
+          trendsText: "Truy cập tài khoản trend để xem mục tiêu và sử dụng công cụ tạo bình luận để tham gia.",
+          mediaTitle: "Bài đăng từ GMMTV, nhãn hàng và truyền thông:",
+          mediaText: "Khi thấy bài đăng về dự án hoặc công việc của PerthSanta, hãy tương tác để góp phần tăng chỉ số truyền thông và độ hiển thị.",
+          priorityTitle: "Thứ tự ưu tiên tương tác của thuật toán Instagram:",
+          share: "Chia sẻ",
+          shareDetail: "(được xem là một tín hiệu tương tác quan trọng; có thể chia sẻ qua tin nhắn hoặc Story)",
+          saveRepost: "Lưu, repost",
+          comment: "Bình luận",
+          commentDetail: "(tự nhiên và có nội dung dài hơn một chút)",
+          like: "Like"
+        },
+
+        th: {
+          back: "← กลับไปที่ Trends",
+          instagram: "Instagram",
+          guide: "– คู่มือ",
+          pageDesc: "วิธีมีส่วนร่วมบน Instagram อย่างมีประสิทธิภาพเพื่อสนับสนุน PerthSanta",
+          openPerth: "เปิด Instagram Perth →",
+          openSanta: "เปิด Instagram Santa →",
+          newPostsTitle: "โพสต์ใหม่จาก PerthSanta:",
+          newPostsText: "กดถูกใจ รีโพสต์ แสดงความคิดเห็น บันทึก และแชร์ผ่านข้อความหรือ Story ให้เร็วที่สุด โดยควรทำภายใน 24 ชั่วโมงแรก",
+          trendsTitle: "ติดตามเทรนด์:",
+          trendsText: "เข้าไปที่บัญชีเทรนด์เพื่อดูเป้าหมายและใช้เครื่องมือสร้างความคิดเห็นเพื่อเข้าร่วม",
+          mediaTitle: "โพสต์จาก GMMTV แบรนด์ และสื่อ:",
+          mediaText: "เมื่อพบโพสต์เกี่ยวกับโปรเจกต์หรืองานของ PerthSanta ให้มีส่วนร่วมเพื่อช่วยเพิ่มตัวชี้วัดด้านสื่อและการมองเห็น",
+          priorityTitle: "ลำดับความสำคัญของการมีส่วนร่วมบน Instagram:",
+          share: "แชร์",
+          shareDetail: "(เป็นสัญญาณการมีส่วนร่วมที่สำคัญ สามารถแชร์ผ่านข้อความหรือ Story ได้)",
+          saveRepost: "บันทึก รีโพสต์",
+          comment: "แสดงความคิดเห็น",
+          commentDetail: "(เป็นธรรมชาติและมีเนื้อหายาวขึ้นเล็กน้อย)",
+          like: "กดถูกใจ"
+        },
+
+        my: {
+          back: "← Trends သို့ ပြန်သွားရန်",
+          instagram: "Instagram",
+          guide: "– လမ်းညွှန်",
+          pageDesc: "PerthSanta ကို အားပေးရန် Instagram တွင် ထိရောက်စွာ ပါဝင်တုံ့ပြန်နည်း။",
+          openPerth: "Perth ၏ Instagram ကိုဖွင့်ရန် →",
+          openSanta: "Santa ၏ Instagram ကိုဖွင့်ရန် →",
+          newPostsTitle: "PerthSanta ၏ ပို့စ်အသစ်များ:",
+          newPostsText: "Like၊ repost၊ comment၊ save ပြုလုပ်ပြီး DM သို့မဟုတ် Story တွင် အမြန်ဆုံး မျှဝေပါ။ ဖြစ်နိုင်လျှင် ပထမ ၂၄ နာရီအတွင်း ပြုလုပ်ပါ။",
+          trendsTitle: "Trending လှုပ်ရှားမှုများကို လိုက်ပါရန်:",
+          trendsText: "ရည်မှန်းချက်များကို ကြည့်ရှုရန် trend အကောင့်သို့ ဝင်ပြီး comment generator ကို အသုံးပြုပါ။",
+          mediaTitle: "GMMTV၊ အမှတ်တံဆိပ်များနှင့် မီဒီယာများ၏ ပို့စ်များ:",
+          mediaText: "PerthSanta ၏ ပရောဂျက်များ သို့မဟုတ် အလုပ်များနှင့် သက်ဆိုင်သော ပို့စ်များကို တွေ့ပါက မီဒီယာဆိုင်ရာ ကိန်းဂဏန်းများနှင့် မြင်နိုင်မှု တိုးတက်စေရန် ပါဝင်တုံ့ပြန်ပါ။",
+          priorityTitle: "Instagram တွင် ဦးစားပေးတုံ့ပြန်မှု အစီအစဉ်:",
+          share: "မျှဝေရန်",
+          shareDetail: "(အရေးကြီးသော ပါဝင်တုံ့ပြန်မှုတစ်ခုဖြစ်ပြီး DM သို့မဟုတ် Story တွင် မျှဝေနိုင်သည်)",
+          saveRepost: "သိမ်းဆည်းရန်၊ repost လုပ်ရန်",
+          comment: "မှတ်ချက်ရေးရန်",
+          commentDetail: "(သဘာဝကျပြီး အနည်းငယ်ပိုရှည်သော မှတ်ချက်)",
+          like: "Like လုပ်ရန်"
+        }
+      };
+
+      const selector = document.getElementById("guideLanguage");
+      const storageKey = "ps_guide_instagram_lang";
+
+      function applyLanguage(lang) {
+        const dictionary = translations[lang] || translations.en;
+
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(function (element) {
+          const key = element.dataset.i18n;
+
+          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+            element.textContent = dictionary[key];
+          }
+        });
+
+        selector.value = lang;
+
+        try {
+          localStorage.setItem(storageKey, lang);
+        } catch (error) {
+          // The page remains usable if local storage is unavailable.
+        }
+      }
+
+      let savedLanguage = "en";
+
+      try {
+        const saved = localStorage.getItem(storageKey);
+
+        if (saved && translations[saved]) {
+          savedLanguage = saved;
+        }
+      } catch (error) {
+        // English is the default language.
+      }
+
+      selector.addEventListener("change", function () {
+        applyLanguage(selector.value);
+      });
+
+      applyLanguage(savedLanguage);
+    })();
+  </script>
 </body>
 </html>
