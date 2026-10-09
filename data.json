@@ -188,6 +188,23 @@
   },
   "instagram": [
     {
+      "id": "DeRv4GOCdwD",
+      "date": "2026-10-09",
+      "handle": "@santa.pp",
+      "title": "Santa Vibes",
+      "postUrl": "https://www.instagram.com/p/DeRv4GOCdwD/",
+      "image": "images/SantaVibes.jpg",
+      "like": 350000,
+      "likeDone": false,
+      "comment": 25000,
+      "commentDone": false,
+      "share": 2000000,
+      "shareDone": false,
+      "generators": [
+        { "name": "Generator 1", "url": "https://new-chat-tau-eosin.vercel.app/" }
+      ]
+    },
+    {
       "id": "DeCUBduAf1F",
       "date": "2026-10-03",
       "handle": "@perthppe",
