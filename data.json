@@ -233,7 +233,7 @@
       "comment": 25000,
       "commentDone": false,
       "share": 1500000,
-      "shareDone": false,
+      "shareDone": true,
       "generators": [
         { "name": "Generator 1", "url": "https://urban-comment-craft.lovable.app/" }
       ]
@@ -267,7 +267,7 @@
       "comment": 25000,
       "commentDone": false,
       "share": 1500000,
-      "shareDone": false,
+      "shareDone": true,
       "generators": [
         { "name": "Generator 1", "url": "https://clinic-comment-engine.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
       ]
@@ -284,7 +284,7 @@
       "comment": 25000,
       "commentDone": false,
       "share": 1500000,
-      "shareDone": false,
+      "shareDone": true,
       "generators": [
         { "name": "Generator 1", "url": "https://amber-glow-reel.lovable.app/" }
       ]
