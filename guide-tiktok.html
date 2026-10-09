@@ -1,61 +1,224 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TikTok Guide - PerthSanta Hub</title>
+  <meta name="description" content="How to interact effectively on TikTok for PerthSanta.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { background: #070707; min-height: 100vh; }</style>
+
+  <style>
+    html, body {
+      background: #070707;
+      min-height: 100vh;
+    }
+
+    body {
+      color: #fff;
+    }
+  </style>
 </head>
+
 <body class="text-white">
-  <div class="max-w-4xl mx-auto px-4 pt-8 pb-20">
-    <a href="series-trends.html" class="text-sm text-red-500 hover:text-red-400">← Back to Trends</a>
-    <h1 class="text-3xl font-bold mt-4 mb-2">TikTok – Guide</h1>
-    <p class="text-gray-400 mb-6">How to interact effectively on TikTok for PerthSanta.</p>
-    
+  <main class="max-w-4xl mx-auto px-4 pt-8 pb-20">
+
+    <!-- Back link and language selector -->
+    <div class="flex items-center justify-between gap-4">
+      <a
+        href="series-trends.html"
+        class="text-sm text-red-500 hover:text-red-400"
+        data-i18n="back"
+      >← Back to Trends</a>
+
+      <select
+        id="guideLanguage"
+        class="bg-zinc-900 border border-zinc-700 text-white text-sm rounded-lg px-3 py-2"
+        aria-label="Select language"
+      >
+        <option value="en">EN</option>
+        <option value="vi">VI</option>
+        <option value="th">TH</option>
+        <option value="my">MY</option>
+      </select>
+    </div>
+
+    <!-- Page title -->
+    <h1 class="text-3xl font-bold mt-4 mb-2">
+      <span data-i18n="tiktok">TikTok</span>
+      <span data-i18n="guide">– Guide</span>
+    </h1>
+
+    <p class="text-gray-400 mb-6" data-i18n="pageDesc">
+      How to interact effectively on TikTok for PerthSanta.
+    </p>
+
     <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-5 sm:p-8 text-gray-300 leading-relaxed space-y-6">
 
-      <!-- 2 nút liên kết + avatar -->
+      <!-- TikTok profile links -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        
-        <!-- Nút Perth -->
-        <a href="https://www.tiktok.com/@perth.ppe?_r=1&_t=ZS-9A2ixMaSEZ2" 
-           target="_blank"
-           class="inline-flex items-center gap-3 px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white font-medium rounded-full transition">
-          <img src="images/perth.ppe.webp" 
-               alt="Perth" 
-               class="w-10 h-10 rounded-full object-cover border-2 border-white/40 flex-shrink-0">
-          <span>Open TikTok Perth →</span>
+
+        <!-- Perth -->
+        <a
+          href="https://www.tiktok.com/@perth.ppe?_r=1&_t=ZS-9A2ixMaSEZ2"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white font-medium rounded-full transition"
+        >
+          <img
+            src="images/perth.ppe.webp"
+            alt="Perth"
+            class="w-10 h-10 rounded-full object-cover border-2 border-white/40 flex-shrink-0"
+            loading="lazy"
+          >
+          <span data-i18n="openPerth">Open TikTok Perth →</span>
         </a>
 
-        <!-- Nút Santa -->
-        <a href="https://www.tiktok.com/@santa.pp?_r=1&_t=ZS-9A2j03BFaTd" 
-           target="_blank"
-           class="inline-flex items-center gap-3 px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white font-medium rounded-full transition">
-          <img src="images/santa.pp.webp" 
-               alt="Santa" 
-               class="w-10 h-10 rounded-full object-cover border-2 border-white/40 flex-shrink-0">
-          <span>Open TikTok Santa →</span>
+        <!-- Santa -->
+        <a
+          href="https://www.tiktok.com/@santa.pp?_r=1&_t=ZS-9A2j03BFaTd"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white font-medium rounded-full transition"
+        >
+          <img
+            src="images/santa.pp.webp"
+            alt="Santa"
+            class="w-10 h-10 rounded-full object-cover border-2 border-white/40 flex-shrink-0"
+            loading="lazy"
+          >
+          <span data-i18n="openSanta">Open TikTok Santa →</span>
         </a>
 
       </div>
 
-      <!-- Nội dung hướng dẫn -->
+      <!-- Interaction guide -->
       <div class="space-y-4">
         <ul class="list-disc list-inside space-y-3">
+
           <li>
-            <strong>New posts from PerthSanta:</strong>  
-            Like, repost, comment, save and share as soon as possible, preferably within the first 24h.
+            <strong data-i18n="newPostsTitle">New posts from PerthSanta:</strong>
+            <span data-i18n="newPostsText">
+              Like, repost, comment, save, and share as soon as possible, preferably within the first 24 hours.
+            </span>
           </li>
+
           <li>
-            <strong>Posts from GMM, Brands & Media:</strong>  
-            When you see posts about PerthSanta's projects/jobs, active-ly interact with them to boost media metrics.
+            <strong data-i18n="mediaTitle">Posts from GMMTV, Brands & Media:</strong>
+            <span data-i18n="mediaText">
+              When you see posts about PerthSanta's projects or jobs, actively interact with them to help boost media metrics and visibility.
+            </span>
           </li>
+
         </ul>
       </div>
 
     </div>
-  </div>
+  </main>
+
+  <!-- Shared website navigation and footer -->
   <script src="common.js"></script>
+
+  <!-- Language selector for TikTok guide only -->
+  <script>
+    (function () {
+      const translations = {
+        en: {
+          back: "← Back to Trends",
+          tiktok: "TikTok",
+          guide: "– Guide",
+          pageDesc: "How to interact effectively on TikTok for PerthSanta.",
+          openPerth: "Open TikTok Perth →",
+          openSanta: "Open TikTok Santa →",
+          newPostsTitle: "New posts from PerthSanta:",
+          newPostsText: "Like, repost, comment, save, and share as soon as possible, preferably within the first 24 hours.",
+          mediaTitle: "Posts from GMMTV, Brands & Media:",
+          mediaText: "When you see posts about PerthSanta's projects or jobs, actively interact with them to help boost media metrics and visibility."
+        },
+
+        vi: {
+          back: "← Quay lại Trends",
+          tiktok: "TikTok",
+          guide: "– Hướng dẫn",
+          pageDesc: "Cách tương tác hiệu quả trên TikTok để hỗ trợ PerthSanta.",
+          openPerth: "Mở TikTok Perth →",
+          openSanta: "Mở TikTok Santa →",
+          newPostsTitle: "Bài đăng mới từ PerthSanta:",
+          newPostsText: "Like, repost, bình luận, lưu và chia sẻ sớm nhất có thể, tốt nhất trong 24 giờ đầu tiên.",
+          mediaTitle: "Bài đăng từ GMMTV, nhãn hàng và truyền thông:",
+          mediaText: "Khi thấy bài đăng về dự án hoặc công việc của PerthSanta, hãy tích cực tương tác để góp phần tăng chỉ số truyền thông và độ hiển thị."
+        },
+
+        th: {
+          back: "← กลับไปที่ Trends",
+          tiktok: "TikTok",
+          guide: "– คู่มือ",
+          pageDesc: "วิธีมีส่วนร่วมบน TikTok อย่างมีประสิทธิภาพเพื่อสนับสนุน PerthSanta",
+          openPerth: "เปิด TikTok Perth →",
+          openSanta: "เปิด TikTok Santa →",
+          newPostsTitle: "โพสต์ใหม่จาก PerthSanta:",
+          newPostsText: "กดถูกใจ รีโพสต์ แสดงความคิดเห็น บันทึก และแชร์ให้เร็วที่สุด โดยควรทำภายใน 24 ชั่วโมงแรก",
+          mediaTitle: "โพสต์จาก GMMTV แบรนด์ และสื่อ:",
+          mediaText: "เมื่อพบโพสต์เกี่ยวกับโปรเจกต์หรืองานของ PerthSanta ให้มีส่วนร่วมอย่าง 적극ขันเพื่อช่วยเพิ่มตัวชี้วัดด้านสื่อและการมองเห็น"
+        },
+
+        my: {
+          back: "← Trends သို့ ပြန်သွားရန်",
+          tiktok: "TikTok",
+          guide: "– လမ်းညွှန်",
+          pageDesc: "PerthSanta ကို အားပေးရန် TikTok တွင် ထိရောက်စွာ ပါဝင်တုံ့ပြန်နည်း။",
+          openPerth: "Perth ၏ TikTok ကိုဖွင့်ရန် →",
+          openSanta: "Santa ၏ TikTok ကိုဖွင့်ရန် →",
+          newPostsTitle: "PerthSanta ၏ ပို့စ်အသစ်များ:",
+          newPostsText: "Like၊ repost၊ comment၊ save ပြုလုပ်ပြီး အမြန်ဆုံး မျှဝေပါ။ ဖြစ်နိုင်လျှင် ပထမ ၂၄ နာရီအတွင်း ပြုလုပ်ပါ။",
+          mediaTitle: "GMMTV၊ အမှတ်တံဆိပ်များနှင့် မီဒီယာများ၏ ပို့စ်များ:",
+          mediaText: "PerthSanta ၏ ပရောဂျက်များ သို့မဟုတ် အလုပ်များနှင့် သက်ဆိုင်သော ပို့စ်များကို တွေ့ပါက မီဒီယာဆိုင်ရာ ကိန်းဂဏန်းများနှင့် မြင်နိုင်မှု တိုးတက်စေရန် တက်ကြွစွာ ပါဝင်တုံ့ပြန်ပါ။"
+        }
+      };
+
+      const selector = document.getElementById("guideLanguage");
+      const storageKey = "ps_guide_tiktok_lang";
+
+      function applyLanguage(lang) {
+        const dictionary = translations[lang] || translations.en;
+
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(function (element) {
+          const key = element.dataset.i18n;
+
+          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+            element.textContent = dictionary[key];
+          }
+        });
+
+        selector.value = lang;
+
+        try {
+          localStorage.setItem(storageKey, lang);
+        } catch (error) {
+          // The page remains usable if local storage is unavailable.
+        }
+      }
+
+      let savedLanguage = "en";
+
+      try {
+        const saved = localStorage.getItem(storageKey);
+
+        if (saved && translations[saved]) {
+          savedLanguage = saved;
+        }
+      } catch (error) {
+        // English is the default language.
+      }
+
+      selector.addEventListener("change", function () {
+        applyLanguage(selector.value);
+      });
+
+      applyLanguage(savedLanguage);
+    })();
+  </script>
 </body>
 </html>
