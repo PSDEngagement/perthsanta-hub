@@ -1,127 +1,379 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>X Guide Trending - PerthSanta Hub</title>
+  <title>X – Guide Trending | PerthSanta Hub</title>
+  <meta name="description" content="How to trend Heartbound on X.">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { background: #070707; min-height: 100vh; }
-    body.modal-open { overflow: hidden; }
+    body {
+      background: #09090b;
+      color: #fff;
+    }
+
+    .guide-section {
+      background: rgba(24, 24, 27, 0.78);
+      border: 1px solid #27272a;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .guide-section h2 {
+      color: #f87171;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .guide-section ul {
+      list-style: disc;
+      padding-left: 22px;
+    }
+
+    .guide-section li {
+      margin: 8px 0;
+      line-height: 1.7;
+      color: #e4e4e7;
+    }
+
+    .guide-image {
+      display: block;
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      margin: 16px auto 28px;
+      border-radius: 12px;
+      cursor: zoom-in;
+      border: 1px solid #3f3f46;
+    }
+
+    #fullscreenModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.94);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    #fullscreenModal img {
+      max-width: 100%;
+      max-height: 88vh;
+      object-fit: contain;
+    }
+
+    #fullscreenModal.active {
+      display: flex;
+    }
+
+    @media (max-width: 640px) {
+      .guide-section {
+        padding: 16px;
+      }
+    }
   </style>
 </head>
+
 <body class="text-white">
-  <div class="max-w-4xl mx-auto px-4 pt-8 pb-20">
-    <a href="series-trends.html" class="text-sm text-red-500 hover:text-red-400">← Back to Trends</a>
-    <h1 class="text-3xl font-bold mt-4 mb-2">X – Guide Trending</h1>
-    <p class="text-gray-400 mb-6">How to trend Heartbound on X.</p>
-    
-    <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-5 sm:p-8 text-gray-300 leading-relaxed space-y-6">
-      <!-- Title -->
-      <h2 class="text-center text-xl sm:text-2xl font-bold uppercase tracking-wide text-white">
-        Effective Trending Guide on X:
-      </h2>
+  <main class="max-w-4xl mx-auto px-4 pt-8 pb-20">
 
-      <!-- Mục 1 -->
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-2">1. The “15/15” Posting rule:</h3>
-        <ul class="list-disc list-inside space-y-1 ml-1">
-          <li>In the first 15 minutes, post text-only tweets (at least 15 characters).</li>
-          <li>DO NOT use emojis, images, videos, or special characters.</li>
-          <li>After the first 15 minutes, you can post tweets with attached images or videos.</li>
-        </ul>
-      </div>
+    <!-- Back link and language selector -->
+    <div class="flex items-center justify-between gap-4">
+      <a
+        href="series-trends.html"
+        class="text-sm text-red-500 hover:text-red-400"
+        data-i18n="back"
+      >← Back to Trends</a>
 
-      <!-- Mục 2 -->
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-2">2. Interaction Strategy:</h3>
-        <ul class="list-disc list-inside space-y-1 ml-1">
-          <li>Regularly interact with large accounts (OFFICIAL PAGES, FANBASES, TREND) and Top Tweets.</li>
-          <li>Preferably use one language when participating in a trend.</li>
-          <li>Interact and reply back and forth in comments.</li>
-        </ul>
-      </div>
-
-      <!-- Mục 3 -->
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-2">3. Account Requirements:</h3>
-        <p class="ml-1">The account needs a minimum number of followers (100–500) and regular activity.</p>
-      </div>
-
-      <!-- Note -->
-      <div class="pt-1">
-        <p class="text-red-500 underline font-medium">
-          Note: Posted content must be at least 15 characters long, including the official hashtags and key-words, and MUST NOT be left blank to avoid being flagged as spam.
-        </p>
-      </div>
-
-      <!-- Priority order X + Image -->
-      <div class="pt-4">
-        <h3 class="text-center text-lg font-semibold text-white mb-4">
-          Priority order X
-        </h3>
-        <div class="flex justify-center">
-          <img src="picguideX.jpg" 
-               alt="Priority order X" 
-               class="max-w-full h-auto rounded-xl border border-zinc-600 shadow-lg cursor-pointer hover:opacity-90 transition"
-               onclick="openFullscreen(this.src)"
-               title="Nhấn để xem full size">
-        </div>
-      </div>
-
-      <!-- Schedule Post Guide -->
-      <div class="pt-8">
-        <h3 class="text-center text-lg font-semibold text-white mb-4">
-          Schedule Post Guide
-        </h3>
-        <div class="flex justify-center">
-          <img src="images/picschedulepost.jpg" 
-               alt="Schedule Post Guide" 
-               class="max-w-full h-auto rounded-xl border border-zinc-600 shadow-lg cursor-pointer hover:opacity-90 transition"
-               onclick="openFullscreen(this.src)"
-               title="Nhấn để xem full size">
-        </div>
-      </div>
+      <select
+        id="guideLanguage"
+        class="bg-zinc-900 border border-zinc-700 text-white text-sm rounded-lg px-3 py-2"
+        aria-label="Select language"
+      >
+        <option value="en">EN</option>
+        <option value="vi">VI</option>
+        <option value="th">TH</option>
+        <option value="my">MY</option>
+      </select>
     </div>
+
+    <!-- Page title -->
+    <h1
+      class="text-3xl font-bold mt-4 mb-2"
+      data-i18n="pageTitle"
+    >X – Guide Trending</h1>
+
+    <p
+      class="text-gray-400 mb-8"
+      data-i18n="pageDesc"
+    >How to trend Heartbound on X.</p>
+
+    <!-- Main guide -->
+    <h2
+      class="text-xl font-bold mb-5"
+      data-i18n="mainTitle"
+    >Effective Trending Guide on X:</h2>
+
+    <!-- Section 1 -->
+    <section class="guide-section">
+      <h2 data-i18n="section1">1. The “15/15” Posting Rule</h2>
+      <ul>
+        <li data-i18n="rule1">
+          In the first 15 minutes, post text-only tweets (at least 15 characters).
+        </li>
+        <li data-i18n="rule2">
+          DO NOT use emojis, images, videos, or special characters.
+        </li>
+        <li data-i18n="rule3">
+          After the first 15 minutes, you can post tweets with attached images or videos.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="guide-section">
+      <h2 data-i18n="section2">2. Interaction Strategy</h2>
+      <ul>
+        <li data-i18n="interaction1">
+          Regularly interact with large accounts (OFFICIAL PAGES, FANBASES, TREND) and Top Tweets.
+        </li>
+        <li data-i18n="interaction2">
+          Preferably use one language when participating in a trend.
+        </li>
+        <li data-i18n="interaction3">
+          Interact and reply back and forth in comments.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="guide-section">
+      <h2 data-i18n="section3">3. Account Requirements</h2>
+      <p
+        class="text-gray-200 leading-7"
+        data-i18n="account"
+      >
+        The account needs a minimum number of followers (100–500) and regular activity.
+      </p>
+
+      <p
+        class="mt-4 text-amber-300 leading-7"
+        data-i18n="note"
+      >
+        Note: Posted content must be at least 15 characters long, including the official hashtags and key-words, and MUST NOT be left blank to avoid being flagged as spam.
+      </p>
+    </section>
+
+    <!-- Priority Order Guide -->
+    <h2
+      class="text-xl font-bold mt-8 mb-3"
+      data-i18n="priority"
+    >Priority Order on X</h2>
+
+    <img
+      src="picguideX.jpg"
+      alt="Priority Order Guide on X"
+      class="guide-image"
+      onclick="openFullscreen(this.src)"
+      loading="lazy"
+    >
+
+    <!-- Schedule Post Guide -->
+    <h2
+      class="text-xl font-bold mt-8 mb-3"
+      data-i18n="schedule"
+    >Schedule Post Guide</h2>
+
+    <img
+      src="images/picschedulepost.jpg"
+      alt="Schedule Post Guide"
+      class="guide-image"
+      onclick="openFullscreen(this.src)"
+      loading="lazy"
+    >
+
+  </main>
+
+  <!-- Fullscreen image modal -->
+  <div
+    id="fullscreenModal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image preview"
+    onclick="closeFullscreen()"
+  >
+    <button
+      type="button"
+      onclick="closeFullscreen()"
+      class="absolute top-5 right-5 text-white text-3xl leading-none hover:text-red-400"
+      aria-label="Close"
+    >&times;</button>
+
+    <img
+      id="fullscreenImg"
+      src=""
+      alt="Fullscreen image"
+      onclick="event.stopPropagation()"
+    >
   </div>
 
-  <!-- Fullscreen Modal -->
-  <div id="fullscreenModal" 
-       class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4"
-       onclick="closeFullscreen()">
-    <button onclick="closeFullscreen()" 
-            class="absolute top-4 right-4 text-white text-4xl font-light hover:text-red-400 transition z-10"
-            aria-label="Đóng">
-      &times;
-    </button>
-    <img id="fullscreenImg" 
-         src="" 
-         alt="Fullscreen" 
-         class="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-         onclick="event.stopPropagation()">
-  </div>
-
+  <!-- Shared website navigation and footer -->
   <script src="common.js"></script>
+
+  <!-- Language selector for this page only -->
   <script>
+    (function () {
+      const translations = {
+        en: {
+          back: "← Back to Trends",
+          pageTitle: "X – Guide Trending",
+          pageDesc: "How to trend Heartbound on X.",
+          mainTitle: "Effective Trending Guide on X:",
+          section1: "1. The “15/15” Posting Rule",
+          rule1: "In the first 15 minutes, post text-only tweets (at least 15 characters).",
+          rule2: "DO NOT use emojis, images, videos, or special characters.",
+          rule3: "After the first 15 minutes, you can post tweets with attached images or videos.",
+          section2: "2. Interaction Strategy",
+          interaction1: "Regularly interact with large accounts (OFFICIAL PAGES, FANBASES, TREND) and Top Tweets.",
+          interaction2: "Preferably use one language when participating in a trend.",
+          interaction3: "Interact and reply back and forth in comments.",
+          section3: "3. Account Requirements",
+          account: "The account needs a minimum number of followers (100–500) and regular activity.",
+          note: "Note: Posted content must be at least 15 characters long, including the official hashtags and key-words, and MUST NOT be left blank to avoid being flagged as spam.",
+          priority: "Priority Order on X",
+          schedule: "Schedule Post Guide"
+        },
+
+        vi: {
+          back: "← Quay lại Trends",
+          pageTitle: "X – Hướng dẫn Trending",
+          pageDesc: "Cách trending Heartbound trên X.",
+          mainTitle: "Hướng dẫn Trending hiệu quả trên X:",
+          section1: "1. Quy tắc đăng bài “15/15”",
+          rule1: "Trong 15 phút đầu tiên, chỉ đăng tweet dạng văn bản (ít nhất 15 ký tự).",
+          rule2: "KHÔNG sử dụng emoji, hình ảnh, video hoặc ký tự đặc biệt.",
+          rule3: "Sau 15 phút đầu tiên, bạn có thể đăng tweet kèm hình ảnh hoặc video.",
+          section2: "2. Chiến lược tương tác",
+          interaction1: "Thường xuyên tương tác với các tài khoản lớn (TRANG CHÍNH THỨC, FANBASE, TREND) và các bài đăng nổi bật.",
+          interaction2: "Nên sử dụng một ngôn ngữ thống nhất khi tham gia trending.",
+          interaction3: "Tương tác và trả lời qua lại trong phần bình luận.",
+          section3: "3. Yêu cầu đối với tài khoản",
+          account: "Tài khoản cần có số lượng người theo dõi tối thiểu (100–500) và hoạt động thường xuyên.",
+          note: "Lưu ý: Nội dung bài đăng phải có ít nhất 15 ký tự, bao gồm hashtag chính thức và từ khóa. KHÔNG được để nội dung trống để tránh bị đánh dấu là spam.",
+          priority: "Thứ tự ưu tiên trên X",
+          schedule: "Hướng dẫn lên lịch đăng bài"
+        },
+
+        th: {
+          back: "← กลับไปที่ Trends",
+          pageTitle: "X – คู่มือการติดเทรนด์",
+          pageDesc: "วิธีทำให้ Heartbound ติดเทรนด์บน X",
+          mainTitle: "คู่มือการติดเทรนด์บน X อย่างมีประสิทธิภาพ:",
+          section1: "1. กฎการโพสต์ “15/15”",
+          rule1: "ในช่วง 15 นาทีแรก ให้โพสต์เฉพาะข้อความ (อย่างน้อย 15 ตัวอักษร)",
+          rule2: "ห้ามใช้อีโมจิ รูปภาพ วิดีโอ หรืออักขระพิเศษ",
+          rule3: "หลังจาก 15 นาทีแรก คุณสามารถโพสต์ข้อความพร้อมรูปภาพหรือวิดีโอได้",
+          section2: "2. กลยุทธ์การมีส่วนร่วม",
+          interaction1: "มีส่วนร่วมกับบัญชีขนาดใหญ่เป็นประจำ (บัญชีทางการ แฟนเบส และบัญชีเทรนด์) รวมถึงโพสต์ที่ได้รับความสนใจ",
+          interaction2: "ควรใช้ภาษาเดียวกันเมื่อเข้าร่วมการติดเทรนด์",
+          interaction3: "มีส่วนร่วมและตอบกลับความคิดเห็นไปมา",
+          section3: "3. ข้อกำหนดของบัญชี",
+          account: "บัญชีควรมีผู้ติดตามอย่างน้อย 100–500 คน และมีการใช้งานอย่างสม่ำเสมอ",
+          note: "หมายเหตุ: เนื้อหาในโพสต์ต้องมีอย่างน้อย 15 ตัวอักษร รวมแฮชแท็กทางการและคำสำคัญ ห้ามปล่อยเนื้อหาว่างเปล่าเพื่อหลีกเลี่ยงการถูกระบุว่าเป็นสแปม",
+          priority: "ลำดับความสำคัญบน X",
+          schedule: "คู่มือการตั้งเวลาโพสต์"
+        },
+
+        my: {
+          back: "← နောက်သို့",
+          pageTitle: "X – Trending လမ်းညွှန်",
+          pageDesc: "X ပေါ်တွင် Heartbound ကို trending ဖြစ်စေရန် နည်းလမ်းများ။",
+          mainTitle: "X ပေါ်တွင် Trending ဖြစ်စေရန် ထိရောက်သော လမ်းညွှန်:",
+          section1: "၁။ “15/15” ပို့စ်တင်ခြင်း စည်းမျဉ်း",
+          rule1: "ပထမ ၁၅ မိနစ်အတွင်း စာသားသက်သက် tweet များကိုသာ တင်ပါ (အနည်းဆုံး စာလုံး ၁၅ လုံး)။",
+          rule2: "အီမိုဂျီ၊ ပုံ၊ ဗီဒီယို သို့မဟုတ် အထူးသင်္ကေတများ မသုံးပါနှင့်။",
+          rule3: "ပထမ ၁၅ မိနစ်ပြီးနောက် ပုံ သို့မဟုတ် ဗီဒီယိုပါသော tweet များကို တင်နိုင်ပါသည်။",
+          section2: "၂။ အပြန်အလှန်ဆက်သွယ်မှု နည်းဗျူဟာ",
+          interaction1: "တရားဝင်စာမျက်နှာများ၊ ပရိသတ်အဖွဲ့များ၊ trend အကောင့်များနှင့် လူစိတ်ဝင်စားမှုများသော ပို့စ်များကို ပုံမှန်တုံ့ပြန်ပါ။",
+          interaction2: "Trending တွင် ပါဝင်သည့်အခါ ဖြစ်နိုင်လျှင် ဘာသာစကားတစ်မျိုးတည်းကို အသုံးပြုပါ။",
+          interaction3: "မှတ်ချက်များတွင် အပြန်အလှန်တုံ့ပြန်ပြီး ပြန်လည်ဖြေကြားပါ။",
+          section3: "၃။ အကောင့်လိုအပ်ချက်များ",
+          account: "အကောင့်တွင် follower အနည်းဆုံး ၁၀၀–၅၀၀ ခန့်ရှိပြီး ပုံမှန်အသုံးပြုမှုရှိသင့်သည်။",
+          note: "မှတ်ချက်: ပို့စ်တွင် တရားဝင် hashtag များနှင့် အဓိကစကားလုံးများအပါအဝင် စာလုံးအနည်းဆုံး ၁၅ လုံး ပါရမည်။ Spam ဟု သတ်မှတ်ခံရခြင်းမှ ရှောင်ရှားရန် အကြောင်းအရာမပါဘဲ မတင်ပါနှင့်။",
+          priority: "X ပေါ်ရှိ ဦးစားပေးအစီအစဉ်",
+          schedule: "ပို့စ်အချိန်ဇယား လမ်းညွှန်"
+        }
+      };
+
+      const selector = document.getElementById("guideLanguage");
+      const storageKey = "ps_guide_x_lang";
+
+      function applyLanguage(lang) {
+        const dictionary = translations[lang] || translations.en;
+
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(function (element) {
+          const key = element.dataset.i18n;
+
+          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+            element.textContent = dictionary[key];
+          }
+        });
+
+        selector.value = lang;
+
+        try {
+          localStorage.setItem(storageKey, lang);
+        } catch (error) {
+          // The page still works if local storage is unavailable.
+        }
+      }
+
+      let savedLanguage = "en";
+
+      try {
+        const saved = localStorage.getItem(storageKey);
+
+        if (saved && translations[saved]) {
+          savedLanguage = saved;
+        }
+      } catch (error) {
+        // Use English if local storage is unavailable.
+      }
+
+      selector.addEventListener("change", function () {
+        applyLanguage(selector.value);
+      });
+
+      applyLanguage(savedLanguage);
+    })();
+
     function openFullscreen(src) {
-      const modal = document.getElementById('fullscreenModal');
-      const img = document.getElementById('fullscreenImg');
-      img.src = src;
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      document.body.classList.add('modal-open');
+      const modal = document.getElementById("fullscreenModal");
+      const image = document.getElementById("fullscreenImg");
+
+      image.src = src;
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
     }
 
     function closeFullscreen() {
-      const modal = document.getElementById('fullscreenModal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      document.body.classList.remove('modal-open');
+      const modal = document.getElementById("fullscreenModal");
+
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
     }
 
-    // Đóng bằng phím ESC
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeFullscreen();
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeFullscreen();
+      }
     });
   </script>
 </body>
