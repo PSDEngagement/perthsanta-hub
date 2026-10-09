@@ -408,18 +408,38 @@
             "title": "INFINITY MEDICAL CLINIC",
             "note": "05:00 PM (UTC+7)",
             "location": "CENTRAL CHANTHANURI",
-            "hastag": "TBA",
-            "keyword": "TBA",
-            "for": ["PERTH"]
+            "hastag": "#InfinitymedicalclinicxPerth",
+            "keyword": "PERTH JOURNEY INFINITY LOVE",
+            "for": ["PERTH"],
+             "generators": [
+           {
+             "name": "GEN 1",
+             "url": "#"
+           },
+          {
+             "name": "GEN 2",
+             "url": "#"
+          }
+           ]
           },
           {
             "date": "10 Oct",
             "title": "STRAWBERRY SHORTCAKE WITH SANTA",
             "note": "07:00 PM (UTC+7)",
             "location": "TIKTOKSHOP 3CE THAILAND",
-            "hastag": "TBA",
-            "keyword": "TBA",
-            "for": ["SANTA"]
+            "hastag": "#3CEVelvetxSanta",
+            "keyword": "SANTA 3CE VVSTRAWBERRY",
+            "for": ["SANTA"],
+             "generators": [
+           {
+             "name": "GEN 1",
+             "url": "#"
+           },
+          {
+             "name": "GEN 2",
+             "url": "#"
+          }
+           ]
           },
           {
             "date": "11 Oct",
