@@ -121,10 +121,16 @@
     localStorage.setItem("ps_hub_lang", lang);
     window.psApplyLang(lang);
   };
-
   const here = pageName();
-  const lang = currentLang();
-  const t = window.PS_I18N[lang];
+
+  const t = {
+    navHome: "Home",
+    navTrends: "Trends",
+    navMissions: "Missions",
+    navYoutube: "YouTube",
+    navIg: "Instagram",
+    navIntro: "Intro"
+  };
 
   function navIcon(name, active) {
     const c = active ? "#f87171" : "#a1a1aa";
@@ -249,16 +255,8 @@
           '<ul id="ps-alert-list" class="p-2 space-y-1.5 max-h-64 overflow-y-auto"></ul>' +
         "</div>" +
       "</div>" +
-      '<select id="language" onchange="psChangeLanguage()" class="bg-zinc-950 border border-zinc-600 text-white text-sm rounded-full px-2.5 py-1.5 font-medium">' +
-        '<option value="en">EN</option>' +
-        '<option value="vi">VI</option>' +
-        '<option value="th">TH</option>' +
-        '<option value="my">MY</option>' +
-      "</select>" +
     "</div>";
   document.body.insertBefore(bar, document.body.firstChild);
-  document.getElementById("language").value = lang;
-  window.psApplyLang(lang);
 
   document.body.classList.add("ps-has-tabbar");
   const tabbar = document.createElement("nav");
