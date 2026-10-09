@@ -366,25 +366,6 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "7 Oct",
-            "title": "JASP.ER TEMPTATION CONCERT | PRESS TOUR",
-            "note": "10:00 AM (UTC+7)",
-            "location": "LIVE | INTERVIEW",
-            "hastag": "JASPERCONCERT",
-            "keyword": "JASPER CONCERT PRESSTOUR",
-            "for": ["SANTA"],
-            "generators": [
-           {
-             "name": "GEN 1",
-             "url": "#"
-           },
-          {
-             "name": "GEN 2",
-             "url": "#"
-          }
-           ]
-          },
-          {
             "date": "8 Oct",
             "title": "UNLOCKING CLOUD SKIN SECRETS WITH SANTA’S FAVORITE SUN STICK",
             "note": "12:00 PM (UTC+7)",
