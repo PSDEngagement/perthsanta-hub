@@ -383,44 +383,6 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "8 Oct",
-            "title": "UNLOCKING CLOUD SKIN SECRETS WITH SANTA’S FAVORITE SUN STICK",
-            "note": "12:00 PM (UTC+7)",
-            "location": "TIKTOKSHOP L'OREAL",
-            "hastag": "LOrealCloudStickxSanta",
-            "keyword": "SANTA CLOUD SKIN SUNSTICK",
-            "for": ["SANTA"],
-            "generators": [
-           {
-             "name": "GEN 1",
-             "url": "https://psdxtrend.github.io/x-comment-generator/loreal.html"
-           },
-          {
-             "name": "GEN 2",
-             "url": "https://psdtrendng.github.io/genLOrealSanta/"
-          }
-           ]
-          },
-          {
-            "date": "8 Oct",
-            "title": "DESTINY CLINIC",
-            "note": "06:00 PM (UTC+7)",
-            "location": "CENTRAL RAMA2 1ST FLOOR",
-            "hastag": "destinyclinicxPerthSanta",
-            "keyword": "PERTHSANTA BEAUTY BLOOM",
-            "for": ["PS"],
-            "generators": [
-           {
-             "name": "GEN 1",
-             "url": "https://psdxtrend.github.io/x-comment-generator/destiny.html"
-           },
-          {
-             "name": "GEN 2",
-             "url": "https://psdtrendng.github.io/DestinyClinicPerthSanta/"
-          }
-           ]
-          },
-          {
             "date": "10 Oct",
             "title": "INFINITY MEDICAL CLINIC",
             "note": "05:00 PM (UTC+7)",
