@@ -383,44 +383,6 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "10 Oct",
-            "title": "INFINITY MEDICAL CLINIC",
-            "note": "05:00 PM (UTC+7)",
-            "location": "CENTRAL CHANTHANURI",
-            "hastag": "#InfinitymedicalclinicxPerth",
-            "keyword": "PERTH JOURNEY INFINITY LOVE",
-            "for": ["PERTH"],
-             "generators": [
-           {
-             "name": "GEN 1",
-             "url": "https://psdxtrend.github.io/x-comment-generator/infinity.html"
-           },
-          {
-             "name": "GEN 2",
-             "url": "https://perth-infinity-buzz.lovable.app/?zarsrc=30&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo"
-          }
-           ]
-          },
-          {
-            "date": "10 Oct",
-            "title": "STRAWBERRY SHORTCAKE WITH SANTA",
-            "note": "07:00 PM (UTC+7)",
-            "location": "TIKTOKSHOP 3CE THAILAND",
-            "hastag": "#3CEVelvetxSanta",
-            "keyword": "SANTA 3CE VVSTRAWBERRY",
-            "for": ["SANTA"],
-             "generators": [
-           {
-             "name": "GEN 1",
-             "url": "https://psdxtrend.github.io/x-comment-generator/3ce.html"
-           },
-          {
-             "name": "GEN 2",
-             "url": "https://santa-3ce.lovable.app/?zarsrc=30&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo"
-          }
-           ]
-          },
-          {
             "date": "11 Oct",
             "title": "GMMTV FANIVAL 2026 HAPPY FAMILY",
             "note": "06:30 PM (UTC+7)",
@@ -442,7 +404,7 @@
           {
             "date": "12 Oct",
             "title": "KING POWER 37TH ANNIVERSARY DELIGHTS & SURPSIRES 2026",
-            "note": "TBA",
+            "note": "06:00 PM (UTC+7)",
             "location": "KING POWER RANGNAM, BANGKOK, THAILAND",
             "hastag": "TBA",
             "keyword": "TBA",
