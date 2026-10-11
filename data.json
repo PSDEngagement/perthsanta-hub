@@ -427,7 +427,17 @@
             "location": "UNION HALL, UNION MALL",
             "hastag": "GMMTVFANIVAL2026HappyFamilyxPS",
             "keyword": "PSD DEVILS LANDMARK 2026",
-            "for": ["PSD"]
+            "for": ["PSD"],
+            "generators": [
+           {
+             "name": "GEN 1",
+             "url": "https://psdxtrend.github.io/x-comment-generator/psd-fanival.html"
+           },
+          {
+             "name": "GEN 2",
+             "url": ""
+          }
+           ]
           },
           {
             "date": "12 Oct",
