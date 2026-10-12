@@ -423,9 +423,19 @@
             "title": "KING POWER 37TH ANNIVERSARY DELIGHTS & SURPSIRES 2026",
             "note": "06:00 PM (UTC+7)",
             "location": "KING POWER RANGNAM, BANGKOK, THAILAND",
-            "hastag": "TBA",
-            "keyword": "TBA",
+            "hastag": "KingPower37thAnniversary",
+            "keyword": "PSD FAMILY 37TH KINGPOWER",
             "for": ["PSD"]
+            "generators": [
+           {
+             "name": "GEN 1",
+             "url": "https://psdtrendng.github.io/PSDtrend12/"
+           },
+          {
+             "name": "GEN 2",
+             "url": "https://psdtrendng.github.io/genPSDtrend12/"
+          }
+           ]
           },
           {
             "date": "17 Oct",
