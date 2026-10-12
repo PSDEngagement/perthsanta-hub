@@ -187,7 +187,7 @@
     ]
   },
   "instagram": [
-     {
+    {
       "id": "DeW6-hCga6t",
       "date": "2026-10-11",
       "handle": "@perthppe",
@@ -238,7 +238,7 @@
         { "name": "Generator 1", "url": "https://pixel-perfect-display-7828.lovable.app/" }
       ]
     },
-     {
+    {
       "id": "DeCUGfuTjzX",
       "date": "2026-10-03",
       "handle": "@santa.pp",
@@ -408,15 +408,15 @@
             "keyword": "PSD DEVILS LANDMARK 2026",
             "for": ["PSD"],
             "generators": [
-           {
-             "name": "GEN 1",
-             "url": "https://psdxtrend.github.io/x-comment-generator/psd-fanival.html"
-           },
-          {
-             "name": "GEN 2",
-             "url": "https://psdtrendng.github.io/PerthSantaDomiiatrend/"
-          }
-           ]
+              {
+                "name": "GEN 1",
+                "url": "https://psdxtrend.github.io/x-comment-generator/psd-fanival.html"
+              },
+              {
+                "name": "GEN 2",
+                "url": "https://psdtrendng.github.io/PerthSantaDomiiatrend/"
+              }
+            ]
           },
           {
             "date": "12 Oct",
@@ -425,17 +425,17 @@
             "location": "KING POWER RANGNAM, BANGKOK, THAILAND",
             "hastag": "KingPower37thAnniversary",
             "keyword": "PSD FAMILY 37TH KINGPOWER",
-            "for": ["PSD"]
+            "for": ["PSD"],
             "generators": [
-           {
-             "name": "GEN 1",
-             "url": "https://psdtrendng.github.io/PSDtrend12/"
-           },
-          {
-             "name": "GEN 2",
-             "url": "https://psdtrendng.github.io/genPSDtrend12/"
-          }
-           ]
+              {
+                "name": "GEN 1",
+                "url": "https://psdtrendng.github.io/PSDtrend12/"
+              },
+              {
+                "name": "GEN 2",
+                "url": "https://psdtrendng.github.io/genPSDtrend12/"
+              }
+            ]
           },
           {
             "date": "17 Oct",
@@ -466,7 +466,7 @@
           },
           {
             "date": "25 Oct",
-            "title": "FINELINE X PERTH AT LOTUS'S",
+            "title": "FINELINE X PERTH CLASS LOTUS'S",
             "note": "TBA",
             "location": "LOTUS'S RAMA4",
             "hastag": "TBA",
