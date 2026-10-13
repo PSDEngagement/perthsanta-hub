@@ -479,7 +479,7 @@
             "location": "TBA",
             "hastag": "TBA",
             "keyword": "TBA",
-            "for": ["PERTH, DOMIIA"],
+            "for": ["PERTH", "DOMIIA"],
             "generators": [
               {
                 "name": "GEN 1",
@@ -489,6 +489,25 @@
                 "name": "GEN 2",
                 "url": ""
               }
+            ]
+          },
+          {
+            "date": "08 Oct",
+            "title": "FAN MEETING CHINA WITH SANTA AND DOMIIA",
+            "note": "TBA",
+            "location": "TBA",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["SANTA", "DOMIIA"],
+            "generators": [
+              {
+                "name": "GEN 1",
+                "url": ""
+              },
+              {
+                "name": "GEN 2",
+                "url": ""
+          }
         ]
       }
     ]
