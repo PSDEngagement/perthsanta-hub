@@ -492,7 +492,7 @@
             ]
           },
           {
-            "date": "08 Oct",
+            "date": "08 Nov",
             "title": "FAN MEETING CHINA WITH SANTA AND DOMIIA",
             "note": "TBA",
             "location": "TBA",
@@ -507,11 +507,64 @@
               {
                 "name": "GEN 2",
                 "url": ""
+              }
+            ]
+          },
+         {
+            "date": "13-14-15 Nov",
+            "title": "FRIENDLY ME MALDIVES WITH SANTA",
+            "note": "TBA",
+            "location": "TBA",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["SANTA"],
+            "generators": [
+              {
+                "name": "GEN 1",
+                "url": ""
+              },
+              {
+                "name": "GEN 2",
+                "url": ""
+              }
+            ]
+          },
+          {
+            "date": "21 Nov",
+            "title": "DAO COFFEE EXCLUSIVE MEETING ",
+            "note": "TBA",
+            "location": "TBA",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH", "SANTA"],
+            "generators": [
+              {
+                "name": "GEN 1",
+                "url": ""
+              },
+              {
+                "name": "GEN 2",
+                "url": ""
+              }
+            ]
+          },
+          {
+            "date": "28 Nov",
+            "title": "GMM STARLYMPICS WITH PSD ",
+            "note": "TBA",
+            "location": "TBA",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PSD"],
+            "generators": [
+              {
+                "name": "GEN 1", "url": "" },
+              {
+                "name": "GEN 2", "url": "" }
+            ]
           }
         ]
       }
-    ]
-  }
     ],
     "infJobUrl": "https://njpoyw2fdnkg.jp.larksuite.com/wiki/SrIrw6Ur8iTOtukrtomjO0OZpYd?sheet=f8cdf3"
   }
