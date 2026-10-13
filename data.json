@@ -400,25 +400,6 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "11 Oct",
-            "title": "GMMTV FANIVAL 2026 HAPPY FAMILY",
-            "note": "06:30 PM (UTC+7)",
-            "location": "UNION HALL, UNION MALL",
-            "hastag": "GMMTVFANIVAL2026HappyFamilyxPS",
-            "keyword": "PSD DEVILS LANDMARK 2026",
-            "for": ["PSD"],
-            "generators": [
-              {
-                "name": "GEN 1",
-                "url": "https://psdxtrend.github.io/x-comment-generator/psd-fanival.html"
-              },
-              {
-                "name": "GEN 2",
-                "url": "https://psdtrendng.github.io/PerthSantaDomiiatrend/"
-              }
-            ]
-          },
-          {
             "date": "12 Oct",
             "title": "KING POWER 37TH ANNIVERSARY DELIGHTS & SURPSIRES 2026",
             "note": "06:00 PM (UTC+7)",
@@ -485,9 +466,30 @@
             "hastag": "TBA",
             "keyword": "TBA",
             "for": ["SANTA"]
-          }
+          },
+          {
+        "month": "November 2026",
+        "items": [
+          {
+            "date": "07 Nov",
+            "title": "FAN MEETING CHINA WITH PERTH AND DOMIIA",
+            "note": "TBA",
+            "location": "TBA",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH, DOMIIA"],
+            "generators": [
+              {
+                "name": "GEN 1",
+                "url": ""
+              },
+              {
+                "name": "GEN 2",
+                "url": ""
+              },
         ]
       }
+      
     ],
     "infJobUrl": "https://njpoyw2fdnkg.jp.larksuite.com/wiki/SrIrw6Ur8iTOtukrtomjO0OZpYd?sheet=f8cdf3"
   }
