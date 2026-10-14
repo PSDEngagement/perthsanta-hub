@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,16 +44,26 @@
         data-i18n="back"
       >← Back to Trends</a>
 
-      <select
-        id="guideLanguage"
-        class="bg-zinc-900 border border-zinc-700 text-white text-sm rounded-lg px-3 py-2"
-        aria-label="Select language"
-      >
-        <option value="en">EN</option>
-        <option value="vi">VI</option>
-        <option value="th">TH</option>
-        <option value="my">MY</option>
-      </select>
+      <!-- Language selector: style giống To-Do (không nhấp nháy) -->
+      <div class="relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm border border-red-600/80 bg-red-950/90 text-red-200 hover:bg-red-900 hover:text-white font-medium transition shadow-[0_0_12px_rgba(239,68,68,0.25)]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z" />
+        </svg>
+        <select
+          id="guideLanguage"
+          class="bg-transparent border-none outline-none appearance-none text-red-200 text-sm font-medium pr-4 cursor-pointer"
+          aria-label="Select language"
+        >
+          <option value="en">EN</option>
+          <option value="vi">VI</option>
+          <option value="th">TH</option>
+          <option value="my">MY</option>
+        </select>
+        <svg class="absolute right-2 w-3 h-3 text-red-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
     </div>
 
     <!-- Page title -->
@@ -299,18 +308,18 @@
           mainTitle: "Facebook တွင် ပါဝင်တုံ့ပြန်ရန် လမ်းညွှန်",
           introTitle: "GMMTV၊ အမှတ်တံဆိပ်များနှင့် မီဒီယာများ၏ ပို့စ်များ:",
           introText: "PerthSanta ၏ ပရောဂျက်များ၊ အလုပ်များ၊ ပွဲများ သို့မဟုတ် ပူးပေါင်းဆောင်ရွက်မှုများနှင့် သက်ဆိုင်သော ပို့စ်များကို တွေ့ပါက ပို့စ်များ၏ မီဒီယာစွမ်းဆောင်ရည်နှင့် မြင်နိုင်မှု တိုးတက်စေရန် တက်ကြွစွာ ပါဝင်တုံ့ပြန်ပါ။",
-          view: "ကြည့်ရှုရန်:",
-          viewText: "ပို့စ် သို့မဟုတ် ဗီဒီယိုကို ဖွင့်ပြီး ကြည့်ရှု၊ ဖတ်ရှုပါ။",
-          react: "တုံ့ပြန်မှု:",
-          reactText: "အကြောင်းအရာနှင့် ကိုက်ညီသော တုံ့ပြန်မှုကို ရွေးချယ်ပါ။",
+          view: "ကြည့်ရန်:",
+          viewText: "ပို့စ် သို့မဟုတ် ဗီဒီယိုကို ဖွင့်ပြီး ကြည့်/ဖတ်ပါ။",
+          react: "တုံ့ပြန်ရန်:",
+          reactText: "အကြောင်းအရာနှင့် ကိုက်ညီသော တုံ့ပြန်မှု တစ်ခု ထားပါ။",
           comment: "မှတ်ချက်:",
-          commentText: "PerthSanta သို့မဟုတ် ပရောဂျက်နှင့် သက်ဆိုင်သော အဓိပ္ပာယ်ရှိသည့် မှတ်ချက်များ ရေးသားပါ။",
-          reply: "ပြန်စာ:",
-          replyText: "ဆွေးနွေးမှုတွင် ပါဝင်ပြီး အခြားသူများ၏ မှတ်ချက်များကို သဘာဝကျကျ ပြန်ဖြေပါ။",
+          commentText: "PerthSanta သို့မဟုတ် ပရောဂျက်နှင့် ပတ်သက်သော အဓိပ္ပာယ်ရှိပြီး သက်ဆိုင်သော မှတ်ချက်များ ချန်ထားပါ။",
+          reply: "ပြန်ကြားရန်:",
+          replyText: "စကားပြောဆိုမှုများတွင် ပါဝင်ပြီး အခြားမှတ်ချက်များကို သဘာဝကျစွာ ပြန်ကြားပါ။",
           share: "မျှဝေရန်:",
-          shareText: "သင့်ပရိုဖိုင်၊ Story သို့မဟုတ် သက်ဆိုင်ရာအဖွဲ့များသို့ သင့်လျော်သည့်အခါ မျှဝေပါ။",
+          shareText: "သင့်လျော်သည့်အခါ ပို့စ်ကို သင့်ပရိုဖိုင်၊ Story သို့မဟုတ် သက်ဆိုင်ရာအုပ်စုများသို့ မျှဝေပါ။",
           save: "သိမ်းဆည်းရန်:",
-          saveText: "နောက်တစ်ကြိမ် ပြန်ကြည့်လိုသော အကြောင်းအရာများကို သိမ်းဆည်းပါ။",
+          saveText: "သင် အမှန်တကယ် ပြန်ကြည့်လိုသော အကြောင်းအရာများကို သိမ်းဆည်းပါ။",
           click: "နှိပ်ရန်:",
           clickText: "စိတ်ဝင်စားပါက သက်ဆိုင်ရာလင့်ခ်များ သို့မဟုတ် အကြောင်းအရာများကို ဖွင့်ပါ။",
           important: "အရေးကြီး:",
@@ -321,7 +330,7 @@
       };
 
       const selector = document.getElementById("guideLanguage");
-      const storageKey = "ps_guide_facebook_lang";
+      const storageKey = "ps_guide_lang";
 
       function applyLanguage(lang) {
         const dictionary = translations[lang] || translations.en;
@@ -382,9 +391,8 @@
 
     function openFullscreen(src) {
       const modal = document.getElementById("fullscreenModal");
-      const img = document.getElementById("fullscreenImg");
-
-      img.src = src;
+      const image = document.getElementById("fullscreenImg");
+      image.src = src;
       modal.classList.remove("hidden");
       modal.classList.add("flex");
       document.body.classList.add("modal-open");
@@ -392,7 +400,6 @@
 
     function closeFullscreen() {
       const modal = document.getElementById("fullscreenModal");
-
       modal.classList.add("hidden");
       modal.classList.remove("flex");
       document.body.classList.remove("modal-open");
