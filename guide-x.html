@@ -77,22 +77,36 @@
         class="text-sm text-red-500 hover:text-red-400"
         data-i18n="back"
       >← Back to Trends</a>
-      <select
-        id="guideLanguage"
-        class="bg-zinc-900 border border-zinc-700 text-white text-sm rounded-lg px-3 py-2"
-        aria-label="Select language"
-      >
-        <option value="en">EN</option>
-        <option value="vi">VI</option>
-        <option value="th">TH</option>
-        <option value="my">MY</option>
-      </select>
+
+      <!-- Language selector: Globe + Code -->
+      <div class="relative flex items-center gap-1.5 bg-zinc-900 border border-zinc-700 rounded-lg px-2.5 py-1.5 text-sm text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z" />
+        </svg>
+        <select
+          id="guideLanguage"
+          class="bg-transparent border-none outline-none appearance-none text-white text-sm font-medium pr-5 cursor-pointer"
+          aria-label="Select language"
+        >
+          <option value="en">EN</option>
+          <option value="vi">VI</option>
+          <option value="th">TH</option>
+          <option value="my">MY</option>
+        </select>
+        <svg class="absolute right-2 w-3 h-3 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
     </div>
+
     <!-- Page title -->
     <h1 class="text-3xl font-bold mt-4 mb-2" data-i18n="pageTitle">X – Guide Trending</h1>
     <p class="text-gray-400 mb-8" data-i18n="pageDesc">How to trend Heartbound on X.</p>
+
     <!-- Main guide -->
     <h2 class="text-xl font-bold mb-5" data-i18n="mainTitle">Effective Trending Guide on X:</h2>
+
     <!-- Section 1 -->
     <section class="guide-section">
       <h2 data-i18n="section1">1. The “15/15” Posting Rule</h2>
@@ -102,83 +116,45 @@
         <li data-i18n="rule3">After the first 15 minutes, you can post tweets with attached images or videos.</li>
       </ul>
     </section>
+
     <!-- Section 2 -->
     <section class="guide-section">
       <h2 data-i18n="section2">2. Interaction Strategy</h2>
       <ul>
-        <li data-i18n="interaction1">
-          The minimum threshold for a post to have good engagement is &gt;30 interactions per post.
-        </li>
+        <li data-i18n="interaction1">The minimum threshold for a post to have good engagement is &gt;30 interactions per post.</li>
       </ul>
       <p class="mt-3 mb-1" style="color: #ef4444; font-weight: 400;" data-i18n="formulaLabel">Formula:</p>
-      <p class="text-center mb-4" style="color: #3b82f6; font-weight: 400;" data-i18n="formulaValue">
-        Interaction = like + repost/quote + comment
-      </p>
+      <p class="text-center mb-4" style="color: #3b82f6; font-weight: 400;" data-i18n="formulaValue">Interaction = like + repost/quote + comment</p>
       <ul>
-        <li data-i18n="interaction2">
-          Regularly interact with large accounts (OFFICIAL PAGES, FANBASES, TREND) and Top Tweets that have hashtag attached (The X algorithm highly values Quote and Comment)
-        </li>
-        <li data-i18n="interaction3">
-          Should schedule posts ahead to trend keyword/hashtag to No.1 faster
-        </li>
-        <li data-i18n="interaction4">
-          If your post is over 280 characters, you must include the keyword/ hashtag before or within the first 280 characters. Otherwise, it won’t count toward engagement
-        </li>
-        <li data-i18n="interaction5">
-          Interact and reply back and forth in comments.
-        </li>
+        <li data-i18n="interaction2">Regularly interact with large accounts (OFFICIAL PAGES, FANBASES, TREND) and Top Tweets that have hashtag attached (The X algorithm highly values Quote and Comment)</li>
+        <li data-i18n="interaction3">Should schedule posts ahead to trend keyword/hashtag to No.1 faster</li>
+        <li data-i18n="interaction4">If your post is over 280 characters, you must include the keyword/ hashtag before or within the first 280 characters. Otherwise, it won’t count toward engagement</li>
+        <li data-i18n="interaction5">Interact and reply back and forth in comments.</li>
       </ul>
     </section>
+
     <!-- Section 3 -->
     <section class="guide-section">
       <h2 data-i18n="section3">3. Account Requirements</h2>
-      <p class="text-gray-200 leading-7" data-i18n="account">
-        The account needs a minimum number of followers (100–500) and regular activity.
-      </p>
-      <p class="mt-4 text-amber-300 leading-7" data-i18n="note">
-        Note: Posted content must be at least 15 characters long, including the official hashtags and key-words, and MUST NOT be left blank to avoid being flagged as spam.
-      </p>
+      <p class="text-gray-200 leading-7" data-i18n="account">The account needs a minimum number of followers (100–500) and regular activity.</p>
+      <p class="mt-4 text-amber-300 leading-7" data-i18n="note">Note: Posted content must be at least 15 characters long, including the official hashtags and key-words, and MUST NOT be left blank to avoid being flagged as spam.</p>
     </section>
+
     <!-- Priority Order Guide -->
     <h2 class="text-xl font-bold mt-8 mb-3" data-i18n="priority">Priority Order on X</h2>
-    <img
-      src="picguideX.jpg"
-      alt="Priority Order Guide on X"
-      class="guide-image"
-      onclick="openFullscreen(this.src)"
-      loading="lazy"
-    >
+    <img src="picguideX.jpg" alt="Priority Order Guide on X" class="guide-image" onclick="openFullscreen(this.src)" loading="lazy">
+
     <!-- Schedule Post Guide -->
     <h2 class="text-xl font-bold mt-8 mb-3" data-i18n="schedule">Schedule Post Guide</h2>
-    <img
-      src="images/picschedulepost.jpg"
-      alt="Schedule Post Guide"
-      class="guide-image"
-      onclick="openFullscreen(this.src)"
-      loading="lazy"
-    >
+    <img src="images/picschedulepost.jpg" alt="Schedule Post Guide" class="guide-image" onclick="openFullscreen(this.src)" loading="lazy">
   </main>
+
   <!-- Fullscreen image modal -->
-  <div
-    id="fullscreenModal"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Image preview"
-    onclick="closeFullscreen()"
-  >
-    <button
-      type="button"
-      onclick="closeFullscreen()"
-      class="absolute top-5 right-5 text-white text-3xl leading-none hover:text-red-400"
-      aria-label="Close"
-    >&times;</button>
-    <img
-      id="fullscreenImg"
-      src=""
-      alt="Fullscreen image"
-      onclick="event.stopPropagation()"
-    >
+  <div id="fullscreenModal" role="dialog" aria-modal="true" aria-label="Image preview" onclick="closeFullscreen()">
+    <button type="button" onclick="closeFullscreen()" class="absolute top-5 right-5 text-white text-3xl leading-none hover:text-red-400" aria-label="Close">&times;</button>
+    <img id="fullscreenImg" src="" alt="Fullscreen image" onclick="event.stopPropagation()">
   </div>
+
   <script src="common.js"></script>
   <script>
     (function () {
@@ -276,8 +252,10 @@
           schedule: "ပို့စ်အချိန်ဇယား လမ်းညွှန်"
         }
       };
+
       const selector = document.getElementById("guideLanguage");
-      const storageKey = "ps_guide_x_lang";
+      const storageKey = "ps_guide_lang";
+
       function applyLanguage(lang) {
         const dictionary = translations[lang] || translations.en;
         document.documentElement.lang = lang;
@@ -292,6 +270,7 @@
           localStorage.setItem(storageKey, lang);
         } catch (error) {}
       }
+
       let savedLanguage = "en";
       try {
         const saved = localStorage.getItem(storageKey);
@@ -299,11 +278,14 @@
           savedLanguage = saved;
         }
       } catch (error) {}
+
       selector.addEventListener("change", function () {
         applyLanguage(selector.value);
       });
+
       applyLanguage(savedLanguage);
     })();
+
     function openFullscreen(src) {
       const modal = document.getElementById("fullscreenModal");
       const image = document.getElementById("fullscreenImg");
