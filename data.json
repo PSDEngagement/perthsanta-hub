@@ -430,32 +430,6 @@
       }
     ],
     "schedule": [
-      {
-        "month": "October 2026",
-        "items": [
-          {
-            "date": "12 Oct",
-            "title": "KING POWER 37TH ANNIVERSARY DELIGHTS & SURPSIRES 2026",
-            "note": "06:00 PM (UTC+7)",
-            "location": "KING POWER RANGNAM, BANGKOK, THAILAND",
-            "hastag": "KingPowerxPerthSantaDomiia",
-            "keyword": "PSD FAMILY 37TH KINGPOWER",
-            "for": ["PSD"],
-            "generators": [
-              {
-                "name": "GEN 1",
-                "url": "https://psdtrendng.github.io/PSDtrend12/"
-              },
-              {
-                "name": "GEN 2",
-                "url": "https://psdtrendng.github.io/genPSDtrend12/"
-              },
-              {
-                "name": "GEN 3",
-                "url": "https://psdxtrend.github.io/x-comment-generator/kingpower37.html"
-              }
-            ]
-          },
           {
             "date": "14 Oct",
             "title": "PERTH UNLEASH THE ROCK",
