@@ -468,7 +468,11 @@
             "location": "MCCHALL THE MALL LIFESTORE BANGKAPI, 3RD FLOOR, LIVE YT: MAYA TV, FB: MAYA HOTNEWS",
             "hastag": "MAYATVAWARDS2026",
             "keyword": "DOMIIA DAZZLES AT MAYA",
-            "for": ["DOMIIA"]
+            "for": ["DOMIIA"],
+            "generators": [
+              { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/maya-domiia.html" },
+              { "name": "GEN 2", "url": "" }
+            ]
           },
           {
             "date": "17 Oct",
