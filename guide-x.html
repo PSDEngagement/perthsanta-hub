@@ -78,8 +78,8 @@
         data-i18n="back"
       >← Back to Trends</a>
 
-      <!-- Language selector: Globe + Code (nổi bật hơn) -->
-      <div class="relative flex items-center gap-1.5 bg-zinc-800 border border-red-500/60 rounded-lg px-3 py-1.5 text-sm text-white shadow-sm hover:border-red-500 hover:bg-zinc-700 transition-all">
+      <!-- Language selector: style giống To-Do (không nhấp nháy) -->
+      <div class="relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm border border-red-600/80 bg-red-950/90 text-red-200 hover:bg-red-900 hover:text-white font-medium transition shadow-[0_0_12px_rgba(239,68,68,0.25)]">
         <!-- Globe Icon -->
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
@@ -88,7 +88,7 @@
 
         <select
           id="guideLanguage"
-          class="bg-transparent border-none outline-none appearance-none text-white text-sm font-semibold pr-5 cursor-pointer"
+          class="bg-transparent border-none outline-none appearance-none text-red-200 text-sm font-medium pr-4 cursor-pointer"
           aria-label="Select language"
         >
           <option value="en">EN</option>
@@ -98,7 +98,7 @@
         </select>
 
         <!-- Dropdown arrow -->
-        <svg class="absolute right-2.5 w-3 h-3 text-red-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="absolute right-2 w-3 h-3 text-red-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
         </svg>
       </div>
