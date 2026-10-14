@@ -536,47 +536,35 @@
   <script>
   (function () {
 
-    const MONTHS = {
-      jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5,
-      jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11
-    };
+    const MONTHS = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
 
     function parseDateLabel(label) {
       if (!label) return null;
-      const m = String(label).trim().match(/^(\d{1,2})\s+([A-Za-z]{3})/);
+      const m = String(label).trim().match(/(\d{1,2})\s+([A-Za-z]{3})/);
       if (!m) return null;
       const day = parseInt(m[1], 10);
-      const monthIndex = MONTHS[m[2].toLowerCase()];
-      if (monthIndex === undefined) return null;
+      const mon = m[2].toUpperCase();
+      const monthIndex = MONTHS.indexOf(mon);
+      if (monthIndex < 0 || !day) return null;
       return { day, monthIndex };
     }
 
     function parseTimeToMinutes(note) {
       if (!note) return null;
-      const s = String(note).trim().toUpperCase();
-      if (s === "ALL DAY" || s === "TBA" || s === "N/A") return null;
-
-      let m = s.match(/(\d{1,2})[:.](\d{2})\s*(AM|PM)/);
-      if (m) {
-        let h = parseInt(m[1], 10);
-        const min = parseInt(m[2], 10);
-        const ap = m[3];
-        if (ap === "PM" && h < 12) h += 12;
-        if (ap === "AM" && h === 12) h = 0;
-        return h * 60 + min;
-      }
-
-      m = s.match(/(\d{1,2})[:.](\d{2})/);
-      if (m) return parseInt(m[1], 10) * 60 + parseInt(m[2], 10);
-      return null;
+      const m = String(note).match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+      if (!m) return null;
+      let h = parseInt(m[1], 10);
+      const min = parseInt(m[2], 10);
+      const ap = m[3].toUpperCase();
+      if (ap === "PM" && h !== 12) h += 12;
+      if (ap === "AM" && h === 12) h = 0;
+      return h * 60 + min;
     }
 
     function formatDisplayTime(note) {
       if (!note) return "";
-      const s = String(note).trim();
-      if (/ALL DAY/i.test(s)) return "ALL DAY";
-      if (/TBA/i.test(s)) return "TBA";
-      return s.replace(/\s*\([^)]*\)\s*/g, "").trim() + " BKK";
+      const m = String(note).match(/(\d{1,2}:\d{2}\s*(?:AM|PM))/i);
+      return m ? m[1].replace(/\s+/g, " ").toUpperCase() + " BKK" : "";
     }
 
     function formatDateShort(day, monthIndex) {
@@ -614,6 +602,7 @@
       return 2;
     }
 
+    // ========== HÀM ĐÃ CHỈNH ==========
     function getAudienceHearts(audience) {
       const values = Array.isArray(audience)
         ? audience.map(function (item) {
@@ -622,19 +611,27 @@
         : [String(audience || "").trim().toUpperCase()];
 
       const hearts = [];
+      const hasPSD = values.includes("PSD");
+      const hasDomiia = values.includes("DOMIIA") || values.includes("DOMIA");
 
-      if (values.includes("PERTH") || values.includes("PS") || values.includes("PERTHSANTA") || values.includes("PSD")) {
+      // Perth → tim đen
+      if (values.includes("PERTH") || values.includes("PS") || values.includes("PERTHSANTA") || hasPSD) {
         hearts.push('<span class="heart-black" aria-label="Perth">♥</span>');
       }
-      if (values.includes("SANTA") || values.includes("PS") || values.includes("PERTHSANTA") || values.includes("PSD")) {
+
+      // Santa → tim trắng
+      if (values.includes("SANTA") || values.includes("PS") || values.includes("PERTHSANTA") || hasPSD) {
         hearts.push('<span class="heart-white" aria-label="Santa">♥</span>');
       }
-      if (values.includes("PSD")) {
+
+      // Domiia → tim đỏ (chỉ khi có DOMIIA hoặc PSD)
+      if (hasDomiia || hasPSD) {
         hearts.push('<span class="heart-red" aria-label="Domiia">♥</span>');
       }
 
       return hearts.join("");
     }
+    // ==================================
 
     function buildCard(ev, status) {
       const isLive = status === "live";
@@ -663,7 +660,6 @@
       const timeStr = formatDisplayTime(ev.note);
       const dateStr = formatDateShort(ev._day, ev._monthIndex);
 
-      // Start Trend: ưu tiên field tự điền, không có thì tự trừ 15 phút
       let startTrendStr = "";
       if (ev.startTrend) {
         startTrendStr = formatDisplayTime(ev.startTrend);
