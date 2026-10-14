@@ -188,40 +188,40 @@
   },
   "instagram": [
     {
-    "id": "DebwBGZBUzk",
-    "date": "2026-10-13",
-    "handle": "@perthppe",
-    "title": "PerthSanta × Walls Topten Xtra",
-    "postUrl": "https://www.instagram.com/reel/DebwBGZBUzk/",
-    "image": "images/perthtopten.jpg",
-    "like": 200000,
-    "likeDone": false,
-    "comment": 20000,
-    "commentDone": false,
-    "share": 1500000,
-    "shareDone": false,
-    "generators": [
-      { "name": "Generator 1", "url": "https://cozy-comment-forge.lovable.app/" }
-  ]
-},
-{
-     "id": "Deb4BBspf6Y",
-     "date": "2026-10-13",
-     "handle": "@santa.pp",
-     "title": "PerthSanta × Walls Topten Xtra",
-     "postUrl": "https://www.instagram.com/reel/Deb4BBspf6Y/",
-     "image": "images/santatopten.jpg",
-     "like": 200000,
-     "likeDone": false,
-     "comment": 20000,
-     "commentDone": false,
-     "share": 1500000,
-     "shareDone": false,
-     "generators": [
-       { "name": "Generator 1", "url": "https://cozy-comment-forge.lovable.app/" }
-    ]
-  },
-  {
+      "id": "DebwBGZBUzk",
+      "date": "2026-10-13",
+      "handle": "@perthppe",
+      "title": "PerthSanta × Walls Topten Xtra",
+      "postUrl": "https://www.instagram.com/reel/DebwBGZBUzk/",
+      "image": "images/perthtopten.jpg",
+      "like": 200000,
+      "likeDone": false,
+      "comment": 20000,
+      "commentDone": false,
+      "share": 1500000,
+      "shareDone": false,
+      "generators": [
+        { "name": "Generator 1", "url": "https://cozy-comment-forge.lovable.app/" }
+      ]
+    },
+    {
+      "id": "Deb4BBspf6Y",
+      "date": "2026-10-13",
+      "handle": "@santa.pp",
+      "title": "PerthSanta × Walls Topten Xtra",
+      "postUrl": "https://www.instagram.com/reel/Deb4BBspf6Y/",
+      "image": "images/santatopten.jpg",
+      "like": 200000,
+      "likeDone": false,
+      "comment": 20000,
+      "commentDone": false,
+      "share": 1500000,
+      "shareDone": false,
+      "generators": [
+        { "name": "Generator 1", "url": "https://cozy-comment-forge.lovable.app/" }
+      ]
+    },
+    {
       "id": "DeW6-hCga6t",
       "date": "2026-10-11",
       "handle": "@perthppe",
@@ -520,14 +520,8 @@
             "keyword": "TBA",
             "for": ["PERTH", "DOMIIA"],
             "generators": [
-              {
-                "name": "GEN 1",
-                "url": ""
-              },
-              {
-                "name": "GEN 2",
-                "url": ""
-              }
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" }
             ]
           },
           {
@@ -539,17 +533,11 @@
             "keyword": "TBA",
             "for": ["SANTA", "DOMIIA"],
             "generators": [
-              {
-                "name": "GEN 1",
-                "url": ""
-              },
-              {
-                "name": "GEN 2",
-                "url": ""
-              }
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" }
             ]
           },
-         {
+          {
             "date": "13-14-15 Nov",
             "title": "FRIENDLY ME MALDIVES WITH SANTA",
             "note": "TBA",
@@ -558,14 +546,8 @@
             "keyword": "TBA",
             "for": ["SANTA"],
             "generators": [
-              {
-                "name": "GEN 1",
-                "url": ""
-              },
-              {
-                "name": "GEN 2",
-                "url": ""
-              }
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" }
             ]
           },
           {
@@ -577,14 +559,8 @@
             "keyword": "TBA",
             "for": ["PERTH", "SANTA"],
             "generators": [
-              {
-                "name": "GEN 1",
-                "url": ""
-              },
-              {
-                "name": "GEN 2",
-                "url": ""
-              }
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" }
             ]
           },
           {
@@ -596,10 +572,8 @@
             "keyword": "TBA",
             "for": ["PSD"],
             "generators": [
-              {
-                "name": "GEN 1", "url": "" },
-              {
-                "name": "GEN 2", "url": "" }
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" }
             ]
           }
         ]
