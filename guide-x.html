@@ -78,15 +78,17 @@
         data-i18n="back"
       >← Back to Trends</a>
 
-      <!-- Language selector: Globe + Code -->
-      <div class="relative flex items-center gap-1.5 bg-zinc-900 border border-zinc-700 rounded-lg px-2.5 py-1.5 text-sm text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+      <!-- Language selector: Globe + Code (nổi bật hơn) -->
+      <div class="relative flex items-center gap-1.5 bg-zinc-800 border border-red-500/60 rounded-lg px-3 py-1.5 text-sm text-white shadow-sm hover:border-red-500 hover:bg-zinc-700 transition-all">
+        <!-- Globe Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z" />
         </svg>
+
         <select
           id="guideLanguage"
-          class="bg-transparent border-none outline-none appearance-none text-white text-sm font-medium pr-5 cursor-pointer"
+          class="bg-transparent border-none outline-none appearance-none text-white text-sm font-semibold pr-5 cursor-pointer"
           aria-label="Select language"
         >
           <option value="en">EN</option>
@@ -94,8 +96,10 @@
           <option value="th">TH</option>
           <option value="my">MY</option>
         </select>
-        <svg class="absolute right-2 w-3 h-3 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+
+        <!-- Dropdown arrow -->
+        <svg class="absolute right-2.5 w-3 h-3 text-red-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
         </svg>
       </div>
     </div>
