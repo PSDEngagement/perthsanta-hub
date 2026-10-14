@@ -216,7 +216,7 @@
       "comment": 20000,
       "commentDone": false,
       "share": 1500000,
-      "shareDone": false,
+      "shareDone": true,
       "generators": [
         { "name": "Generator 1", "url": "https://cozy-comment-forge.lovable.app/" }
       ]
