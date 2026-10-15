@@ -139,27 +139,36 @@
       border-color: #22c55e;
     }
 
-    /* Fireworks: launch from bottom then burst */
+    /* Fireworks: bay từ dưới lên giữa khung rồi bung */
     .firework {
       position: absolute;
       bottom: 0;
-      width: 3px;
-      height: 3px;
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
       background: #fff;
+      box-shadow: 0 0 6px 2px #ffd700, 0 0 10px 3px rgba(255, 215, 0, 0.8);
       opacity: 0;
-      animation: launch 2.4s ease-out infinite;
+      animation: launch 2.8s ease-out infinite;
+      z-index: 5;
     }
 
-    .firework::before {
+    .firework::before,
+    .firework::after {
       content: "";
       position: absolute;
-      width: 3px;
-      height: 3px;
+      left: 50%;
+      top: 50%;
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
-      background: #fff;
+      transform: translate(-50%, -50%);
       opacity: 0;
-      animation: explode 2.4s ease-out infinite;
+      animation: explode 2.8s ease-out infinite;
+    }
+
+    .firework::after {
+      animation-delay: 0.04s;
     }
 
     @keyframes launch {
@@ -167,13 +176,14 @@
         bottom: 0;
         opacity: 1;
         transform: scale(1);
+        box-shadow: 0 0 5px 2px #fff, 0 0 8px 2px #ffd700;
       }
-      40% {
-        bottom: 55%;
+      42% {
+        bottom: 48%;
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1.15);
       }
-      45% {
+      48% {
         opacity: 0;
       }
       100% {
@@ -182,42 +192,61 @@
     }
 
     @keyframes explode {
-      0%, 40% {
+      0%, 44% {
         opacity: 0;
         box-shadow: none;
       }
-      45% {
+      48% {
         opacity: 1;
         box-shadow:
-          0 0 0 0 #f472b6,
-          0 0 0 0 #f9a8d4,
-          0 0 0 0 #fb7185,
-          0 0 0 0 #fda4af,
-          0 0 0 0 #fbcfe8;
+          0 0 0 0 #fff,
+          0 0 0 0 #ffd700,
+          0 0 0 0 #ff6b9d,
+          0 0 0 0 #ff4757,
+          0 0 0 0 #ffa502,
+          0 0 0 0 #ff6348,
+          0 0 0 0 #fbcfe8,
+          0 0 0 0 #fbbf24;
       }
-      70% {
+      72% {
         opacity: 1;
         box-shadow:
-          0 -35px 0 0 #f472b6,
-          25px -25px 0 0 #f9a8d4,
-          35px 0 0 0 #fb7185,
-          25px 25px 0 0 #fda4af,
-          0 35px 0 0 #fbcfe8,
-          -25px 25px 0 0 #f472b6,
-          -35px 0 0 0 #f9a8d4,
-          -25px -25px 0 0 #fb7185;
+          0 -55px 6px 0 #fff,
+          39px -39px 6px 0 #ffd700,
+          55px 0 6px 0 #ff6b9d,
+          39px 39px 6px 0 #ff4757,
+          0 55px 6px 0 #ffa502,
+          -39px 39px 6px 0 #ff6348,
+          -55px 0 6px 0 #fbcfe8,
+          -39px -39px 6px 0 #fbbf24,
+          20px -50px 5px 0 #fff,
+          50px -20px 5px 0 #ffd700,
+          50px 20px 5px 0 #ff6b9d,
+          20px 50px 5px 0 #ff4757,
+          -20px 50px 5px 0 #ffa502,
+          -50px 20px 5px 0 #ff6348,
+          -50px -20px 5px 0 #fbcfe8,
+          -20px -50px 5px 0 #fbbf24;
       }
       100% {
         opacity: 0;
         box-shadow:
-          0 -60px 0 -2px transparent,
-          42px -42px 0 -2px transparent,
-          60px 0 0 -2px transparent,
-          42px 42px 0 -2px transparent,
-          0 60px 0 -2px transparent,
-          -42px 42px 0 -2px transparent,
-          -60px 0 0 -2px transparent,
-          -42px -42px 0 -2px transparent;
+          0 -85px 0 -4px transparent,
+          60px -60px 0 -4px transparent,
+          85px 0 0 -4px transparent,
+          60px 60px 0 -4px transparent,
+          0 85px 0 -4px transparent,
+          -60px 60px 0 -4px transparent,
+          -85px 0 0 -4px transparent,
+          -60px -60px 0 -4px transparent,
+          30px -80px 0 -4px transparent,
+          80px -30px 0 -4px transparent,
+          80px 30px 0 -4px transparent,
+          30px 80px 0 -4px transparent,
+          -30px 80px 0 -4px transparent,
+          -80px 30px 0 -4px transparent,
+          -80px -30px 0 -4px transparent,
+          -30px -80px 0 -4px transparent;
       }
     }
   </style>
