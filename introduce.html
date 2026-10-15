@@ -329,23 +329,20 @@
       var p = list[i];
       hideAll();
       document.getElementById("intro-detail").classList.remove("hidden");
+      document.getElementById("detail-name").textContent = p.name || "Profile";
       scrollToTop();
-      document.getElementById("detail-name").innerText = p.name || "Profile";
-      document.getElementById("next-btn").classList.toggle("hidden", i >= list.length - 1);
-      document.getElementById("detail-box").innerHTML =
-        '<div class="photo-frame-lg"><img src="' + photoSrc(p) + '" alt=""></div>' +
-        '<p class="text-sm text-gray-400 mb-1 mt-6">Full name</p>' +
-        '<p class="text-lg font-semibold mb-4 text-zinc-100">' + (p.fullname || p.name || "—") + "</p>" +
-        '<p class="text-sm text-gray-400 mb-1">Thai name</p>' +
-        '<p class="text-lg font-semibold mb-4 text-zinc-100">' + (p.thaiName || "—") + "</p>" +
-        '<p class="text-sm text-gray-400 mb-1">Role</p>' +
-        '<p class="text-lg font-semibold mb-4 text-zinc-100">' + (p.role || "—") + "</p>" +
-        '<p class="text-sm text-gray-400 mb-1">Birthday</p>' +
-        '<p class="text-lg font-semibold mb-4 text-zinc-100">' + (p.born || "—") + "</p>" +
-        '<p class="text-sm text-gray-400 mb-1">Agency</p>' +
-        '<p class="text-lg font-semibold mb-5 text-zinc-100">' + (p.agency || "—") + "</p>" +
-        '<p class="text-sm text-gray-400 mb-2">Socials</p>' +
-        '<div class="flex flex-wrap gap-3">' + socialLinks(p) + "</div>";
+
+      var box = document.getElementById("detail-box");
+      box.innerHTML =
+        '<div class="photo-frame-lg mb-4"><img src="' + photoSrc(p) + '" alt="' + (p.name || "") + '"></div>' +
+        '<h3 class="text-xl font-bold">' + (p.fullname || "") + "</h3>" +
+        '<p class="text-gray-400 text-sm mt-1">' + (p.thaiName || "") + "</p>" +
+        '<p class="mt-3 text-sm">' + (p.role || "") + "</p>" +
+        '<p class="text-sm text-gray-400 mt-1">Born: ' + (p.born || "—") + "</p>" +
+        '<p class="text-sm text-gray-400">Agency: ' + (p.agency || "—") + "</p>" +
+        '<div class="flex gap-3 mt-5">' + socialLinks(p) + "</div>";
+
+      document.getElementById("next-btn").style.visibility = (i < list.length - 1) ? "visible" : "hidden";
     }
 
     function prevProfile() {
@@ -354,39 +351,29 @@
     }
 
     function nextProfile() {
-      if (currentIndex < (introData.profiles || []).length - 1) {
-        showProfile(currentIndex + 1);
-      }
+      var list = introData.profiles || [];
+      if (currentIndex < list.length - 1) showProfile(currentIndex + 1);
     }
 
-    function tagText(v) {
-      if (!v) return "";
-      return String(v).charAt(0) === "#" ? v : "#" + v;
+    function tagText(h) {
+      if (!h) return "";
+      return h.split(/[\s,]+/).filter(Boolean).map(function (t) {
+        return t.startsWith("#") ? t : "#" + t;
+      }).join(" ");
     }
 
     function copyText(text, btn) {
-      if (!text) return;
-      function done() {
-        var old = btn.innerHTML;
-        btn.classList.add("copied");
-        btn.innerHTML = "✓ Copied";
-        setTimeout(function () {
-          btn.classList.remove("copied");
-          btn.innerHTML = old;
-        }, 1500);
-      }
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done).catch(function () {
-          fallbackCopy(text);
-          done();
+        navigator.clipboard.writeText(text).then(function () {
+          btn.classList.add("copied");
+          btn.textContent = "Copied!";
+          setTimeout(function () {
+            btn.classList.remove("copied");
+            btn.textContent = "📋 Copy";
+          }, 1500);
         });
-      } else {
-        fallbackCopy(text);
-        done();
+        return;
       }
-    }
-
-    function fallbackCopy(text) {
       var ta = document.createElement("textarea");
       ta.value = text;
       ta.style.position = "fixed";
@@ -519,27 +506,39 @@
               copyPayload.replace(/"/g, "&quot;") + '">📋 Copy</button>'
             : "";
 
+          var isHighlight = !!it.highlight;
+
           var badge = "";
           if (isToday) {
             badge = '<span class="absolute top-2 right-2 text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-600 text-white shadow">TODAY</span>';
           } else if (isPast) {
             badge = '<span class="absolute top-2 right-2 w-5 h-5 rounded-full bg-zinc-600 flex items-center justify-center text-white text-xs">✓</span>';
+          } else if (isHighlight) {
+            badge = '<span class="absolute top-2 right-2 text-[10px] font-bold px-1.5 py-0.5 rounded bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow">🎂 BIRTHDAY</span>';
           }
 
           var cardClass = "relative rounded-xl p-3 border ";
           var styleExtra = "";
+          var borderEmoji = "";
 
           if (isToday) {
             cardClass += "bg-gradient-to-br from-[#2a0a0a] to-[#0a0a0a] border-red-500 ring-1 ring-red-500/40";
             styleExtra = ' style="box-shadow:0 0 16px rgba(239,68,68,0.35);"';
           } else if (isPast) {
             cardClass += "bg-zinc-900/50 border-zinc-700/50 opacity-55";
+          } else if (isHighlight) {
+            cardClass += "bg-gradient-to-br from-[#3a0a1a] to-[#1a0a12] border-pink-500 ring-2 ring-pink-400/60";
+            styleExtra = ' style="box-shadow:0 0 20px rgba(236,72,153,0.45); transform:scale(1.02);"';
+            borderEmoji =
+              '<span class="absolute -top-2 left-1/2 -translate-x-1/2 text-lg leading-none">🎂</span>' +
+              '<span class="absolute -bottom-2 left-1/2 -translate-x-1/2 text-lg leading-none">🎉</span>';
           } else {
             cardClass += "bg-gradient-to-br from-[#2a0a0a] to-[#0a0a0a] border-red-900/50";
           }
 
           return (
             '<div class="' + cardClass + '"' + styleExtra + ">" +
+              borderEmoji +
               badge +
               '<p class="text-red-400 text-sm font-semibold mb-1.5">' + dateStr + "</p>" +
               forHtml +
