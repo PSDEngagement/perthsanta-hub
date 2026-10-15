@@ -139,34 +139,79 @@
       border-color: #22c55e;
     }
 
-    /* Fireworks effect for birthday highlight */
+    /* Fireworks burst effect */
     .firework {
       position: absolute;
-      bottom: 6px;
-      width: 4px;
-      height: 4px;
+      bottom: 12px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
-      background: #f472b6;
-      animation: firework 1.8s ease-out infinite;
-      box-shadow: 
-        0 0 6px #f472b6,
-        0 -18px 0 -2px #f9a8d4,
-        10px -10px 0 -2px #fb7185,
-        -10px -10px 0 -2px #f472b6,
-        14px 0 0 -2px #fda4af,
-        -14px 0 0 -2px #f9a8d4;
+      background: transparent;
+      animation: firework-burst 1.6s ease-out infinite;
     }
 
-    @keyframes firework {
+    .firework::before,
+    .firework::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+    }
+
+    .firework::before {
+      box-shadow:
+        0 0 0 0 #f472b6,
+        0 0 0 0 #f9a8d4,
+        0 0 0 0 #fb7185,
+        0 0 0 0 #fda4af;
+      animation: particle 1.6s ease-out infinite;
+    }
+
+    .firework::after {
+      box-shadow:
+        0 0 0 0 #f9a8d4,
+        0 0 0 0 #f472b6,
+        0 0 0 0 #fda4af,
+        0 0 0 0 #fb7185;
+      animation: particle 1.6s ease-out infinite reverse;
+    }
+
+    @keyframes firework-burst {
       0% {
-        transform: translateY(0) scale(0.3);
+        transform: scale(0.2);
         opacity: 1;
       }
-      50% {
+      40% {
+        transform: scale(1);
         opacity: 1;
       }
       100% {
-        transform: translateY(-65px) scale(1.1);
+        transform: scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    @keyframes particle {
+      0% {
+        box-shadow:
+          0 0 0 0 #f472b6,
+          0 0 0 0 #f9a8d4,
+          0 0 0 0 #fb7185,
+          0 0 0 0 #fda4af;
+      }
+      40% {
+        box-shadow:
+          0 -28px 0 0 #f472b6,
+          20px -20px 0 0 #f9a8d4,
+          28px 0 0 0 #fb7185,
+          20px 20px 0 0 #fda4af;
+      }
+      100% {
+        box-shadow:
+          0 -48px 0 -2px transparent,
+          36px -36px 0 -2px transparent,
+          48px 0 0 -2px transparent,
+          36px 36px 0 -2px transparent;
         opacity: 0;
       }
     }
@@ -564,10 +609,10 @@
             borderEmoji = `
               <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-xl">
                 <span class="firework" style="left:8%; animation-delay:0s;"></span>
-                <span class="firework" style="left:28%; animation-delay:0.35s;"></span>
-                <span class="firework" style="left:48%; animation-delay:0.7s;"></span>
-                <span class="firework" style="left:68%; animation-delay:1.05s;"></span>
-                <span class="firework" style="left:88%; animation-delay:1.4s;"></span>
+                <span class="firework" style="left:28%; animation-delay:0.4s;"></span>
+                <span class="firework" style="left:48%; animation-delay:0.8s;"></span>
+                <span class="firework" style="left:68%; animation-delay:1.2s;"></span>
+                <span class="firework" style="left:88%; animation-delay:1.6s;"></span>
               </div>
             `;
           } else {
