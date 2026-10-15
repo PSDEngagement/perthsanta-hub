@@ -139,17 +139,17 @@
       border-color: #22c55e;
     }
 
-    /* Fireworks: bay từ dưới lên giữa khung rồi bung */
+    /* Fireworks: hạt nhỏ + nhiều tia */
     .firework {
       position: absolute;
       bottom: 0;
-      width: 4px;
-      height: 4px;
+      width: 2px;
+      height: 2px;
       border-radius: 50%;
       background: #fff;
-      box-shadow: 0 0 6px 2px #ffd700, 0 0 10px 3px rgba(255, 215, 0, 0.8);
+      box-shadow: 0 0 4px 1px #ffd700;
       opacity: 0;
-      animation: launch 2.8s ease-out infinite;
+      animation: launch 2.6s ease-out infinite;
       z-index: 5;
     }
 
@@ -159,16 +159,16 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 4px;
-      height: 4px;
+      width: 2px;
+      height: 2px;
       border-radius: 50%;
       transform: translate(-50%, -50%);
       opacity: 0;
-      animation: explode 2.8s ease-out infinite;
+      animation: explode 2.6s ease-out infinite;
     }
 
     .firework::after {
-      animation-delay: 0.04s;
+      animation-delay: 0.03s;
     }
 
     @keyframes launch {
@@ -176,14 +176,13 @@
         bottom: 0;
         opacity: 1;
         transform: scale(1);
-        box-shadow: 0 0 5px 2px #fff, 0 0 8px 2px #ffd700;
       }
-      42% {
+      40% {
         bottom: 48%;
         opacity: 1;
-        transform: scale(1.15);
+        transform: scale(1);
       }
-      48% {
+      46% {
         opacity: 0;
       }
       100% {
@@ -192,61 +191,73 @@
     }
 
     @keyframes explode {
-      0%, 44% {
+      0%, 42% {
         opacity: 0;
         box-shadow: none;
       }
-      48% {
+      46% {
         opacity: 1;
         box-shadow:
           0 0 0 0 #fff,
           0 0 0 0 #ffd700,
           0 0 0 0 #ff6b9d,
-          0 0 0 0 #ff4757,
-          0 0 0 0 #ffa502,
-          0 0 0 0 #ff6348,
-          0 0 0 0 #fbcfe8,
-          0 0 0 0 #fbbf24;
+          0 0 0 0 #ffa502;
       }
-      72% {
+      70% {
         opacity: 1;
         box-shadow:
-          0 -55px 6px 0 #fff,
-          39px -39px 6px 0 #ffd700,
-          55px 0 6px 0 #ff6b9d,
-          39px 39px 6px 0 #ff4757,
-          0 55px 6px 0 #ffa502,
-          -39px 39px 6px 0 #ff6348,
-          -55px 0 6px 0 #fbcfe8,
-          -39px -39px 6px 0 #fbbf24,
-          20px -50px 5px 0 #fff,
-          50px -20px 5px 0 #ffd700,
-          50px 20px 5px 0 #ff6b9d,
-          20px 50px 5px 0 #ff4757,
-          -20px 50px 5px 0 #ffa502,
-          -50px 20px 5px 0 #ff6348,
-          -50px -20px 5px 0 #fbcfe8,
-          -20px -50px 5px 0 #fbbf24;
+          0 -42px 1px 0 #fff,
+          30px -30px 1px 0 #ffd700,
+          42px 0 1px 0 #ff6b9d,
+          30px 30px 1px 0 #ffa502,
+          0 42px 1px 0 #fff,
+          -30px 30px 1px 0 #ffd700,
+          -42px 0 1px 0 #ff6b9d,
+          -30px -30px 1px 0 #ffa502,
+          15px -40px 1px 0 #fff,
+          40px -15px 1px 0 #ffd700,
+          40px 15px 1px 0 #ff6b9d,
+          15px 40px 1px 0 #ffa502,
+          -15px 40px 1px 0 #fff,
+          -40px 15px 1px 0 #ffd700,
+          -40px -15px 1px 0 #ff6b9d,
+          -15px -40px 1px 0 #ffa502,
+          22px -36px 1px 0 #fff,
+          36px -22px 1px 0 #ffd700,
+          36px 22px 1px 0 #ff6b9d,
+          22px 36px 1px 0 #ffa502,
+          -22px 36px 1px 0 #fff,
+          -36px 22px 1px 0 #ffd700,
+          -36px -22px 1px 0 #ff6b9d,
+          -22px -36px 1px 0 #ffa502;
       }
       100% {
         opacity: 0;
         box-shadow:
-          0 -85px 0 -4px transparent,
-          60px -60px 0 -4px transparent,
-          85px 0 0 -4px transparent,
-          60px 60px 0 -4px transparent,
-          0 85px 0 -4px transparent,
-          -60px 60px 0 -4px transparent,
-          -85px 0 0 -4px transparent,
-          -60px -60px 0 -4px transparent,
-          30px -80px 0 -4px transparent,
-          80px -30px 0 -4px transparent,
-          80px 30px 0 -4px transparent,
-          30px 80px 0 -4px transparent,
-          -30px 80px 0 -4px transparent,
-          -80px 30px 0 -4px transparent,
-          -80px -30px 0 -4px transparent,
-          -30px -80px 0 -4px transparent;
+          0 -70px 0 -1px transparent,
+          49px -49px 0 -1px transparent,
+          70px 0 0 -1px transparent,
+          49px 49px 0 -1px transparent,
+          0 70px 0 -1px transparent,
+          -49px 49px 0 -1px transparent,
+          -70px 0 0 -1px transparent,
+          -49px -49px 0 -1px transparent,
+          25px -66px 0 -1px transparent,
+          66px -25px 0 -1px transparent,
+          66px 25px 0 -1px transparent,
+          25px 66px 0 -1px transparent,
+          -25px 66px 0 -1px transparent,
+          -66px 25px 0 -1px transparent,
+          -66px -25px 0 -1px transparent,
+          -25px -66px 0 -1px transparent,
+          35px -60px 0 -1px transparent,
+          60px -35px 0 -1px transparent,
+          60px 35px 0 -1px transparent,
+          35px 60px 0 -1px transparent,
+          -35px 60px 0 -1px transparent,
+          -60px 35px 0 -1px transparent,
+          -60px -35px 0 -1px transparent,
+          -35px -60px 0 -1px transparent;
       }
     }
   </style>
