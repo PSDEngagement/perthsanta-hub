@@ -551,6 +551,16 @@
         "month": "November 2026",
         "items": [
           {
+           "date": "05 Nov",
+           "title": "🎂 HAPPY BIRTHDAY SANTA 🎂",
+           "note": "ALL DAY • Celebrate on socials 🎉",
+           "location": "ALL SOCIAL PLATFORM",
+           "hastag": "TBA",
+           "keyword": "TBA",
+           "for": ["SANTA"],
+           "highlight": true
+          },
+          {
             "date": "05 Nov",
             "title": "PERTHSANTA WITH FOAMDREAM ",
             "note": "07:00 PM (UTC+7)",
