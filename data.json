@@ -188,6 +188,23 @@
   },
   "instagram": [
     {
+     "id": "DegHlpKAWXv",
+     "date": "2026-10-15",
+     "handle": "@perthppe",
+     "title": "Perth ยกหน้าให้ Olay",
+     "postUrl": "https://www.instagram.com/p/DegHlpKAWXv/",
+     "image": "images/pertholay.jpg",
+     "like": 200000,
+     "likeDone": false,
+     "comment": 15000,
+     "commentDone": false,
+     "share": 1500000,
+     "shareDone": false,
+     "generators": [
+        { "name": "Generator 1", "url": "#" }
+      ]
+    },
+    {
       "id": "DebwBGZBUzk",
       "date": "2026-10-13",
       "handle": "@perthppe",
@@ -196,7 +213,7 @@
       "image": "images/perthtopten.jpg",
       "like": 200000,
       "likeDone": false,
-      "comment": 20000,
+      "comment": 15000,
       "commentDone": false,
       "share": 1500000,
       "shareDone": false,
@@ -213,7 +230,7 @@
       "image": "images/santatopten.jpg",
       "like": 200000,
       "likeDone": false,
-      "comment": 20000,
+      "comment": 15000,
       "commentDone": false,
       "share": 1500000,
       "shareDone": true,
@@ -230,7 +247,7 @@
   "image": "images/santachagee.jpg",
   "like": 200000,
   "likeDone": false,
-  "comment": 20000,
+  "comment": 15000,
   "commentDone": false,
   "share": 1500000,
   "shareDone": false,
@@ -534,6 +551,19 @@
         "month": "November 2026",
         "items": [
           {
+            "date": "05 Nov",
+            "title": "PERTHSANTA WITH FOAMDREAM ",
+            "note": "07:00 PM (UTC+7)",
+            "location": "WEIBO LIVE: FoamDream梦游演奏家官方微博",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH", "SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" }
+            ]
+          },
+          {
             "date": "07 Nov",
             "title": "FAN MEETING WITH PERTH & DOMIIA: TRUE LOVE ARRIVES ",
             "note": "TBA",
@@ -580,6 +610,19 @@
             "hastag": "TBA",
             "keyword": "TBA",
             "for": ["PERTH", "SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" }
+            ]
+          },
+          {
+            "date": "22 Nov",
+            "title": "PERTHยกหน้าให้OLAY IN CHIANGMAI",
+            "note": "05:00 PM (UTC+7)",
+            "location": "ONE NIMMAN, CHIANG MAI",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
               { "name": "GEN 2", "url": "" }
