@@ -201,7 +201,7 @@
      "share": 1500000,
      "shareDone": false,
      "generators": [
-        { "name": "Generator 1", "url": "#" }
+        { "name": "Generator 1", "url": "https://crimson-pearl-creations.lovable.app/" }
       ]
     },
     {
