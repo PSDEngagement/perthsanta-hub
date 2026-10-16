@@ -652,6 +652,24 @@
             ]
           }
         ]
+      },
+      {
+        "month": "December 2026",
+        "items": [
+          {
+            "date": "07 Dec",
+            "title": "GULP SLURPEE X FANTA",
+            "note": "05:00 PM - 06:00 PM (UTC+7)",
+            "location": "EDEN, 1ST FLOOR, CENTRALWORLD",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" }
+            ]
+          }
+        ]
       }
     ],
     "infJobUrl": "https://njpoyw2fdnkg.jp.larksuite.com/wiki/SrIrw6Ur8iTOtukrtomjO0OZpYd?sheet=f8cdf3"
