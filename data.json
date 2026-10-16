@@ -488,7 +488,12 @@
             "location": "H853 ENTERTAINMENT HALL, LISBOETA MACAU, MACAU",
             "hastag": "TBA",
             "keyword": "TBA",
-            "for": ["PS"]
+            "for": ["PS"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
           },
           {
             "date": "20 Oct",
@@ -497,7 +502,12 @@
             "location": "BITEC BANGNA GRAND HALL, 201-203, 2ND FLOOR",
             "hastag": "TBA",
             "keyword": "TBA",
-            "for": ["DOMIIA"]
+            "for": ["DOMIIA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
           },
           {
             "date": "22 Oct",
@@ -506,7 +516,12 @@
             "location": "CENTRAL WESTGATE",
             "hastag": "TBA",
             "keyword": "TBA",
-            "for": ["SANTA"]
+            "for": ["SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
           },
           {
             "date": "23 Oct",
@@ -515,7 +530,12 @@
             "location": "CENTRAL SIRACHA, G FLOOR",
             "hastag": "TBA",
             "keyword": "TBA",
-            "for": ["PERTH"]
+            "for": ["PERTH"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
           },
           {
             "date": "25 Oct",
@@ -524,7 +544,12 @@
             "location": "LOTUS'S RAMA4",
             "hastag": "TBA",
             "keyword": "TBA",
-            "for": ["PERTH"]
+            "for": ["PERTH"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
           },
           {
             "date": "25 Oct",
@@ -533,7 +558,12 @@
             "location": "PARIS EVENT CENTER, PARIS, FRANCE",
             "hastag": "TBA",
             "keyword": "TBA",
-            "for": ["SANTA"]
+            "for": ["SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
           }
         ]
       },
@@ -548,7 +578,12 @@
            "hastag": "SANTA23rdSilverBurst ",
            "keyword": "TBA",
            "for": ["SANTA"],
-           "highlight": true
+           "highlight": true,
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
           },
           {
             "date": "05 Nov",
@@ -560,7 +595,8 @@
             "for": ["PERTH", "SANTA"],
             "generators": [
               { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" }
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
             ]
           },
           {
@@ -573,7 +609,8 @@
             "for": ["PERTH", "DOMIIA"],
             "generators": [
               { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" }
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
             ]
           },
           {
@@ -586,7 +623,8 @@
             "for": ["SANTA", "DOMIIA"],
             "generators": [
               { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" }
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
             ]
           },
           {
@@ -599,7 +637,8 @@
             "for": ["SANTA"],
             "generators": [
               { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" }
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
             ]
           },
           {
@@ -612,7 +651,8 @@
             "for": ["PERTH", "SANTA"],
             "generators": [
               { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" }
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
             ]
           },
           {
@@ -625,7 +665,8 @@
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" }
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
             ]
           },
           {
@@ -638,7 +679,8 @@
             "for": ["PSD"],
             "generators": [
               { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" }
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
             ]
           }
         ]
@@ -656,7 +698,22 @@
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" }
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
+            "date": "18-19-20 Dec",
+            "title": "JASP.ER TEMPATION CONCERT ",
+            "note": "TBA",
+            "location": "IMPACT ARENA, MUANG THONG THANI",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
             ]
           }
         ]
