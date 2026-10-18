@@ -468,38 +468,9 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "15 Oct",
-            "title": "MAYA TV AWARDS 2026",
-            "note": "05:00 PM (UTC+7)",
-            "startTrend": "05:00 PM (UTC+7)",
-            "location": "MCCHALL THE MALL LIFESTORE BANGKAPI, 3RD FLOOR, LIVE YT: MAYA TV, FB: MAYA HOTNEWS",
-            "hastag": "MAYATVAWARDS2026",
-            "keyword": "DOMIIA DAZZLES AT MAYA",
-            "for": ["DOMIIA"],
-            "generators": [
-              { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/maya-domiia.html" },
-              { "name": "GEN 2", "url": "" }
-            ]
-          },
-          {
-            "date": "17 Oct",
-            "title": "PERTHSANTA 1ST FANMEETING IN MACAU",
-            "note": "12:30 PM (UTC+7)",
-            "startTrend": "12:00 PM (UTC+7)",
-            "location": "H853 ENTERTAINMENT HALL, LISBOETA MACAU, MACAU",
-            "hastag": "#PerthSantaFMinMacau",
-            "keyword": "PERTHSANTA LOST IN LOVE",
-            "for": ["PS"],
-            "generators": [
-              { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/macau.html" },
-              { "name": "GEN 2", "url": "https://psdtrendng.github.io/PerthSantafmtinMacau/" },
-              { "name": "GEN 3", "url": "https://perthsanta-fmt-macau.lovable.app/" }
-            ]
-          },
-          {
             "date": "18 Oct",
             "title": "IDOL ENERGY SEASON 2 | EP 3",
-            "note": "18:00 PM (UTC+7)",
+            "note": "06:00 PM (UTC+7)",
             "location": "YOUTUBE GMMTV OFFICIAL",
             "hastag": "#IDOLENERGYSS2",
             "keyword": "TBA",
