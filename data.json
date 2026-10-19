@@ -558,6 +558,20 @@
         "month": "November 2026",
         "items": [
           {
+            "date": "04 Nov",
+            "title": "SCARLET HEART THAILAND THE GRAND PREMIERE",
+            "note": "TBA",
+            "location": "UNION HALL, UNION MALL",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
            "date": "05 Nov",
            "title": "🎂 SANTA'S BIRTHDAY, OUR SILVER MOMENT 🎂",
            "note": "ALL DAY • CELEBRATE ON SOCIALS 🎉",
