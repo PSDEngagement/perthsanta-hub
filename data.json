@@ -583,7 +583,7 @@
             "generators": [
               { "name": "GEN 1", "url": "" },
               { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" },
+              { "name": "GEN 3", "url": "" }
             ]
           },
           {
