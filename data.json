@@ -502,20 +502,6 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "18 Oct",
-            "title": "IDOL ENERGY SEASON 2 | EP 3",
-            "note": "06:00 PM (UTC+7)",
-            "location": "YOUTUBE GMMTV OFFICIAL",
-            "hastag": "#IDOLENERGYSS2",
-            "keyword": "TBA",
-            "for": ["SANTA"],
-            "generators": [
-              { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
             "date": "20 Oct",
             "title": "HOWE AWARDS 2026",
             "note": "04:00 PM (UTC+7)",
@@ -533,11 +519,26 @@
           {
             "date": "22 Oct",
             "title": "INFINITY CLINIC",
-            "note": "TBA",
+            "note": "06:00 PM (UTC+7)",
             "location": "CENTRAL WESTGATE",
             "hastag": "TBA",
             "keyword": "TBA",
             "for": ["SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          
+            "date": "22 Oct",
+            "title": "SCARLET HEART THAILAND THE GRAND PREMIERE | LIVE",
+            "note": "06:00 PM (UTC+7)",
+            "startTrend": "06:00 PM (UTC+7)",
+            "location": "YOUTUBE, FACEBOOK, TIKTOK: GMMTV",
+            "hastag": "",
+            "keyword": "",
+            "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
               { "name": "GEN 2", "url": "" },
