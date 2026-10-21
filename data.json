@@ -534,10 +534,9 @@
             "date": "22 Oct",
             "title": "SCARLET HEART THAILAND THE GRAND PREMIERE | LIVE",
             "note": "06:00 PM (UTC+7)",
-            "startTrend": "06:00 PM (UTC+7)",
             "location": "YOUTUBE, FACEBOOK, TIKTOK: GMMTV",
-            "hastag": "TBA",
-            "keyword": "TBA",
+            "hastag": "#ScarletHeartTHLIVE",
+            "keyword": "PERTH AS KONGTHAI SHTH",
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
