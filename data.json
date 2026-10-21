@@ -280,7 +280,7 @@
   "postUrl": "https://www.instagram.com/p/DeYdBZPCYOh/",
   "image": "images/santachagee.jpg",
   "like": 150000,
-  "likeDone": false,
+  "likeDone": true,
   "comment": 15000,
   "commentDone": false,
   "share": 1500000,
