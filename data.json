@@ -526,7 +526,7 @@
             "for": ["SANTA"],
             "generators": [
               { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/santa-infinity.html" },
-              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 2", "url": "https://infinity-santapp.lovable.app/" },
               { "name": "GEN 3", "url": "" }
             ]
           },
