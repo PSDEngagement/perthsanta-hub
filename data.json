@@ -540,7 +540,7 @@
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "https://psdtrendng.github.io/genPerthlive/" },
-              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 2", "url": "https://psdxtrend.github.io/x-comment-generator/kongthai.html" },
               { "name": "GEN 3", "url": "" }
             ]
           },
