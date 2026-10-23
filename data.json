@@ -616,6 +616,20 @@
               { "name": "GEN 2", "url": "" },
               { "name": "GEN 3", "url": "" }
             ]
+          },
+          {
+            "date": "31 Oct",
+            "title": "RALPH LAUREN RALPH'S CLUB NEW YORK POP-UP",
+            "note": "TBA",
+            "location": "SM MAKATI CONCOURSE, PHILIPPINES",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH", "SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
           }
         ]
       },
