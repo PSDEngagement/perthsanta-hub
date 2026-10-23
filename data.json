@@ -555,8 +555,8 @@
             "keyword": "PERTH SEOUL AT SI RACHA",
             "for": ["PERTH"],
             "generators": [
-              { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 1", "url": "https://seoul-perth-g2.lovable.app/" },
+              { "name": "GEN 2", "url": "https://seoul-society-social-spark.lovable.app/" },
               { "name": "GEN 3", "url": "" }
             ]
           },
