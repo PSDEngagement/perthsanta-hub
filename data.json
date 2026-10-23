@@ -519,21 +519,6 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "20 Oct",
-            "title": "HOWE AWARDS 2026",
-            "note": "04:00 PM (UTC+7)",
-            "startTrend": "04:00 PM (UTC+7)",
-            "location": "BITEC BANGNA GRAND HALL, 201-203, 2ND FLOOR",
-            "hastag": "HOWEAWARDS2026",
-            "keyword": "DOMIIA SHINES AT HOWE",
-            "for": ["DOMIIA"],
-            "generators": [
-              { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/howe-domiia.html" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
             "date": "22 Oct",
             "title": "INFINITY MEDICAL CLINIC",
             "note": "06:00 PM (UTC+7)",
@@ -566,8 +551,8 @@
             "title": "SEOUL SOCIETY CLINIC",
             "note": "05:00 PM (UTC+7)",
             "location": "CENTRAL SIRACHA, G FLOOR",
-            "hastag": "TBA",
-            "keyword": "TBA",
+            "hastag": "SeoulSocietyClinicxPerth",
+            "keyword": "PERTH SEOUL AT SI RACHA",
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
