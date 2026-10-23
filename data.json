@@ -561,6 +561,21 @@
             ]
           },
           {
+             "date": "24 Oct",
+             "title": "LOTUS'S LIVE SHOP WITH PERTH",
+             "note": "12:00 PM (UTC+7)",
+             "startTrend": "11:30 AM (UTC+7)",
+             "location": "Facebook & YouTube: Lotus’s",
+             "hastag": "LotussAppXPerth",
+             "keyword": "PERTH LOTUSS LIVE SHOP",
+             "for": ["PERTH"],
+             "generators": [
+               { "name": "GEN 1", "url": "" },
+               { "name": "GEN 2", "url": "" },
+               { "name": "GEN 3", "url": "" }
+             ]
+          },
+          {
             "date": "25 Oct",
             "title": "FINELINE X PERTH CLASS LOTUS'S",
             "note": "TBA",
