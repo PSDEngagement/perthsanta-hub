@@ -333,7 +333,7 @@
       "like": 350000,
       "likeDone": false,
       "comment": 25000,
-      "commentDone": false,
+      "commentDone": true,
       "share": 2000000,
       "shareDone": false,
       "generators": [
