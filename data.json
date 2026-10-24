@@ -519,34 +519,6 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "22 Oct",
-            "title": "INFINITY MEDICAL CLINIC",
-            "note": "06:00 PM (UTC+7)",
-            "location": "CENTRAL WESTGATE",
-            "hastag": "InfinityMedicalClinicxSanta",
-            "keyword": "SANTA FOUND INFINITY LOVE",
-            "for": ["SANTA"],
-            "generators": [
-              { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/santa-infinity.html" },
-              { "name": "GEN 2", "url": "https://infinity-santapp.lovable.app/" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
-            "date": "22 Oct",
-            "title": "SCARLET HEART THAILAND THE GRAND PREMIERE | LIVE",
-            "note": "06:00 PM (UTC+7)",
-            "location": "YOUTUBE, FACEBOOK, TIKTOK: GMMTV",
-            "hastag": "ScarletHeartTHLIVE",
-            "keyword": "PERTH AS KONGTHAI SHTH",
-            "for": ["PERTH"],
-            "generators": [
-              { "name": "GEN 1", "url": "https://psdtrendng.github.io/genPerthlive/" },
-              { "name": "GEN 2", "url": "https://psdxtrend.github.io/x-comment-generator/kongthai.html" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
             "date": "23 Oct",
             "title": "SEOUL SOCIETY CLINIC",
             "note": "05:00 PM (UTC+7)",
@@ -571,7 +543,7 @@
              "for": ["PERTH"],
              "generators": [
                { "name": "GEN 1", "url": "https://psdtrendng.github.io/PerthLotuss/" },
-               { "name": "GEN 2", "url": "" },
+               { "name": "GEN 2", "url": "https://psdxtrend.github.io/x-comment-generator/lotus.html" },
                { "name": "GEN 3", "url": "" }
              ]
           },
