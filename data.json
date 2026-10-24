@@ -401,7 +401,7 @@
       "like": 350000,
       "likeDone": true,
       "comment": 25000,
-      "commentDone": false,
+      "commentDone": true,
       "share": 1500000,
       "shareDone": true,
       "generators": [
