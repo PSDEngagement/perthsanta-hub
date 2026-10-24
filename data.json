@@ -382,7 +382,7 @@
       "postUrl": "https://www.instagram.com/p/DdYe0t5Ado0/",
       "image": "images/Sayang.jpg",
       "like": 350000,
-      "likeDone": false,
+      "likeDone": true,
       "comment": 25000,
       "commentDone": false,
       "share": 1500000,
