@@ -188,6 +188,23 @@
   },
   "instagram": [
     {
+  "id": "De4e7m5gaqN",
+  "date": "2026-10-24",
+  "handle": "@perthppe",
+  "title": "Perth Night Pool",
+  "postUrl": "https://www.instagram.com/p/De4e7m5gaqN/",
+  "image": "images/perthpool.jpg",
+  "like": 350000,
+  "likeDone": false,
+  "comment": 25000,
+  "commentDone": false,
+  "share": 2000000,
+  "shareDone": false,
+  "generators": [
+    { "name": "Generator 1", "url": "https://stirring-raindrop-644769.netlify.app/" }
+  ]
+    }
+    {
   "id": "DezQhHPAaG-",
   "date": "2026-10-22",
   "handle": "@perthppe",
@@ -550,10 +567,10 @@
           {
             "date": "25 Oct",
             "title": "FINELINE X PERTH CLASS LOTUS'S",
-            "note": "TBA",
+            "note": "02:00 PM (UTC+7)",
             "location": "LOTUS'S RAMA4",
-            "hastag": "TBA",
-            "keyword": "TBA",
+            "hastag": "FinelineSpeedWash2in1XPerth",
+            "keyword": "PERTH FINELINE QUICK CLEAN",
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
