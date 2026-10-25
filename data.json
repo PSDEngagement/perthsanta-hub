@@ -560,7 +560,7 @@
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/perth-fineline.html" },
-              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 2", "url": "https://perth-fineline.netlify.app/" },
               { "name": "GEN 3", "url": "" }
             ]
           },
