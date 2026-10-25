@@ -573,8 +573,8 @@
             "keyword": "JASPER BONJOUR PARIS",
             "for": ["SANTA"],
             "generators": [
-              { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 1", "url": "https://santa-jasper-paris.netlify.app/" },
+              { "name": "GEN 2", "url": "https://santa-paris-g2.netlify.app/" },
               { "name": "GEN 3", "url": "" }
             ]
           },
