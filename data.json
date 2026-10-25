@@ -536,20 +536,6 @@
         "month": "October 2026",
         "items": [
           {
-            "date": "23 Oct",
-            "title": "SEOUL SOCIETY CLINIC",
-            "note": "05:00 PM (UTC+7)",
-            "location": "CENTRAL SIRACHA, G FLOOR",
-            "hastag": "SeoulSocietyClinicxPerth",
-            "keyword": "PERTH SEOUL AT SI RACHA",
-            "for": ["PERTH"],
-            "generators": [
-              { "name": "GEN 1", "url": "https://seoul-perth-g2.lovable.app/" },
-              { "name": "GEN 2", "url": "https://seoul-society-social-spark.lovable.app/" },
-              { "name": "GEN 3", "url": "https://psdxtrend.github.io/x-comment-generator/seoul-perth.html" }
-            ]
-          },
-          {
              "date": "24 Oct",
              "title": "LOTUS'S LIVE SHOP WITH PERTH",
              "note": "12:00 PM (UTC+7)",
@@ -573,7 +559,7 @@
             "keyword": "PERTH FINELINE QUICK CLEAN",
             "for": ["PERTH"],
             "generators": [
-              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/perth-fineline.html" },
               { "name": "GEN 2", "url": "" },
               { "name": "GEN 3", "url": "" }
             ]
