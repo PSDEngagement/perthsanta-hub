@@ -655,6 +655,20 @@
             ]
           },
           {
+            "date": "06 Nov",
+            "title": "HOUSE OF LEE WITH PERTHSANTA",
+            "note": "04:00 PM (UTC+7)",
+            "location": "CENTRALWORLD ZONE EDEN 1",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH", "SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
             "date": "07 Nov",
             "title": "FAN MEETING WITH PERTH & DOMIIA: TRUE LOVE ARRIVES ",
             "note": "TBA",
