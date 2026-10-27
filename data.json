@@ -786,6 +786,20 @@
             ]
           },
           {
+            "date": "10 Dec",
+            "title": "LOTUS WITH PERTHSANTA",
+            "note": "TBA",
+            "location": "TBA",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH", "SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
             "date": "18-19-20 Dec",
             "title": "JASP.ER TEMPTATION CONCERT ",
             "note": "TBA",
