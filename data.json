@@ -536,35 +536,6 @@
         "month": "October 2026",
         "items": [
           {
-             "date": "24 Oct",
-             "title": "LOTUS'S LIVE SHOP WITH PERTH",
-             "note": "12:00 PM (UTC+7)",
-             "startTrend": "11:30 AM (UTC+7)",
-             "location": "Facebook & YouTube: Lotus’s",
-             "hastag": "LotussAppXPerth",
-             "keyword": "PERTH LOTUSS LIVE SHOP",
-             "for": ["PERTH"],
-             "generators": [
-               { "name": "GEN 1", "url": "https://psdtrendng.github.io/PerthLotuss/" },
-               { "name": "GEN 2", "url": "https://psdxtrend.github.io/x-comment-generator/lotus.html" },
-               { "name": "GEN 3", "url": "" }
-             ]
-          },
-          {
-            "date": "25 Oct",
-            "title": "FINELINE X PERTH CLASS LOTUS'S",
-            "note": "02:00 PM (UTC+7)",
-            "location": "LOTUS'S RAMA4",
-            "hastag": "FinelineSpeedWash2in1XPerth",
-            "keyword": "PERTH FINELINE QUICK CLEAN",
-            "for": ["PERTH"],
-            "generators": [
-              { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/perth-fineline.html" },
-              { "name": "GEN 2", "url": "https://perth-fineline.netlify.app/" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
             "date": "26 Oct",
             "title": "THE A FESTIVAL 2026",
             "note": "03:45 AM (UTC+7)",
