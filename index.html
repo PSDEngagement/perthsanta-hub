@@ -602,7 +602,6 @@
       return 2;
     }
 
-    // ========== HÀM ĐÃ CHỈNH ==========
     function getAudienceHearts(audience) {
       const values = Array.isArray(audience)
         ? audience.map(function (item) {
@@ -614,24 +613,40 @@
       const hasPSD = values.includes("PSD");
       const hasDomiia = values.includes("DOMIIA") || values.includes("DOMIA");
 
-      // Perth → tim đen
       if (values.includes("PERTH") || values.includes("PS") || values.includes("PERTHSANTA") || hasPSD) {
         hearts.push('<span class="heart-black" aria-label="Perth">♥</span>');
       }
 
-      // Santa → tim trắng
       if (values.includes("SANTA") || values.includes("PS") || values.includes("PERTHSANTA") || hasPSD) {
         hearts.push('<span class="heart-white" aria-label="Santa">♥</span>');
       }
 
-      // Domiia → tim đỏ (chỉ khi có DOMIIA hoặc PSD)
       if (hasDomiia || hasPSD) {
         hearts.push('<span class="heart-red" aria-label="Domiia">♥</span>');
       }
 
       return hearts.join("");
     }
-    // ==================================
+
+    // ========== HỖ TRỢ NHIỀU HASHTAG ==========
+    function getHashtags(ev) {
+      var tags = [];
+      var source = ev.hastags || ev.hastag || ev.hashtag;
+
+      if (Array.isArray(source)) {
+        tags = source;
+      } else if (typeof source === "string" && source && source !== "TBA") {
+        // Tách theo dấu phẩy HOẶC khoảng trắng
+        tags = source.split(/[\s,]+/).map(function (s) {
+          return s.trim();
+        }).filter(Boolean);
+      }
+
+      return tags.filter(function (t) {
+        return t && t !== "TBA";
+      });
+    }
+    // ==========================================
 
     function buildCard(ev, status) {
       const isLive = status === "live";
@@ -655,7 +670,6 @@
       }
 
       const heartsHtml = getAudienceHearts(ev.for);
-      const hashtag = (ev.hastag && ev.hastag !== "TBA") ? "#" + ev.hastag.replace(/^#/, "") : "";
       const keyword = (ev.keyword && ev.keyword !== "TBA") ? ev.keyword : "";
       const timeStr = formatDisplayTime(ev.note);
       const dateStr = formatDateShort(ev._day, ev._monthIndex);
@@ -685,9 +699,18 @@
           (g.name || ("GEN " + (i + 1))) + "</a>";
       }).join("");
 
+      // ===== Tags (keyword + nhiều hashtag) =====
       let tagsHtml = "";
       if (keyword) tagsHtml += '<span class="ev-tag keyword">' + keyword + "</span>";
-      if (hashtag) tagsHtml += '<span class="ev-tag hashtag">' + hashtag + "</span>";
+
+      const hashtags = getHashtags(ev);
+      hashtags.forEach(function (ht) {
+        const clean = String(ht).replace(/^#/, "").trim();
+        if (clean) {
+          tagsHtml += '<span class="ev-tag hashtag">#' + clean + "</span>";
+        }
+      });
+      // ==========================================
 
       return '<div class="' + cls + '">' +
         '<div class="ev-top">' +
@@ -747,6 +770,7 @@
             startTrend: item.startTrend || null,
             location: item.location,
             hastag: item.hastag,
+            hastags: item.hastags,
             keyword: item.keyword,
             for: item.for,
             generators: Array.isArray(item.generators) ? item.generators : [],
