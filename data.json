@@ -559,7 +559,7 @@
             "for": ["PERTH", "SANTA"],
             "generators": [
               { "name": "GEN 1", "url": "https://psdtrendng.github.io/GenChupaChups/" },
-              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 2", "url": "https://psdxtrend.github.io/x-comment-generator/chupachups-ps.html" },
               { "name": "GEN 3", "url": "" }
             ]
           },
