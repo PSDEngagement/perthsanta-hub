@@ -359,7 +359,12 @@
 
     function tagText(h) {
       if (!h) return "";
-      return h.split(/[\s,]+/).filter(Boolean).map(function (t) {
+      if (Array.isArray(h)) {
+        return h.map(function (t) {
+          return String(t).startsWith("#") ? t : "#" + t;
+        }).join(" ");
+      }
+      return String(h).split(/[\s,]+/).filter(Boolean).map(function (t) {
         return t.startsWith("#") ? t : "#" + t;
       }).join(" ");
     }
@@ -384,6 +389,12 @@
       ta.select();
       try { document.execCommand("copy"); } catch (e) {}
       document.body.removeChild(ta);
+      btn.classList.add("copied");
+      btn.textContent = "Copied!";
+      setTimeout(function () {
+        btn.classList.remove("copied");
+        btn.textContent = "📋 Copy";
+      }, 1500);
     }
 
     // ========== Fireworks Canvas ==========
@@ -435,7 +446,6 @@
       function loop() {
         ctx.clearRect(0, 0, w, h);
 
-        // Rockets
         for (var i = rockets.length - 1; i >= 0; i--) {
           var r = rockets[i];
           r.y += r.vy;
@@ -446,7 +456,6 @@
           ctx.fillStyle = r.color;
           ctx.fill();
 
-          // trail
           ctx.beginPath();
           ctx.moveTo(r.x, r.y);
           ctx.lineTo(r.x, r.y + 8);
@@ -460,12 +469,11 @@
           }
         }
 
-        // Particles
         for (var j = particles.length - 1; j >= 0; j--) {
           var p = particles[j];
           p.x += p.vx;
           p.y += p.vy;
-          p.vy += 0.06; // gravity
+          p.vy += 0.06;
           p.vx *= 0.98;
           p.alpha -= 0.012;
 
@@ -486,9 +494,7 @@
       }
       loop();
 
-      // Launch continuously
       setInterval(launchRocket, 650);
-      // Launch a few immediately
       for (var k = 0; k < 3; k++) setTimeout(launchRocket, k * 200);
     }
 
@@ -551,7 +557,7 @@
 
       (introData.schedule || []).forEach(function (m) {
         var itemsHtml = (m.items || []).map(function (it) {
-          var hash = it.hashtag || it.hastag || "";
+          var hash = it.hashtag || it.hastag || it.hastags || "";
           var keyw = it.keyword || "";
           var loc = it.location || "";
           var dateStr = it.date || "";
@@ -599,7 +605,24 @@
           var extra = "";
           if (loc)  extra += '<p class="text-xs text-gray-400 mt-1.5 leading-snug break-all">📍 ' + loc + "</p>";
           if (keyw) extra += '<p class="text-xs text-gray-300 mt-1 leading-snug break-all">🔑 ' + keyw + "</p>";
-          if (hash) extra += '<p class="text-xs text-red-400 mt-0.5 leading-snug break-all">' + tagText(hash) + "</p>";
+
+          // ===== HIỆN 2 TAG RIÊNG BIỆT =====
+          if (hash) {
+            var tagList = Array.isArray(hash)
+              ? hash
+              : String(hash).split(/[\s,]+/).filter(Boolean);
+
+            var tags = tagList.map(function (t) {
+              var clean = String(t).replace(/^#/, "").trim();
+              if (!clean || clean === "TBA") return "";
+              return '<span class="inline-block text-[11px] font-medium px-2 py-0.5 rounded-full bg-red-950/80 border border-red-700/60 text-red-300">#' + clean + '</span>';
+            }).filter(Boolean).join(" ");
+
+            if (tags) {
+              extra += '<div class="flex flex-wrap gap-1.5 mt-1.5">' + tags + '</div>';
+            }
+          }
+          // =================================
 
           var copyParts = [];
           if (keyw) copyParts.push(keyw);
@@ -662,7 +685,6 @@
         box.appendChild(el);
       });
 
-      // Start fireworks on birthday cards
       box.querySelectorAll(".fw-canvas").forEach(function (canvas) {
         startFireworks(canvas);
       });
