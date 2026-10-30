@@ -341,23 +341,6 @@
       ]
     },
     {
-  "id": "DeYdBZPCYOh",
-  "date": "2026-10-12",
-  "handle": "@santa.pp",
-  "title": "Santa × CHAGEE Lemon Fruit Tea",
-  "postUrl": "https://www.instagram.com/p/DeYdBZPCYOh/",
-  "image": "images/santachagee.jpg",
-  "like": 150000,
-  "likeDone": true,
-  "comment": 10000,
-  "commentDone": true,
-  "share": 1000000,
-  "shareDone": true,
-  "generators": [
-    { "name": "Generator 1", "url": "https://image-wonderland-maker.lovable.app/" }
-  ]
-    },
-    {
       "id": "DeW6-hCga6t",
       "date": "2026-10-11",
       "handle": "@perthppe",
@@ -423,57 +406,6 @@
       "shareDone": true,
       "generators": [
         { "name": "Generator 1", "url": "https://pixel-perfect-render-46841.lovable.app/" }
-      ]
-    },
-    {
-      "id": "DdYe0t5Ado0",
-      "date": "2026-09-17",
-      "handle": "@perthppe",
-      "title": "Perth Sayang",
-      "postUrl": "https://www.instagram.com/p/DdYe0t5Ado0/",
-      "image": "images/Sayang.jpg",
-      "like": 350000,
-      "likeDone": true,
-      "comment": 20000,
-      "commentDone": true,
-      "share": 1500000,
-      "shareDone": true,
-      "generators": [
-        { "name": "Generator 1", "url": "https://urban-comment-craft.lovable.app/" }
-      ]
-    },
-    {
-      "id": "DdeHgssgRG4",
-      "date": "2026-09-19",
-      "handle": "@perthppe",
-      "title": "Perth × Streetwise Chronicle",
-      "postUrl": "https://www.instagram.com/p/DdeHgssgRG4/",
-      "image": "images/Perth.jpg",
-      "like": 350000,
-      "likeDone": true,
-      "comment": 25000,
-      "commentDone": true,
-      "share": 1500000,
-      "shareDone": true,
-      "generators": [
-        { "name": "Generator 1", "url": "https://streetwise-copy-engine.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
-      ]
-    },
-    {
-      "id": "DdoDRklARxQ",
-      "date": "2026-09-23",
-      "handle": "@perthppe",
-      "title": "Perth × Alpha Clinic",
-      "postUrl": "https://www.instagram.com/p/DdoDRklARxQ/",
-      "image": "images/Clinic.jpg",
-      "like": 150000,
-      "likeDone": true,
-      "comment": 20000,
-      "commentDone": true,
-      "share": 1500000,
-      "shareDone": true,
-      "generators": [
-        { "name": "Generator 1", "url": "https://clinic-comment-engine.lovable.app/?utm_id=97760_v0_s00_e0_tv4" }
       ]
     },
     {
