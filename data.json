@@ -433,9 +433,9 @@
       "postUrl": "https://www.instagram.com/p/DdoDRklARxQ/",
       "image": "images/Clinic.jpg",
       "like": 150000,
-      "likeDone": false,
-      "comment": 25000,
-      "commentDone": false,
+      "likeDone": true,
+      "comment": 20000,
+      "commentDone": true,
       "share": 1500000,
       "shareDone": true,
       "generators": [
