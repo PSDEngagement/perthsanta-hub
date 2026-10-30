@@ -201,8 +201,9 @@
       "share": 2000000,
       "shareDone": false,
       "generators": [
-        { "name": "Generator 1", "url": "https://santaparis1.netlify.app/" }
-        { "name": "Generator 2 emoji", "url": "https://santaxparisicon.netlify.app/" }
+        { "name": "Generator 1", "url": "https://santaparis1.netlify.app/" },
+        { "name": "Generator 2", "url": "https://pixel-perfect-screenshot-maker-99.lovable.app/" },
+        { "name": "Generator 3 emoji", "url": "https://santaxparisicon.netlify.app/" }
       ]
     },
     {
@@ -219,7 +220,8 @@
   "share": 1000000,
   "shareDone": false,
   "generators": [
-    { "name": "Generator 1", "url": "https://perthxfinelinesw.netlify.app/" }
+    { "name": "Generator 1", "url": "https://comment-sprout-counter.lovable.app/" },
+    { "name": "Generator 2", "url": "https://perthxfinelinesw.netlify.app/" }
   ]
     },
     {
