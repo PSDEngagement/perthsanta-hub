@@ -400,8 +400,8 @@
       "image": "images/Sayang.jpg",
       "like": 350000,
       "likeDone": true,
-      "comment": 25000,
-      "commentDone": false,
+      "comment": 20000,
+      "commentDone": true,
       "share": 1500000,
       "shareDone": true,
       "generators": [
@@ -451,8 +451,8 @@
       "image": "images/perthguitar.jpg",
       "like": 350000,
       "likeDone": false,
-      "comment": 25000,
-      "commentDone": false,
+      "comment": 20000,
+      "commentDone": true,
       "share": 1500000,
       "shareDone": true,
       "generators": [
