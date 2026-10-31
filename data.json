@@ -543,9 +543,9 @@
             "for": ["PERTH", "SANTA"],
             "generators": [
               { "name": "SOCIAL ENGAGEMENT", "url": "https://psdtrendng.github.io/engagementPerthSanta/" },
-              { "name": "GEN 1", "url": "https://pixel-to-page-151.lovable.app/" },
+              { "name": "GEN 1", "url": "https://perthsantaxralphclub.netlify.app/" },
               { "name": "GEN 2", "url": "https://psdtrendng.github.io/genRalphLauren/" },
-              { "name": "GEN 3", "url": "https://perthsantaxralphclub.netlify.app/" }
+              { "name": "GEN 3", "url": "" }
             ]
           }
         ]
