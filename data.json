@@ -201,7 +201,8 @@
     "share": 2000000,
     "shareDone": false,
     "generators": [
-      { "name": "Generator 1", "url": "" }
+      { "name": "Generator 1", "url": "https://perthsantaxralphclub.netlify.app/" },
+      { "name": "Generator 2", "url": "" }
     ]
   },
   {
@@ -218,7 +219,8 @@
      "share": 2000000,
      "shareDone": false,
      "generators": [
-       { "name": "Generator 1", "url": "" }
+       { "name": "Generator 1", "url": "https://perthsantaxralphclub.netlify.app/" },
+       { "name": "Generator 2", "url": "" }
      ]
     },
     {
