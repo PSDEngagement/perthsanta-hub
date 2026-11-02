@@ -198,7 +198,7 @@
     "likeDone": false,
     "comment": 30000,
     "commentDone": false,
-    "share": 20000000,
+    "share": 2000000,
     "shareDone": false,
     "generators": [
       { "name": "Generator 1", "url": "" }
@@ -215,7 +215,7 @@
      "likeDone": false,
      "comment": 30000,
      "commentDone": false,
-     "share": 20000000,
+     "share": 2000000,
      "shareDone": false,
      "generators": [
        { "name": "Generator 1", "url": "" }
