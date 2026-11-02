@@ -267,9 +267,9 @@
   "postUrl": "https://www.instagram.com/p/De4e7m5gaqN/",
   "image": "images/perthpool.jpg",
   "like": 350000,
-  "likeDone": false,
-  "comment": 25000,
-  "commentDone": false,
+  "likeDone": true,
+  "comment": 20000,
+  "commentDone": true,
   "share": 2000000,
   "shareDone": false,
   "generators": [
@@ -285,8 +285,8 @@
   "image": "images/perthskyline.jpg",
   "like": 350000,
   "likeDone": false,
-  "comment": 25000,
-  "commentDone": false,
+  "comment": 20000,
+  "commentDone": true,
   "share": 2000000,
   "shareDone": false,
   "generators": [
