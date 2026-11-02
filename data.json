@@ -253,7 +253,7 @@
   "comment": 15000,
   "commentDone": false,
   "share": 1000000,
-  "shareDone": false,
+  "shareDone": true,
   "generators": [
     { "name": "Generator 1", "url": "https://comment-sprout-counter.lovable.app/" },
     { "name": "Generator 2", "url": "https://perthxfinelinesw.netlify.app/" }
