@@ -604,13 +604,24 @@
     }
 
     function getAudienceHearts(audience) {
-      const list = Array.isArray(audience) ? audience : [];
-      const hearts = [];
-      if (list.indexOf("PERTH") >= 0) hearts.push('<span class="heart-black">♥</span>');
-      if (list.indexOf("SANTA") >= 0) hearts.push('<span class="heart-white">♥</span>');
-      if (list.indexOf("PSD") >= 0 || list.indexOf("DOMIIA") >= 0) hearts.push('<span class="heart-red">♥</span>');
-      return hearts.join("");
-    }
+  const list = Array.isArray(audience) ? audience : [];
+  const hearts = [];
+
+  // Nếu có PSD → hiện đủ 3 tim (đen + trắng + đỏ)
+  if (list.indexOf("PSD") >= 0) {
+    hearts.push('<span class="heart-black">♥</span>');
+    hearts.push('<span class="heart-white">♥</span>');
+    hearts.push('<span class="heart-red">♥</span>');
+    return hearts.join("");
+  }
+
+  // Các trường hợp còn lại giữ nguyên
+  if (list.indexOf("PERTH") >= 0) hearts.push('<span class="heart-black">♥</span>');
+  if (list.indexOf("SANTA") >= 0) hearts.push('<span class="heart-white">♥</span>');
+  if (list.indexOf("DOMIIA") >= 0) hearts.push('<span class="heart-red">♥</span>');
+  
+  return hearts.join("");
+}
 
     function getHashtags(ev) {
       const tags = [];
