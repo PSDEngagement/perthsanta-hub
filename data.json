@@ -304,8 +304,8 @@
   "image": "images/PerthFineline.jpg",
   "like": 200000,
   "likeDone": false,
-  "comment": 15000,
-  "commentDone": false,
+  "comment": 10000,
+  "commentDone": true,
   "share": 1000000,
   "shareDone": true,
   "generators": [
