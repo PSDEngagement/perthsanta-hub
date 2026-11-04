@@ -505,7 +505,7 @@
       <a href="youtube-streaming.html" class="menu-row">
         <div class="menu-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/>
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0-9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/>
           </svg>
         </div>
         <div class="min-w-0 flex-1">
@@ -604,24 +604,24 @@
     }
 
     function getAudienceHearts(audience) {
-  const list = Array.isArray(audience) ? audience : [];
-  const hearts = [];
+      const list = Array.isArray(audience) ? audience : [];
+      const hearts = [];
 
-  // Nếu có PSD → hiện đủ 3 tim (đen + trắng + đỏ)
-  if (list.indexOf("PSD") >= 0) {
-    hearts.push('<span class="heart-black">♥</span>');
-    hearts.push('<span class="heart-white">♥</span>');
-    hearts.push('<span class="heart-red">♥</span>');
-    return hearts.join("");
-  }
+      // If has PSD → show all 3 hearts (black + white + red)
+      if (list.indexOf("PSD") >= 0) {
+        hearts.push('<span class="heart-black">♥</span>');
+        hearts.push('<span class="heart-white">♥</span>');
+        hearts.push('<span class="heart-red">♥</span>');
+        return hearts.join("");
+      }
 
-  // Các trường hợp còn lại giữ nguyên
-  if (list.indexOf("PERTH") >= 0) hearts.push('<span class="heart-black">♥</span>');
-  if (list.indexOf("SANTA") >= 0) hearts.push('<span class="heart-white">♥</span>');
-  if (list.indexOf("DOMIIA") >= 0) hearts.push('<span class="heart-red">♥</span>');
-  
-  return hearts.join("");
-}
+      // Other cases
+      if (list.indexOf("PERTH") >= 0) hearts.push('<span class="heart-black">♥</span>');
+      if (list.indexOf("SANTA") >= 0) hearts.push('<span class="heart-white">♥</span>');
+      if (list.indexOf("DOMIIA") >= 0) hearts.push('<span class="heart-red">♥</span>');
+      
+      return hearts.join("");
+    }
 
     function getHashtags(ev) {
       const tags = [];
@@ -663,14 +663,14 @@
       const timeStr = formatDisplayTime(ev.note);
       const dateStr = formatDateShort(ev._day, ev._monthIndex);
 
+      // Display Start Trend time
       let startTrendStr = "";
       if (ev.startTrend) {
         startTrendStr = formatDisplayTime(ev.startTrend);
       } else if (ev._startMin !== null) {
-        let trendMin = ev._startMin - 15;
-        if (trendMin < 0) trendMin += 24 * 60;
-        let h = Math.floor(trendMin / 60);
-        let m = trendMin % 60;
+        // _startMin is already the trend time (note - 15), so just format it
+        let h = Math.floor(ev._startMin / 60);
+        let m = ev._startMin % 60;
         const ap = h >= 12 ? "PM" : "AM";
         let h12 = h % 12;
         if (h12 === 0) h12 = 12;
@@ -751,6 +751,21 @@
           const parsed = parseDateLabel(item.date);
           if (!parsed) return;
 
+          // ===== STATUS TIME LOGIC =====
+          // Priority: startTrend → otherwise note - 15 minutes
+          let statusMin = null;
+
+          if (item.startTrend) {
+            statusMin = parseTimeToMinutes(item.startTrend);
+          } else {
+            const noteMin = parseTimeToMinutes(item.note);
+            if (noteMin !== null) {
+              statusMin = noteMin - 15;
+              if (statusMin < 0) statusMin += 24 * 60; // handle midnight wrap
+            }
+          }
+          // =============================
+
           allEvents.push({
             title: item.title,
             note: item.note,
@@ -763,7 +778,7 @@
             generators: Array.isArray(item.generators) ? item.generators : [],
             _day: parsed.day,
             _monthIndex: parsed.monthIndex,
-            _startMin: parseTimeToMinutes(item.note)
+            _startMin: statusMin   // controls LIVE / UPCOMING
           });
         });
       });
