@@ -591,27 +591,6 @@
     ],
     "schedule": [
       {
-        "month": "October 2026",
-        "items": [
-          {
-            "date": "31 Oct",
-            "title": "RALPH LAUREN RALPH'S CLUB NEW YORK POP-UP",
-            "note": "06:00 PM (UTC+7)",
-            "startTrend": "05:00 PM (UTC+7)",
-            "location": "SM MAKATI CONCOURSE, PHILIPPINES",
-            "hastag": "RalphLaurenFragrancesXPerthSanta",
-            "keyword": "PERTHSANTA RALPHS CLUB POPUP",
-            "for": ["PERTH", "SANTA"],
-            "generators": [
-              { "name": "SOCIAL ENGAGEMENT", "url": "https://psdtrendng.github.io/engagementPerthSanta/" },
-              { "name": "GEN 1", "url": "https://perthsantaxralphclub.netlify.app/" },
-              { "name": "GEN 2", "url": "https://psdtrendng.github.io/genRalphLauren/" },
-              { "name": "GEN 3", "url": "https://psdxtrend.github.io/x-comment-generator/ralph-lauren-ps.html" }
-            ]
-          }
-        ]
-      },
-      {
         "month": "November 2026",
         "items": [
           {
@@ -634,7 +613,7 @@
             "note": "08:30 PM (UTC+7)",
             "startTrend": "04:30 PM (UTC+7)",
             "location": "UNION HALL, UNION MALL",
-            "hastag": "ScarletHeartUllaveeEP1",
+            "hastag": "ScarletHeartUllaveeEP1", "PerthTanapon",
             "keyword": "PERTH KONGTAI ONCE ULLAVEE",
             "for": ["PERTH"],
             "generators": [
@@ -677,8 +656,8 @@
             "title": "SCARLET HEART ULLAVEE THE GRAND PREMIERE",
             "note": "08:30 PM (UTC+7)",
             "location": "ONE31",
-            "hastag": "ScarletHeartUllaveeEP2",
-            "keyword": "TBA",
+            "hastag": "ScarletHeartUllaveeEP2", "PerthTanapon",
+            "keyword": "PERTH KONGTAI ONCE ULLAVEE",
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
