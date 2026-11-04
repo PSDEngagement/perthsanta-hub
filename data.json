@@ -201,7 +201,7 @@
   "share": 2000000,
   "shareDone": false,
   "generators": [
-    { "name": "Generator 1", "url": "" },
+    { "name": "Generator 1", "url": "https://pixel-perfect-picture-playback-267.lovable.app/" },
     { "name": "Generator 2", "url": "" }
   ]
     },
@@ -219,7 +219,7 @@
   "share": 2000000,
   "shareDone": false,
   "generators": [
-    { "name": "Generator 1", "url": "" },
+    { "name": "Generator 1", "url": "https://perth-comment-pocket.lovable.app/" },
     { "name": "Generator 2", "url": "" }
   ]
     },
