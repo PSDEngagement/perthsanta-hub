@@ -551,8 +551,8 @@
       "likeDone": false,
       "comment": 25000,
       "commentDone": false,
-      "share": 2000000,
-      "shareDone": false,
+      "share": 1500000,
+      "shareDone": true,
       "generators": [
         { "name": "Generator 1", "url": "https://crimson-canvas-generator.lovable.app/" }
       ]
@@ -568,7 +568,7 @@
       "likeDone": false,
       "comment": 25000,
       "commentDone": true,
-      "share": 2000000,
+      "share": 1500000,
       "shareDone": false,
       "generators": [
         { "name": "Generator 1", "url": "https://new-chat-tau-eosin.vercel.app/" }
