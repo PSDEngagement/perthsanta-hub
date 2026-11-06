@@ -515,8 +515,8 @@
       "image": "images/perthtopten.jpg",
       "like": 150000,
       "likeDone": false,
-      "comment": 15000,
-      "commentDone": false,
+      "comment": 10000,
+      "commentDone": true,
       "share": 1500000,
       "shareDone": true,
       "generators": [
@@ -532,8 +532,8 @@
       "image": "images/santatopten.jpg",
       "like": 150000,
       "likeDone": false,
-      "comment": 15000,
-      "commentDone": false,
+      "comment": 10000,
+      "commentDone": true,
       "share": 1500000,
       "shareDone": true,
       "generators": [
