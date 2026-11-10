@@ -717,34 +717,6 @@
            ]
           },
           {
-            "date": "07 Nov",
-            "title": "FAN MEETING WITH PERTH & DOMIIA: TRUE LOVE ARRIVES ",
-            "note": "TBA",
-            "location": "CHINA",
-            "hastag": "TBA",
-            "keyword": "TBA",
-            "for": ["PERTH", "DOMIIA"],
-            "generators": [
-              { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
-            "date": "08 Nov",
-            "title": "FAN MEETING WITH SANTA & DOMIIA: DREAMS COME TRUE",
-            "note": "TBA",
-            "location": "CHINA",
-            "hastag": "TBA",
-            "keyword": "TBA",
-            "for": ["SANTA", "DOMIIA"],
-            "generators": [
-              { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
             "date": "11 Nov",
             "title": "SCARLET HEART ULLAVEE THE GRAND PREMIERE",
             "note": "08:30 PM (UTC+7)",
