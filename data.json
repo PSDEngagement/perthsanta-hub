@@ -702,78 +702,6 @@
         "month": "November 2026",
         "items": [
           {
-           "date": "05 Nov",
-           "title": "🎂 SANTA'S BIRTHDAY, OUR SILVER MOMENT 🎂",
-           "note": "08:30 AM (UTC+7) 🎉",
-           "startTrend": "08:30 AM (UTC+7)",
-           "location": "ALL SOCIAL PLATFORM",
-           "hastag": "SANTA23rdSilverBurst",
-           "keyword": "SANTA 23RD GLEAMING",
-           "for": ["SANTA"],
-           "highlight": true,
-            "generators": [
-              { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
-            "date": "05 Nov",
-            "title": "PERTHSANTA WITH FOAMDREAM ",
-            "note": "07:00 PM (UTC+7)",
-            "location": "WEIBO LIVE: FoamDream梦游演奏家官方微博",
-            "hastag": "PerthSantaxFoamdream",
-            "keyword": "PERTHSANTA MEMORABLE NIGHT",
-            "for": ["PERTH", "SANTA"],
-            "generators": [
-              { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
-            "date": "05 Nov",
-            "title": "SCARLET HEART ULLAVEE THE GRAND PREMIERE",
-            "note": "08:30 PM (UTC+7)",
-            "location": "ONE31",
-            "hastag": "ScarletHeartUllaveeEP2",
-            "keyword": "PERTH KONGTAI ONCE ULLAVEE",
-            "for": ["PERTH"],
-            "generators": [
-              { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
-            "date": "06 Nov",
-            "title": "ADVANCED HAIR CARE ROUTINE",
-            "note": "12:00 PM - 13:00 PM (UTC+7)",
-            "location": "LIVE SHOPEE L’ORÉAL",
-            "hastag": "LOrealParisHairxPerth",
-            "keyword": "PERTH HAIR CARE ROUTINE",
-            "for": ["PERTH"],
-            "generators": [
-              { "name": "GEN 1", "url": "https://psdtrendng.github.io/genL-OrealParisHairCare/" },
-              { "name": "GEN 2", "url": "https://psdxtrend.github.io/x-comment-generator/perth-loreal.html" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
-            "date": "06 Nov",
-            "title": "HOUSE OF LEE WITH PERTHSANTA",
-            "note": "04:00 PM (UTC+7)",
-            "location": "CENTRALWORLD ZONE EDEN 1",
-            "hastag": "LEExPerthSanta",
-            "keyword": "PERTHSANTA HOUSE OF LEE ",
-            "for": ["PERTH", "SANTA"],
-            "generators": [
-              { "name": "GEN 1", "url": "https://psdtrendng.github.io/genHOUSEOFLEE/" },
-              { "name": "GEN 2", "url": "https://psdxtrend.github.io/x-comment-generator/house-of-lee-ps.html" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
             "date": "07 Nov",
             "title": "FAN MEETING WITH PERTH & DOMIIA: TRUE LOVE ARRIVES ",
             "note": "TBA",
@@ -1021,6 +949,20 @@
             "title": "PHAYAO ORIGINS: THE FIRST LIGHT OF 2027",
             "note": "TBA",
             "location": "KING NGAM MUEANG MONUMENT, PHAYAO PROVINCE",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
+            "date": "31 Dec",
+            "title": "COUNTDOWN CELEBRATION 2027 | JASP.ER",
+            "note": "TBA",
+            "location": "ONE BANGKOK PART",
             "hastag": "TBA",
             "keyword": "TBA",
             "for": ["SANTA"],
