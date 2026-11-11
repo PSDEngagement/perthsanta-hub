@@ -244,8 +244,8 @@
     .ev-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.3rem;
-      margin-bottom: 0.5rem;
+      gap: 0.45rem;
+      margin-bottom: 0.55rem;
     }
 
     .ev-tag {
@@ -661,7 +661,7 @@
       });
     }
 
-    // ===== Hàm copy giống schedule =====
+    // ===== Hàm copy =====
     function copyText(text, btn) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(function () {
@@ -750,14 +750,21 @@
         }
       });
 
-      // ===== Tạo nút Copy =====
+      // ===== Tạo nút Copy (có khoảng cách đẹp) =====
       let copyParts = [];
       if (keyword) copyParts.push(keyword);
+
+      const hashList = [];
       hashtags.forEach(function (ht) {
         const clean = String(ht).replace(/^#/, "").trim();
-        if (clean) copyParts.push("#" + clean);
+        if (clean) hashList.push("#" + clean);
       });
-      const copyPayload = copyParts.join("\n");
+
+      if (hashList.length) {
+        copyParts.push(hashList.join(" "));
+      }
+
+      const copyPayload = copyParts.join("\n\n");
       const copyBtnHtml = copyPayload
         ? '<button type="button" class="ev-copy-btn" data-copy="' +
           copyPayload.replace(/"/g, "&quot;") +
