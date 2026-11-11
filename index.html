@@ -306,6 +306,31 @@
       transform: translateY(-1px);
     }
 
+    /* ===== Nút Copy KW + Hashtag ===== */
+    .ev-copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.35rem;
+      background: linear-gradient(145deg, #7f1d1d 0%, #450a0a 100%);
+      border: 1px solid #991b1b;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      padding: 0.28rem 0.7rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .ev-copy-btn:hover {
+      background: linear-gradient(145deg, #991b1b 0%, #7f1d1d 100%);
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+    }
+    .ev-copy-btn.copied {
+      background: linear-gradient(145deg, #166534 0%, #14532d 100%);
+      border-color: #22c55e;
+    }
+
     .menu-row {
       display: flex;
       align-items: center;
@@ -505,7 +530,7 @@
       <a href="youtube-streaming.html" class="menu-row">
         <div class="menu-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0-9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/>
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/>
           </svg>
         </div>
         <div class="min-w-0 flex-1">
@@ -534,6 +559,7 @@
 
   </main>
 
+  <script src="common.js"></script>
   <script>
   (function () {
 
@@ -607,7 +633,6 @@
       const list = Array.isArray(audience) ? audience : [];
       const hearts = [];
 
-      // If has PSD → show all 3 hearts (black + white + red)
       if (list.indexOf("PSD") >= 0) {
         hearts.push('<span class="heart-black">♥</span>');
         hearts.push('<span class="heart-white">♥</span>');
@@ -615,7 +640,6 @@
         return hearts.join("");
       }
 
-      // Other cases
       if (list.indexOf("PERTH") >= 0) hearts.push('<span class="heart-black">♥</span>');
       if (list.indexOf("SANTA") >= 0) hearts.push('<span class="heart-white">♥</span>');
       if (list.indexOf("DOMIIA") >= 0) hearts.push('<span class="heart-red">♥</span>');
@@ -635,6 +659,35 @@
       return tags.filter(function (t) {
         return t && t !== "TBA";
       });
+    }
+
+    // ===== Hàm copy giống schedule =====
+    function copyText(text, btn) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          btn.classList.add("copied");
+          btn.textContent = "Copied!";
+          setTimeout(function () {
+            btn.classList.remove("copied");
+            btn.textContent = "📋 Copy";
+          }, 1500);
+        });
+        return;
+      }
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      btn.classList.add("copied");
+      btn.textContent = "Copied!";
+      setTimeout(function () {
+        btn.classList.remove("copied");
+        btn.textContent = "📋 Copy";
+      }, 1500);
     }
 
     function buildCard(ev, status) {
@@ -663,12 +716,10 @@
       const timeStr = formatDisplayTime(ev.note);
       const dateStr = formatDateShort(ev._day, ev._monthIndex);
 
-      // Display Start Trend time
       let startTrendStr = "";
       if (ev.startTrend) {
         startTrendStr = formatDisplayTime(ev.startTrend);
       } else if (ev._startMin !== null) {
-        // _startMin is already the trend time (note - 15), so just format it
         let h = Math.floor(ev._startMin / 60);
         let m = ev._startMin % 60;
         const ap = h >= 12 ? "PM" : "AM";
@@ -698,6 +749,20 @@
           tagsHtml += '<span class="ev-tag hashtag">#' + clean + "</span>";
         }
       });
+
+      // ===== Tạo nút Copy =====
+      let copyParts = [];
+      if (keyword) copyParts.push(keyword);
+      hashtags.forEach(function (ht) {
+        const clean = String(ht).replace(/^#/, "").trim();
+        if (clean) copyParts.push("#" + clean);
+      });
+      const copyPayload = copyParts.join("\n");
+      const copyBtnHtml = copyPayload
+        ? '<button type="button" class="ev-copy-btn" data-copy="' +
+          copyPayload.replace(/"/g, "&quot;") +
+          '">📋 Copy</button>'
+        : "";
 
       return '<div class="' + cls + '">' +
         '<div class="ev-top">' +
@@ -733,6 +798,7 @@
             : "") +
         "</div>" +
         (tagsHtml ? '<div class="ev-tags">' + tagsHtml + "</div>" : "") +
+        copyBtnHtml +
         (genHtml ? '<div class="ev-bottom"><div class="ev-gens">' + genHtml + "</div></div>" : "") +
       "</div>";
     }
@@ -751,8 +817,6 @@
           const parsed = parseDateLabel(item.date);
           if (!parsed) return;
 
-          // ===== STATUS TIME LOGIC =====
-          // Priority: startTrend → otherwise note - 15 minutes
           let statusMin = null;
 
           if (item.startTrend) {
@@ -761,10 +825,9 @@
             const noteMin = parseTimeToMinutes(item.note);
             if (noteMin !== null) {
               statusMin = noteMin - 15;
-              if (statusMin < 0) statusMin += 24 * 60; // handle midnight wrap
+              if (statusMin < 0) statusMin += 24 * 60;
             }
           }
-          // =============================
 
           allEvents.push({
             title: item.title,
@@ -778,7 +841,7 @@
             generators: Array.isArray(item.generators) ? item.generators : [],
             _day: parsed.day,
             _monthIndex: parsed.monthIndex,
-            _startMin: statusMin   // controls LIVE / UPCOMING
+            _startMin: statusMin
           });
         });
       });
@@ -817,6 +880,15 @@
       container.innerHTML = activeEvents.map(function (event) {
         return buildCard(event, getStatus(event, bkk));
       }).join("");
+
+      // Gắn sự kiện click cho nút Copy
+      container.querySelectorAll(".ev-copy-btn").forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          copyText(btn.getAttribute("data-copy") || "", btn);
+        });
+      });
     }
 
     fetch("data.json?t=" + Date.now())
@@ -837,8 +909,5 @@
 
   })();
   </script>
-
-  <script src="common.js"></script>
-
 </body>
 </html>
