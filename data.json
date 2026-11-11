@@ -720,9 +720,10 @@
             "date": "11 Nov",
             "title": "SCARLET HEART ULLAVEE THE GRAND PREMIERE",
             "note": "08:30 PM (UTC+7)",
+            "startTrend": "08:30 PM (UTC+7)",
             "location": "ONE31",
             "hastag": "ScarletHeartUllaveeEP3",
-            "keyword": "TBA",
+            "keyword": "PERTH KONGTAI ONCE ULLAVEE",
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
@@ -734,9 +735,10 @@
             "date": "12 Nov",
             "title": "SCARLET HEART ULLAVEE THE GRAND PREMIERE",
             "note": "08:30 PM (UTC+7)",
+            "startTrend": "08:30 PM (UTC+7)",
             "location": "ONE31",
             "hastag": "ScarletHeartUllaveeEP4",
-            "keyword": "TBA",
+            "keyword": "PERTH KONGTAI ONCE ULLAVEE",
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
