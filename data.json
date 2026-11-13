@@ -761,12 +761,40 @@
             ]
           },
           {
-            "date": "13-14-15 Nov",
+            "date": "13 Nov",
             "title": "FRIENDLY ME MALDIVES WITH SANTA",
-            "note": "TBA",
-            "location": "TBA",
-            "hastag": "TBA",
-            "keyword": "TBA",
+            "note": "ALL DAY",
+            "location": "MALDIVES",
+            "hastag": "FLMinMaldivesxSanta",
+            "keyword": "MALDIVES AFFAIR WITH SANTA DAY1",
+            "for": ["SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
+            "date": "14 Nov",
+            "title": "FRIENDLY ME MALDIVES WITH SANTA",
+            "note": "ALL DAY",
+            "location": "MALDIVES",
+            "hastag": "FLMinMaldivesxSanta",
+            "keyword": "MALDIVES AFFAIR WITH SANTA DAY2",
+            "for": ["SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
+            "date": "15 Nov",
+            "title": "FRIENDLY ME MALDIVES WITH SANTA",
+            "note": "ALL DAY",
+            "location": "MALDIVES",
+            "hastag": "FLMinMaldivesxSanta",
+            "keyword": "MALDIVES AFFAIR WITH SANTA DAY3",
             "for": ["SANTA"],
             "generators": [
               { "name": "GEN 1", "url": "" },
