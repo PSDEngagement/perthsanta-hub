@@ -609,7 +609,7 @@
       "generators": [
         { "name": "Generator 1", "url": "https://pixel-perfect-display-7828.lovable.app/" }
       ]
-    },
+    }
   ],
   "missions": [
     { "id": "ig-engagement", "title": "Instagram Engagement", "page": "ig-engagement.html", "type": "Instagram", "done": false },
