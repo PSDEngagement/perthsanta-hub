@@ -994,6 +994,20 @@
             ]
           },
           {
+            "date": "27 Dec",
+            "title": "THE MALL LIFESTORE THE GREAT HAPPY NEW YEAR",
+            "note": "TBA",
+            "location": "The Mall Lifestore Bangkae",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
             "date": "30 Dec",
             "title": "PHAYAO ORIGINS: THE FIRST LIGHT OF 2027",
             "note": "TBA",
