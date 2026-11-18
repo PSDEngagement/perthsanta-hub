@@ -197,7 +197,7 @@
   "postUrl": "https://www.instagram.com/p/Df1533cFIGr/",
   "image": "images/santamaldives.jpg",
   "like": 350000,
-  "likeDone": false,
+  "likeDone": true,
   "comment": 20000,
   "commentDone": false,
   "share": 1500000,
