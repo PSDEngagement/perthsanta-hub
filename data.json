@@ -235,7 +235,7 @@
   "like": 200000,
   "likeDone": false,
   "comment": 30000,
-  "commentDone": false,
+  "commentDone": true,
   "share": 1500000,
   "shareDone": false,
   "generators": [
@@ -253,7 +253,7 @@
   "like": 200000,
   "likeDone": true,
   "comment": 30000,
-  "commentDone": false,
+  "commentDone": true,
   "share": 1500000,
   "shareDone": false,
   "generators": [
