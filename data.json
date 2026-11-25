@@ -281,17 +281,17 @@
 },
 {
   "id": "Df9sVR0I1Xu",
-  "date": "2026-11-20 ♡ BKK",
+  "date": "2026-11-20 ♡ 19:48 BKK",
   "handle": "@perthppe",
   "title": "Perth x Sorry Not Sorry",
   "postUrl": "https://www.instagram.com/p/Df9sVR0I1Xu/",
   "image": "images/perthsorry.jpg",
-  "like": 200000,
-  "likeDone": false,
+  "like": 250000,
+  "likeDone": true,
   "comment": 20000,
   "commentDone": false,
   "share": 1000000,
-  "shareDone": false,
+  "shareDone": true,
   "generators": [
     { "name": "Generator 1", "url": "https://fresh-comments.lovable.app/" },
     { "name": "Generator 2", "url": "" }
@@ -299,7 +299,7 @@
 },
 {
   "id": "Df9pnmgOlx7",
-  "date": "2026-11-20 ♡ BKK",
+  "date": "2026-11-20 ♡ 19:27 BKK",
   "handle": "@perthppe",
   "title": "Perth x Sorry Not Sorry (Reel)",
   "postUrl": "https://www.instagram.com/reel/Df9pnmgOlx7/",
@@ -309,7 +309,7 @@
   "comment": 20000,
   "commentDone": false,
   "share": 1000000,
-  "shareDone": false,
+  "shareDone": true,
   "generators": [
     { "name": "Generator 1", "url": "https://screenshot-to-soul-6567.lovable.app/" },
     { "name": "Generator 2", "url": "" }
@@ -317,12 +317,12 @@
 },
     {
   "id": "Df1533cFIGr",
-  "date": "2026-11-17 ♡ Maldives",
+  "date": "2026-11-17 ♡ 19:13 BKK",
   "handle": "@santa.pp",
   "title": "Santa x Maldives",
   "postUrl": "https://www.instagram.com/p/Df1533cFIGr/",
   "image": "images/santamaldives.jpg",
-  "like": 350000,
+  "like": 500000,
   "likeDone": true,
   "comment": 20000,
   "commentDone": false,
@@ -335,12 +335,12 @@
  },
  {
   "id": "DftxMlsoaYs",
-  "date": "2026-11-14 ♡ BKK",
+  "date": "2026-11-14 ♡ 15:23 BKK",
   "handle": "@perthppe",
   "title": "Perth x Tattoos",
   "postUrl": "https://www.instagram.com/p/DftxMlsoaYs/",
   "image": "images/perthtatto.jpg",
-  "like": 350000,
+  "like": 750000,
   "likeDone": true,
   "comment": 20000,
   "commentDone": false,
@@ -353,7 +353,7 @@
 },
 {
   "id": "DfY35SwCUou",
-  "date": "2026-11-06 ♡ BKK",
+  "date": "2026-11-06 ♡ 12:38 BKK",
   "handle": "@santa.pp",
   "title": "Santa x Dolce & Gabbana",
   "postUrl": "https://www.instagram.com/p/DfY35SwCUou/",
@@ -371,7 +371,7 @@
 },
 {
   "id": "DfYtBNLoSaH",
-  "date": "2026-11-06 ♡ BKK",
+  "date": "2026-11-06 ♡ 11:03 BKK",
   "handle": "@perthppe",
   "title": "Perth x Dolce & Gabbana",
   "postUrl": "https://www.instagram.com/p/DfYtBNLoSaH/",
@@ -389,7 +389,7 @@
     },
     {
   "id": "DfXtO45ASpI",
-  "date": "2026-11-05 ♡ BKK",
+  "date": "2026-11-06 ♡ 01:45 BKK",
   "handle": "@santa.pp",
   "title": "SANTA 23RD GLEAMING 🎂",
   "postUrl": "https://www.instagram.com/p/DfXtO45ASpI/",
@@ -407,7 +407,7 @@
     }, 
     {
   "id": "DfW4CHmgQLg",
-  "date": "2026-11-05 ♡ BKK",
+  "date": "2026-11-05 ♡ 18:00 BKK",
   "handle": "@perthppe",
   "title": "21-23 🎂",
   "postUrl": "https://www.instagram.com/p/DfW4CHmgQLg/",
@@ -425,7 +425,7 @@
     },
     {
   "id": "DfU4gIXgTd9",
-  "date": "2026-11-04 ♡ BKK",
+  "date": "2026-11-04 ♡ 23:26 BKK",
   "handle": "@perthppe",
   "title": "WELCOME ULLAVEE",
   "postUrl": "https://www.instagram.com/p/DfU4gIXgTd9/",
@@ -443,7 +443,7 @@
     },
     {
   "id": "DfUoGY1iX3I",
-  "date": "2026-11-04 ♡ BKK",
+  "date": "2026-11-04 ♡ 21:03 BKK",
   "handle": "@santa.pp",
   "title": "Santa x GMMTV Next",
   "postUrl": "https://www.instagram.com/p/DfUoGY1iX3I/",
@@ -461,13 +461,13 @@
     },
     {
   "id": "DfT7qIhIU-V",
-  "date": "2026-11-04 ♡ BKK",
+  "date": "2026-11-04 ♡ 14:34 BKK",
   "handle": "@perthppe",
   "title": "Perth x GMMTV Next",
   "postUrl": "https://www.instagram.com/p/DfT7qIhIU-V/",
   "image": "images/perthgmmnext.jpg",
   "like": 200000,
-  "likeDone": false,
+  "likeDone": true,
   "comment": 15000,
   "commentDone": false,
   "share": 1500000,
@@ -479,7 +479,7 @@
     },
     {
     "id": "DfPlCI5iZvg",
-    "date": "2026-11-02 ♡ BKK",
+    "date": "2026-11-02 ♡ 22:00 BKK",
     "handle": "@santa.pp",
     "title": "Santa Ralph Lauren",
     "postUrl": "https://www.instagram.com/p/DfPlCI5iZvg/",
@@ -497,7 +497,7 @@
   },
   {
      "id": "DfPkFZbgRPQ",
-     "date": "2026-11-02 ♡ BKK",
+     "date": "2026-11-02 ♡ 21:51 BKK",
      "handle": "@perthppe",
      "title": "Perth Ralph Lauren",
      "postUrl": "https://www.instagram.com/p/DfPkFZbgRPQ/",
@@ -515,7 +515,7 @@
     },
     {
       "id": "DfMiYerAdmO",
-      "date": "2026-11-01 ♡ BKK",
+      "date": "2026-11-01 ♡ 17:39 BKK",
       "handle": "@perthppe",
       "title": "Perth X Philippine",
       "postUrl": "https://www.instagram.com/p/DfMiYerAdmO/?img_index=3",
@@ -529,24 +529,6 @@
      "generators": [
        { "name": "Generator 1", "url": "https://perth-philippine-connection.lovable.app/" }
      ]
-    },
-    {
-      "id": "DfJkqMhPLWi",
-      "date": "2026-10-31 ♡ 14:13 BKK",
-      "handle": "@perthppe",
-      "title": "PerthSanta x Mediheal",
-      "postUrl": "https://www.instagram.com/reel/DfJkqMhPLWi/?psln=OXpwOXJmc3RqbHYy",
-      "image": "images/PSMediheal.jpg",
-      "like": 100000,
-      "likeDone": false,
-      "comment": 10000,
-      "commentDone": false,
-      "share": 1000000,
-      "shareDone": true,
-      "generators": [
-        { "name": "Generator 1", "url": "https://pixel-perfect-echo-389.lovable.app/" },
-        { "name": "Generator 2", "url": "" }
-      ]
     },
     {
       "id": "DfHssp0CXNC",
@@ -568,26 +550,8 @@
       ]
     },
     {
-  "id": "DfHVAJpAcVn",
-  "date": "2026-10-30 ♡ 17:06 BKK",
-  "handle": "@perthppe",
-  "title": "Perth Fineline",
-  "postUrl": "https://www.instagram.com/p/DfHVAJpAcVn/",
-  "image": "images/PerthFineline.jpg",
-  "like": 200000,
-  "likeDone": false,
-  "comment": 10000,
-  "commentDone": true,
-  "share": 1000000,
-  "shareDone": true,
-  "generators": [
-    { "name": "Generator 1", "url": "https://comment-sprout-counter.lovable.app/" },
-    { "name": "Generator 2", "url": "https://perthxfinelinesw.netlify.app/" }
-  ]
-    },
-    {
   "id": "De4e7m5gaqN",
-  "date": "2026-10-24",
+  "date": "2026-10-24 ♡ 22:44 BKK",
   "handle": "@perthppe",
   "title": "Perth Night Pool",
   "postUrl": "https://www.instagram.com/p/De4e7m5gaqN/",
@@ -604,13 +568,13 @@
     },
     {
   "id": "DezQhHPAaG-",
-  "date": "2026-10-22",
+  "date": "2026-10-22 ♡ 22:02 BKK",
   "handle": "@perthppe",
   "title": "Perth Twilight Horizon",
   "postUrl": "https://www.instagram.com/p/DezQhHPAaG-/",
   "image": "images/perthskyline.jpg",
   "like": 350000,
-  "likeDone": true,
+  "likeDone": false,
   "comment": 20000,
   "commentDone": true,
   "share": 1500000,
@@ -621,7 +585,7 @@
     },
     {
   "id": "DetqH2XhDUy",
-  "date": "2026-10-20",
+  "date": "2026-10-20 ♡ 17:51 BKK",
   "handle": "@perthppe",
   "title": "PerthSanta × Chupa Chups Sour Belt",
   "postUrl": "https://www.instagram.com/p/DetqH2XhDUy/",
@@ -637,76 +601,8 @@
   ]
     },
     {
-  "id": "DerFsDkAVhk",
-  "date": "2026-10-19",
-  "handle": "@perthppe",
-  "title": "Perth × Gulp Slurpee 7-Eleven",
-  "postUrl": "https://www.instagram.com/p/DerFsDkAVhk/",
-  "image": "images/perthgulp.jpg",
-  "like": 100000,
-  "likeDone": false,
-  "comment": 10000,
-  "commentDone": true,
-  "share": 1000000,
-  "shareDone": true,
-  "generators": [
-    { "name": "Generator 1", "url": "https://pixel-perfect-replay-452.lovable.app/" }
-  ]
-    },
-    {
-     "id": "DegHlpKAWXv",
-     "date": "2026-10-15",
-     "handle": "@perthppe",
-     "title": "Perth ยกหน้าให้ Olay",
-     "postUrl": "https://www.instagram.com/p/DegHlpKAWXv/",
-     "image": "images/pertholay.jpg",
-     "like": 100000,
-     "likeDone": false,
-     "comment": 10000,
-     "commentDone": true,
-     "share": 1000000,
-     "shareDone": true,
-     "generators": [
-        { "name": "Generator 1", "url": "https://crimson-pearl-creations.lovable.app/" }
-      ]
-    },
-    {
-      "id": "DebwBGZBUzk",
-      "date": "2026-10-13",
-      "handle": "@perthppe",
-      "title": "PerthSanta × Walls Topten Xtra",
-      "postUrl": "https://www.instagram.com/reel/DebwBGZBUzk/",
-      "image": "images/perthtopten.jpg",
-      "like": 150000,
-      "likeDone": false,
-      "comment": 10000,
-      "commentDone": true,
-      "share": 1500000,
-      "shareDone": true,
-      "generators": [
-        { "name": "Generator 1", "url": "https://cozy-comment-forge.lovable.app/" }
-      ]
-    },
-    {
-      "id": "Deb4BBspf6Y",
-      "date": "2026-10-13",
-      "handle": "@santa.pp",
-      "title": "PerthSanta × Walls Topten Xtra",
-      "postUrl": "https://www.instagram.com/reel/Deb4BBspf6Y/",
-      "image": "images/santatopten.jpg",
-      "like": 150000,
-      "likeDone": false,
-      "comment": 10000,
-      "commentDone": true,
-      "share": 1500000,
-      "shareDone": true,
-      "generators": [
-        { "name": "Generator 1", "url": "https://cozy-comment-forge.lovable.app/" }
-      ]
-    },
-    {
       "id": "DeW6-hCga6t",
-      "date": "2026-10-11",
+      "date": "2026-10-11 ♡ 21:55 BKK",
       "handle": "@perthppe",
       "title": "PerthSanta Domiia",
       "postUrl": "https://www.instagram.com/p/DeW6-hCga6t/",
@@ -723,7 +619,7 @@
     },
     {
       "id": "DeRv4GOCdwD",
-      "date": "2026-10-09",
+      "date": "2026-10-09 ♡ 21:41 BKK",
       "handle": "@santa.pp",
       "title": "Santa Vibes",
       "postUrl": "https://www.instagram.com/p/DeRv4GOCdwD/",
@@ -736,23 +632,6 @@
       "shareDone": false,
       "generators": [
         { "name": "Generator 1", "url": "https://new-chat-tau-eosin.vercel.app/" }
-      ]
-    },
-    {
-      "id": "DeCUBduAf1F",
-      "date": "2026-10-03",
-      "handle": "@perthppe",
-      "title": "Perth ChiangMai",
-      "postUrl": "https://www.instagram.com/p/DeCUBduAf1F/",
-      "image": "images/ChiangMai.jpg",
-      "like": 350000,
-      "likeDone": false,
-      "comment": 25000,
-      "commentDone": true,
-      "share": 1500000,
-      "shareDone": true,
-      "generators": [
-        { "name": "Generator 1", "url": "https://pixel-perfect-display-7828.lovable.app/" }
       ]
     }
   ],
