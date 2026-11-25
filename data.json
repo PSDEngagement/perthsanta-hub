@@ -780,17 +780,17 @@
               ]
            },
            {
-             "date": "29 Nov",
-             "title": "ENJOY THE FUN WITH SANTA AND FELIX",
-             "note": "06:00 PM (UTC+7)",
-             "location": "SHOPEE LIVE : Felina Canino & VIF Official Store",
-             "hastag": "TBA",
-             "keyword": "TBA",
-             "for": ["SANTA"],
-             "generators": [
-               { "name": "GEN 1", "url": "" },
-               { "name": "GEN 2", "url": "" },
-               { "name": "GEN 3", "url": "" }
+              "date": "29 Nov",
+              "title": "โตมากับวุฟ ฟันไปกับ SANTA & FELIX",
+              "note": "06:00 PM (UTC+7)",
+              "location": "SHOPEE : FELINA CANINO & VIF OFFICIAL STORE",
+              "hastag": "TBA",
+              "keyword": "TBA",
+              "for": ["SANTA"],
+              "generators": [
+                { "name": "GEN 1", "url": "" },
+                { "name": "GEN 2", "url": "" },
+                { "name": "GEN 3", "url": "" }
               ]
            }
         ]
@@ -832,6 +832,20 @@
             "note": "TBA",
             "location": "IMPACT ARENA, MUANG THONG THANI",
             "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["SANTA"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
+            "date": "26 Dec",
+            "title": "FRIENDLY ME THE GLOW VERSE 2026",
+            "note": "TBA",
+            "location": "SIAM SQUARE BLOCK I",
+            "hastag": ["TBA"],
             "keyword": "TBA",
             "for": ["SANTA"],
             "generators": [
