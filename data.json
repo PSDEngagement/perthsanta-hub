@@ -694,65 +694,6 @@
         "month": "November 2026",
         "items": [
           {
-             "date": "20 Nov",
-             "title": "BITE WITH PERTH เม้าท์แฝดกันแซ่บกับ BITETO",
-             "note": "05:00 PM (UTC+7)",
-             "location": "LIVE TikTok : @biteto.thailand",
-             "hastag": "BITETOxPERTH",
-             "keyword": "PERTH EATZAP WITH BITETO",
-             "for": ["PERTH"],
-             "generators": [
-              { "name": "GEN 1", "url": "https://psdtrendng.github.io/trendPerthBITETO/" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
-             "date": "20 Nov",
-             "title": "SORRY NOT SORRY - PERTH OFFICIAL MV",
-             "note": "07:00 PM (UTC+7)",
-             "location": "YouTube | RISER MUSIC",
-             "hastag": [
-               "SorryNotSorryPERTH", 
-               "PerthTanapon"
-             ],
-             "keyword": "PERTH COMEBACK NOT SORRY",
-             "for": ["PERTH"],
-             "generators": [
-              { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-           ]
-          },
-          {
-            "date": "21 Nov",
-            "title": "DAO COFFEE EXCLUSIVE MEETING ",
-            "note": "01:00 PM (UTC+7)",
-            "location": "LOTUS'S RAMA4",
-            "hastag": "ExclusivemeetingbyDaocoffeexPerthSanta",
-            "keyword": "PERTHSANTA COFFEE DATE",
-            "for": ["PERTH", "SANTA"],
-            "generators": [
-              { "name": "GEN 1", "url": "" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
-            "date": "22 Nov",
-            "title": "PERTHยกหน้าให้OLAY IN CHIANGMAI",
-            "note": "05:00 PM (UTC+7)",
-            "location": "ONE NIMMAN, CHIANG MAI",
-            "hastag": ["olayxperth", "perthยกหน้าให้olay"],
-            "keyword": "PERTH WITH OLAY IN CHIANG MAI",
-            "for": ["PERTH"],
-            "generators": [
-              { "name": "GEN 1", "url": "https://psdtrendng.github.io/gentrendPerthOlay/" },
-              { "name": "GEN 2", "url": "" },
-              { "name": "GEN 3", "url": "" }
-            ]
-          },
-          {
             "date": "25 Nov",
             "title": "SCARLET HEART ULLAVEE THE GRAND PREMIERE",
             "note": "08:30 PM (UTC+7)",
@@ -789,6 +730,20 @@
             "location": "ONE31",
             "hastag": "ScarletHeartUllaveeEP8",
             "keyword": "PERTH KONGTAI ONCE ULLAVEE",
+            "for": ["PERTH"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
+            "date": "27 Nov",
+            "title": "รายการ 9ENTERTAIN",
+            "note": "09:00 PM (UTC+7)",
+            "location": "YOUTUBE: 9ENTERTAIN OFFICIAL",
+            "hastag": "TBA",
+            "keyword": "TBA",
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
