@@ -805,7 +805,7 @@
             "location": "EDEN, 1ST FLOOR, CENTRALWORLD",
             "hastag": "TBA",
             "keyword": "TBA",
-            "for": ["PERTH"],
+            "for": ["PERTH", "DOMIIA"],
             "generators": [
               { "name": "GEN 1", "url": "" },
               { "name": "GEN 2", "url": "" },
