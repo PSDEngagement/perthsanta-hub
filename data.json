@@ -190,6 +190,24 @@
   },
   "instagram": [
     {
+  "id": "DgNdM7hBwVC",
+  "date": "2026-11-26 ♡ 22:46 BKK",
+  "handle": "@perthppe",
+  "title": "Perth Guitar 2",
+  "postUrl": "https://https://www.instagram.com/perthppe/reel/DgNdM7hBwVC/",
+  "image": "images/Pedguitar.png",
+  "like": 200000,
+  "likeDone": false,
+  "comment": 10000,
+  "commentDone": false,
+  "share": 1000000,
+  "shareDone": false,
+  "generators": [
+    { "name": "Generator 1", "url": "https://frame-to-function-design.lovable.app/" },
+    { "name": "Generator 2", "url": "" }
+  ]
+},
+    {
   "id": "DgKRtmhpZdW",
   "date": "2026-11-25 ♡ 17:07 BKK",
   "handle": "@perthppe",
@@ -198,7 +216,7 @@
   "image": "images/Perthguitar.jpg",
   "like": 200000,
   "likeDone": false,
-  "comment": 15000,
+  "comment": 10000,
   "commentDone": false,
   "share": 1000000,
   "shareDone": false,
@@ -216,7 +234,7 @@
   "image": "images/PedTalineman.PNG",
   "like": 200000,
   "likeDone": false,
-  "comment": 15000,
+  "comment": 10000,
   "commentDone": false,
   "share": 1000000,
   "shareDone": false,
