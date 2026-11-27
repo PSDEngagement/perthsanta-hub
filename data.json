@@ -775,11 +775,11 @@
             "title": "GMM STARLYMPICS WITH PSD ",
             "note": "TBA",
             "location": "TBA",
-            "hastag": "TBA",
-            "keyword": "TBA",
+            "hastag": [ "GMMTVStarlympics2026", "#PerthSanta #เพิร์ธแซนต้า", "DOMIIA"]
+            "keyword": "PERTHSANTA DOMIIA FAMIGNITE",
             "for": ["PSD"],
             "generators": [
-              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/starlympics-2026-ps.html" },
               { "name": "GEN 2", "url": "" },
               { "name": "GEN 3", "url": "" }
             ]
