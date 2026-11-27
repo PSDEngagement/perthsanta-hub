@@ -565,7 +565,7 @@
       "generators": [
         { "name": "Generator 1", "url": "https://crimson-canvas-generator.lovable.app/" }
       ]
-    },
+    }
   ],
   "missions": [
     { "id": "ig-engagement", "title": "Instagram Engagement", "page": "ig-engagement.html", "type": "Instagram", "done": false },
