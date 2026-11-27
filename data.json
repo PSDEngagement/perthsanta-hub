@@ -215,7 +215,7 @@
   "postUrl": "https://www.instagram.com/p/DgKRtmhpZdW/",
   "image": "images/Perthguitar.jpg",
   "like": 200000,
-  "likeDone": false,
+  "likeDone": true,
   "comment": 10000,
   "commentDone": false,
   "share": 1000000,
@@ -237,7 +237,7 @@
   "comment": 10000,
   "commentDone": false,
   "share": 1000000,
-  "shareDone": false,
+  "shareDone": true,
   "generators": [
     { "name": "Generator 1", "url": "https://pixel-perfect-replay-27859.lovable.app/" },
     { "name": "Generator 2", "url": "" }
@@ -255,7 +255,7 @@
   "comment": 15000,
   "commentDone": false,
   "share": 1000000,
-  "shareDone": false,
+  "shareDone": true,
   "generators": [
     { "name": "Generator 1", "url": "https://lee-comment-companion.lovable.app/" },
     { "name": "Generator 2", "url": "" }
@@ -273,7 +273,7 @@
   "comment": 15000,
   "commentDone": false,
   "share": 1000000,
-  "shareDone": false,
+  "shareDone": true,
   "generators": [
     { "name": "Generator 1", "url": "https://lee-comment-companion.lovable.app/" },
     { "name": "Generator 2", "url": "" }
@@ -304,7 +304,7 @@
   "title": "Perth x Sorry Not Sorry",
   "postUrl": "https://www.instagram.com/p/Df9sVR0I1Xu/",
   "image": "images/perthsorry.jpg",
-  "like": 250000,
+  "like": 300000,
   "likeDone": true,
   "comment": 20000,
   "commentDone": false,
@@ -358,7 +358,7 @@
   "title": "Perth x Tattoos",
   "postUrl": "https://www.instagram.com/p/DftxMlsoaYs/",
   "image": "images/perthtatto.jpg",
-  "like": 750000,
+  "like": 800000,
   "likeDone": true,
   "comment": 20000,
   "commentDone": false,
@@ -387,24 +387,6 @@
     { "name": "Generator 2", "url": "https://psdengagement.github.io/santadolceandgabbana/" }
   ]
 },
-{
-  "id": "DfYtBNLoSaH",
-  "date": "2026-11-06 ♡ 11:03 BKK",
-  "handle": "@perthppe",
-  "title": "Perth x Dolce & Gabbana",
-  "postUrl": "https://www.instagram.com/p/DfYtBNLoSaH/",
-  "image": "images/perthd&g.jpg",
-  "like": 200000,
-  "likeDone": true,
-  "comment": 30000,
-  "commentDone": true,
-  "share": 1500000,
-  "shareDone": false,
-  "generators": [
-    { "name": "Generator 1", "url": "https://image-faithful-screenmaker.lovable.app/" },
-    { "name": "Generator 2", "url": "" }
-  ]
-    },
     {
   "id": "DfXtO45ASpI",
   "date": "2026-11-06 ♡ 01:45 BKK",
@@ -484,7 +466,7 @@
   "title": "Perth x GMMTV Next",
   "postUrl": "https://www.instagram.com/p/DfT7qIhIU-V/",
   "image": "images/perthgmmnext.jpg",
-  "like": 200000,
+  "like": 250000,
   "likeDone": true,
   "comment": 15000,
   "commentDone": false,
@@ -568,57 +550,6 @@
       ]
     },
     {
-  "id": "De4e7m5gaqN",
-  "date": "2026-10-24 ♡ 22:44 BKK",
-  "handle": "@perthppe",
-  "title": "Perth Night Pool",
-  "postUrl": "https://www.instagram.com/p/De4e7m5gaqN/",
-  "image": "images/perthpool.jpg",
-  "like": 350000,
-  "likeDone": true,
-  "comment": 20000,
-  "commentDone": true,
-  "share": 2000000,
-  "shareDone": false,
-  "generators": [
-    { "name": "Generator 1", "url": "https://stirring-raindrop-644769.netlify.app/" }
-  ]
-    },
-    {
-  "id": "DezQhHPAaG-",
-  "date": "2026-10-22 ♡ 22:02 BKK",
-  "handle": "@perthppe",
-  "title": "Perth Twilight Horizon",
-  "postUrl": "https://www.instagram.com/p/DezQhHPAaG-/",
-  "image": "images/perthskyline.jpg",
-  "like": 350000,
-  "likeDone": false,
-  "comment": 20000,
-  "commentDone": true,
-  "share": 1500000,
-  "shareDone": false,
-  "generators": [
-    { "name": "Generator 1", "url": "https://image-inspired-screen-maker.lovable.app/" }
-  ]
-    },
-    {
-  "id": "DetqH2XhDUy",
-  "date": "2026-10-20 ♡ 17:51 BKK",
-  "handle": "@perthppe",
-  "title": "PerthSanta × Chupa Chups Sour Belt",
-  "postUrl": "https://www.instagram.com/p/DetqH2XhDUy/",
-  "image": "images/chupachups.jpg",
-  "like": 150000,
-  "likeDone": false,
-  "comment": 15000,
-  "commentDone": true,
-  "share": 1500000,
-  "shareDone": false,
-  "generators": [
-    { "name": "Generator 1", "url": "https://pixel-perfect-replay-7241.lovable.app/" }
-  ]
-    },
-    {
       "id": "DeW6-hCga6t",
       "date": "2026-10-11 ♡ 21:55 BKK",
       "handle": "@perthppe",
@@ -635,23 +566,6 @@
         { "name": "Generator 1", "url": "https://crimson-canvas-generator.lovable.app/" }
       ]
     },
-    {
-      "id": "DeRv4GOCdwD",
-      "date": "2026-10-09 ♡ 21:41 BKK",
-      "handle": "@santa.pp",
-      "title": "Santa Vibes",
-      "postUrl": "https://www.instagram.com/p/DeRv4GOCdwD/",
-      "image": "images/SantaVibes.jpg",
-      "like": 350000,
-      "likeDone": false,
-      "comment": 25000,
-      "commentDone": true,
-      "share": 1500000,
-      "shareDone": false,
-      "generators": [
-        { "name": "Generator 1", "url": "https://new-chat-tau-eosin.vercel.app/" }
-      ]
-    }
   ],
   "missions": [
     { "id": "ig-engagement", "title": "Instagram Engagement", "page": "ig-engagement.html", "type": "Instagram", "done": false },
