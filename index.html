@@ -241,10 +241,12 @@
 
     .heart-red { color: #ef4444; }
 
+    /* ===== CHỈ CHỈNH: tag xuống từng hàng ===== */
     .ev-tags {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
       margin-bottom: 0.55rem;
     }
 
@@ -306,13 +308,12 @@
       transform: translateY(-1px);
     }
 
-    /* ===== Nút Copy KW + Hashtag ===== */
     .ev-copy-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
       margin-top: 0.35rem;
-      margin-bottom: 0.55rem; /* ← đã thêm khoảng cách với GEN */
+      margin-bottom: 0.55rem;
       background: linear-gradient(145deg, #7f1d1d 0%, #450a0a 100%);
       border: 1px solid #991b1b;
       color: #fff;
@@ -648,10 +649,13 @@
       return hearts.join("");
     }
 
+    /* ===== CHỈ CHỈNH: hỗ trợ hastag dạng array ===== */
     function getHashtags(ev) {
       const tags = [];
       if (Array.isArray(ev.hastags)) {
         ev.hastags.forEach(function (t) { tags.push(t); });
+      } else if (Array.isArray(ev.hastag)) {
+        ev.hastag.forEach(function (t) { tags.push(t); });
       } else if (ev.hastag) {
         String(ev.hastag).split(",").forEach(function (t) {
           tags.push(t.trim());
@@ -662,7 +666,6 @@
       });
     }
 
-    // ===== Hàm copy =====
     function copyText(text, btn) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(function () {
@@ -751,7 +754,6 @@
         }
       });
 
-      // ===== Tạo nút Copy (có khoảng cách đẹp) =====
       let copyParts = [];
       if (keyword) copyParts.push(keyword);
 
@@ -889,7 +891,6 @@
         return buildCard(event, getStatus(event, bkk));
       }).join("");
 
-      // Gắn sự kiện click cho nút Copy
       container.querySelectorAll(".ev-copy-btn").forEach(function (btn) {
         btn.addEventListener("click", function (e) {
           e.preventDefault();
