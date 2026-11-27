@@ -699,7 +699,7 @@
             "for": ["PSD"],
             "generators": [
               { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/starlympics-2026-ps.html" },
-              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 2", "url": "https://psdstarlympics26.netlify.app/" },
               { "name": "GEN 3", "url": "" }
             ]
           },
@@ -717,7 +717,7 @@
             "for": ["SANTA"],
             "generators": [
               { "name": "GEN 1", "url": "https://psdxtrend.github.io/x-comment-generator/santajasper-starlympic.html" },
-              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 2", "url": "https://santajasperstarlympics26.netlify.app/" },
               { "name": "GEN 3", "url": "" }
             ]
           },
