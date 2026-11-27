@@ -759,9 +759,10 @@
             "date": "27 Nov",
             "title": "รายการ 9ENTERTAIN",
             "note": "09:00 PM (UTC+7)",
+            "startTrend": "09:00 PM (UTC+7)",
             "location": "YOUTUBE: 9ENTERTAIN OFFICIAL",
-            "hastag": "TBA",
-            "keyword": "TBA",
+            "hastag": "9EntertainxPerthxPhuwin",
+            "keyword": "PERTH PHUWIN SHUV X 9ENT",
             "for": ["PERTH"],
             "generators": [
               { "name": "GEN 1", "url": "" },
