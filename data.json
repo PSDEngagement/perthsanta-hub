@@ -783,6 +783,20 @@
             ]
           },
           {
+            "date": "13 Dec",
+            "title": "INFINITY MEDICAL CLINIC SPECIAL GUESTS",
+            "note": "05:00 PM (UTC+7)",
+            "location": "CENTRAL CHIANGRAI ACTIVITY AREA, 1ST FLOOR",
+            "hastag": "TBA",
+            "keyword": "TBA",
+            "for": ["PERTH"],
+            "generators": [
+              { "name": "GEN 1", "url": "" },
+              { "name": "GEN 2", "url": "" },
+              { "name": "GEN 3", "url": "" }
+            ]
+          },
+          {
             "date": "18-19-20 Dec",
             "title": "JASP.ER TEMPTATION CONCERT ",
             "note": "TBA",
